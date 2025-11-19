@@ -11,28 +11,48 @@
 
   function initCarousel() {
     const carousel = document.getElementById('comp-lqizp7fs');
-    if (!carousel) return;
+    if (!carousel) {
+      console.error('Carousel not found');
+      return;
+    }
 
     const slidesWrapper = carousel.querySelector('[data-testid="slidesWrapper"]');
     const prevButton = carousel.querySelector('[data-testid="prevButton"]');
     const nextButton = carousel.querySelector('[data-testid="nextButton"]');
     const dotsNav = carousel.querySelector('nav ol');
 
-    if (!slidesWrapper || !prevButton || !nextButton || !dotsNav) return;
+    if (!slidesWrapper || !prevButton || !nextButton || !dotsNav) {
+      console.error('Carousel elements not found');
+      return;
+    }
 
+    // Get all slides - they have class 'imK94d'
     const slides = Array.from(slidesWrapper.querySelectorAll('.imK94d'));
     const dots = Array.from(dotsNav.querySelectorAll('li'));
+
+    console.log('Found', slides.length, 'slides');
+
+    if (slides.length === 0) {
+      console.error('No slides found');
+      return;
+    }
+
     let currentSlide = 0;
 
-    // Hide all slides except the first one
+    // Style slides for proper visibility control
+    // Since they're absolutely positioned, use z-index and opacity
     function updateSlides() {
       slides.forEach((slide, index) => {
         if (index === currentSlide) {
-          slide.style.display = 'block';
+          slide.style.zIndex = '10';
           slide.style.opacity = '1';
+          slide.style.visibility = 'visible';
+          slide.style.pointerEvents = 'auto';
         } else {
-          slide.style.display = 'none';
+          slide.style.zIndex = '1';
           slide.style.opacity = '0';
+          slide.style.visibility = 'hidden';
+          slide.style.pointerEvents = 'none';
         }
       });
 
@@ -41,15 +61,17 @@
         const link = dot.querySelector('a');
         if (index === currentSlide) {
           dot.setAttribute('aria-current', 'true');
-          link.classList.add('Ale4Rm');
+          if (link) link.classList.add('Ale4Rm');
         } else {
           dot.removeAttribute('aria-current');
-          link.classList.remove('Ale4Rm');
+          if (link) link.classList.remove('Ale4Rm');
         }
       });
 
       // Update aria-live for accessibility
       slidesWrapper.setAttribute('aria-live', 'polite');
+
+      console.log('Current slide:', currentSlide);
     }
 
     // Navigate to specific slide
@@ -67,12 +89,14 @@
     // Previous button
     prevButton.addEventListener('click', function(e) {
       e.preventDefault();
+      console.log('Previous clicked');
       goToSlide(currentSlide - 1);
     });
 
     // Next button
     nextButton.addEventListener('click', function(e) {
       e.preventDefault();
+      console.log('Next clicked');
       goToSlide(currentSlide + 1);
     });
 
@@ -82,6 +106,7 @@
       if (link) {
         link.addEventListener('click', function(e) {
           e.preventDefault();
+          console.log('Dot', index, 'clicked');
           goToSlide(index);
         });
       }
@@ -98,12 +123,36 @@
       }
     });
 
+    // Make carousel focusable for keyboard navigation
+    carousel.setAttribute('tabindex', '0');
+
     // Optional: Auto-play (uncomment to enable)
-    // setInterval(function() {
+    // let autoplayInterval = setInterval(function() {
     //   goToSlide(currentSlide + 1);
     // }, 5000);
 
-    // Initialize
+    // // Pause autoplay on hover
+    // carousel.addEventListener('mouseenter', function() {
+    //   clearInterval(autoplayInterval);
+    // });
+
+    // carousel.addEventListener('mouseleave', function() {
+    //   autoplayInterval = setInterval(function() {
+    //     goToSlide(currentSlide + 1);
+    //   }, 5000);
+    // });
+
+    // Add transition CSS
+    const style = document.createElement('style');
+    style.textContent = `
+      .imK94d {
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize - show first slide
+    console.log('Initializing carousel');
     updateSlides();
   }
 })();

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+        }
+        #test-output {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Carousel Test Page</h1>
+
+        <div class="instructions">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Open your browser's Developer Console (F12)</li>
+                <li>Scroll down to find the testimonials carousel on the main page</li>
+                <li>Click the Previous/Next arrow buttons</li>
+                <li>Click the navigation dots</li>
+                <li>Try keyboard navigation (arrow keys)</li>
+                <li>Check console for debug messages</li>
+            </ol>
+        </div>
+
+        <div id="test-output">
+            <strong>Console Output:</strong><br>
+            Open browser console to see carousel initialization messages
+        </div>
+
+        <p style="margin-top: 20px;">
+            <strong>Expected behavior:</strong><br>
+            - Clicking arrows should navigate between 6 testimonials<br>
+            - Active dot should highlight<br>
+            - Smooth fade transition between slides<br>
+            - Console should log slide changes
+        </p>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="index.html" style="background: #2196F3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Go to Main Page</a>
+        </p>
+    </div>
+
+    <script>
+        // Intercept console.log to display in page
+        const output = document.getElementById('test-output');
+        const oldLog = console.log;
+        console.log = function(...args) {
+            oldLog.apply(console, args);
+            output.innerHTML += '<br>' + args.join(' ');
+            output.scrollTop = output.scrollHeight;
+        };
+
+        console.log('Test page loaded - navigate to index.html to test carousel');
+    </script>
+</body>
+</html>
