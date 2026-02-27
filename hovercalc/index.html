@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoverCalc — Menu bar calculator for macOS</title>
+  <meta name="description" content="HoverCalc is a simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
+  <link rel="canonical" href="https://michelstorms.com/hovercalc/">
+
+  <link rel="icon" type="image/png" href="../assets/logo-og.png">
+  <link rel="apple-touch-icon" href="../assets/logo-og.png">
+
+  <meta property="og:title" content="HoverCalc — Menu bar calculator for macOS">
+  <meta property="og:description" content="A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
+  <meta property="og:url" content="https://michelstorms.com/hovercalc/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/hovercalc/composite.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoverCalc — Menu bar calculator for macOS">
+  <meta name="twitter:description" content="A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/hovercalc/composite.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      --accent: #e07830;
+      --accent-light: #f0954a;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 72px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(224, 120, 48, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--gray-500);
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Mac App Store Badge ===== */
+    .mas-badge {
+      display: inline-block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .mas-badge:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .mas-badge img {
+      height: 48px;
+      width: auto;
+    }
+
+    /* ===== Screenshot Showcase ===== */
+    .showcase {
+      background: var(--navy);
+      padding: 72px 0;
+      overflow: hidden;
+    }
+
+    .showcase img {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 88px 0; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ===== Features ===== */
+    .features { background: var(--white); }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .features-header .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .feature-card .kbd {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 5px;
+      padding: 2px 7px;
+      color: var(--navy);
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta .section-label { color: var(--accent-light); }
+    .cta .section-title { color: var(--white); }
+
+    .cta .section-subtitle {
+      color: var(--gray-300);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--navy-dark);
+      color: var(--gray-300);
+      padding: 26px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .footer-inner a {
+      color: var(--gray-300);
+      transition: color 0.2s;
+    }
+
+    .footer-inner a:hover { color: var(--white); }
+
+    .legal-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+    }
+
+    .legal-links a {
+      color: var(--gray-400);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-links a:hover { color: var(--white); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 72px 24px 56px; }
+      .hero h1 { font-size: 2.4rem; }
+      section { padding: 64px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+      .showcase { padding: 48px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
+        <li><a href="https://michelstorms.com/blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">macOS Menu Bar Utility</span>
+      <h1>HoverCalc</h1>
+      <p>A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12" aria-label="Download on the Mac App Store">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot Showcase -->
+  <section class="showcase">
+    <div class="container">
+      <img src="../assets/apps/hovercalc/composite.png" alt="HoverCalc screenshots showing calculator, result, settings, and welcome screens">
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Calculate anywhere, anytime</h2>
+        <p class="section-subtitle">HoverCalc stays out of the way until you need it. Click the menu bar icon or press a hotkey to start calculating instantly.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
+          </div>
+          <h3>Menu Bar Calculator</h3>
+          <p>Click the menu bar icon to open HoverCalc as a popup panel. Type your expression and get results instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Floating Mode</h3>
+          <p>Drag the title bar to detach HoverCalc into a floating window. It stays on top of all apps, even in fullscreen.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+          </div>
+          <h3>Expression Input</h3>
+          <p>Type full expressions like <span class="kbd">245*18</span> or <span class="kbd">(100+50)/3</span>. See your expression and result at the same time.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Global Hotkey</h3>
+          <p>Press <span class="kbd">&#8984;</span> + <span class="kbd">=</span> to toggle HoverCalc from any app. Fully configurable in Settings.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+          </div>
+          <h3>Calculation History</h3>
+          <p>Recent calculations are saved so you can quickly recall previous results. Tap any entry to reuse it.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h3>Open at Login</h3>
+          <p>Enable launch at login so HoverCalc is always one click or keypress away. Set it once and forget it.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <span class="section-label">Get HoverCalc</span>
+      <h2 class="section-title">Your calculator, always within reach</h2>
+      <p class="section-subtitle">Free on the Mac App Store. No subscription, no ads.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12" aria-label="Download on the Mac App Store">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://michelstorms.com/hovercalc/terms/">Terms of Service</a>
+        <a href="https://michelstorms.com/hovercalc/license/">License Agreement</a>
+        <a href="https://michelstorms.com/hovercalc/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
