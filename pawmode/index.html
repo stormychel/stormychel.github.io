@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HoverCalc — Menu bar calculator for macOS</title>
-  <meta name="description" content="HoverCalc is a simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
-  <link rel="canonical" href="https://michelstorms.com/hovercalc/">
+  <title>PawMode — Vehicle monitor for pets and belongings</title>
+  <meta name="description" content="PawMode turns a spare iPhone into a Tesla-style Dog Mode for any vehicle. Live camera, thermal monitoring, reassurance messages, and real-time remote alerts from your pocket.">
+  <link rel="canonical" href="https://michelstorms.com/pawmode/">
 
   <link rel="icon" type="image/png" href="../assets/logo-og.png">
   <link rel="apple-touch-icon" href="../assets/logo-og.png">
 
-  <meta property="og:title" content="HoverCalc — Menu bar calculator for macOS">
-  <meta property="og:description" content="A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
-  <meta property="og:url" content="https://michelstorms.com/hovercalc/">
+  <meta property="og:title" content="PawMode — Vehicle monitor for pets and belongings">
+  <meta property="og:description" content="Turn a spare iPhone into a vehicle monitor with live camera, thermal alerts, reassurance messages, and remote monitoring from your pocket.">
+  <meta property="og:url" content="https://michelstorms.com/pawmode/">
   <meta property="og:site_name" content="Michel Storms">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://michelstorms.com/assets/apps/hovercalc/composite.png">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/pawmode/composite_promo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HoverCalc — Menu bar calculator for macOS">
-  <meta name="twitter:description" content="A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps.">
-  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/hovercalc/composite.png">
+  <meta name="twitter:title" content="PawMode — Vehicle monitor for pets and belongings">
+  <meta name="twitter:description" content="Turn a spare iPhone into a vehicle monitor with live camera, thermal alerts, reassurance messages, and remote monitoring from your pocket.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/pawmode/composite_promo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,8 @@
       --gray-300: #c5c5ca;
       --gray-400: #8c8c92;
       --gray-500: #52525a;
-      --accent: #e07830;
-      --accent-light: #f0954a;
+      --accent: #14b8a6;
+      --accent-light: #2dd4bf;
       --font-heading: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
@@ -126,7 +126,7 @@
       right: -20%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(224, 120, 48, 0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.07) 0%, transparent 70%);
       border-radius: 50%;
     }
 
@@ -159,7 +159,7 @@
     .hero p {
       font-size: 1.125rem;
       color: var(--gray-500);
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto 40px;
       line-height: 1.8;
     }
@@ -185,6 +185,12 @@
     .mas-badge img {
       height: 48px;
       width: auto;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 18px;
     }
 
     /* ===== Screenshot Showcase ===== */
@@ -288,16 +294,49 @@
       line-height: 1.6;
     }
 
-    .feature-card .kbd {
-      display: inline-block;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 500;
+    /* ===== Two-Device Section ===== */
+    .pairing {
+      background: var(--off-white);
+    }
+
+    .pairing-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .pairing-card {
       background: var(--white);
       border: 1px solid var(--gray-200);
-      border-radius: 5px;
-      padding: 2px 7px;
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .pairing-card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(20, 184, 166, 0.1);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .pairing-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
       color: var(--navy);
+    }
+
+    .pairing-card p {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.65;
     }
 
     /* ===== CTA ===== */
@@ -316,6 +355,20 @@
       margin-right: auto;
       margin-bottom: 32px;
     }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 20px;
+    }
+
+    .cta-link {
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cta-link:hover { color: var(--white); }
 
     /* ===== Footer ===== */
     footer {
@@ -367,6 +420,7 @@
       .hero h1 { font-size: 2.4rem; }
       section { padding: 64px 0; }
       .features-grid { grid-template-columns: 1fr; }
+      .pairing-inner { grid-template-columns: 1fr; gap: 20px; }
       .nav-links { gap: 16px; }
       .showcase { padding: 48px 0; }
     }
@@ -393,21 +447,22 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-label">macOS Menu Bar Utility</span>
-      <h1>HoverCalc</h1>
-      <p>A simple, powerful calculator that lives in your menu bar. Detach it into a floating window for desktop and fullscreen apps. Available in 128 languages.</p>
+      <span class="hero-label">iOS Vehicle Monitor</span>
+      <h1>PawMode</h1>
+      <p>Turn a spare iPhone into a Tesla-style Dog Mode for any vehicle. Monitor thermal state, show a live camera feed, and reassure passersby — while you keep an eye on everything from your pocket.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12" aria-label="Download on the Mac App Store">
-          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" alt="Download on the Mac App Store">
+        <a class="mas-badge" href="https://michelstorms.com/apps.html#pawmode" aria-label="Learn more about PawMode">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Coming soon to the App Store">
         </a>
       </div>
+      <p class="hero-note">Coming soon to the App Store · iPhone &amp; iPad</p>
     </div>
   </section>
 
   <!-- Screenshot Showcase -->
   <section class="showcase">
     <div class="container">
-      <img src="../assets/apps/hovercalc/composite_promo.png" alt="HoverCalc color themes — Match your style">
+      <img src="../assets/apps/pawmode/composite_promo.png" alt="PawMode — Monitor mode and Personal dashboard side by side">
     </div>
   </section>
 
@@ -416,75 +471,105 @@
     <div class="container">
       <div class="features-header">
         <span class="section-label">Features</span>
-        <h2 class="section-title">Calculate anywhere, anytime</h2>
-        <p class="section-subtitle">HoverCalc stays out of the way until you need it. Click the menu bar icon or press a hotkey to start calculating instantly.</p>
+        <h2 class="section-title">Peace of mind, parked or in motion</h2>
+        <p class="section-subtitle">PawMode pairs two iPhones over iCloud — one stays in the vehicle, the other stays with you. No accounts, no extra hardware.</p>
       </div>
       <div class="features-grid">
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></svg>
           </div>
-          <h3>Menu Bar Calculator</h3>
-          <p>Click the menu bar icon to open HoverCalc as a popup panel. Type your expression and get results instantly.</p>
+          <h3>Thermal Monitoring</h3>
+          <p>Real-time thermal state with color-coded alerts: Nominal, Fair, Serious, and Critical. Get a push notification the moment conditions cross a threshold.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <h3>Floating Mode</h3>
-          <p>Drag the title bar to detach HoverCalc into a floating window. It stays on top of all apps, even in fullscreen.</p>
+          <h3>Live Camera Feed</h3>
+          <p>Front-camera dashcam runs on the monitor phone. Request a remote snapshot anytime from your personal device to check in on your pets.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Expression Input</h3>
-          <p>Type full expressions like <span class="kbd">245*18</span>, <span class="kbd">(100+50)/3</span>, or <span class="kbd">2^8</span>. See your expression and result at the same time.</p>
+          <h3>Reassurance Message</h3>
+          <p>Display a customizable message for passersby — "The air conditioning is running and my pets are safe." Auto-translates to the local language.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
           </div>
-          <h3>Global Hotkey</h3>
-          <p>Press <span class="kbd">&#8984;</span> + <span class="kbd">=</span> to toggle HoverCalc from any app. Fully configurable in Settings.</p>
+          <h3>Two-Device Pairing</h3>
+          <p>Pair by scanning a QR code — no account required. Devices sync over CloudKit with a 60-second heartbeat, even when backgrounded.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </div>
-          <h3>Calculation History</h3>
-          <p>Recent calculations are saved so you can quickly recall previous results. Tap any entry to reuse it.</p>
+          <h3>Remote Alerts</h3>
+          <p>Repeating push notifications for thermal warnings, low battery, and offline status. Set the interval from 1 to 30 minutes.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3>Open at Login</h3>
-          <p>Enable launch at login so HoverCalc is always one click or keypress away. Set it once and forget it.</p>
+          <h3>Auto-Translation</h3>
+          <p>Detects the local country via reverse geocoding and cycles the display message through relevant languages using Apple's on-device translation.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-          <h3>Color Themes</h3>
-          <p>Choose from 7 built-in color themes to match your style. Pick your vibe in Settings.</p>
+          <h3>Surveillance Overlay</h3>
+          <p>On-screen "REC", "Uploading to cloud", and "Surveillance Active" indicators double as a visible deterrent against tampering and break-ins.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
-            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6.5 6.5h11v11h-11z"/><path d="M6.5 6.5L2 2"/><path d="M17.5 6.5L22 2"/><path d="M6.5 17.5L2 22"/><path d="M17.5 17.5L22 22"/></svg>
           </div>
-          <h3>128 Languages</h3>
-          <p>Fully localized in 128 languages. HoverCalc speaks your language right out of the box.</p>
+          <h3>BLE Temperature Sensor</h3>
+          <p>Optional support for Xiaomi LYWSD-compatible external sensors for a more accurate cabin reading — the phone's thermal state is only part of the picture.</p>
         </div>
 
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Passcode Lock &amp; Stealth Mode</h3>
+          <p>Lock the monitor with a passcode stored in the iOS Keychain. Stealth mode blanks the screen while the camera keeps running.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Two-Device Pairing -->
+  <section class="pairing">
+    <div class="container">
+      <div class="features-header" style="margin-bottom: 40px;">
+        <span class="section-label">Two devices, one pairing</span>
+        <h2 class="section-title">Monitor in the car, Personal in your pocket</h2>
+      </div>
+      <div class="pairing-inner">
+        <div class="pairing-card">
+          <span class="badge">Monitor</span>
+          <h3>The phone in your vehicle</h3>
+          <p>Live front-camera feed, thermal state display, reassurance message for passersby, contact QR code, video recording, and timed auto-snapshots. Keeps the screen awake and auto-dims after 5 minutes of inactivity.</p>
+        </div>
+        <div class="pairing-card">
+          <span class="badge">Personal</span>
+          <h3>The phone you carry</h3>
+          <p>Remote dashboard with thermal state, battery level, charging status, and sensor readings. Request snapshots, edit the display message, and get push alerts the instant conditions change or the monitor drops offline.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -492,14 +577,15 @@
   <!-- CTA -->
   <section class="cta">
     <div class="container">
-      <span class="section-label">Get HoverCalc</span>
-      <h2 class="section-title">Your calculator, always within reach</h2>
-      <p class="section-subtitle">Available on the Mac App Store. No subscription, no ads.</p>
+      <span class="section-label">Get PawMode</span>
+      <h2 class="section-title">Keep pets, belongings, and peace of mind in view</h2>
+      <p class="section-subtitle">Currently in development. Join TestFlight to get early access and help shape the release.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12" aria-label="Download on the Mac App Store">
-          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" alt="Download on the Mac App Store">
+        <a class="mas-badge" href="mailto:michelstorms@icloud.com?subject=PawMode%20TestFlight%20Access">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Request TestFlight access">
         </a>
       </div>
+      <p class="cta-note">Or <a class="cta-link" href="https://michelstorms.com/apps.html#pawmode">see full specs on the Apps page</a>.</p>
     </div>
   </section>
 
@@ -507,9 +593,9 @@
     <div class="footer-inner">
       <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
       <div class="legal-links">
-        <a href="https://michelstorms.com/hovercalc/terms/">Terms of Service</a>
-        <a href="https://michelstorms.com/hovercalc/license/">License Agreement</a>
-        <a href="https://michelstorms.com/hovercalc/privacy/">Privacy Policy</a>
+        <a href="https://michelstorms.com/pawmode/terms/">Terms of Service</a>
+        <a href="https://michelstorms.com/pawmode/license/">License Agreement</a>
+        <a href="https://michelstorms.com/pawmode/privacy/">Privacy Policy</a>
       </div>
       <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
     </div>
