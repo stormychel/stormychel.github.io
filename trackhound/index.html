@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackHound — Offline routing that takes the small roads</title>
+  <meta name="description" content="TrackHound is an offline routing app for ADV motorcycles, supermoto, 4x4 / overlanding, and gravel bikes. It deliberately routes onto narrow lanes, farm tracks, and dirt paths — all on-device, no signal needed.">
+  <link rel="canonical" href="https://michelstorms.com/trackhound/">
+
+  <link rel="icon" type="image/png" href="../assets/logo-og.png">
+  <link rel="apple-touch-icon" href="../assets/logo-og.png">
+
+  <meta property="og:title" content="TrackHound — Offline routing that takes the small roads">
+  <meta property="og:description" content="Offline routing for ADV motorcycles, supermoto, 4x4 / overlanding, and gravel bikes — onto narrow lanes, farm tracks, and dirt paths. Runs entirely on your iPhone.">
+  <meta property="og:url" content="https://michelstorms.com/trackhound/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/composite_promo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TrackHound — Offline routing that takes the small roads">
+  <meta name="twitter:description" content="Offline routing for ADV motorcycles, supermoto, 4x4 / overlanding, and gravel bikes — onto narrow lanes, farm tracks, and dirt paths.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/composite_promo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      --accent: #4d7c0f;
+      --accent-light: #65a30d;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 72px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(77, 124, 15, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--gray-500);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== App Store Badge ===== */
+    .mas-badge {
+      display: inline-block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .mas-badge:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .mas-badge img {
+      height: 48px;
+      width: auto;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 18px;
+    }
+
+    /* ===== Screenshot Showcase ===== */
+    .showcase {
+      background: var(--navy);
+      padding: 72px 0;
+      overflow: hidden;
+    }
+
+    .showcase img {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 88px 0; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ===== Features ===== */
+    .features { background: var(--white); }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .features-header .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ===== Route Styles Section ===== */
+    .styles {
+      background: var(--off-white);
+    }
+
+    .styles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .style-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .style-card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(77, 124, 15, 0.1);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .style-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .style-card p {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta .section-label { color: var(--accent-light); }
+    .cta .section-title { color: var(--white); }
+
+    .cta .section-subtitle {
+      color: var(--gray-300);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--navy-dark);
+      color: var(--gray-300);
+      padding: 26px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .footer-inner a {
+      color: var(--gray-300);
+      transition: color 0.2s;
+    }
+
+    .footer-inner a:hover { color: var(--white); }
+
+    .legal-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+    }
+
+    .legal-links a {
+      color: var(--gray-400);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-links a:hover { color: var(--white); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 72px 24px 56px; }
+      .hero h1 { font-size: 2.4rem; }
+      section { padding: 64px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .styles-grid { grid-template-columns: 1fr; gap: 16px; }
+      .nav-links { gap: 16px; }
+      .showcase { padding: 48px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
+        <li><a href="https://michelstorms.com/blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">iOS Adventure Routing</span>
+      <h1>TrackHound</h1>
+      <p>Most apps optimise for speed or distance. TrackHound deliberately takes the small roads &mdash; narrow lanes, farm tracks, and dirt paths, paved or not. Routing runs entirely on your iPhone, so it keeps working with no signal.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+      <p class="hero-note">In development &mdash; first release coming soon.</p>
+    </div>
+  </section>
+
+  <!-- Screenshot Showcase -->
+  <section class="showcase">
+    <div class="container">
+      <img src="../assets/apps/trackhound/composite_promo.png" alt="TrackHound — route on the map, the route-style picker, and the turn-by-turn roadbook">
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Built for the road less travelled</h2>
+        <p class="section-subtitle">On-device routing, offline maps, and a cost function tuned to find the small stuff &mdash; no account, no server.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M9 18h6"/></svg>
+          </div>
+          <h3>On-Device Routing</h3>
+          <p>A full Valhalla routing engine runs on your iPhone. No backend, no tracking &mdash; routes calculate locally, even in airplane mode.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          </div>
+          <h3>Offline Maps</h3>
+          <p>Download map regions for Belgium, the Netherlands, and Northern France. Plan and navigate with zero signal once a region is on the phone.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 22 17 7"/></svg>
+          </div>
+          <h3>Unpavediest by Default</h3>
+          <p>The signature mode hunts for gravel, dirt, and farm tracks, biasing hard toward narrow, traffic-free roads &mdash; the whole point of the app.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+          </div>
+          <h3>Four Route Styles</h3>
+          <p>Switch between Shortest, Fastest, Curviest, and Unpavediest with a tap &mdash; same start and end, four very different rides.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Compare on the Map</h3>
+          <p>Run all four presets at once and see them overlaid side by side, colour-coded, so you can pick the line you actually want before you leave.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          <h3>Glance Roadbook</h3>
+          <p>A full-screen, rally-style roadbook: one big maneuver, a heading compass, and your speed &mdash; readable at a glance from a tank bag.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </div>
+          <h3>Loop Generator</h3>
+          <p>Set a target distance and TrackHound builds a round-trip loop that brings you back to where you started &mdash; ideal for a free afternoon.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>GPX Import &amp; Export</h3>
+          <p>Bring in tracks from elsewhere or export your planned route as GPX to share it or load it onto a dedicated GPS.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 17l1.5-5.5A2 2 0 0 1 8.4 10h7.2a2 2 0 0 1 1.9 1.5L19 17"/><path d="M3 17h18v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          </div>
+          <h3>CarPlay</h3>
+          <p>Send the maneuver card and route to your vehicle's screen, so the roadbook is right there on the dash for 4x4 and overland trips.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Route Styles -->
+  <section class="styles">
+    <div class="container">
+      <div class="features-header" style="margin-bottom: 40px;">
+        <span class="section-label">One route, four characters</span>
+        <h2 class="section-title">Pick how you want to get there</h2>
+      </div>
+      <div class="styles-grid">
+        <div class="style-card">
+          <span class="badge">Shortest</span>
+          <h3>Shortest</h3>
+          <p>The absolute shortest legal path between two points, whatever the surface &mdash; the no-nonsense baseline.</p>
+        </div>
+        <div class="style-card">
+          <span class="badge">Fastest</span>
+          <h3>Fastest</h3>
+          <p>Optimised for time, with motorways allowed &mdash; for when you just need to be somewhere.</p>
+        </div>
+        <div class="style-card">
+          <span class="badge">Curviest</span>
+          <h3>Curviest</h3>
+          <p>Twisty paved back-roads and no motorway &mdash; the Sunday-ride preset for supermoto and sport riders.</p>
+        </div>
+        <div class="style-card">
+          <span class="badge">Unpavediest</span>
+          <h3>Unpavediest</h3>
+          <p>Gravel, dirt, and farm tracks wherever they exist. The TrackHound default and the reason the app exists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <span class="section-label">Get TrackHound</span>
+      <h2 class="section-title">Routes that take the road less travelled</h2>
+      <p class="section-subtitle">Coming to the App Store for iPhone, with CarPlay support. Built for ADV, supermoto, 4x4, and gravel.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
