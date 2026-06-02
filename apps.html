@@ -167,6 +167,21 @@
       color: var(--navy);
     }
 
+    .app-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      flex: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    }
+
     .status-pill {
       display: inline-flex;
       align-items: center;
@@ -386,6 +401,7 @@
       .apps-hero { padding-top: 52px; }
       .app-card { padding: 24px; }
       .app-name { font-size: 1.8rem; }
+      .app-icon { width: 52px; height: 52px; border-radius: 12px; }
       .app-meta { grid-template-columns: 1fr; }
       .detail-columns { grid-template-columns: 1fr; gap: 14px; }
       .screens-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -419,7 +435,10 @@
     <section class="apps-grid" aria-label="App list">
       <article class="app-card" id="librebase">
         <div class="app-card-header">
-          <h2 class="app-name">LibreBase</h2>
+          <div class="app-title">
+            <img class="app-icon" src="assets/apps/librebase/icon.png" alt="LibreBase app icon">
+            <h2 class="app-name">LibreBase</h2>
+          </div>
           <span class="status-pill">1.0.0 · In Development</span>
         </div>
         <p class="app-tagline">Your QardioBase scale, straight into Apple Health.</p>
@@ -475,7 +494,10 @@
 
       <article class="app-card">
         <div class="app-card-header">
-          <h2 class="app-name">HoverCalc</h2>
+          <div class="app-title">
+            <img class="app-icon" src="assets/apps/hovercalc/icon.png" alt="HoverCalc app icon">
+            <h2 class="app-name">HoverCalc</h2>
+          </div>
           <span class="status-pill">1.1.6 · Available on the Mac App Store</span>
         </div>
         <p class="app-tagline">A menu bar calculator that follows your workflow.</p>
@@ -545,7 +567,10 @@
 
       <article class="app-card" id="pawmode">
         <div class="app-card-header">
-          <h2 class="app-name">PawMode</h2>
+          <div class="app-title">
+            <img class="app-icon" src="assets/apps/pawmode/icon.png" alt="PawMode app icon">
+            <h2 class="app-name">PawMode</h2>
+          </div>
           <span class="status-pill">1.0.0 · In Development</span>
         </div>
         <p class="app-tagline">Monitor your vehicle's temperature and keep your pets safe.</p>
@@ -617,7 +642,10 @@
 
       <article class="app-card" id="trackhound">
         <div class="app-card-header">
-          <h2 class="app-name">TrackHound</h2>
+          <div class="app-title">
+            <img class="app-icon" src="assets/apps/trackhound/icon.png" alt="TrackHound app icon">
+            <h2 class="app-name">TrackHound</h2>
+          </div>
           <span class="status-pill">1.0 · In Development</span>
         </div>
         <p class="app-tagline">Navigation that deliberately takes the small roads.</p>
@@ -688,7 +716,10 @@
 
       <article class="app-card" id="pickdateplace">
         <div class="app-card-header">
-          <h2 class="app-name">PickDatePlace</h2>
+          <div class="app-title">
+            <img class="app-icon" src="assets/apps/pickdateplace/icon.png" alt="PickDatePlace app icon">
+            <h2 class="app-name">PickDatePlace</h2>
+          </div>
           <span class="status-pill">1.0.0 · Prepare for Submission</span>
         </div>
         <p class="app-tagline">Choose the date first, then the place.</p>
