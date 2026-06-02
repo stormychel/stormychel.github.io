@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LibreBase — Your QardioBase scale, in Apple Health</title>
+  <meta name="description" content="LibreBase is an independent, open-source iOS app that connects your QardioBase smart scale straight to Apple Health over Bluetooth — no account, no cloud, no Qardio app. Tested with the original QardioBase (1st generation).">
+  <link rel="canonical" href="https://michelstorms.com/librebase/">
+
+  <link rel="icon" type="image/png" href="../assets/apps/librebase/icon.png">
+  <link rel="apple-touch-icon" href="../assets/apps/librebase/icon.png">
+
+  <meta property="og:title" content="LibreBase — Your QardioBase scale, in Apple Health">
+  <meta property="og:description" content="Independent, open-source iOS app that connects your QardioBase smart scale to Apple Health over Bluetooth. Tested with the original QardioBase (1st generation).">
+  <meta property="og:url" content="https://michelstorms.com/librebase/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/librebase/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LibreBase — Your QardioBase scale, in Apple Health">
+  <meta name="twitter:description" content="Independent, open-source iOS app that connects your QardioBase smart scale to Apple Health. Tested with the original QardioBase (1st generation).">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/librebase/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      --accent: #0e7490;
+      --accent-light: #14b8a6;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 72px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      margin: 0 auto 28px;
+      box-shadow: 0 12px 34px rgba(14, 116, 144, 0.28);
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--gray-500);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ===== App Store Badge ===== */
+    .mas-badge {
+      display: inline-block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .mas-badge:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .mas-badge img {
+      height: 48px;
+      width: auto;
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-300);
+      color: var(--navy);
+      transition: transform 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 18px;
+    }
+
+    /* ===== Compatibility band ===== */
+    .compat {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .compat-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .compat-badge {
+      flex: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(20, 184, 166, 0.12);
+      padding: 6px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .compat-inner p {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 88px 0; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ===== Features ===== */
+    .features { background: var(--white); }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .features-header .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ===== How it works ===== */
+    .how { background: var(--off-white); }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .how-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .how-card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(20, 184, 166, 0.1);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .how-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .how-card p {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta .section-label { color: var(--accent-light); }
+    .cta .section-title { color: var(--white); }
+
+    .cta .section-subtitle {
+      color: var(--gray-300);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--navy-dark);
+      color: var(--gray-300);
+      padding: 26px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .footer-inner a {
+      color: var(--gray-300);
+      transition: color 0.2s;
+    }
+
+    .footer-inner a:hover { color: var(--white); }
+
+    .legal-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+    }
+
+    .legal-links a {
+      color: var(--gray-400);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-links a:hover { color: var(--white); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 72px 24px 56px; }
+      .hero h1 { font-size: 2.4rem; }
+      section { padding: 64px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: 16px; }
+      .nav-links { gap: 16px; }
+      .compat-inner { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
+        <li><a href="https://michelstorms.com/blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-icon" src="../assets/apps/librebase/icon.png" alt="LibreBase app icon">
+      <span class="hero-label">Open-source iOS · Apple Health</span>
+      <h1>LibreBase</h1>
+      <p>When Qardio shut down, the scales kept working over Bluetooth. LibreBase pairs with your QardioBase, reads your weight the moment you step on, and saves it straight to Apple Health &mdash; no account, no cloud, no Qardio app.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6775892745" aria-label="Download LibreBase on the App Store">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a class="btn-ghost" href="https://github.com/stormychel/LibreBase">View on GitHub</a>
+      </div>
+      <p class="hero-note">Open source &middot; in development &mdash; TestFlight coming soon.</p>
+    </div>
+  </section>
+
+  <!-- Compatibility -->
+  <section class="compat" style="padding:0;">
+    <div class="compat-inner">
+      <span class="compat-badge">Compatibility</span>
+      <p>LibreBase has so far been tested only with the <strong>original QardioBase (1st generation, model B100)</strong>. The QardioBase 2 and QardioBase X are not yet verified &mdash; they may work, but are currently untested.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Your scale, set free</h2>
+        <p class="section-subtitle">A tiny, private client that does one thing well &mdash; gets your weight off the scale and into Apple Health, with no vendor in the middle.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 17l10-10M7 7l10 10M12 2v20"/><path d="M12 12l5-3.5V5.5L12 9 7 5.5v3L12 12z" fill="white" stroke="none"/></svg>
+          </div>
+          <h3>Direct Bluetooth</h3>
+          <p>Connects straight to the QardioBase over Bluetooth LE. No account, no cloud, and no need for the discontinued Qardio app.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Straight to Apple Health</h3>
+          <p>Step on the scale and your weight is captured and saved to HealthKit automatically. Your data lives on your device.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          </div>
+          <h3>In-app BMI</h3>
+          <p>BMI is calculated in the app from your height, read from and synced back to Apple Health &mdash; not from the scale's stale profile.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="white" stroke="none"/><circle cx="16" cy="12" r="2" fill="white" stroke="none"/><circle cx="10" cy="18" r="2" fill="white" stroke="none"/></svg>
+          </div>
+          <h3>Metric or imperial</h3>
+          <p>Kilograms or pounds, centimeters or feet &mdash; weight and height follow your region automatically.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="10" x2="23" y2="14"/><rect x="3" y="8" width="9" height="8" rx="1" fill="white" stroke="none"/></svg>
+          </div>
+          <h3>Battery &amp; reconnect</h3>
+          <p>See the scale's battery and connection status at a glance, with a one-tap reconnect when it drops off.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Private by design</h3>
+          <p>No servers, no analytics, no tracking. LibreBase has no network code at all &mdash; everything happens on your phone.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how">
+    <div class="container">
+      <div class="features-header" style="margin-bottom: 40px;">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">No vendor, no middleman</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <span class="badge">Step 1</span>
+          <h3>Pair</h3>
+          <p>Open LibreBase and it finds your QardioBase over Bluetooth &mdash; no Qardio account or app required.</p>
+        </div>
+        <div class="how-card">
+          <span class="badge">Step 2</span>
+          <h3>Weigh in</h3>
+          <p>Step on the scale. Your weight appears instantly and is saved to Apple Health, with BMI from your height.</p>
+        </div>
+        <div class="how-card">
+          <span class="badge">Step 3</span>
+          <h3>Own your data</h3>
+          <p>Everything stays in Apple Health on your device. No cloud lock-in, ever &mdash; the whole reason LibreBase exists.</p>
+        </div>
+        <div class="how-card">
+          <span class="badge">Open source</span>
+          <h3>Inspect it</h3>
+          <p>LibreBase is MIT-licensed and on GitHub. Read the code, file an issue, or help add support for other QardioBase models.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <span class="section-label">Get LibreBase</span>
+      <h2 class="section-title">Keep your QardioBase alive</h2>
+      <p class="section-subtitle">Coming to the App Store for iPhone. Tested with the original QardioBase (1st generation). A wellness logger, not a medical device.</p>
+      <div class="hero-buttons">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6775892745" aria-label="Download LibreBase on the App Store">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a class="btn-ghost" href="https://github.com/stormychel/LibreBase" style="color:var(--gray-300);border-color:var(--gray-300);">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://github.com/stormychel/LibreBase/blob/main/LICENSE">License (MIT)</a>
+        <a href="https://michelstorms.com/librebase/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
