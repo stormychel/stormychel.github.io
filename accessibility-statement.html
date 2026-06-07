@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accessibility Statement — Michel Storms</title>
+  <title data-i18n="meta.title">Accessibility Statement — Michel Storms</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -106,35 +106,76 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Michel Storms</a>
       <div class="nav-actions">
-        <a href="apps.html" class="nav-back">Apps</a>
-        <a href="index.html" class="nav-back">&larr; Back to Home</a>
+        <a href="apps.html" class="nav-back" data-i18n="nav.apps">Apps</a>
+        <a href="index.html" class="nav-back" data-i18n="nav.back_home">&larr; Back to Home</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <h1>Accessibility Statement</h1>
-    <p class="subtitle">Michel Storms is committed to ensuring digital accessibility for all visitors.</p>
+    <h1 data-i18n="a11y.h1">Accessibility Statement</h1>
+    <p class="subtitle" data-i18n="a11y.subtitle">Michel Storms is committed to ensuring digital accessibility for all visitors.</p>
 
-    <h2>Conformance Status</h2>
-    <p>The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
-    <p>Michel Storms is fully conformant with WCAG 2.1 level AA. Fully conformant means that the content fully conforms to the accessibility standard without any exceptions.</p>
+    <h2 data-i18n="a11y.h2_conformance">Conformance Status</h2>
+    <p data-i18n="a11y.p_wcag">The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
+    <p data-i18n="a11y.p_conformant">Michel Storms is fully conformant with WCAG 2.1 level AA. Fully conformant means that the content fully conforms to the accessibility standard without any exceptions.</p>
 
-    <h2>Feedback</h2>
-    <p>We welcome your feedback on the accessibility of this website. Please let us know if you encounter any accessibility barriers:</p>
+    <h2 data-i18n="a11y.h2_feedback">Feedback</h2>
+    <p data-i18n="a11y.p_feedback_intro">We welcome your feedback on the accessibility of this website. Please let us know if you encounter any accessibility barriers:</p>
     <ul>
-      <li>Phone: <a href="tel:+32487444733">+32 487 444 733</a></li>
-      <li>Email: <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></li>
+      <li data-i18n="a11y.li_phone">Phone: <a href="tel:+32487444733">+32 487 444 733</a></li>
+      <li data-i18n="a11y.li_email">Email: <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></li>
     </ul>
-    <p>We try to respond to feedback within 24 hours.</p>
+    <p data-i18n="a11y.p_respond">We try to respond to feedback within 24 hours.</p>
 
     <hr>
 
-    <p>This statement was created on 26 February 2025 using the <a href="https://www.w3.org/WAI/planning/statements/">W3C Accessibility Statement Generator Tool</a>.</p>
+    <p data-i18n="a11y.p_statement">This statement was created on 26 February 2025 using the <a href="https://www.w3.org/WAI/planning/statements/">W3C Accessibility Statement Generator Tool</a>.</p>
   </main>
 
   <footer>
-    <p>&copy; 2021–2026 <a href="index.html">Michel Storms</a>. All rights reserved.</p>
+    <p data-i18n="footer.copyright">&copy; 2021–2026 <a href="index.html">Michel Storms</a>. All rights reserved.</p>
   </footer>
+
+  <!-- i18n -->
+  <script>
+  window.I18N_STRINGS = {
+    nl: {
+      "meta.title": "Toegankelijkheidsverklaring — Michel Storms",
+      "nav.apps": "Apps",
+      "nav.back_home": "&larr; Terug naar Home",
+      "a11y.h1": "Toegankelijkheidsverklaring",
+      "a11y.subtitle": "Michel Storms zet zich in voor digitale toegankelijkheid voor alle bezoekers.",
+      "a11y.h2_conformance": "Conformiteitsstatus",
+      "a11y.p_wcag": "De <a href=\"https://www.w3.org/WAI/standards-guidelines/wcag/\">Richtlijnen voor Toegankelijkheid van Webcontent (WCAG)</a> stellen eisen aan ontwerpers en ontwikkelaars om de toegankelijkheid voor mensen met een beperking te verbeteren. Er worden drie conformiteitsniveaus onderscheiden: Niveau A, Niveau AA en Niveau AAA.",
+      "a11y.p_conformant": "Michel Storms voldoet volledig aan WCAG 2.1 niveau AA. Volledige conformiteit betekent dat de inhoud volledig voldoet aan de toegankelijkheidsstandaard, zonder enige uitzondering.",
+      "a11y.h2_feedback": "Feedback",
+      "a11y.p_feedback_intro": "We verwelkomen uw feedback over de toegankelijkheid van deze website. Laat het ons weten als u toegankelijkheidsbelemmeringen tegenkomt:",
+      "a11y.li_phone": "Telefoon: <a href=\"tel:+32487444733\">+32 487 444 733</a>",
+      "a11y.li_email": "E-mail: <a href=\"mailto:michelstorms@icloud.com\">michelstorms@icloud.com</a>",
+      "a11y.p_respond": "We proberen binnen 24 uur op feedback te reageren.",
+      "a11y.p_statement": "Deze verklaring is opgesteld op 26 februari 2025 met behulp van de <a href=\"https://www.w3.org/WAI/planning/statements/\">W3C Toegankelijkheidsverklaring Generator</a>.",
+      "footer.copyright": "&copy; 2021–2026 <a href=\"index.html\">Michel Storms</a>. Alle rechten voorbehouden."
+    },
+    fr: {
+      "meta.title": "Déclaration d'accessibilité — Michel Storms",
+      "nav.apps": "Apps",
+      "nav.back_home": "&larr; Retour à l'accueil",
+      "a11y.h1": "Déclaration d'accessibilité",
+      "a11y.subtitle": "Michel Storms s'engage à garantir l'accessibilité numérique pour tous les visiteurs.",
+      "a11y.h2_conformance": "État de conformité",
+      "a11y.p_wcag": "Les <a href=\"https://www.w3.org/WAI/standards-guidelines/wcag/\">Règles pour l'accessibilité des contenus Web (WCAG)</a> définissent les exigences pour les concepteurs et développeurs afin d'améliorer l'accessibilité pour les personnes handicapées. Trois niveaux de conformité sont définis : Niveau A, Niveau AA et Niveau AAA.",
+      "a11y.p_conformant": "Michel Storms est pleinement conforme au niveau AA des WCAG 2.1. La pleine conformité signifie que le contenu satisfait intégralement à la norme d'accessibilité, sans aucune exception.",
+      "a11y.h2_feedback": "Retour d'information",
+      "a11y.p_feedback_intro": "Nous accueillons volontiers vos commentaires sur l'accessibilité de ce site web. Veuillez nous informer si vous rencontrez des obstacles en matière d'accessibilité :",
+      "a11y.li_phone": "Téléphone : <a href=\"tel:+32487444733\">+32 487 444 733</a>",
+      "a11y.li_email": "E-mail : <a href=\"mailto:michelstorms@icloud.com\">michelstorms@icloud.com</a>",
+      "a11y.p_respond": "Nous nous efforçons de répondre aux commentaires dans les 24 heures.",
+      "a11y.p_statement": "Cette déclaration a été créée le 26 février 2025 à l'aide du <a href=\"https://www.w3.org/WAI/planning/statements/\">générateur de déclarations d'accessibilité du W3C</a>.",
+      "footer.copyright": "&copy; 2021–2026 <a href=\"index.html\">Michel Storms</a>. Tous droits réservés."
+    }
+  };
+  </script>
+  <script src="/assets/i18n.js"></script>
 </body>
 </html>

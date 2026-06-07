@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TrackHound — Offline routing that takes the small roads</title>
-  <meta name="description" content="TrackHound is an offline routing app for ADV motorcycles, supermoto, 4x4 / overlanding, and gravel bikes. It deliberately routes onto narrow lanes, farm tracks, and dirt paths — all on-device, no signal needed.">
+  <title data-i18n="meta.title">TrackHound — Offline routing that takes the small roads</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="TrackHound is an offline routing app for ADV motorcycles, supermoto, 4x4 / overlanding, and gravel bikes. It deliberately routes onto narrow lanes, farm tracks, and dirt paths — all on-device, no signal needed.">
   <link rel="canonical" href="https://michelstorms.com/trackhound/">
 
   <link rel="icon" type="image/png" href="../assets/logo-og.png">
@@ -429,9 +429,9 @@
     <div class="nav-inner">
       <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
       <ul class="nav-links">
-        <li><a href="https://michelstorms.com/">Home</a></li>
-        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
-        <li><a href="https://michelstorms.com/blog.html">Blog</a></li>
+        <li><a href="https://michelstorms.com/" data-i18n="nav.home">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html" data-i18n="nav.apps">Apps</a></li>
+        <li><a href="https://michelstorms.com/blog.html" data-i18n="nav.blog">Blog</a></li>
       </ul>
     </div>
   </nav>
@@ -439,23 +439,23 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <img class="hero-icon" src="../assets/apps/trackhound/icon.png" alt="TrackHound app icon">
-      <span class="hero-label">iOS Adventure Routing</span>
+      <img class="hero-icon" src="../assets/apps/trackhound/icon.png" alt="TrackHound app icon" data-i18n-attr="alt:hero.icon_alt">
+      <span class="hero-label" data-i18n="hero.label">iOS Adventure Routing</span>
       <h1>TrackHound</h1>
-      <p>Most apps optimise for speed or distance. TrackHound deliberately takes the small roads &mdash; narrow lanes, farm tracks, and dirt paths, paved or not. Routing runs entirely on your iPhone, so it keeps working with no signal.</p>
+      <p data-i18n="hero.subtitle">Most apps optimise for speed or distance. TrackHound deliberately takes the small roads &mdash; narrow lanes, farm tracks, and dirt paths, paved or not. Routing runs entirely on your iPhone, so it keeps working with no signal.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store">
-          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:hero.badge_aria">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:hero.badge_alt">
         </a>
       </div>
-      <p class="hero-note">In development &mdash; first release coming soon.</p>
+      <p class="hero-note" data-i18n="hero.note">In development &mdash; first release coming soon.</p>
     </div>
   </section>
 
   <!-- Screenshot Showcase -->
   <section class="showcase">
     <div class="container">
-      <img src="../assets/apps/trackhound/composite_promo.png" alt="TrackHound — route on the map, the route-style picker, and the turn-by-turn roadbook">
+      <img src="../assets/apps/trackhound/composite_promo.png" alt="TrackHound — route on the map, the route-style picker, and the turn-by-turn roadbook" data-i18n-attr="alt:showcase.alt">
     </div>
   </section>
 
@@ -463,9 +463,9 @@
   <section class="features">
     <div class="container">
       <div class="features-header">
-        <span class="section-label">Features</span>
-        <h2 class="section-title">Built for the road less travelled</h2>
-        <p class="section-subtitle">On-device routing, offline maps, and a cost function tuned to find the small stuff &mdash; no account, no server.</p>
+        <span class="section-label" data-i18n="features.label">Features</span>
+        <h2 class="section-title" data-i18n="features.title">Built for the road less travelled</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">On-device routing, offline maps, and a cost function tuned to find the small stuff &mdash; no account, no server.</p>
       </div>
       <div class="features-grid">
 
@@ -473,72 +473,72 @@
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M9 18h6"/></svg>
           </div>
-          <h3>On-Device Routing</h3>
-          <p>A full Valhalla routing engine runs on your iPhone. No backend, no tracking &mdash; routes calculate locally, even in airplane mode.</p>
+          <h3 data-i18n="features.f1.title">On-Device Routing</h3>
+          <p data-i18n="features.f1.desc">A full Valhalla routing engine runs on your iPhone. No backend, no tracking &mdash; routes calculate locally, even in airplane mode.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
           </div>
-          <h3>Offline Maps</h3>
-          <p>Download map regions for Belgium, the Netherlands, and Northern France. Plan and navigate with zero signal once a region is on the phone.</p>
+          <h3 data-i18n="features.f2.title">Offline Maps</h3>
+          <p data-i18n="features.f2.desc">Download map regions for Belgium, the Netherlands, and Northern France. Plan and navigate with zero signal once a region is on the phone.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 22 17 7"/></svg>
           </div>
-          <h3>Unpavediest by Default</h3>
-          <p>The signature mode hunts for gravel, dirt, and farm tracks, biasing hard toward narrow, traffic-free roads &mdash; the whole point of the app.</p>
+          <h3 data-i18n="features.f3.title">Unpavediest by Default</h3>
+          <p data-i18n="features.f3.desc">The signature mode hunts for gravel, dirt, and farm tracks, biasing hard toward narrow, traffic-free roads &mdash; the whole point of the app.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
           </div>
-          <h3>Four Route Styles</h3>
-          <p>Switch between Shortest, Fastest, Curviest, and Unpavediest with a tap &mdash; same start and end, four very different rides.</p>
+          <h3 data-i18n="features.f4.title">Four Route Styles</h3>
+          <p data-i18n="features.f4.desc">Switch between Shortest, Fastest, Curviest, and Unpavediest with a tap &mdash; same start and end, four very different rides.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
-          <h3>Compare on the Map</h3>
-          <p>Run all four presets at once and see them overlaid side by side, colour-coded, so you can pick the line you actually want before you leave.</p>
+          <h3 data-i18n="features.f5.title">Compare on the Map</h3>
+          <p data-i18n="features.f5.desc">Run all four presets at once and see them overlaid side by side, colour-coded, so you can pick the line you actually want before you leave.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
           </div>
-          <h3>Glance Roadbook</h3>
-          <p>A full-screen, rally-style roadbook: one big maneuver, a heading compass, and your speed &mdash; readable at a glance from a tank bag.</p>
+          <h3 data-i18n="features.f6.title">Glance Roadbook</h3>
+          <p data-i18n="features.f6.desc">A full-screen, rally-style roadbook: one big maneuver, a heading compass, and your speed &mdash; readable at a glance from a tank bag.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
           </div>
-          <h3>Loop Generator</h3>
-          <p>Set a target distance and TrackHound builds a round-trip loop that brings you back to where you started &mdash; ideal for a free afternoon.</p>
+          <h3 data-i18n="features.f7.title">Loop Generator</h3>
+          <p data-i18n="features.f7.desc">Set a target distance and TrackHound builds a round-trip loop that brings you back to where you started &mdash; ideal for a free afternoon.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </div>
-          <h3>GPX Import &amp; Export</h3>
-          <p>Bring in tracks from elsewhere or export your planned route as GPX to share it or load it onto a dedicated GPS.</p>
+          <h3 data-i18n="features.f8.title">GPX Import &amp; Export</h3>
+          <p data-i18n="features.f8.desc">Bring in tracks from elsewhere or export your planned route as GPX to share it or load it onto a dedicated GPS.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">
             <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 17l1.5-5.5A2 2 0 0 1 8.4 10h7.2a2 2 0 0 1 1.9 1.5L19 17"/><path d="M3 17h18v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
           </div>
-          <h3>CarPlay</h3>
-          <p>Send the maneuver card and route to your vehicle's screen, so the roadbook is right there on the dash for 4x4 and overland trips.</p>
+          <h3 data-i18n="features.f9.title">CarPlay</h3>
+          <p data-i18n="features.f9.desc">Send the maneuver card and route to your vehicle's screen, so the roadbook is right there on the dash for 4x4 and overland trips.</p>
         </div>
 
       </div>
@@ -549,29 +549,29 @@
   <section class="styles">
     <div class="container">
       <div class="features-header" style="margin-bottom: 40px;">
-        <span class="section-label">One route, four characters</span>
-        <h2 class="section-title">Pick how you want to get there</h2>
+        <span class="section-label" data-i18n="routes.label">One route, four characters</span>
+        <h2 class="section-title" data-i18n="routes.title">Pick how you want to get there</h2>
       </div>
       <div class="styles-grid">
         <div class="style-card">
-          <span class="badge">Shortest</span>
-          <h3>Shortest</h3>
-          <p>The absolute shortest legal path between two points, whatever the surface &mdash; the no-nonsense baseline.</p>
+          <span class="badge" data-i18n="routes.shortest.badge">Shortest</span>
+          <h3 data-i18n="routes.shortest.title">Shortest</h3>
+          <p data-i18n="routes.shortest.desc">The absolute shortest legal path between two points, whatever the surface &mdash; the no-nonsense baseline.</p>
         </div>
         <div class="style-card">
-          <span class="badge">Fastest</span>
-          <h3>Fastest</h3>
-          <p>Optimised for time, with motorways allowed &mdash; for when you just need to be somewhere.</p>
+          <span class="badge" data-i18n="routes.fastest.badge">Fastest</span>
+          <h3 data-i18n="routes.fastest.title">Fastest</h3>
+          <p data-i18n="routes.fastest.desc">Optimised for time, with motorways allowed &mdash; for when you just need to be somewhere.</p>
         </div>
         <div class="style-card">
-          <span class="badge">Curviest</span>
-          <h3>Curviest</h3>
-          <p>Twisty paved back-roads and no motorway &mdash; the Sunday-ride preset for supermoto and sport riders.</p>
+          <span class="badge" data-i18n="routes.curviest.badge">Curviest</span>
+          <h3 data-i18n="routes.curviest.title">Curviest</h3>
+          <p data-i18n="routes.curviest.desc">Twisty paved back-roads and no motorway &mdash; the Sunday-ride preset for supermoto and sport riders.</p>
         </div>
         <div class="style-card">
-          <span class="badge">Unpavediest</span>
-          <h3>Unpavediest</h3>
-          <p>Gravel, dirt, and farm tracks wherever they exist. The TrackHound default and the reason the app exists.</p>
+          <span class="badge" data-i18n="routes.unpavediest.badge">Unpavediest</span>
+          <h3 data-i18n="routes.unpavediest.title">Unpavediest</h3>
+          <p data-i18n="routes.unpavediest.desc">Gravel, dirt, and farm tracks wherever they exist. The TrackHound default and the reason the app exists.</p>
         </div>
       </div>
     </div>
@@ -580,12 +580,12 @@
   <!-- CTA -->
   <section class="cta">
     <div class="container">
-      <span class="section-label">Get TrackHound</span>
-      <h2 class="section-title">Routes that take the road less travelled</h2>
-      <p class="section-subtitle">Coming to the App Store for iPhone, with CarPlay support. Built for ADV, supermoto, 4x4, and gravel.</p>
+      <span class="section-label" data-i18n="cta.label">Get TrackHound</span>
+      <h2 class="section-title" data-i18n="cta.title">Routes that take the road less travelled</h2>
+      <p class="section-subtitle" data-i18n="cta.subtitle">Coming to the App Store for iPhone, with CarPlay support. Built for ADV, supermoto, 4x4, and gravel.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store">
-          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:cta.badge_aria">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:cta.badge_alt">
         </a>
       </div>
     </div>
@@ -595,13 +595,134 @@
     <div class="footer-inner">
       <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
       <div class="legal-links">
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
-        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
-        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="footer.terms">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/" data-i18n="footer.license">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
       </div>
       <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
     </div>
   </footer>
+
+  <!-- i18n -->
+  <script>
+  window.I18N_STRINGS = {
+    nl: {
+      "meta.title": "TrackHound — Offline routering via de kleine wegen",
+      "meta.description": "TrackHound is een offline routeringsapp voor ADV-motoren, supermoto, 4x4 / overlanding en gravelfietsers. De app kiest bewust voor smalle lanen, boerderijpaden en onverharde wegen — volledig op het apparaat, zonder bereik.",
+      "nav.home": "Home",
+      "nav.apps": "Apps",
+      "nav.blog": "Blog",
+      "hero.icon_alt": "TrackHound app-icoon",
+      "hero.label": "iOS Avontuurlijke Routering",
+      "hero.subtitle": "De meeste apps optimaliseren voor snelheid of afstand. TrackHound kiest bewust de kleine wegen &mdash; smalle lanen, boerderijpaden en onverharde tracks, verhard of niet. De routering draait volledig op je iPhone, dus werkt ook zonder bereik.",
+      "hero.badge_aria": "Download TrackHound in de App Store",
+      "hero.badge_alt": "Download in de App Store",
+      "hero.note": "In ontwikkeling &mdash; eerste release binnenkort beschikbaar.",
+      "showcase.alt": "TrackHound — route op de kaart, de routestijlkiezer en het bochtenboek",
+      "features.label": "Functies",
+      "features.title": "Gebouwd voor de weg die minder bewandeld wordt",
+      "features.subtitle": "On-device routering, offline kaarten en een kostfunctie afgestemd op het vinden van kleine wegen &mdash; geen account, geen server.",
+      "features.f1.title": "On-Device Routering",
+      "features.f1.desc": "Een volledige Valhalla-routeringsmotor draait op je iPhone. Geen backend, geen tracking &mdash; routes worden lokaal berekend, zelfs in vliegtuigmodus.",
+      "features.f2.title": "Offline Kaarten",
+      "features.f2.desc": "Download kaartregio's voor België, Nederland en Noord-Frankrijk. Plan en navigeer zonder enig bereik zodra een regio op de telefoon staat.",
+      "features.f3.title": "Onverhard als Standaard",
+      "features.f3.desc": "De kenmerkende modus speurt naar gravel, aarde en boerderijpaden en geeft sterk de voorkeur aan smalle, verkeersvrije wegen &mdash; het hele punt van de app.",
+      "features.f4.title": "Vier Routestijlen",
+      "features.f4.desc": "Schakel met een tik tussen Kortste, Snelste, Bochtigste en Onverhard &mdash; zelfde begin en einde, vier heel verschillende ritten.",
+      "features.f5.title": "Vergelijk op de Kaart",
+      "features.f5.desc": "Bereken alle vier presets tegelijk en zie ze kleurgecodeerd naast elkaar, zodat je de lijn kiest die je echt wilt voor je vertrekt.",
+      "features.f6.title": "Glance Routeboek",
+      "features.f6.desc": "Een volledig scherm rally-stijl routeboek: één grote manoeuvre, een koerskompas en je snelheid &mdash; in één oogopslag leesbaar vanuit een tanktas.",
+      "features.f7.title": "Lus-generator",
+      "features.f7.desc": "Stel een doelafstand in en TrackHound bouwt een rondrit die je terugbrengt naar het startpunt &mdash; ideaal voor een vrije namiddag.",
+      "features.f8.title": "GPX Importeren &amp; Exporteren",
+      "features.f8.desc": "Importeer tracks van elders of exporteer je geplande route als GPX om te delen of te laden op een dedicated GPS.",
+      "features.f9.title": "CarPlay",
+      "features.f9.desc": "Stuur de manoeuvrekaart en route naar het scherm van je voertuig, zodat het routeboek zichtbaar is op het dashboard tijdens 4x4- en overlanding-trips.",
+      "routes.label": "Één route, vier karakters",
+      "routes.title": "Kies hoe je er wilt geraken",
+      "routes.shortest.badge": "Kortste",
+      "routes.shortest.title": "Kortste",
+      "routes.shortest.desc": "Het kortste legale pad tussen twee punten, ongeacht het oppervlak &mdash; de no-nonsense basislijn.",
+      "routes.fastest.badge": "Snelste",
+      "routes.fastest.title": "Snelste",
+      "routes.fastest.desc": "Geoptimaliseerd voor tijd, met snelwegen toegestaan &mdash; voor wanneer je gewoon ergens moet zijn.",
+      "routes.curviest.badge": "Bochtigste",
+      "routes.curviest.title": "Bochtigste",
+      "routes.curviest.desc": "Kronkelende verharde achterwegen zonder snelweg &mdash; de zondagsritpreset voor supermoto- en sportrijders.",
+      "routes.unpavediest.badge": "Onverhard",
+      "routes.unpavediest.title": "Onverhard",
+      "routes.unpavediest.desc": "Gravel, aarde en boerderijpaden waar ze bestaan. De standaard van TrackHound en de reden waarom de app bestaat.",
+      "cta.label": "Haal TrackHound",
+      "cta.title": "Routes die de weg minder bewandeld nemen",
+      "cta.subtitle": "Binnenkort in de App Store voor iPhone, met CarPlay-ondersteuning. Gebouwd voor ADV, supermoto, 4x4 en gravel.",
+      "cta.badge_aria": "Download TrackHound in de App Store",
+      "cta.badge_alt": "Download in de App Store",
+      "footer.terms": "Servicevoorwaarden",
+      "footer.license": "Licentieovereenkomst",
+      "footer.privacy": "Privacybeleid"
+    },
+    fr: {
+      "meta.title": "TrackHound — Itinéraires hors ligne qui prennent les petites routes",
+      "meta.description": "TrackHound est une application d'itinéraires hors ligne pour motos ADV, supermoto, 4x4 / overlanding et vélos de gravel. Elle emprunte délibérément les voies étroites, chemins agricoles et pistes non goudronnées — entièrement sur l'appareil, sans réseau.",
+      "nav.home": "Accueil",
+      "nav.apps": "Apps",
+      "nav.blog": "Blog",
+      "hero.icon_alt": "Icône de l'application TrackHound",
+      "hero.label": "Navigation Aventure iOS",
+      "hero.subtitle": "La plupart des applications optimisent la vitesse ou la distance. TrackHound prend délibérément les petites routes &mdash; voies étroites, chemins agricoles et pistes non goudronnées, revêtues ou non. Le calcul d'itinéraire s'exécute entièrement sur votre iPhone, sans réseau.",
+      "hero.badge_aria": "Télécharger TrackHound sur l'App Store",
+      "hero.badge_alt": "Télécharger sur l'App Store",
+      "hero.note": "En développement &mdash; première version bientôt disponible.",
+      "showcase.alt": "TrackHound — itinéraire sur la carte, le sélecteur de style de route et le road book étape par étape",
+      "features.label": "Fonctionnalités",
+      "features.title": "Conçu pour la route la moins fréquentée",
+      "features.subtitle": "Calcul d'itinéraire sur l'appareil, cartes hors ligne et une fonction de coût réglée pour trouver les petits chemins &mdash; sans compte, sans serveur.",
+      "features.f1.title": "Calcul Sur l'Appareil",
+      "features.f1.desc": "Un moteur de routage Valhalla complet tourne sur votre iPhone. Pas de backend, pas de suivi &mdash; les itinéraires sont calculés localement, même en mode avion.",
+      "features.f2.title": "Cartes Hors Ligne",
+      "features.f2.desc": "Téléchargez des régions cartographiques pour la Belgique, les Pays-Bas et le nord de la France. Planifiez et naviguez sans réseau une fois la région sur le téléphone.",
+      "features.f3.title": "Non Goudronné par Défaut",
+      "features.f3.desc": "Le mode signature recherche le gravier, la terre et les chemins agricoles, en privilégiant fortement les routes étroites et sans trafic &mdash; l'essence même de l'application.",
+      "features.f4.title": "Quatre Styles d'Itinéraire",
+      "features.f4.desc": "Passez d'un mode à l'autre en une touche : Plus court, Plus rapide, Plus sinueux et Non goudronné &mdash; même départ et arrivée, quatre trajets très différents.",
+      "features.f5.title": "Comparer sur la Carte",
+      "features.f5.desc": "Calculez les quatre préréglages en même temps et visualisez-les côte à côte avec un code couleur, pour choisir la ligne que vous voulez avant de partir.",
+      "features.f6.title": "Road Book Rapide",
+      "features.f6.desc": "Un road book plein écran façon rallye : une grande manœuvre, une boussole de cap et votre vitesse &mdash; lisible d'un coup d'œil depuis un sac de réservoir.",
+      "features.f7.title": "Générateur de Boucle",
+      "features.f7.desc": "Définissez une distance cible et TrackHound crée une boucle aller-retour qui vous ramène à votre point de départ &mdash; idéal pour un après-midi libre.",
+      "features.f8.title": "Import &amp; Export GPX",
+      "features.f8.desc": "Importez des traces depuis d'autres sources ou exportez votre itinéraire planifié en GPX pour le partager ou le charger sur un GPS dédié.",
+      "features.f9.title": "CarPlay",
+      "features.f9.desc": "Envoyez la carte de manœuvre et l'itinéraire sur l'écran de votre véhicule, pour avoir le road book directement sur le tableau de bord lors de sorties 4x4 et overlanding.",
+      "routes.label": "Un itinéraire, quatre caractères",
+      "routes.title": "Choisissez comment vous voulez y aller",
+      "routes.shortest.badge": "Plus court",
+      "routes.shortest.title": "Plus court",
+      "routes.shortest.desc": "Le chemin légal le plus court entre deux points, quelle que soit la surface &mdash; la référence sans fioritures.",
+      "routes.fastest.badge": "Plus rapide",
+      "routes.fastest.title": "Plus rapide",
+      "routes.fastest.desc": "Optimisé pour le temps, avec les autoroutes autorisées &mdash; pour quand vous devez juste être quelque part.",
+      "routes.curviest.badge": "Plus sinueux",
+      "routes.curviest.title": "Plus sinueux",
+      "routes.curviest.desc": "Routes secondaires goudronnées et sinueuses sans autoroute &mdash; le préréglage balade du dimanche pour les supermoto et les sportifs.",
+      "routes.unpavediest.badge": "Non goudronné",
+      "routes.unpavediest.title": "Non goudronné",
+      "routes.unpavediest.desc": "Gravier, terre et chemins agricoles partout où ils existent. Le réglage par défaut de TrackHound et la raison d'être de l'application.",
+      "cta.label": "Obtenir TrackHound",
+      "cta.title": "Des itinéraires qui prennent la route la moins fréquentée",
+      "cta.subtitle": "Prochainement sur l'App Store pour iPhone, avec prise en charge de CarPlay. Conçu pour l'ADV, le supermoto, le 4x4 et le gravel.",
+      "cta.badge_aria": "Télécharger TrackHound sur l'App Store",
+      "cta.badge_alt": "Télécharger sur l'App Store",
+      "footer.terms": "Conditions d'utilisation",
+      "footer.license": "Contrat de licence",
+      "footer.privacy": "Politique de confidentialité"
+    }
+  };
+  </script>
+  <script src="/assets/i18n.js"></script>
 
 </body>
 </html>

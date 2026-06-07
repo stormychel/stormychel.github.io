@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Michel Storms — Freelance Apple Developer</title>
-  <meta name="description" content="Michel Storms is a Freelance Apple Developer offering custom software solutions, advice, design and programming services for Apple Platforms.">
+  <title data-i18n="meta.title">Michel Storms — Freelance Software Developer specialised in Apple</title>
+  <meta name="description" content="Michel Storms is a Freelance Software Developer specialised in Apple, offering custom software solutions, advice, design and programming services for Apple Platforms." data-i18n-attr="content:meta.desc">
   <link rel="canonical" href="https://michelstorms.com">
 
   <!-- Favicon -->
@@ -809,15 +809,15 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">Michel Storms</a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav.toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="apps.html">Apps</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="accessibility-statement.html">Accessibility</a></li>
+        <li><a href="apps.html" data-i18n="nav.apps">Apps</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="accessibility-statement.html" data-i18n="nav.accessibility">Accessibility</a></li>
       </ul>
     </div>
   </nav>
@@ -825,24 +825,24 @@
   <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-content hero-copy">
-      <img src="assets/logo.png" alt="Michel Storms logo" class="hero-logo">
-      <span class="hero-label">Independent Apple Engineer</span>
-      <h1>Crafting exceptional software for Apple platforms</h1>
-      <p>Custom solutions, expert advice, and thoughtful design for macOS, iOS, watchOS, and beyond. If you want to move fast, you can either send a project brief or book a focused 30-minute call.</p>
+      <img src="assets/logo.png" alt="Michel Storms logo" class="hero-logo" data-i18n-attr="alt:hero.logo_alt">
+      <span class="hero-label" data-i18n="hero.label">Freelance Software Developer specialised in Apple</span>
+      <h1 data-i18n="hero.h1">Crafting exceptional software for Apple platforms</h1>
+      <p data-i18n="hero.p">Custom solutions, expert advice, and thoughtful design for macOS, iOS, watchOS, and beyond. If you want to move fast, you can either send a project brief or book a focused 30-minute call.</p>
       <div class="hero-buttons">
         <a href="https://cal.eu/michelstorms" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book 30 Minutes
+          <span data-i18n="hero.btn_book">Book 30 Minutes</span>
         </a>
         <a href="#contact" class="btn btn-outline">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Get a Proposal
+          <span data-i18n="hero.btn_proposal">Get a Proposal</span>
         </a>
       </div>
       <div class="hero-links">
         <a href="mailto:michelstorms@icloud.com" class="hero-chip">
           <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email Me
+          <span data-i18n="hero.chip_email">Email Me</span>
         </a>
         <a href="https://github.com/stormychel" class="hero-chip" target="_blank" rel="noopener noreferrer">
           <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.18 1.77 1.18 1.02 1.77 2.69 1.26 3.34.97.1-.75.4-1.26.72-1.55-2.56-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.18a10.99 10.99 0 0 1 5.81 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.42.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
@@ -857,9 +857,9 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text fade-in">
-          <span class="section-label">About</span>
-          <h2 class="section-title">Building for the Apple ecosystem</h2>
-          <p class="section-subtitle">I help businesses and individuals bring their ideas to life on Apple platforms. Whether you need a macOS app, iOS experience, or cross-platform solution — I bring deep expertise, clear communication, and a passion for quality to every project.</p>
+          <span class="section-label" data-i18n="about.label">About</span>
+          <h2 class="section-title" data-i18n="about.title">Building for the Apple ecosystem</h2>
+          <p class="section-subtitle" data-i18n="about.subtitle">I help businesses and individuals bring their ideas to life on Apple platforms. Whether you need a macOS app, iOS experience, or cross-platform solution — I bring deep expertise, clear communication, and a passion for quality to every project.</p>
         </div>
         <div class="services-list fade-in">
           <div class="service-item">
@@ -867,8 +867,8 @@
               <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <div>
-              <h3>macOS Development</h3>
-              <p>Native desktop apps built with SwiftUI, AppKit, and the latest Apple frameworks.</p>
+              <h3 data-i18n="services.macos.title">macOS Development</h3>
+              <p data-i18n="services.macos.desc">Native desktop apps built with SwiftUI, AppKit, and the latest Apple frameworks.</p>
             </div>
           </div>
           <div class="service-item">
@@ -876,8 +876,8 @@
               <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
             <div>
-              <h3>iOS &amp; watchOS Apps</h3>
-              <p>Mobile and wearable experiences designed to feel at home on every Apple device.</p>
+              <h3 data-i18n="services.ios.title">iOS &amp; watchOS Apps</h3>
+              <p data-i18n="services.ios.desc">Mobile and wearable experiences designed to feel at home on every Apple device.</p>
             </div>
           </div>
           <div class="service-item">
@@ -885,8 +885,8 @@
               <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div>
-              <h3>Consulting &amp; Architecture</h3>
-              <p>Technical guidance, code reviews, and architecture planning for Apple projects.</p>
+              <h3 data-i18n="services.consulting.title">Consulting &amp; Architecture</h3>
+              <p data-i18n="services.consulting.desc">Technical guidance, code reviews, and architecture planning for Apple projects.</p>
             </div>
           </div>
         </div>
@@ -898,15 +898,15 @@
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="testimonials-header fade-in">
-        <span class="section-label">Testimonials</span>
-        <h2 class="section-title">What clients say</h2>
-        <p class="section-subtitle">I'm fortunate to have worked with great people who trusted me with their ideas.</p>
+        <span class="section-label" data-i18n="testimonials.label">Testimonials</span>
+        <h2 class="section-title" data-i18n="testimonials.title">What clients say</h2>
+        <p class="section-subtitle" data-i18n="testimonials.subtitle">I'm fortunate to have worked with great people who trusted me with their ideas.</p>
       </div>
       <div class="testimonials-grid">
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Michael stands out as the most exceptional Apple developer I've encountered. Throughout our year-long collaboration, he has consistently met and exceeded the project goals. His innovative approach brought fresh ideas that significantly enhanced our project's scope and potential. His attention to detail, love for the project and commitment to quality are extraordinary.</p>
+            <p data-i18n="testimonials.t1.quote">Michael stands out as the most exceptional Apple developer I've encountered. Throughout our year-long collaboration, he has consistently met and exceeded the project goals. His innovative approach brought fresh ideas that significantly enhanced our project's scope and potential. His attention to detail, love for the project and commitment to quality are extraordinary.</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">TS</div>
@@ -919,33 +919,33 @@
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Competent and capable mac developer with solid software engineering skills. Takes ownership, including challenges, makes useful suggestions where there are options, and proceeds to take the project to a successful completion. Professional, Talented, and A-List. Recommended without reservation.</p>
+            <p data-i18n="testimonials.t2.quote">Competent and capable mac developer with solid software engineering skills. Takes ownership, including challenges, makes useful suggestions where there are options, and proceeds to take the project to a successful completion. Professional, Talented, and A-List. Recommended without reservation.</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">TN</div>
             <div>
               <div class="testimonial-name">Trevor N.</div>
-              <div class="testimonial-role">Client</div>
+              <div class="testimonial-role" data-i18n="testimonials.t2.role">Client</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Michael was incredible to work with and some of the best macOS code that I have seen. His quality is impeccable and he is so incredibly systematic. I would hire him for another project in a heartbeat.</p>
+            <p data-i18n="testimonials.t3.quote">Michael was incredible to work with and some of the best macOS code that I have seen. His quality is impeccable and he is so incredibly systematic. I would hire him for another project in a heartbeat.</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">EB</div>
             <div>
               <div class="testimonial-name">Ethan Blount</div>
-              <div class="testimonial-role">Client</div>
+              <div class="testimonial-role" data-i18n="testimonials.t3.role">Client</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Michel did a great job, excellent communication &amp; documentation of his work. He solved problems fast &amp; good, even in difficult situations he had every time a proposal how to solve. I'm looking forward to our next project.</p>
+            <p data-i18n="testimonials.t4.quote">Michel did a great job, excellent communication &amp; documentation of his work. He solved problems fast &amp; good, even in difficult situations he had every time a proposal how to solve. I'm looking forward to our next project.</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">EB</div>
@@ -958,20 +958,20 @@
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Michel was a fantastic asset to the project and I will work with him again anytime. The Best of the Best!! Highly recommended!</p>
+            <p data-i18n="testimonials.t5.quote">Michel was a fantastic asset to the project and I will work with him again anytime. The Best of the Best!! Highly recommended!</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">MS</div>
             <div>
               <div class="testimonial-name">Mans Shapshak</div>
-              <div class="testimonial-role">Client</div>
+              <div class="testimonial-role" data-i18n="testimonials.t5.role">Client</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">
-            <p>Very patient and good communication. Helped me walk through and troubleshoot the problem.</p>
+            <p data-i18n="testimonials.t6.quote">Very patient and good communication. Helped me walk through and troubleshoot the problem.</p>
           </div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">DT</div>
@@ -991,16 +991,16 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info fade-in">
-          <span class="section-label">Get in Touch</span>
-          <h2 class="section-title">Let's build something great</h2>
-          <p class="section-subtitle">Have an idea for an app or need expert help with an Apple project? Reach out and I'll get back to you with a proposal.</p>
+          <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+          <h2 class="section-title" data-i18n="contact.title">Let's build something great</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">Have an idea for an app or need expert help with an Apple project? Reach out and I'll get back to you with a proposal.</p>
           <div class="contact-methods">
             <div class="contact-method">
               <div class="contact-method-icon">
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Email</div>
+                <div class="contact-method-label" data-i18n="contact.email_label">Email</div>
                 <div class="contact-method-value"><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></div>
               </div>
             </div>
@@ -1009,7 +1009,7 @@
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Phone</div>
+                <div class="contact-method-label" data-i18n="contact.phone_label">Phone</div>
                 <div class="contact-method-value"><a href="tel:+32487444733">+32 487 444 733</a></div>
               </div>
             </div>
@@ -1018,8 +1018,8 @@
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Calendar</div>
-                <div class="contact-method-value"><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer">Book an online 30-minute call</a></div>
+                <div class="contact-method-label" data-i18n="contact.calendar_label">Calendar</div>
+                <div class="contact-method-value"><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer" data-i18n="contact.calendar_value">Book an online 30-minute call</a></div>
               </div>
             </div>
             <div class="contact-method">
@@ -1027,7 +1027,7 @@
                 <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.18 1.77 1.18 1.02 1.77 2.69 1.26 3.34.97.1-.75.4-1.26.72-1.55-2.56-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.18a10.99 10.99 0 0 1 5.81 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.42.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">GitHub</div>
+                <div class="contact-method-label" data-i18n="contact.github_label">GitHub</div>
                 <div class="contact-method-value"><a href="https://github.com/stormychel" target="_blank" rel="noopener noreferrer">github.com/stormychel</a></div>
               </div>
             </div>
@@ -1036,50 +1036,50 @@
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Location</div>
-                <div class="contact-method-value">Ingelmunster, Belgium</div>
+                <div class="contact-method-label" data-i18n="contact.location_label">Location</div>
+                <div class="contact-method-value" data-i18n="contact.location_value">Ingelmunster, Belgium</div>
               </div>
             </div>
           </div>
           <div class="contact-quick-links fade-in">
             <a href="https://cal.eu/michelstorms" class="quick-link-card" target="_blank" rel="noopener noreferrer">
-              <strong>Prefer a live conversation?</strong>
-              <p>Skip the back-and-forth and reserve time directly in the calendar.</p>
-              <span>Open booking page
+              <strong data-i18n="contact.quicklink1.title">Prefer a live conversation?</strong>
+              <p data-i18n="contact.quicklink1.desc">Skip the back-and-forth and reserve time directly in the calendar.</p>
+              <span><span data-i18n="contact.quicklink1.cta">Open booking page</span>
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
               </span>
             </a>
             <a href="https://github.com/stormychel" class="quick-link-card" target="_blank" rel="noopener noreferrer">
-              <strong>Want to inspect how I work?</strong>
-              <p>Browse the public GitHub profile for code, experiments, and shipped ideas.</p>
-              <span>Visit GitHub
+              <strong data-i18n="contact.quicklink2.title">Want to inspect how I work?</strong>
+              <p data-i18n="contact.quicklink2.desc">Browse the public GitHub profile for code, experiments, and shipped ideas.</p>
+              <span><span data-i18n="contact.quicklink2.cta">Visit GitHub</span>
                 <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
               </span>
             </a>
           </div>
         </div>
         <form class="contact-form fade-in" action="https://formspree.io/f/xgejqkdp" method="POST">
-          <h3>Get a Proposal</h3>
-          <p>Describe your project and I'll send you a quote.</p>
+          <h3 data-i18n="contact.form.title">Get a Proposal</h3>
+          <p data-i18n="contact.form.desc">Describe your project and I'll send you a quote.</p>
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Name or Company</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
+              <label for="name" data-i18n="contact.form.name_label">Name or Company</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" data-i18n-attr="placeholder:contact.form.name_placeholder">
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email" data-i18n="contact.form.email_label">Email</label>
               <input type="email" id="email" name="email" required placeholder="you@example.com">
             </div>
           </div>
           <div class="form-group">
-            <label for="phone">Phone <span style="color: var(--gray-400); font-weight: 400;">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890">
+            <label for="phone" data-i18n="contact.form.phone_label">Phone <span style="color: var(--gray-400); font-weight: 400;">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" data-i18n-attr="placeholder:contact.form.phone_placeholder">
           </div>
           <div class="form-group">
-            <label for="message">Project Description</label>
-            <textarea id="message" name="message" required placeholder="Tell me about your app idea or project..."></textarea>
+            <label for="message" data-i18n="contact.form.message_label">Project Description</label>
+            <textarea id="message" name="message" required placeholder="Tell me about your app idea or project..." data-i18n-attr="placeholder:contact.form.message_placeholder"></textarea>
           </div>
-          <button type="submit" class="btn-submit">Send Proposal Request</button>
+          <button type="submit" class="btn-submit" data-i18n="contact.form.submit">Send Proposal Request</button>
         </form>
       </div>
     </div>
@@ -1091,35 +1091,35 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <img src="assets/logo-white.png" alt="Michel Storms" class="footer-logo">
-          <p>Freelance Apple Developer based in Belgium. Building quality software for macOS, iOS, and beyond.</p>
+          <p data-i18n="footer.brand.desc">Freelance Software Developer specialised in Apple, based in Belgium. Building quality software for macOS, iOS, and beyond.</p>
         </div>
         <div class="footer-links">
-          <h4>Navigation</h4>
+          <h4 data-i18n="footer.nav.heading">Navigation</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="apps.html">Apps</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" data-i18n="footer.nav.home">Home</a></li>
+            <li><a href="apps.html" data-i18n="footer.nav.apps">Apps</a></li>
+            <li><a href="#about" data-i18n="footer.nav.about">About</a></li>
+            <li><a href="#testimonials" data-i18n="footer.nav.testimonials">Testimonials</a></li>
+            <li><a href="#contact" data-i18n="footer.nav.contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Legal</h4>
+          <h4 data-i18n="footer.legal.heading">Legal</h4>
           <ul>
-            <li><a href="accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="accessibility-statement.html" data-i18n="footer.legal.accessibility">Accessibility Statement</a></li>
             <li>BTW: 0765.873.990</li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Connect</h4>
+          <h4 data-i18n="footer.connect.heading">Connect</h4>
           <ul>
-            <li><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer">Book 30 Minutes</a></li>
+            <li><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer" data-i18n="footer.connect.book">Book 30 Minutes</a></li>
             <li><a href="https://github.com/stormychel" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="mailto:michelstorms@icloud.com">Email</a></li>
+            <li><a href="mailto:michelstorms@icloud.com" data-i18n="footer.connect.email">Email</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Address</h4>
+          <h4 data-i18n="footer.address.heading">Address</h4>
           <ul>
             <li>Gentstraat 196</li>
             <li>8770 Ingelmunster</li>
@@ -1128,11 +1128,174 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2021–2026 Michel Storms. All rights reserved.</p>
+        <p>&copy; 2021–2026 Michel Storms. <span data-i18n="footer.bottom.rights">All rights reserved.</span></p>
         <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
       </div>
     </div>
   </footer>
+
+  <!-- i18n -->
+  <script>
+  window.I18N_STRINGS = {
+    nl: {
+      "meta.title": "Michel Storms — Freelance softwareontwikkelaar gespecialiseerd in Apple",
+      "meta.desc": "Michel Storms is een freelance softwareontwikkelaar gespecialiseerd in Apple, en biedt maatwerksoftware, advies, design en programmeerdiensten voor Apple-platformen.",
+      "nav.toggle": "Menu openen",
+      "nav.apps": "Apps",
+      "nav.about": "Over mij",
+      "nav.testimonials": "Referenties",
+      "nav.contact": "Contact",
+      "nav.accessibility": "Toegankelijkheid",
+      "hero.logo_alt": "Michel Storms logo",
+      "hero.label": "Freelance softwareontwikkelaar gespecialiseerd in Apple",
+      "hero.h1": "Uitzonderlijke software voor Apple-platformen",
+      "hero.p": "Oplossingen op maat, deskundig advies en doordacht design voor macOS, iOS, watchOS en meer. Wil je snel van start? Stuur een projectbeschrijving of boek een gefocust gesprek van 30 minuten.",
+      "hero.btn_book": "Boek 30 minuten",
+      "hero.btn_proposal": "Vraag een offerte aan",
+      "hero.chip_email": "Stuur een e-mail",
+      "about.label": "Over mij",
+      "about.title": "Bouwen voor het Apple-ecosysteem",
+      "about.subtitle": "Ik help bedrijven en particulieren hun ideeën tot leven te brengen op Apple-platformen. Of je nu een macOS-app, iOS-ervaring of platformoverschrijdende oplossing nodig hebt — ik breng diepgaande expertise, heldere communicatie en een passie voor kwaliteit mee naar elk project.",
+      "services.macos.title": "macOS-ontwikkeling",
+      "services.macos.desc": "Native desktopapps gebouwd met SwiftUI, AppKit en de nieuwste Apple-frameworks.",
+      "services.ios.title": "iOS- en watchOS-apps",
+      "services.ios.desc": "Mobiele en wearable-ervaringen die op elk Apple-apparaat als thuis aanvoelen.",
+      "services.consulting.title": "Consultancy &amp; Architectuur",
+      "services.consulting.desc": "Technisch advies, code-reviews en architectuurplanning voor Apple-projecten.",
+      "testimonials.label": "Referenties",
+      "testimonials.title": "Wat klanten zeggen",
+      "testimonials.subtitle": "Ik heb het geluk gehad om met geweldige mensen te werken die mij hun ideeën toevertrouwden.",
+      "testimonials.t1.quote": "Michael onderscheidt zich als de meest uitzonderlijke Apple-ontwikkelaar die ik ben tegengekomen. Gedurende onze samenwerking van een jaar heeft hij de projectdoelen consequent gehaald én overtroffen. Zijn innovatieve aanpak bracht frisse ideeën die de reikwijdte en het potentieel van ons project aanzienlijk hebben vergroot. Zijn oog voor detail, liefde voor het project en toewijding aan kwaliteit zijn buitengewoon.",
+      "testimonials.t2.quote": "Competente en bekwame mac-ontwikkelaar met gedegen software-engineeringvaardigheden. Neemt eigenaarschap, ook bij uitdagingen, doet nuttige suggesties waar er keuzes zijn, en brengt het project tot een succesvolle afronding. Professioneel, getalenteerd en van het hoogste niveau. Zonder voorbehoud aanbevolen.",
+      "testimonials.t2.role": "Klant",
+      "testimonials.t3.quote": "Michael was geweldig om mee samen te werken en leverde een deel van de beste macOS-code die ik ooit heb gezien. Zijn kwaliteit is onberispelijk en hij werkt op een uiterst systematische manier. Ik zou hem zonder aarzeling voor een volgend project inhuren.",
+      "testimonials.t3.role": "Klant",
+      "testimonials.t4.quote": "Michel heeft uitstekend werk geleverd, met prima communicatie en documentatie. Hij loste problemen snel en goed op; zelfs in moeilijke situaties had hij altijd een voorstel klaar. Ik kijk uit naar ons volgende project.",
+      "testimonials.t5.quote": "Michel was een fantastische aanwinst voor het project en ik werk graag wanneer dan ook opnieuw met hem samen. De beste van de besten!! Sterk aanbevolen!",
+      "testimonials.t5.role": "Klant",
+      "testimonials.t6.quote": "Erg geduldig en goede communicatie. Hij hielp mij stap voor stap het probleem te doorgronden en op te lossen.",
+      "contact.label": "Neem contact op",
+      "contact.title": "Laten we iets geweldigs bouwen",
+      "contact.subtitle": "Heb je een app-idee of heb je expert hulp nodig bij een Apple-project? Neem contact op en ik kom terug met een voorstel.",
+      "contact.email_label": "E-mail",
+      "contact.phone_label": "Telefoon",
+      "contact.calendar_label": "Agenda",
+      "contact.calendar_value": "Boek een online gesprek van 30 minuten",
+      "contact.github_label": "GitHub",
+      "contact.location_label": "Locatie",
+      "contact.location_value": "Ingelmunster, België",
+      "contact.quicklink1.title": "Liever een live gesprek?",
+      "contact.quicklink1.desc": "Sla het heen-en-weer e-mailen over en reserveer tijd rechtstreeks in de agenda.",
+      "contact.quicklink1.cta": "Boekingspagina openen",
+      "contact.quicklink2.title": "Benieuwd hoe ik werk?",
+      "contact.quicklink2.desc": "Bekijk het publieke GitHub-profiel voor code, experimenten en afgeleverde projecten.",
+      "contact.quicklink2.cta": "Bezoek GitHub",
+      "contact.form.title": "Vraag een offerte aan",
+      "contact.form.desc": "Beschrijf je project en ik stuur je een prijsvoorstel.",
+      "contact.form.name_label": "Naam of bedrijf",
+      "contact.form.name_placeholder": "Jouw naam",
+      "contact.form.email_label": "E-mail",
+      "contact.form.phone_label": "Telefoon <span style=\"color: var(--gray-400); font-weight: 400;\">(optioneel)</span>",
+      "contact.form.phone_placeholder": "+32 123 456 789",
+      "contact.form.message_label": "Projectomschrijving",
+      "contact.form.message_placeholder": "Vertel me over je app-idee of project...",
+      "contact.form.submit": "Offerte aanvragen",
+      "footer.brand.desc": "Freelance softwareontwikkelaar gespecialiseerd in Apple, gevestigd in België. Kwalitatieve software voor macOS, iOS en meer.",
+      "footer.nav.heading": "Navigatie",
+      "footer.nav.home": "Home",
+      "footer.nav.apps": "Apps",
+      "footer.nav.about": "Over mij",
+      "footer.nav.testimonials": "Referenties",
+      "footer.nav.contact": "Contact",
+      "footer.legal.heading": "Juridisch",
+      "footer.legal.accessibility": "Toegankelijkheidsverklaring",
+      "footer.connect.heading": "Verbinden",
+      "footer.connect.book": "Boek 30 minuten",
+      "footer.connect.email": "E-mail",
+      "footer.address.heading": "Adres",
+      "footer.bottom.rights": "Alle rechten voorbehouden."
+    },
+    fr: {
+      "meta.title": "Michel Storms — Développeur logiciel indépendant spécialisé Apple",
+      "meta.desc": "Michel Storms est un développeur logiciel indépendant spécialisé Apple, proposant des solutions logicielles sur mesure, du conseil, du design et des services de programmation pour les plateformes Apple.",
+      "nav.toggle": "Ouvrir le menu",
+      "nav.apps": "Apps",
+      "nav.about": "À propos",
+      "nav.testimonials": "Témoignages",
+      "nav.contact": "Contact",
+      "nav.accessibility": "Accessibilité",
+      "hero.logo_alt": "Logo Michel Storms",
+      "hero.label": "Développeur logiciel indépendant spécialisé Apple",
+      "hero.h1": "Des logiciels d'exception pour les plateformes Apple",
+      "hero.p": "Solutions sur mesure, conseils d'expert et design réfléchi pour macOS, iOS, watchOS et bien plus. Pour aller vite, envoyez un descriptif de projet ou réservez un appel ciblé de 30 minutes.",
+      "hero.btn_book": "Réserver 30 minutes",
+      "hero.btn_proposal": "Demander un devis",
+      "hero.chip_email": "M'envoyer un e-mail",
+      "about.label": "À propos",
+      "about.title": "Développer pour l'écosystème Apple",
+      "about.subtitle": "J'aide les entreprises et les particuliers à concrétiser leurs idées sur les plateformes Apple. Que vous ayez besoin d'une app macOS, d'une expérience iOS ou d'une solution multiplateforme — j'apporte une expertise approfondie, une communication claire et une passion pour la qualité à chaque projet.",
+      "services.macos.title": "Développement macOS",
+      "services.macos.desc": "Applications desktop natives créées avec SwiftUI, AppKit et les derniers frameworks Apple.",
+      "services.ios.title": "Apps iOS &amp; watchOS",
+      "services.ios.desc": "Expériences mobiles et wearable conçues pour s'intégrer parfaitement à chaque appareil Apple.",
+      "services.consulting.title": "Conseil &amp; Architecture",
+      "services.consulting.desc": "Accompagnement technique, revues de code et planification d'architecture pour les projets Apple.",
+      "testimonials.label": "Témoignages",
+      "testimonials.title": "Ce que disent les clients",
+      "testimonials.subtitle": "J'ai eu la chance de travailler avec des personnes remarquables qui m'ont confié leurs idées.",
+      "testimonials.t1.quote": "Michael se distingue comme le développeur Apple le plus exceptionnel que j'aie rencontré. Tout au long de notre collaboration d'un an, il a constamment atteint et dépassé les objectifs du projet. Son approche innovante a apporté des idées fraîches qui ont considérablement enrichi la portée et le potentiel de notre projet. Son souci du détail, son amour du projet et son engagement envers la qualité sont extraordinaires.",
+      "testimonials.t2.quote": "Développeur Mac compétent et capable, avec de solides compétences en génie logiciel. Il prend les choses en main, y compris face aux défis, fait des suggestions utiles lorsqu'il y a des options, et mène le projet à une conclusion réussie. Professionnel, talentueux, au meilleur niveau. Recommandé sans réserve.",
+      "testimonials.t2.role": "Client",
+      "testimonials.t3.quote": "Michael a été incroyable à travailler avec lui et a produit certains des meilleurs codes macOS que j'aie vus. Sa qualité est irréprochable et il est extrêmement méthodique. Je le réembaucherais pour un autre projet sans hésiter.",
+      "testimonials.t3.role": "Client",
+      "testimonials.t4.quote": "Michel a fait un excellent travail, avec une communication et une documentation de qualité. Il a résolu les problèmes rapidement et efficacement ; même dans des situations difficiles, il avait toujours une proposition de solution. J'attends avec impatience notre prochain projet.",
+      "testimonials.t5.quote": "Michel a été un atout fantastique pour le projet et je travaillerai à nouveau avec lui à n'importe quel moment. Le meilleur du meilleur ! Hautement recommandé !",
+      "testimonials.t5.role": "Client",
+      "testimonials.t6.quote": "Très patient et bonne communication. Il m'a guidé pas à pas pour comprendre et résoudre le problème.",
+      "contact.label": "Me contacter",
+      "contact.title": "Construisons quelque chose de grand",
+      "contact.subtitle": "Vous avez une idée d'application ou besoin d'une aide experte sur un projet Apple ? Contactez-moi et je vous ferai parvenir une proposition.",
+      "contact.email_label": "E-mail",
+      "contact.phone_label": "Téléphone",
+      "contact.calendar_label": "Agenda",
+      "contact.calendar_value": "Réserver un appel en ligne de 30 minutes",
+      "contact.github_label": "GitHub",
+      "contact.location_label": "Localisation",
+      "contact.location_value": "Ingelmunster, Belgique",
+      "contact.quicklink1.title": "Vous préférez échanger en direct ?",
+      "contact.quicklink1.desc": "Évitez les allers-retours par e-mail et réservez directement un créneau dans l'agenda.",
+      "contact.quicklink1.cta": "Ouvrir la page de réservation",
+      "contact.quicklink2.title": "Curieux de voir comment je travaille ?",
+      "contact.quicklink2.desc": "Consultez le profil GitHub public pour du code, des expérimentations et des projets livrés.",
+      "contact.quicklink2.cta": "Visiter GitHub",
+      "contact.form.title": "Demander un devis",
+      "contact.form.desc": "Décrivez votre projet et je vous enverrai une estimation.",
+      "contact.form.name_label": "Nom ou entreprise",
+      "contact.form.name_placeholder": "Votre nom",
+      "contact.form.email_label": "E-mail",
+      "contact.form.phone_label": "Téléphone <span style=\"color: var(--gray-400); font-weight: 400;\">(facultatif)</span>",
+      "contact.form.phone_placeholder": "+32 123 456 789",
+      "contact.form.message_label": "Description du projet",
+      "contact.form.message_placeholder": "Parlez-moi de votre idée d'application ou de votre projet...",
+      "contact.form.submit": "Envoyer la demande de devis",
+      "footer.brand.desc": "Développeur logiciel indépendant spécialisé Apple, basé en Belgique. Des logiciels de qualité pour macOS, iOS et bien plus.",
+      "footer.nav.heading": "Navigation",
+      "footer.nav.home": "Accueil",
+      "footer.nav.apps": "Apps",
+      "footer.nav.about": "À propos",
+      "footer.nav.testimonials": "Témoignages",
+      "footer.nav.contact": "Contact",
+      "footer.legal.heading": "Mentions légales",
+      "footer.legal.accessibility": "Déclaration d'accessibilité",
+      "footer.connect.heading": "Me rejoindre",
+      "footer.connect.book": "Réserver 30 minutes",
+      "footer.connect.email": "E-mail",
+      "footer.address.heading": "Adresse",
+      "footer.bottom.rights": "Tous droits réservés."
+    }
+  };
+  </script>
+  <script src="/assets/i18n.js"></script>
 
   <!-- Minimal JS: scroll animations + navbar shadow -->
   <script>
