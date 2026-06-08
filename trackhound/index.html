@@ -422,6 +422,12 @@
       .footer-inner { flex-direction: column; text-align: center; }
     }
   </style>
+
+  <!-- i18n: cloak non-English first paint to prevent a flash of untranslated (English) content -->
+  <script>
+  (function(){try{var l=localStorage.getItem('site-lang');if(!l){var a=navigator.languages||[navigator.language||'en'],i,x;for(i=0;i<a.length;i++){x=(a[i]||'').toLowerCase();if(x.indexOf('nl')===0){l='nl';break;}if(x.indexOf('fr')===0){l='fr';break;}if(x.indexOf('en')===0){l='en';break;}}}if(l&&l!=='en'){var d=document.documentElement;d.setAttribute('data-i18n-cloak','');d.lang=l;setTimeout(function(){d.removeAttribute('data-i18n-cloak');},1500);}}catch(e){}})();
+  </script>
+  <style>html[data-i18n-cloak] body{visibility:hidden}</style>
 </head>
 <body>
 

@@ -70,7 +70,11 @@
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       var k = el.getAttribute('data-i18n');
-      el.innerHTML = (lang === 'en' || dict[k] == null) ? el.__en : dict[k];
+      var val = (lang === 'en' || dict[k] == null) ? el.__en : dict[k];
+      // Plain strings go through textContent (no HTML parsing); only values
+      // that actually contain markup or entities use innerHTML. Keeps the
+      // injection surface minimal even though all values are author-authored.
+      if (/[<&]/.test(val)) el.innerHTML = val; else el.textContent = val;
     }
     var attrNodes = document.querySelectorAll('[data-i18n-attr]');
     for (var j = 0; j < attrNodes.length; j++) {
@@ -110,7 +114,19 @@
       '.lang-switch button + button{border-left:1px solid var(--gray-200,#e2e2e7);}' +
       '.lang-switch button:hover{color:var(--navy,#2d2e3a);}' +
       '.lang-switch button[aria-current="true"]{background:var(--navy,#2d2e3a);color:#fff;}' +
-      '@media (max-width:768px){.lang-switch{margin-left:14px;}}';
+      // Auto mobile menu for pages that have no hamburger of their own.
+      '.i18n-auto-nav .i18n-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;margin-left:14px;flex-shrink:0;}' +
+      '.i18n-auto-nav .i18n-nav-toggle span{display:block;width:22px;height:2px;background:var(--navy,#2d2e3a);margin:5px 0;border-radius:2px;}' +
+      '@media (max-width:768px){.lang-switch{margin-left:14px;}' +
+      '.i18n-auto-nav .nav-links{display:none;}' +
+      '.i18n-auto-nav .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;' +
+      'background:var(--white,#fff);padding:24px;gap:20px;border-bottom:1px solid var(--gray-200,#e2e2e7);' +
+      'box-shadow:0 4px 20px rgba(0,0,0,.06);}' +
+      '.i18n-auto-nav .i18n-nav-toggle{display:block;}}' +
+      // Compact the nav on small phones so logo + menu + switcher never overflow.
+      '@media (max-width:480px){.nav-inner .nav-logo{font-size:1.2rem;}' +
+      '.lang-switch{margin-left:10px;}.lang-switch button{padding:6px 7px;font-size:.68rem;}' +
+      '.i18n-auto-nav .i18n-nav-toggle{margin-left:8px;padding:8px 2px;}}';
     var style = document.createElement('style');
     style.id = 'lang-switch-style';
     style.textContent = css;
@@ -120,6 +136,34 @@
   function buildSwitch() {
     var nav = document.querySelector('.nav-inner');
     if (!nav || nav.querySelector('.lang-switch')) return;
+
+    // Pages without their own hamburger (apps gallery, app landing pages) keep
+    // their nav links inline, which overflows on phones. Inject a hamburger and
+    // a collapsible dropdown — same pattern the homepage uses — so every page has
+    // a consistent mobile menu. The toggle goes in before the switcher so the
+    // switcher stays rightmost.
+    var links = nav.querySelector('.nav-links');
+    if (links && !nav.querySelector('.nav-toggle') && !nav.querySelector('.i18n-nav-toggle')) {
+      nav.classList.add('i18n-auto-nav');
+      var tg = document.createElement('button');
+      tg.type = 'button';
+      tg.className = 'i18n-nav-toggle';
+      tg.setAttribute('aria-label', 'Menu');
+      tg.setAttribute('aria-expanded', 'false');
+      tg.innerHTML = '<span></span><span></span><span></span>';
+      tg.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target && e.target.tagName === 'A') {
+          links.classList.remove('open');
+          tg.setAttribute('aria-expanded', 'false');
+        }
+      });
+      nav.appendChild(tg);
+    }
+
     var box = document.createElement('div');
     box.className = 'lang-switch';
     box.setAttribute('role', 'group');
@@ -143,6 +187,9 @@
     capture();
     buildSwitch();
     apply(current);
+    // Reveal the page once translations are applied (see the in-<head> cloak
+    // snippet that hides non-English first paint to avoid a flash of English).
+    document.documentElement.removeAttribute('data-i18n-cloak');
   }
 
   if (document.readyState === 'loading') {
