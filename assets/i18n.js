@@ -110,7 +110,7 @@
       '.lang-switch button + button{border-left:1px solid var(--gray-200,#e2e2e7);}' +
       '.lang-switch button:hover{color:var(--navy,#2d2e3a);}' +
       '.lang-switch button[aria-current="true"]{background:var(--navy,#2d2e3a);color:#fff;}' +
-      '@media (max-width:768px){.lang-switch{margin-left:auto;margin-right:14px;}}';
+      '@media (max-width:768px){.lang-switch{margin-left:14px;}}';
     var style = document.createElement('style');
     style.id = 'lang-switch-style';
     style.textContent = css;
@@ -133,9 +133,9 @@
       btn.addEventListener('click', function () { setLang(p[0]); });
       box.appendChild(btn);
     });
-    var toggle = nav.querySelector('.nav-toggle');
-    if (toggle) nav.insertBefore(box, toggle);
-    else nav.appendChild(box);
+    // Always last child of the nav so the switcher sits rightmost,
+    // regardless of whether the hamburger or nav-links come first in markup.
+    nav.appendChild(box);
   }
 
   function init() {
