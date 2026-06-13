@@ -435,36 +435,44 @@
   <main class="container">
     <section class="apps-hero">
       <span class="section-label">Open Source</span>
-      <h1>Open source I'm building</h1>
-      <p>Free, MIT-licensed command-line tools &mdash; local, offline, and Apple-Silicon-native. No accounts, no cloud, no tracking.</p>
+      <h1 data-i18n="os.hero.title">Open source I'm building</h1>
+      <p data-i18n="os.hero.subtitle">Free, MIT-licensed command-line tools &mdash; local, offline, and Apple-Silicon-native. No accounts, no cloud, no tracking.</p>
     </section>
 
     <section class="apps-grid" id="os-grid" aria-label="Open source projects"></section>
     <noscript><p style="text-align:center;color:var(--gray-500)">View the projects on <a href="https://github.com/stormychel?tab=repositories">GitHub</a>.</p></noscript>
-  <script>const PROJECTS = [{"repo": "mlx-shtf", "name": "mlx-shtf", "badge": "v0.1.6 &middot; MIT", "tagline": "Offline AI for when the cloud goes dark.", "description": "A fully-offline local AI kit for Apple Silicon &mdash; chat, document Q&amp;A (RAG over your own files), and coding help, all running on a local MLX model with zero network. Your break-glass assistant for when cloud models get pulled.", "meta": {"Platform": "Apple-Silicon macOS &middot; command line", "Runtime": "mlx-lm via pipx &middot; system bash", "License": "Open source (MIT) on GitHub"}, "features": ["Chat", "Offline RAG", "Coding help", "Coding agent", "RAM-aware", "100% offline"], "whyTitle": "Why mlx-shtf", "why": ["A local LLM assistant that needs no internet or account.", "Picks a model that fits your RAM &mdash; never swap-kills the Mac.", "Answers questions grounded in your own local files.", "Drives Claude Code off the local model (<code>mlx-shtf agent</code>).", "Built as the fallback for when cloud models get pulled."], "goodToKnow": ["Apple-Silicon only (bare metal or a macOS VM).", "One-line install: clone the repo, run <code>./install.sh</code>.", "A local model is weaker than a frontier cloud model.", "MIT-licensed &mdash; contributions welcome."], "actions": [{"label": "View on GitHub", "href": "https://github.com/stormychel/mlx-shtf", "primary": true}, {"label": "Latest release", "href": "https://github.com/stormychel/mlx-shtf/releases/latest"}], "links": [{"label": "Documentation", "href": "https://github.com/stormychel/mlx-shtf#readme"}, {"label": "License (MIT)", "href": "https://github.com/stormychel/mlx-shtf/blob/main/LICENSE"}]}, {"repo": "mlx-diff", "name": "mlx-diff", "badge": "v0.4.5 &middot; MIT", "tagline": "Local code review, no cloud required.", "description": "A zero-dependency CLI that reviews a git diff or a GitHub PR with a local MLX model on Apple Silicon. Fully offline, quota-free, and private &mdash; nothing leaves the machine. Reports findings as P1/P2/P3 with file locations, and can comment straight onto a PR.", "meta": {"Platform": "Apple-Silicon macOS &middot; command line", "Runtime": "mlx-lm via pipx &middot; system bash", "License": "Open source (MIT) on GitHub"}, "features": ["git diff review", "GitHub PRs", "P1/P2/P3", "JSON output", "RAM-aware", "100% offline"], "whyTitle": "Why mlx-diff", "why": ["Reviews your code locally &mdash; no API keys, no quotas, nothing leaves the Mac.", "Works on the current branch or any GitHub PR (<code>--pr</code>).", "Picks a model that fits your RAM; falls back if it won't.", "Filter by severity, emit JSON, or post inline PR comments.", "The free, private first pass before a human review."], "goodToKnow": ["Apple-Silicon only (bare metal or a macOS VM).", "A fast first-pass triage &mdash; weaker than a frontier model on subtle bugs.", "One-line install: clone the repo, run <code>./install.sh</code>.", "MIT-licensed &mdash; contributions welcome."], "actions": [{"label": "View on GitHub", "href": "https://github.com/stormychel/mlx-diff", "primary": true}, {"label": "Latest release", "href": "https://github.com/stormychel/mlx-diff/releases/latest"}], "links": [{"label": "Documentation", "href": "https://github.com/stormychel/mlx-diff#readme"}, {"label": "License (MIT)", "href": "https://github.com/stormychel/mlx-diff/blob/main/LICENSE"}]}, {"repo": "LibreBase", "name": "LibreBase", "badge": "1.0.0 &middot; In Development", "tagline": "Your Bluetooth smart scale, straight into Apple Health.", "description": "When Qardio shut down &mdash; app delisted, servers dark &mdash; the scales kept working over Bluetooth. LibreBase is a tiny, independent, open-source iOS app that pairs with a Bluetooth smart scale (like the QardioBase), reads your weight the moment you step on, and saves it to Apple Health. No account, no cloud, no Qardio app, no tracking.", "meta": {"Platform": "iOS &middot; Apple Health", "Runtime": "Swift / SwiftUI &middot; Bluetooth LE", "License": "Open source (MIT) on GitHub"}, "features": ["iOS", "Apple Health", "Bluetooth LE", "In-app BMI", "Metric &amp; Imperial", "No cloud"], "whyTitle": "Why LibreBase", "why": ["Keeps an orphaned smart scale useful after Qardio's shutdown.", "Direct Bluetooth &mdash; no account, cloud, or Qardio app.", "Weight saved straight to Apple Health on your device.", "In-app BMI from your height, synced with Apple Health.", "No servers, no analytics, no tracking whatsoever."], "goodToKnow": ["Tested with the original QardioBase (1st gen, B100).", "Other Bluetooth scales may work &mdash; untested, no promises.", "Units follow your region: kg/lb and cm/ft.", "A wellness logger, not a medical device."], "actions": [{"label": "View on GitHub", "href": "https://github.com/stormychel/LibreBase", "primary": true}, {"label": "Learn more", "href": "https://michelstorms.com/librebase/"}], "links": [{"label": "Documentation", "href": "https://github.com/stormychel/LibreBase#readme"}, {"label": "License (MIT)", "href": "https://github.com/stormychel/LibreBase/blob/main/LICENSE"}, {"label": "Privacy Policy", "href": "https://michelstorms.com/librebase/privacy/"}]}];</script>
-  <!-- Open-source projects: single source of truth. Add a project = one entry above. -->
+  <!-- Open-source projects: single source of truth (en/nl/fr). Add a project = one entry. -->
   <script>
+  const CHROME = {"os.hero.title": {"en": "Open source I'm building", "nl": "Open source die ik bouw", "fr": "L'open source que je développe"}, "os.hero.subtitle": {"en": "Free, MIT-licensed command-line tools &mdash; local, offline, and Apple-Silicon-native. No accounts, no cloud, no tracking.", "nl": "Gratis command-line tools onder MIT-licentie &mdash; lokaal, offline en gemaakt voor Apple Silicon. Geen accounts, geen cloud, geen tracking.", "fr": "Des outils en ligne de commande gratuits sous licence MIT &mdash; locaux, hors ligne et natifs Apple Silicon. Sans compte, sans cloud, sans pistage."}, "os.gtk": {"en": "Good To Know", "nl": "Goed om te weten", "fr": "Bon à savoir"}, "os.meta.platform": {"en": "Platform:", "nl": "Platform:", "fr": "Plateforme :"}, "os.meta.runtime": {"en": "Runtime:", "nl": "Runtime:", "fr": "Environnement :"}, "os.meta.license": {"en": "License:", "nl": "Licentie:", "fr": "Licence :"}, "os.btn.github": {"en": "View on GitHub", "nl": "Bekijk op GitHub", "fr": "Voir sur GitHub"}, "os.btn.release": {"en": "Latest release", "nl": "Laatste release", "fr": "Dernière version"}, "os.btn.learnmore": {"en": "Learn more", "nl": "Meer info", "fr": "En savoir plus"}, "os.btn.docs": {"en": "Documentation", "nl": "Documentatie", "fr": "Documentation"}, "os.btn.license": {"en": "License (MIT)", "nl": "Licentie (MIT)", "fr": "Licence (MIT)"}, "os.btn.privacy": {"en": "Privacy Policy", "nl": "Privacybeleid", "fr": "Politique de confidentialité"}};
+  const PROJECTS = [{"repo": "mlx-shtf", "name": "mlx-shtf", "badge": {"en": "v0.1.6 &middot; MIT", "nl": null, "fr": null}, "tagline": {"en": "Offline AI for when the cloud goes dark.", "nl": "Offline AI voor wanneer de cloud uitvalt.", "fr": "De l'IA hors ligne pour quand le cloud s'éteint."}, "description": {"en": "A fully-offline local AI kit for Apple Silicon &mdash; chat, document Q&amp;A (RAG over your own files), and coding help, all running on a local MLX model with zero network. Your break-glass assistant for when cloud models get pulled.", "nl": "Een volledig offline lokale AI-kit voor Apple Silicon &mdash; chatten, documenten doorzoeken (RAG over je eigen bestanden) en hulp bij code, allemaal op een lokaal MLX-model zonder netwerk. Je noodassistent voor wanneer cloudmodellen worden teruggetrokken.", "fr": "Un kit d'IA local entièrement hors ligne pour Apple Silicon &mdash; chat, questions-réponses sur vos documents (RAG sur vos propres fichiers) et aide au code, le tout sur un modèle MLX local sans réseau. Votre assistant de secours quand les modèles cloud disparaissent."}, "meta": [{"labelKey": "os.meta.platform", "value": {"en": "Apple-Silicon macOS &middot; command line", "nl": "Apple-Silicon macOS &middot; opdrachtregel", "fr": "macOS Apple Silicon &middot; ligne de commande"}}, {"labelKey": "os.meta.runtime", "value": {"en": "mlx-lm via pipx &middot; system bash", "nl": null, "fr": null}}, {"labelKey": "os.meta.license", "value": {"en": "Open source (MIT) on GitHub", "nl": "Open source (MIT) op GitHub", "fr": "Open source (MIT) sur GitHub"}}], "features": {"en": ["Chat", "Offline RAG", "Coding help", "Coding agent", "RAM-aware", "100% offline"], "nl": ["Chat", "Offline RAG", "Hulp bij code", "Code-agent", "RAM-bewust", "100% offline"], "fr": ["Chat", "RAG hors ligne", "Aide au code", "Agent de code", "Gestion RAM", "100% hors ligne"]}, "whyTitle": {"en": "Why mlx-shtf", "nl": "Waarom mlx-shtf", "fr": "Pourquoi mlx-shtf"}, "why": {"en": ["A local LLM assistant that needs no internet or account.", "Picks a model that fits your RAM &mdash; never swap-kills the Mac.", "Answers questions grounded in your own local files.", "Drives Claude Code off the local model (<code>mlx-shtf agent</code>).", "Built as the fallback for when cloud models get pulled."], "nl": ["Een lokale LLM-assistent zonder internet of account.", "Kiest een model dat in je RAM past &mdash; legt je Mac nooit plat door swappen.", "Beantwoordt vragen op basis van je eigen lokale bestanden.", "Stuurt Claude Code aan op het lokale model (<code>mlx-shtf agent</code>).", "Gebouwd als terugval voor wanneer cloudmodellen verdwijnen."], "fr": ["Un assistant LLM local sans internet ni compte.", "Choisit un modèle adapté à votre RAM &mdash; ne fait jamais planter le Mac par swap.", "Répond aux questions en s'appuyant sur vos propres fichiers locaux.", "Pilote Claude Code avec le modèle local (<code>mlx-shtf agent</code>).", "Conçu comme repli quand les modèles cloud sont retirés."]}, "gtk": {"en": ["Apple-Silicon only (bare metal or a macOS VM).", "One-line install: clone the repo, run <code>./install.sh</code>.", "A local model is weaker than a frontier cloud model.", "MIT-licensed &mdash; contributions welcome."], "nl": ["Alleen Apple Silicon (fysiek of een macOS-VM).", "Installatie in één regel: kloon de repo, run <code>./install.sh</code>.", "Een lokaal model is zwakker dan een topcloudmodel.", "MIT-licentie &mdash; bijdragen welkom."], "fr": ["Apple Silicon uniquement (machine réelle ou VM macOS).", "Installation en une ligne : clonez le dépôt, lancez <code>./install.sh</code>.", "Un modèle local est plus faible qu'un modèle cloud de pointe.", "Sous licence MIT &mdash; contributions bienvenues."]}, "actions": [{"key": "os.btn.github", "href": "https://github.com/stormychel/mlx-shtf", "primary": true}, {"key": "os.btn.release", "href": "https://github.com/stormychel/mlx-shtf/releases/latest"}], "links": [{"key": "os.btn.docs", "href": "https://github.com/stormychel/mlx-shtf#readme"}, {"key": "os.btn.license", "href": "https://github.com/stormychel/mlx-shtf/blob/main/LICENSE"}]}, {"repo": "mlx-diff", "name": "mlx-diff", "badge": {"en": "v0.4.5 &middot; MIT", "nl": null, "fr": null}, "tagline": {"en": "Local code review, no cloud required.", "nl": "Lokale code-review, geen cloud nodig.", "fr": "Revue de code locale, sans cloud."}, "description": {"en": "A zero-dependency CLI that reviews a git diff or a GitHub PR with a local MLX model on Apple Silicon. Fully offline, quota-free, and private &mdash; nothing leaves the machine. Reports findings as P1/P2/P3 with file locations, and can comment straight onto a PR.", "nl": "Een CLI zonder dependencies die een git-diff of GitHub-PR beoordeelt met een lokaal MLX-model op Apple Silicon. Volledig offline, zonder quota en privé &mdash; niets verlaat je machine. Geeft bevindingen als P1/P2/P3 met bestandslocaties en kan rechtstreeks op een PR reageren.", "fr": "Un outil en ligne de commande sans dépendances qui examine un diff git ou une PR GitHub avec un modèle MLX local sur Apple Silicon. Entièrement hors ligne, sans quota et privé &mdash; rien ne quitte la machine. Signale les problèmes en P1/P2/P3 avec leur emplacement, et peut commenter directement une PR."}, "meta": [{"labelKey": "os.meta.platform", "value": {"en": "Apple-Silicon macOS &middot; command line", "nl": "Apple-Silicon macOS &middot; opdrachtregel", "fr": "macOS Apple Silicon &middot; ligne de commande"}}, {"labelKey": "os.meta.runtime", "value": {"en": "mlx-lm via pipx &middot; system bash", "nl": null, "fr": null}}, {"labelKey": "os.meta.license", "value": {"en": "Open source (MIT) on GitHub", "nl": "Open source (MIT) op GitHub", "fr": "Open source (MIT) sur GitHub"}}], "features": {"en": ["git diff review", "GitHub PRs", "P1/P2/P3", "JSON output", "RAM-aware", "100% offline"], "nl": ["git diff-review", "GitHub-PR's", "P1/P2/P3", "JSON-uitvoer", "RAM-bewust", "100% offline"], "fr": ["Revue de diff git", "PR GitHub", "P1/P2/P3", "Sortie JSON", "Gestion RAM", "100% hors ligne"]}, "whyTitle": {"en": "Why mlx-diff", "nl": "Waarom mlx-diff", "fr": "Pourquoi mlx-diff"}, "why": {"en": ["Reviews your code locally &mdash; no API keys, no quotas, nothing leaves the Mac.", "Works on the current branch or any GitHub PR (<code>--pr</code>).", "Picks a model that fits your RAM; falls back if it won't.", "Filter by severity, emit JSON, or post inline PR comments.", "The free, private first pass before a human review."], "nl": ["Beoordeelt je code lokaal &mdash; geen API-sleutels, geen quota, niets verlaat de Mac.", "Werkt op de huidige branch of elke GitHub-PR (<code>--pr</code>).", "Kiest een model dat in je RAM past; valt terug als dat niet zo is.", "Filter op ernst, geef JSON uit of plaats inline PR-opmerkingen.", "De gratis, privé eerste controle vóór een menselijke review."], "fr": ["Examine votre code en local &mdash; pas de clés API, pas de quota, rien ne quitte le Mac.", "Fonctionne sur la branche courante ou n'importe quelle PR GitHub (<code>--pr</code>).", "Choisit un modèle adapté à votre RAM ; bascule sur un plus petit sinon.", "Filtrez par gravité, exportez en JSON ou postez des commentaires en ligne sur la PR.", "Le premier passage gratuit et privé avant une revue humaine."]}, "gtk": {"en": ["Apple-Silicon only (bare metal or a macOS VM).", "A fast first-pass triage &mdash; weaker than a frontier model on subtle bugs.", "One-line install: clone the repo, run <code>./install.sh</code>.", "MIT-licensed &mdash; contributions welcome."], "nl": ["Alleen Apple Silicon (fysiek of een macOS-VM).", "Een snelle eerste triage &mdash; zwakker dan een topmodel bij subtiele bugs.", "Installatie in één regel: kloon de repo, run <code>./install.sh</code>.", "MIT-licentie &mdash; bijdragen welkom."], "fr": ["Apple Silicon uniquement (machine réelle ou VM macOS).", "Un premier tri rapide &mdash; plus faible qu'un modèle de pointe sur les bugs subtils.", "Installation en une ligne : clonez le dépôt, lancez <code>./install.sh</code>.", "Sous licence MIT &mdash; contributions bienvenues."]}, "actions": [{"key": "os.btn.github", "href": "https://github.com/stormychel/mlx-diff", "primary": true}, {"key": "os.btn.release", "href": "https://github.com/stormychel/mlx-diff/releases/latest"}], "links": [{"key": "os.btn.docs", "href": "https://github.com/stormychel/mlx-diff#readme"}, {"key": "os.btn.license", "href": "https://github.com/stormychel/mlx-diff/blob/main/LICENSE"}]}, {"repo": "LibreBase", "name": "LibreBase", "badge": {"en": "1.0.0 &middot; In Development", "nl": "1.0.0 &middot; In ontwikkeling", "fr": "1.0.0 &middot; En développement"}, "tagline": {"en": "Your Bluetooth smart scale, straight into Apple Health.", "nl": "Je Bluetooth-smartweegschaal, rechtstreeks in Apple Health.", "fr": "Votre balance connectée Bluetooth, directement dans Apple Santé."}, "description": {"en": "When Qardio shut down &mdash; app delisted, servers dark &mdash; the scales kept working over Bluetooth. LibreBase is a tiny, independent, open-source iOS app that pairs with a Bluetooth smart scale (like the QardioBase), reads your weight the moment you step on, and saves it to Apple Health. No account, no cloud, no Qardio app, no tracking.", "nl": "Toen Qardio stopte &mdash; app verwijderd, servers uit &mdash; bleven de weegschalen werken via Bluetooth. LibreBase is een kleine, onafhankelijke, opensource iOS-app die koppelt met een Bluetooth-smartweegschaal (zoals de QardioBase), je gewicht leest zodra je erop stapt en het opslaat in Apple Health. Geen account, geen cloud, geen Qardio-app, geen tracking.", "fr": "Quand Qardio a fermé &mdash; app retirée, serveurs éteints &mdash; les balances ont continué de fonctionner en Bluetooth. LibreBase est une petite app iOS open-source et indépendante qui se connecte à une balance connectée Bluetooth (comme la QardioBase), lit votre poids dès que vous montez dessus et l'enregistre dans Apple Santé. Sans compte, sans cloud, sans app Qardio, sans pistage."}, "meta": [{"labelKey": "os.meta.platform", "value": {"en": "iOS &middot; Apple Health", "nl": "iOS &middot; Apple Health", "fr": "iOS &middot; Apple Santé"}}, {"labelKey": "os.meta.runtime", "value": {"en": "Swift / SwiftUI &middot; Bluetooth LE", "nl": null, "fr": null}}, {"labelKey": "os.meta.license", "value": {"en": "Open source (MIT) on GitHub", "nl": "Open source (MIT) op GitHub", "fr": "Open source (MIT) sur GitHub"}}], "features": {"en": ["iOS", "Apple Health", "Bluetooth LE", "In-app BMI", "Metric &amp; Imperial", "No cloud"], "nl": ["iOS", "Apple Health", "Bluetooth LE", "BMI in de app", "Metrisch &amp; imperiaal", "Geen cloud"], "fr": ["iOS", "Apple Santé", "Bluetooth LE", "IMC intégré", "Métrique &amp; impérial", "Sans cloud"]}, "whyTitle": {"en": "Why LibreBase", "nl": "Waarom LibreBase", "fr": "Pourquoi LibreBase"}, "why": {"en": ["Keeps an orphaned smart scale useful after Qardio's shutdown.", "Direct Bluetooth &mdash; no account, cloud, or Qardio app.", "Weight saved straight to Apple Health on your device.", "In-app BMI from your height, synced with Apple Health.", "No servers, no analytics, no tracking whatsoever."], "nl": ["Houdt een verweesde smartweegschaal bruikbaar na de sluiting van Qardio.", "Rechtstreeks Bluetooth &mdash; geen account, cloud of Qardio-app.", "Gewicht rechtstreeks opgeslagen in Apple Health op je toestel.", "BMI in de app op basis van je lengte, gesynct met Apple Health.", "Geen servers, geen analytics, geen enkele tracking."], "fr": ["Garde une balance connectée orpheline utile après la fermeture de Qardio.", "Bluetooth direct &mdash; sans compte, cloud ni app Qardio.", "Poids enregistré directement dans Apple Santé, sur votre appareil.", "IMC intégré à partir de votre taille, synchronisé avec Apple Santé.", "Aucun serveur, aucune analyse, aucun pistage."]}, "gtk": {"en": ["Tested with the original QardioBase (1st gen, B100).", "Other Bluetooth scales may work &mdash; untested, no promises.", "Units follow your region: kg/lb and cm/ft.", "A wellness logger, not a medical device."], "nl": ["Getest met de originele QardioBase (1e generatie, B100).", "Andere Bluetooth-weegschalen werken mogelijk &mdash; ongetest, geen garanties.", "Eenheden volgen je regio: kg/lb en cm/ft.", "Een welzijnslogger, geen medisch apparaat."], "fr": ["Testé avec la QardioBase d'origine (1re génération, B100).", "D'autres balances Bluetooth peuvent fonctionner &mdash; non testées, sans garantie.", "Les unités suivent votre région : kg/lb et cm/ft.", "Un journal de bien-être, pas un dispositif médical."]}, "actions": [{"key": "os.btn.github", "href": "https://github.com/stormychel/LibreBase", "primary": true}, {"key": "os.btn.learnmore", "href": "https://michelstorms.com/librebase/"}], "links": [{"key": "os.btn.docs", "href": "https://github.com/stormychel/LibreBase#readme"}, {"key": "os.btn.license", "href": "https://github.com/stormychel/LibreBase/blob/main/LICENSE"}, {"key": "os.btn.privacy", "href": "https://michelstorms.com/librebase/privacy/"}]}];
   (function(){
-    function card(p){
-      var feats = p.features.map(function(f){return '<li>'+f+'</li>';}).join('');
-      var why   = p.why.map(function(x){return '<li>'+x+'</li>';}).join('');
-      var gtk   = p.goodToKnow.map(function(x){return '<li>'+x+'</li>';}).join('');
-      var meta  = Object.keys(p.meta).map(function(k){return '<p><strong>'+k+':</strong> <span>'+p.meta[k]+'</span></p>';}).join('');
-      var acts  = p.actions.map(function(a){return '<a class="btn '+(a.primary?'btn-primary':'btn-outline')+'" href="'+a.href+'">'+a.label+'</a>';}).join('');
-      var links = p.links.map(function(l){return '<a href="'+l.href+'">'+l.label+'</a>';}).join('');
-      return '<article class="app-card" id="'+p.repo+'">'
-        + '<div class="app-card-header"><div class="app-title"><h2 class="app-name">'+p.name+'</h2></div>'
-        + '<span class="status-pill">'+p.badge+'</span></div>'
-        + '<p class="app-tagline">'+p.tagline+'</p>'
-        + '<p class="app-description">'+p.description+'</p>'
-        + '<div class="app-meta">'+meta+'</div>'
-        + '<ul class="platform-list" aria-label="Features">'+feats+'</ul>'
-        + '<div class="detail-columns"><div><h3>'+p.whyTitle+'</h3><ul>'+why+'</ul></div>'
-        + '<div><h3>Good To Know</h3><ul>'+gtk+'</ul></div></div>'
-        + '<div class="app-actions">'+acts+'</div>'
-        + '<div class="legal-links">'+links+'</div></article>';
+    var I={nl:{},fr:{}};
+    I.nl['nav.home']='Home';I.nl['nav.apps']='Apps';I.nl['nav.blog']='Blog';I.nl['nav.accessibility']='Toegankelijkheid';I.nl['footer.rights']='Alle rechten voorbehouden.';
+    I.fr['nav.home']='Accueil';I.fr['nav.apps']='Apps';I.fr['nav.blog']='Blog';I.fr['nav.accessibility']='Accessibilité';I.fr['footer.rights']='Tous droits réservés.';
+    function reg(k,o){if(o){if(o.nl!=null)I.nl[k]=o.nl;if(o.fr!=null)I.fr[k]=o.fr;return o.en;}return '';}
+    function en(k){return CHROME[k]?CHROME[k].en:'';}
+    Object.keys(CHROME).forEach(function(k){reg(k,CHROME[k]);});
+    function list(key,o){return o.en.map(function(t,i){var k=key+'.'+i;if(o.nl)I.nl[k]=o.nl[i];if(o.fr)I.fr[k]=o.fr[i];return '<li data-i18n="'+k+'">'+t+'</li>';}).join('');}
+    function btn(b,primary){return '<a class="btn '+(primary?'btn-primary':'btn-outline')+'" href="'+b.href+'" data-i18n="'+b.key+'">'+en(b.key)+'</a>';}
+    function lnk(b){return '<a href="'+b.href+'" data-i18n="'+b.key+'">'+en(b.key)+'</a>';}
+    function card(p){var id=p.repo;
+      var meta=p.meta.map(function(m,i){var vk='os.'+id+'.meta.'+i;var v=reg(vk,m.value);return '<p><strong data-i18n="'+m.labelKey+'">'+en(m.labelKey)+'</strong> <span data-i18n="'+vk+'">'+v+'</span></p>';}).join('');
+      return '<article class="app-card" id="'+id+'">'
+        +'<div class="app-card-header"><div class="app-title"><h2 class="app-name">'+p.name+'</h2></div>'
+        +'<span class="status-pill" data-i18n="os.'+id+'.badge">'+reg('os.'+id+'.badge',p.badge)+'</span></div>'
+        +'<p class="app-tagline" data-i18n="os.'+id+'.tagline">'+reg('os.'+id+'.tagline',p.tagline)+'</p>'
+        +'<p class="app-description" data-i18n="os.'+id+'.desc">'+reg('os.'+id+'.desc',p.description)+'</p>'
+        +'<div class="app-meta">'+meta+'</div>'
+        +'<ul class="platform-list" aria-label="Features">'+list('os.'+id+'.feat',p.features)+'</ul>'
+        +'<div class="detail-columns">'
+          +'<div><h3 data-i18n="os.'+id+'.whytitle">'+reg('os.'+id+'.whytitle',p.whyTitle)+'</h3><ul>'+list('os.'+id+'.why',p.why)+'</ul></div>'
+          +'<div><h3 data-i18n="os.gtk">'+en('os.gtk')+'</h3><ul>'+list('os.'+id+'.gtk',p.gtk)+'</ul></div>'
+        +'</div>'
+        +'<div class="app-actions">'+p.actions.map(function(a){return btn(a,a.primary);}).join('')+'</div>'
+        +'<div class="legal-links">'+p.links.map(lnk).join('')+'</div></article>';
     }
-    document.getElementById('os-grid').innerHTML = PROJECTS.map(card).join('');
+    window.I18N_STRINGS=I;
+    document.getElementById('os-grid').innerHTML=PROJECTS.map(card).join('');
   })();
   </script>
   </main>
@@ -477,428 +485,7 @@
   </footer>
 
   <!-- i18n -->
-  <script>
-  window.I18N_STRINGS = {
-    nl: {
-      "meta.title": "Apps — Michel Storms",
-      "meta.description": "Apps van Michel Storms voor Apple-platformen",
-
-      "nav.home": "Home",
-      "nav.apps": "Apps",
-      "nav.blog": "Blog",
-      "nav.accessibility": "Toegankelijkheid",
-
-      "hero.label": "Producten",
-      "hero.title": "Apps die ik bouw",
-      "hero.subtitle": "Onafhankelijke apps ontworpen voor Apple-gebruikers, met focus op helderheid, snelheid en handige workflows.",
-
-      "apps.grid.arialabel": "App-overzicht",
-      "platforms.arialabel": "Ondersteunde platformen",
-      "screenshots.title": "Schermafbeeldingen",
-
-      "meta.label.distribution": "Distributie:",
-      "meta.label.storestatus": "Store-status:",
-      "meta.label.currentbuild": "Huidige build:",
-      "meta.label.testedwith": "Getest met:",
-      "meta.label.languages": "Talen:",
-      "meta.label.source": "Broncode:",
-      "meta.label.plannedrelease": "Geplande release:",
-      "meta.label.iap": "In-app aankoop:",
-
-      "legal.tos": "Gebruiksvoorwaarden",
-      "legal.license": "Licentieovereenkomst",
-      "legal.mit": "Licentie (MIT)",
-      "legal.privacy": "Privacybeleid",
-
-      "btn.macappstore": "Download in de Mac App Store",
-      "btn.appstore": "Download in de App Store",
-      "btn.learnmore": "Meer info",
-      "btn.viewgithub": "Bekijk op GitHub",
-
-      "card.librebase.icon.alt": "LibreBase app-icoon",
-      "card.librebase.status": "1.0.0 · In ontwikkeling",
-      "card.librebase.tagline": "Jouw QardioBase-weegschaal, rechtstreeks in Apple Gezondheid.",
-      "card.librebase.description": "Toen Qardio stopte — app verwijderd, servers offline — bleven de weegschalen gewoon werken via Bluetooth. LibreBase is een kleine, onafhankelijke, open-source iOS-app die koppelt met jouw QardioBase, je gewicht uitleest zodra je erop stapt en het opslaat in Apple Gezondheid. Geen account, geen cloud, geen Qardio-app, geen tracking.",
-      "card.librebase.meta.distribution": "Directe build / TestFlight",
-      "card.librebase.meta.storestatus": "Klaar voor indiening",
-      "card.librebase.meta.currentbuild": "4 (versie 1.0.0)",
-      "card.librebase.meta.testedwith": "Alleen QardioBase 1e generatie (B100)",
-      "card.librebase.meta.languages": "Engels (VS)",
-      "card.librebase.meta.source": "Open source (MIT) op GitHub",
-      "card.librebase.platform.bmi": "BMI in de app",
-      "card.librebase.platform.units": "Metrisch &amp; imperiaal",
-      "card.librebase.platform.opensource": "Open source",
-      "card.librebase.why.title": "Waarom LibreBase",
-      "card.librebase.why.1": "Houdt een verlaten QardioBase bruikbaar na de sluiting van Qardio.",
-      "card.librebase.why.2": "Directe Bluetooth — geen account, cloud of Qardio-app.",
-      "card.librebase.why.3": "Gewicht rechtstreeks opgeslagen in Apple Gezondheid op je toestel.",
-      "card.librebase.why.4": "BMI in de app op basis van je lengte, gesynchroniseerd met Apple Gezondheid.",
-      "card.librebase.why.5": "Geen servers, geen analytics, absoluut geen tracking.",
-      "card.librebase.goodtoknow.title": "Goed om te weten",
-      "card.librebase.goodtoknow.1": "Alleen getest met de originele QardioBase (1e gen, B100).",
-      "card.librebase.goodtoknow.2": "QardioBase 2 / X zijn ongetest — werkt mogelijk, geen garanties.",
-      "card.librebase.goodtoknow.3": "Eenheden volgen jouw regio: kg/lb en cm/ft.",
-      "card.librebase.goodtoknow.4": "Een gezondheidslogger, geen medisch hulpmiddel.",
-      "card.librebase.goodtoknow.5": "MIT-licentie — bijdragen welkom.",
-      "card.librebase.legal.arialabel": "LibreBase juridische links",
-
-      "card.hovercalc.icon.alt": "HoverCalc app-icoon",
-      "card.hovercalc.status": "1.1.6 · Beschikbaar in de Mac App Store",
-      "card.hovercalc.tagline": "Een menubalk-rekenmachine die meebeweegt met jouw workflow.",
-      "card.hovercalc.description": "HoverCalc is een snelle macOS-rekenmachine voor dagelijkse berekeningen vanuit de menubalk, met een losmaakbaar zwevend paneel dat beschikbaar blijft op alle desktops en fullscreen-apps. Nu met 7 kleurthema's, instelbare paneeldoorzichtigheid, machtsverheffing (^) en lokalisatie in 128 talen.",
-      "card.hovercalc.meta.distribution": "Mac App Store",
-      "card.hovercalc.meta.storestatus": "Beschikbaar",
-      "card.hovercalc.meta.currentbuild": "58 (versie 1.1.6)",
-      "card.hovercalc.meta.languages": "128 talen",
-      "card.hovercalc.platform.menubar": "Menubalk-hulpprogramma",
-      "card.hovercalc.platform.floatingpanel": "Zwevend paneel",
-      "card.hovercalc.platform.hotkey": "Globale sneltoets",
-      "card.hovercalc.platform.calc": "Expressie-rekenmachine",
-      "card.hovercalc.platform.themes": "Kleurthema's",
-      "card.hovercalc.platform.languages": "128 talen",
-      "card.hovercalc.why.title": "Waarom HoverCalc",
-      "card.hovercalc.why.1": "Snel berekenen zonder een volledige desktopapp te openen.",
-      "card.hovercalc.why.2": "Menubalktoegang voor snelle losse berekeningen.",
-      "card.hovercalc.why.3": "Losmaakbaar paneel voor naast-elkaar-werken.",
-      "card.hovercalc.why.4": "Toetsenbord-eerste invoer en hergebruik van geschiedenis.",
-      "card.hovercalc.why.5": "Werkt betrouwbaar over alle spaces en fullscreen-vensters.",
-      "card.hovercalc.greatfor.title": "Ideaal voor",
-      "card.hovercalc.greatfor.1": "Budgetcontroles tijdens het browsen",
-      "card.hovercalc.greatfor.2": "Snelle technische berekeningen",
-      "card.hovercalc.greatfor.3": "Snelle controles van spreadsheets",
-      "card.hovercalc.greatfor.4": "Onderzoeks- en planningsworkflows",
-      "card.hovercalc.greatfor.5": "Algemene desktopproductiviteit",
-      "card.hovercalc.screenshots.arialabel": "HoverCalc schermafbeeldingen",
-      "card.hovercalc.shot.ocean.alt": "HoverCalc Ocean-thema",
-      "card.hovercalc.shot.ocean.caption": "Ocean",
-      "card.hovercalc.shot.blush.alt": "HoverCalc Blush-thema",
-      "card.hovercalc.shot.blush.caption": "Blush",
-      "card.hovercalc.shot.settings.alt": "HoverCalc instellingen met thema-kiezer",
-      "card.hovercalc.shot.settings.caption": "Instellingen",
-      "card.hovercalc.legal.arialabel": "HoverCalc juridische links",
-
-      "card.pawmode.icon.alt": "PawMode app-icoon",
-      "card.pawmode.status": "1.0.0 · In ontwikkeling",
-      "card.pawmode.tagline": "Bewaak de temperatuur in je voertuig en houd je huisdieren veilig.",
-      "card.pawmode.description": "PawMode verandert een reserveiPhone in een Tesla-stijl Hondenmodus voor elk voertuig. Laat hem in je auto of camper om de temperatuur te bewaken, een live camerabeeld met bewakingsindicatoren te tonen en geruststellende berichten te laten zien aan voorbijgangers. Koppel een tweede toestel voor externe meldingen, snapshots en volledige controle vanuit je zak.",
-      "card.pawmode.meta.distribution": "Directe build / intern testen",
-      "card.pawmode.meta.storestatus": "Nog niet ingediend",
-      "card.pawmode.meta.currentbuild": "In ontwikkeling",
-      "card.pawmode.meta.plannedrelease": "Nader te bepalen",
-      "card.pawmode.meta.languages": "Engels (VS) + automatische vertaling",
-      "card.pawmode.meta.iap": "Premium abonnement (wekelijks / maandelijks / jaarlijks / levenslang)",
-      "card.pawmode.platform.thermal": "Temperatuurbewaking",
-      "card.pawmode.platform.camera": "Live camerabeeld",
-      "card.pawmode.platform.pairing": "Twee-toestellen-koppeling",
-      "card.pawmode.platform.alerts": "Externe meldingen",
-      "card.pawmode.why.title": "Waarom PawMode",
-      "card.pawmode.why.1": "Realtime temperatuurmonitoring met kleurgecodeerde meldingen.",
-      "card.pawmode.why.2": "Live voorcamera voor visuele afschrikking.",
-      "card.pawmode.why.3": "Twee-toestellen-koppeling voor bewaking op afstand vanuit je zak.",
-      "card.pawmode.why.4": "Aanpasbare berichten die automatisch vertalen naar de lokale taal.",
-      "card.pawmode.why.5": "Pushmeldingen wanneer de temperatuur kritieke niveaus bereikt.",
-      "card.pawmode.greatfor.title": "Ideaal voor",
-      "card.pawmode.greatfor.1": "Huisdiereigenaren met honden of katten in de auto",
-      "card.pawmode.greatfor.2": "Reizigers met een camper of bestelbus",
-      "card.pawmode.greatfor.3": "Antidiefstalbescherming tijdens het parkeren",
-      "card.pawmode.greatfor.4": "Voorbijgangers geruststellen dat je huisdieren veilig zijn",
-      "card.pawmode.greatfor.5": "Soloreizigers en auto-kampeerders",
-      "card.pawmode.screenshots.arialabel": "PawMode schermafbeeldingen",
-      "card.pawmode.shot.monitor.alt": "PawMode bewakingsdashboard",
-      "card.pawmode.shot.monitor.caption": "Bewakingsmodus",
-      "card.pawmode.shot.alert.alt": "PawMode temperatuurwaarschuwing",
-      "card.pawmode.shot.alert.caption": "Temperatuurwaarschuwing",
-      "card.pawmode.shot.personal.alt": "PawMode persoonlijk dashboard gekoppeld aan een voertuig",
-      "card.pawmode.shot.personal.caption": "Persoonlijk dashboard",
-      "card.pawmode.legal.arialabel": "PawMode juridische links",
-
-      "card.trackhound.icon.alt": "TrackHound app-icoon",
-      "card.trackhound.status": "1.0.0 · Live",
-      "card.trackhound.tagline": "Navigatie die bewust de kleine wegen kiest.",
-      "card.trackhound.description": "TrackHound is een offline routeer-app voor ADV-motoren, supermoto, 4x4 / overlanding en gravelrijders. Waar andere apps optimaliseren voor snelheid of afstand, zoekt TrackHound smalle landweggetjes, boerenpaadjes en onverharde paden. Routering draait volledig op je iPhone met gedownloade kaartregio's, zodat het ook zonder signaal blijft werken.",
-      "card.trackhound.meta.distribution": "Directe build / intern testen",
-      "card.trackhound.meta.storestatus": "Beschikbaar in de App Store",
-      "card.trackhound.meta.currentbuild": "27 (versie 1.0.0)",
-      "card.trackhound.meta.plannedrelease": "Nader te bepalen",
-      "card.trackhound.meta.languages": "Engels (VS)",
-      "card.trackhound.meta.iap": "TrackHound Pro (abonnement &amp; levenslang)",
-      "card.trackhound.platform.routing": "Routering op toestel",
-      "card.trackhound.platform.offline": "Offline kaarten",
-      "card.trackhound.platform.roadbook": "Bocht-voor-bocht roadbook",
-      "card.trackhound.platform.gpx": "GPX importeren &amp; exporteren",
-      "card.trackhound.why.title": "Waarom TrackHound",
-      "card.trackhound.why.1": "Vier routestijlen — Kortste, Snelste, Kronkeligste en Onverhard.",
-      "card.trackhound.why.2": "Vergelijk alle vier routes op de kaart voor je vertrekt.",
-      "card.trackhound.why.3": "Valhalla-routering op het toestel — werkt volledig offline.",
-      "card.trackhound.why.4": "In één oogopslag leesbaar roadbook met kompasrichting en snelheid.",
-      "card.trackhound.why.5": "Lusroute-generator voor rondritten terug naar je startpunt.",
-      "card.trackhound.greatfor.title": "Ideaal voor",
-      "card.trackhound.greatfor.1": "Adventure- en dual-sport-motoren",
-      "card.trackhound.greatfor.2": "Supermoto en enduro op buitenwegen",
-      "card.trackhound.greatfor.3": "4x4- en overlanding-tochten",
-      "card.trackhound.greatfor.4": "Gravelrijden en verkenning op onverharde wegen",
-      "card.trackhound.greatfor.5": "Weekend-lusritten over kronkelwegen",
-      "card.trackhound.screenshots.arialabel": "TrackHound schermafbeeldingen",
-      "card.trackhound.shot.route.alt": "TrackHound route getekend door de Belgische Ardennen",
-      "card.trackhound.shot.route.caption": "Route op de kaart",
-      "card.trackhound.shot.presets.alt": "TrackHound routestijl-kiezer",
-      "card.trackhound.shot.presets.caption": "Vier routestijlen",
-      "card.trackhound.shot.roadbook.alt": "TrackHound in één oogopslag leesbaar roadbook",
-      "card.trackhound.shot.roadbook.caption": "Bocht-voor-bocht roadbook",
-      "card.trackhound.legal.arialabel": "TrackHound juridische links",
-
-      "card.pickdateplace.icon.alt": "PickDatePlace app-icoon",
-      "card.pickdateplace.status": "1.0.0 · Klaar voor indiening",
-      "card.pickdateplace.tagline": "Kies eerst de datum, dan de locatie.",
-      "card.pickdateplace.description": "PickDatePlace (PDP) maakt groepsplanning eenvoudig: bepaal eerst wanneer, dan valt alles op zijn plek. Maak een peiling in iMessage, deel tijdopties en laat iedereen in seconden Ja / Misschien / Nee stemmen. PDP markeert automatisch de beste overlapping zodat je groep snel een datum kan vastleggen, zonder eindeloze chatgesprekken.",
-      "card.pickdateplace.meta.distribution": "TestFlight / Xcode Cloud",
-      "card.pickdateplace.meta.storestatus": "iOS App 1.0.0 in voorbereiding voor review",
-      "card.pickdateplace.meta.currentbuild": "11 (versie 1.0.0)",
-      "card.pickdateplace.meta.plannedrelease": "niet eerder dan 9 feb. 2026 15:00 CET",
-      "card.pickdateplace.meta.languages": "Engels (VS)",
-      "card.pickdateplace.meta.iap": "Maandelijks Organisator-abonnement",
-      "card.pickdateplace.platform.imessage": "iMessage-app",
-      "card.pickdateplace.platform.groupscheduling": "Groepsplanning",
-      "card.pickdateplace.platform.polls": "Beschikbaarheidspeilingen",
-      "card.pickdateplace.platform.calendar": "Apple Agenda-integratie",
-      "card.pickdateplace.why.title": "Waarom PDP",
-      "card.pickdateplace.why.1": "Maak datum/tijdpeilingen in slechts een paar tikken.",
-      "card.pickdateplace.why.2": "Deel rechtstreeks in iMessage-gesprekken.",
-      "card.pickdateplace.why.3": "Verzamel snel beschikbaarheid van je groep.",
-      "card.pickdateplace.why.4": "Zie het beste tijdstip in één oogopslag.",
-      "card.pickdateplace.why.5": "Vergrendel de winnende optie en rond de plannen af.",
-      "card.pickdateplace.greatfor.title": "Ideaal voor",
-      "card.pickdateplace.greatfor.1": "Etentjes plannen",
-      "card.pickdateplace.greatfor.2": "Teambijeenkomsten",
-      "card.pickdateplace.greatfor.3": "Familieactiviteiten",
-      "card.pickdateplace.greatfor.4": "Studiegroepen",
-      "card.pickdateplace.greatfor.5": "Weekendactiviteiten",
-      "card.pickdateplace.screenshots.arialabel": "PickDatePlace schermafbeeldingen",
-      "card.pickdateplace.shot.org1.alt": "PickDatePlace organisatorscherm 1",
-      "card.pickdateplace.shot.org2.alt": "PickDatePlace organisatorscherm 2",
-      "card.pickdateplace.shot.org3.alt": "PickDatePlace organisatorscherm 3",
-      "card.pickdateplace.shot.org.caption": "Organisatorstroom",
-      "card.pickdateplace.shot.att1.alt": "PickDatePlace deelnemerscherm 1",
-      "card.pickdateplace.shot.att2.alt": "PickDatePlace deelnemerscherm 2",
-      "card.pickdateplace.shot.att3.alt": "PickDatePlace deelnemerscherm 3",
-      "card.pickdateplace.shot.att.caption": "Deelnemerstroom",
-      "card.pickdateplace.btn.testflight": "TestFlight-toegang aanvragen",
-      "card.pickdateplace.btn.feedback": "Vragen of feedback",
-      "card.pickdateplace.legal.arialabel": "PickDatePlace juridische links",
-
-      "footer.rights": "Alle rechten voorbehouden."
-    },
-    fr: {
-      "meta.title": "Apps — Michel Storms",
-      "meta.description": "Applications de Michel Storms pour les plateformes Apple",
-
-      "nav.home": "Accueil",
-      "nav.apps": "Apps",
-      "nav.blog": "Blog",
-      "nav.accessibility": "Accessibilité",
-
-      "hero.label": "Produits",
-      "hero.title": "Les apps que je développe",
-      "hero.subtitle": "Des applications indépendantes conçues pour les utilisateurs Apple, avec un accent sur la clarté, la rapidité et des flux de travail utiles.",
-
-      "apps.grid.arialabel": "Liste des apps",
-      "platforms.arialabel": "Plateformes prises en charge",
-      "screenshots.title": "Captures d'écran",
-
-      "meta.label.distribution": "Distribution :",
-      "meta.label.storestatus": "Statut store :",
-      "meta.label.currentbuild": "Build actuel :",
-      "meta.label.testedwith": "Testé avec :",
-      "meta.label.languages": "Langues :",
-      "meta.label.source": "Code source :",
-      "meta.label.plannedrelease": "Sortie prévue :",
-      "meta.label.iap": "Achat intégré :",
-
-      "legal.tos": "Conditions d'utilisation",
-      "legal.license": "Contrat de licence",
-      "legal.mit": "Licence (MIT)",
-      "legal.privacy": "Politique de confidentialité",
-
-      "btn.macappstore": "Télécharger sur le Mac App Store",
-      "btn.appstore": "Télécharger sur l'App Store",
-      "btn.learnmore": "En savoir plus",
-      "btn.viewgithub": "Voir sur GitHub",
-
-      "card.librebase.icon.alt": "Icône de l'app LibreBase",
-      "card.librebase.status": "1.0.0 · En développement",
-      "card.librebase.tagline": "Votre balance QardioBase, directement dans Santé Apple.",
-      "card.librebase.description": "Quand Qardio a fermé — app supprimée, serveurs éteints — les balances continuaient de fonctionner en Bluetooth. LibreBase est une petite app iOS indépendante et open-source qui se connecte à votre QardioBase, lit votre poids dès que vous montez dessus et l'enregistre dans Santé Apple. Pas de compte, pas de cloud, pas d'app Qardio, pas de tracking.",
-      "card.librebase.meta.distribution": "Build direct / TestFlight",
-      "card.librebase.meta.storestatus": "Prêt pour soumission",
-      "card.librebase.meta.currentbuild": "4 (version 1.0.0)",
-      "card.librebase.meta.testedwith": "QardioBase 1re génération (B100) uniquement",
-      "card.librebase.meta.languages": "Anglais (É.-U.)",
-      "card.librebase.meta.source": "Open source (MIT) sur GitHub",
-      "card.librebase.platform.bmi": "IMC intégré",
-      "card.librebase.platform.units": "Métrique &amp; impérial",
-      "card.librebase.platform.opensource": "Open source",
-      "card.librebase.why.title": "Pourquoi LibreBase",
-      "card.librebase.why.1": "Redonne vie à une QardioBase abandonnée après la fermeture de Qardio.",
-      "card.librebase.why.2": "Bluetooth direct — aucun compte, cloud ou app Qardio nécessaire.",
-      "card.librebase.why.3": "Poids enregistré directement dans Santé Apple sur votre appareil.",
-      "card.librebase.why.4": "IMC calculé à partir de votre taille, synchronisé avec Santé Apple.",
-      "card.librebase.why.5": "Aucun serveur, aucune analytics, absolument aucun tracking.",
-      "card.librebase.goodtoknow.title": "Bon à savoir",
-      "card.librebase.goodtoknow.1": "Testé uniquement avec le QardioBase original (1re gen, B100).",
-      "card.librebase.goodtoknow.2": "QardioBase 2 / X non testés — peut fonctionner, sans garantie.",
-      "card.librebase.goodtoknow.3": "Les unités suivent votre région : kg/lb et cm/ft.",
-      "card.librebase.goodtoknow.4": "Un journal bien-être, pas un dispositif médical.",
-      "card.librebase.goodtoknow.5": "Licence MIT — contributions bienvenues.",
-      "card.librebase.legal.arialabel": "Liens légaux LibreBase",
-
-      "card.hovercalc.icon.alt": "Icône de l'app HoverCalc",
-      "card.hovercalc.status": "1.1.6 · Disponible sur le Mac App Store",
-      "card.hovercalc.tagline": "Une calculatrice dans la barre de menus qui suit votre flux de travail.",
-      "card.hovercalc.description": "HoverCalc est une calculatrice macOS rapide pour les calculs du quotidien depuis la barre de menus, avec un panneau flottant détachable qui reste disponible sur tous les bureaux et apps plein écran. Désormais avec 7 thèmes de couleurs, opacité du panneau réglable, opérateur puissance (^) et localisation en 128 langues.",
-      "card.hovercalc.meta.distribution": "Mac App Store",
-      "card.hovercalc.meta.storestatus": "Disponible",
-      "card.hovercalc.meta.currentbuild": "58 (version 1.1.6)",
-      "card.hovercalc.meta.languages": "128 langues",
-      "card.hovercalc.platform.menubar": "Utilitaire barre de menus",
-      "card.hovercalc.platform.floatingpanel": "Panneau flottant",
-      "card.hovercalc.platform.hotkey": "Raccourci global",
-      "card.hovercalc.platform.calc": "Calculatrice d'expressions",
-      "card.hovercalc.platform.themes": "Thèmes de couleurs",
-      "card.hovercalc.platform.languages": "128 langues",
-      "card.hovercalc.why.title": "Pourquoi HoverCalc",
-      "card.hovercalc.why.1": "Calculs rapides sans ouvrir une app bureau complète.",
-      "card.hovercalc.why.2": "Accès depuis la barre de menus pour des calculs ponctuels.",
-      "card.hovercalc.why.3": "Panneau détachable pour travailler côte à côte.",
-      "card.hovercalc.why.4": "Saisie clavier en priorité et réutilisation de l'historique.",
-      "card.hovercalc.why.5": "Fonctionne de manière fiable sur tous les espaces et fenêtres plein écran.",
-      "card.hovercalc.greatfor.title": "Idéal pour",
-      "card.hovercalc.greatfor.1": "Vérifications de budget en naviguant",
-      "card.hovercalc.greatfor.2": "Calculs rapides en ingénierie",
-      "card.hovercalc.greatfor.3": "Vérifications ponctuelles de tableurs",
-      "card.hovercalc.greatfor.4": "Flux de travail de recherche et planification",
-      "card.hovercalc.greatfor.5": "Productivité générale sur bureau",
-      "card.hovercalc.screenshots.arialabel": "Captures d'écran HoverCalc",
-      "card.hovercalc.shot.ocean.alt": "HoverCalc thème Ocean",
-      "card.hovercalc.shot.ocean.caption": "Ocean",
-      "card.hovercalc.shot.blush.alt": "HoverCalc thème Blush",
-      "card.hovercalc.shot.blush.caption": "Blush",
-      "card.hovercalc.shot.settings.alt": "Paramètres HoverCalc avec sélecteur de thème",
-      "card.hovercalc.shot.settings.caption": "Paramètres",
-      "card.hovercalc.legal.arialabel": "Liens légaux HoverCalc",
-
-      "card.pawmode.icon.alt": "Icône de l'app PawMode",
-      "card.pawmode.status": "1.0.0 · En développement",
-      "card.pawmode.tagline": "Surveillez la température de votre véhicule et gardez vos animaux en sécurité.",
-      "card.pawmode.description": "PawMode transforme un iPhone de rechange en mode Chien à la Tesla pour n'importe quel véhicule. Laissez-le dans votre voiture ou camping-car pour surveiller la température, afficher un flux caméra en direct avec indicateurs de surveillance et montrer des messages rassurants aux passants. Coupler un second appareil pour recevoir des alertes à distance, des instantanés et un contrôle total depuis votre poche.",
-      "card.pawmode.meta.distribution": "Build direct / tests internes",
-      "card.pawmode.meta.storestatus": "Pas encore soumis",
-      "card.pawmode.meta.currentbuild": "En développement",
-      "card.pawmode.meta.plannedrelease": "À déterminer",
-      "card.pawmode.meta.languages": "Anglais (É.-U.) + traduction automatique",
-      "card.pawmode.meta.iap": "Abonnement Premium (hebdomadaire / mensuel / annuel / à vie)",
-      "card.pawmode.platform.thermal": "Surveillance thermique",
-      "card.pawmode.platform.camera": "Flux caméra en direct",
-      "card.pawmode.platform.pairing": "Couplage deux appareils",
-      "card.pawmode.platform.alerts": "Alertes à distance",
-      "card.pawmode.why.title": "Pourquoi PawMode",
-      "card.pawmode.why.1": "Surveillance thermique en temps réel avec alertes codées par couleur.",
-      "card.pawmode.why.2": "Flux caméra avant en direct pour une dissuasion visuelle.",
-      "card.pawmode.why.3": "Couplage deux appareils pour la surveillance à distance depuis votre poche.",
-      "card.pawmode.why.4": "Messages personnalisables traduits automatiquement dans la langue locale.",
-      "card.pawmode.why.5": "Notifications push quand la température atteint des niveaux critiques.",
-      "card.pawmode.greatfor.title": "Idéal pour",
-      "card.pawmode.greatfor.1": "Propriétaires d'animaux avec chiens ou chats en voiture",
-      "card.pawmode.greatfor.2": "Voyageurs en camping-car ou fourgon aménagé",
-      "card.pawmode.greatfor.3": "Dissuasion antivol pendant le stationnement",
-      "card.pawmode.greatfor.4": "Rassurer les passants que vos animaux sont en sécurité",
-      "card.pawmode.greatfor.5": "Voyageurs solitaires et campeurs en voiture",
-      "card.pawmode.screenshots.arialabel": "Captures d'écran PawMode",
-      "card.pawmode.shot.monitor.alt": "Tableau de bord de surveillance PawMode",
-      "card.pawmode.shot.monitor.caption": "Mode surveillance",
-      "card.pawmode.shot.alert.alt": "Alerte thermique PawMode",
-      "card.pawmode.shot.alert.caption": "Alerte thermique",
-      "card.pawmode.shot.personal.alt": "Tableau de bord personnel PawMode couplé à un véhicule",
-      "card.pawmode.shot.personal.caption": "Tableau de bord personnel",
-      "card.pawmode.legal.arialabel": "Liens légaux PawMode",
-
-      "card.trackhound.icon.alt": "Icône de l'app TrackHound",
-      "card.trackhound.status": "1.0.0 · En ligne",
-      "card.trackhound.tagline": "Une navigation qui emprunte délibérément les petites routes.",
-      "card.trackhound.description": "TrackHound est une app de routage hors ligne pour motos ADV, supermoto, 4x4 / overlanding et vélos de gravel. Là où d'autres apps optimisent la vitesse ou la distance, TrackHound traque les petites routes, chemins agricoles et pistes non goudronnées. Le routage s'exécute entièrement sur votre iPhone avec des régions cartographiques téléchargées, et fonctionne donc sans signal.",
-      "card.trackhound.meta.distribution": "Build direct / tests internes",
-      "card.trackhound.meta.storestatus": "Disponible sur l'App Store",
-      "card.trackhound.meta.currentbuild": "27 (version 1.0.0)",
-      "card.trackhound.meta.plannedrelease": "À déterminer",
-      "card.trackhound.meta.languages": "Anglais (É.-U.)",
-      "card.trackhound.meta.iap": "TrackHound Pro (abonnement &amp; à vie)",
-      "card.trackhound.platform.routing": "Routage sur appareil",
-      "card.trackhound.platform.offline": "Cartes hors ligne",
-      "card.trackhound.platform.roadbook": "Roadbook virage par virage",
-      "card.trackhound.platform.gpx": "Import &amp; export GPX",
-      "card.trackhound.why.title": "Pourquoi TrackHound",
-      "card.trackhound.why.1": "Quatre styles d'itinéraire — Plus court, Plus rapide, Plus sinueux et Plus non goudronné.",
-      "card.trackhound.why.2": "Comparez les quatre itinéraires sur la carte avant de partir.",
-      "card.trackhound.why.3": "Routage Valhalla sur l'appareil — fonctionne entièrement hors ligne.",
-      "card.trackhound.why.4": "Roadbook lisible d'un coup d'œil avec boussole de cap et vitesse.",
-      "card.trackhound.why.5": "Générateur de boucles pour les allers-retours vers votre point de départ.",
-      "card.trackhound.greatfor.title": "Idéal pour",
-      "card.trackhound.greatfor.1": "Motos adventure et dual-sport",
-      "card.trackhound.greatfor.2": "Sorties supermoto et enduro sur routes secondaires",
-      "card.trackhound.greatfor.3": "Sorties 4x4 et overlanding",
-      "card.trackhound.greatfor.4": "Exploration gravel et pistes non goudronnées",
-      "card.trackhound.greatfor.5": "Boucles du week-end sur les routes sinueuses",
-      "card.trackhound.screenshots.arialabel": "Captures d'écran TrackHound",
-      "card.trackhound.shot.route.alt": "Itinéraire TrackHound tracé à travers les Ardennes belges",
-      "card.trackhound.shot.route.caption": "Itinéraire sur la carte",
-      "card.trackhound.shot.presets.alt": "Sélecteur de style d'itinéraire TrackHound",
-      "card.trackhound.shot.presets.caption": "Quatre styles d'itinéraire",
-      "card.trackhound.shot.roadbook.alt": "Roadbook TrackHound lisible d'un coup d'œil",
-      "card.trackhound.shot.roadbook.caption": "Roadbook virage par virage",
-      "card.trackhound.legal.arialabel": "Liens légaux TrackHound",
-
-      "card.pickdateplace.icon.alt": "Icône de l'app PickDatePlace",
-      "card.pickdateplace.status": "1.0.0 · Prêt pour soumission",
-      "card.pickdateplace.tagline": "Choisissez d'abord la date, puis l'endroit.",
-      "card.pickdateplace.description": "PickDatePlace (PDP) simplifie la planification en groupe : décidez d'abord quand, tout le reste s'enchaîne naturellement. Créez un sondage dans iMessage, partagez des créneaux et laissez chacun voter Oui / Peut-être / Non en quelques secondes. PDP met automatiquement en évidence le meilleur créneau commun pour que votre groupe puisse fixer une date rapidement, sans fils de discussion interminables.",
-      "card.pickdateplace.meta.distribution": "TestFlight / Xcode Cloud",
-      "card.pickdateplace.meta.storestatus": "iOS App 1.0.0 en préparation pour review",
-      "card.pickdateplace.meta.currentbuild": "11 (version 1.0.0)",
-      "card.pickdateplace.meta.plannedrelease": "pas avant le 9 fév. 2026 15h00 CET",
-      "card.pickdateplace.meta.languages": "Anglais (É.-U.)",
-      "card.pickdateplace.meta.iap": "Abonnement Organisateur mensuel",
-      "card.pickdateplace.platform.imessage": "App iMessage",
-      "card.pickdateplace.platform.groupscheduling": "Planification de groupe",
-      "card.pickdateplace.platform.polls": "Sondages de disponibilité",
-      "card.pickdateplace.platform.calendar": "Intégration Calendrier Apple",
-      "card.pickdateplace.why.title": "Pourquoi PDP",
-      "card.pickdateplace.why.1": "Créez des sondages date/heure en quelques gestes seulement.",
-      "card.pickdateplace.why.2": "Partagez directement dans les conversations iMessage.",
-      "card.pickdateplace.why.3": "Recueillez rapidement les disponibilités de votre groupe.",
-      "card.pickdateplace.why.4": "Voyez le meilleur créneau commun d'un coup d'œil.",
-      "card.pickdateplace.why.5": "Verrouillez l'option gagnante et finalisez les plans.",
-      "card.pickdateplace.greatfor.title": "Idéal pour",
-      "card.pickdateplace.greatfor.1": "Organiser un dîner",
-      "card.pickdateplace.greatfor.2": "Réunions d'équipe",
-      "card.pickdateplace.greatfor.3": "Événements en famille",
-      "card.pickdateplace.greatfor.4": "Groupes de travail",
-      "card.pickdateplace.greatfor.5": "Activités du week-end",
-      "card.pickdateplace.screenshots.arialabel": "Captures d'écran PickDatePlace",
-      "card.pickdateplace.shot.org1.alt": "PickDatePlace écran organisateur 1",
-      "card.pickdateplace.shot.org2.alt": "PickDatePlace écran organisateur 2",
-      "card.pickdateplace.shot.org3.alt": "PickDatePlace écran organisateur 3",
-      "card.pickdateplace.shot.org.caption": "Flux organisateur",
-      "card.pickdateplace.shot.att1.alt": "PickDatePlace écran participant 1",
-      "card.pickdateplace.shot.att2.alt": "PickDatePlace écran participant 2",
-      "card.pickdateplace.shot.att3.alt": "PickDatePlace écran participant 3",
-      "card.pickdateplace.shot.att.caption": "Flux participant",
-      "card.pickdateplace.btn.testflight": "Demander l'accès TestFlight",
-      "card.pickdateplace.btn.feedback": "Questions ou retours",
-      "card.pickdateplace.legal.arialabel": "Liens légaux PickDatePlace",
-
-      "footer.rights": "Tous droits réservés."
-    }
-  };
-  </script>
+  <!-- i18n provided by the open-source render above -->
   <script src="/assets/i18n.js"></script>
 </body>
 </html>
