@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PawMode — Press &amp; Media Kit</title>
+  <meta name="description" content="Press and media kit for PawMode: a Tesla-style Dog Mode for any vehicle that turns a spare iPhone into a live pet monitor. Facts, screenshots, and downloadable assets.">
+  <link rel="canonical" href="https://michelstorms.com/pawmode/press/">
+
+  <link rel="icon" type="image/png" href="/assets/logo-og.png">
+  <link rel="apple-touch-icon" href="/assets/logo-og.png">
+
+  <meta property="og:title" content="PawMode — Press &amp; Media Kit">
+  <meta property="og:description" content="A Tesla-style Dog Mode for any vehicle — turn a spare iPhone into a live pet monitor. Facts, screenshots, and a downloadable press kit.">
+  <meta property="og:url" content="https://michelstorms.com/pawmode/press/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/pawmode/press/keyart.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PawMode — Press &amp; Media Kit">
+  <meta name="twitter:description" content="A Tesla-style Dog Mode for any vehicle. Downloadable press kit.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/pawmode/press/keyart.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      --accent: #14b8a6;
+      --accent-light: #2dd4bf;
+      --accent-ink: #0f766e;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 10; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Buttons ===== */
+    .btn { display: inline-block; border-radius: 8px; padding: 13px 26px; font-size: 0.9rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s; border: 1px solid transparent; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(20,184,166,0.28); }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--accent-light); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--gray-300); }
+    .btn-outline:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-ink); }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
+
+    /* ===== Hero ===== */
+    .hero { text-align: center; padding: 80px 24px 60px; background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(20,184,166,0.10) 0%, transparent 70%); border-radius: 50%; }
+    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 22px; box-shadow: 0 12px 34px rgba(0,0,0,0.16); }
+    .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 14px; }
+    .status-pill { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); background: rgba(20,184,166,0.12); padding: 5px 12px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 700; line-height: 1.08; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 8px; }
+    .tagline { font-family: var(--font-heading); font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 600; color: var(--accent-ink); margin-bottom: 18px; font-style: italic; }
+    .hero p.lede { font-size: 1.1rem; color: var(--gray-500); max-width: 600px; margin: 0 auto 28px; line-height: 1.75; }
+    .hero-note { font-size: 0.85rem; color: var(--gray-400); margin-top: 16px; }
+
+    /* ===== Key art showcase ===== */
+    .showcase { background: var(--navy-dark); padding: 0; overflow: hidden; }
+    .showcase img { width: 100%; max-width: 1600px; margin: 0 auto; }
+
+    /* ===== Sections ===== */
+    section { padding: 80px 0; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 14px; }
+    .section-title { font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 18px; letter-spacing: -0.02em; }
+    .section-subtitle { font-size: 1.02rem; color: var(--gray-500); max-width: 620px; line-height: 1.7; }
+
+    /* ===== Facts ===== */
+    .facts { background: var(--off-white); }
+    .facts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 8px; }
+    .facts-grid dl { display: contents; }
+    .fact { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--gray-200); }
+    .fact dt { color: var(--gray-500); font-weight: 500; flex: 0 0 auto; }
+    .fact dd { text-align: right; font-weight: 500; color: var(--navy); }
+    .fact dd a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ===== Hook ===== */
+    .hook-list { list-style: none; display: grid; gap: 16px; max-width: 860px; }
+    .hook-list li { position: relative; padding-left: 30px; color: var(--gray-500); line-height: 1.7; }
+    .hook-list li::before { content: ''; position: absolute; left: 0; top: 11px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .hook-list strong { color: var(--navy); font-weight: 600; }
+
+    /* ===== Two-device ===== */
+    .pairing { background: var(--off-white); }
+    .pairing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .pairing-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 30px 28px; }
+    .pairing-card .badge { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink); background: rgba(20,184,166,0.12); padding: 5px 10px; border-radius: 999px; margin-bottom: 14px; }
+    .pairing-card h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px; color: var(--navy); }
+    .pairing-card p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.65; }
+
+    /* ===== Gallery ===== */
+    .gallery { background: var(--white); }
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+    figure { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; }
+    figure img { width: 100%; }
+    figcaption { font-size: 0.85rem; color: var(--gray-500); padding: 12px 14px; text-align: center; }
+
+    /* ===== Features (free vs premium) ===== */
+    .features { background: var(--off-white); }
+    .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .tier { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 30px 28px; }
+    .tier.pro { background: var(--navy); border-color: var(--navy); color: var(--white); }
+    .tier h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 4px; color: inherit; }
+    .tier .price { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 18px; }
+    .tier.pro .price { color: var(--accent-light); }
+    .tier ul { list-style: none; display: grid; gap: 11px; }
+    .tier li { position: relative; padding-left: 26px; font-size: 0.95rem; line-height: 1.55; color: var(--gray-500); }
+    .tier.pro li { color: var(--gray-300); }
+    .tier li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+
+    /* ===== Callout ===== */
+    .callout-wrap { background: var(--white); }
+    .callout { background: linear-gradient(135deg, #2d2e3a 0%, #3d3e4e 100%); color: var(--white); border-radius: 20px; padding: 44px 40px; max-width: 920px; margin: 0 auto; position: relative; overflow: hidden; }
+    .callout::before { content: ''; position: absolute; top: -50%; right: -10%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(20,184,166,0.22) 0%, transparent 70%); border-radius: 50%; }
+    .callout-inner { position: relative; }
+    .callout h3 { font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 12px; }
+    .callout p { color: var(--gray-300); max-width: 640px; margin-bottom: 22px; }
+    .callout .sub { font-size: 0.9rem; color: var(--gray-400); margin-top: 14px; }
+
+    /* ===== Press kit ===== */
+    .kit { background: var(--off-white); }
+    .kit-previews { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; margin: 6px 0 28px; }
+    .kit-previews img { border-radius: 14px; border: 1px solid var(--gray-200); }
+    .kit-previews .thumb-icon { width: 92px; height: 92px; }
+    .kit-previews .thumb-art { width: 220px; height: auto; }
+    .kit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px; margin-top: 30px; }
+    .kit-list { list-style: none; display: grid; gap: 10px; }
+    .kit-list li { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px solid var(--gray-200); padding-bottom: 10px; font-size: 0.95rem; }
+    .kit-list .links a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; margin-left: 10px; white-space: nowrap; }
+    .kit-list .label { color: var(--navy); font-weight: 500; }
+    .sub-head { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 14px; }
+    .brand-basics { display: grid; gap: 12px; }
+    .swatch-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { display: flex; align-items: center; gap: 9px; font-size: 0.85rem; color: var(--gray-500); }
+    .swatch i { width: 26px; height: 26px; border-radius: 7px; display: inline-block; border: 1px solid var(--gray-200); }
+    .brand-basics .row { font-size: 0.92rem; color: var(--gray-500); }
+    .brand-basics .row strong { color: var(--navy); }
+
+    /* ===== Boilerplate / contact ===== */
+    .boiler { background: var(--navy); color: var(--white); text-align: center; }
+    .boiler .section-title { color: var(--white); }
+    .boiler blockquote { font-size: 1.1rem; color: var(--gray-300); max-width: 720px; margin: 0 auto 28px; line-height: 1.7; font-style: italic; }
+    .boiler a.mail { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+    .boiler-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 20px; font-size: 0.9rem; }
+    .boiler-links a { color: var(--gray-300); text-decoration: underline; text-underline-offset: 2px; }
+    .boiler-links a:hover { color: var(--white); }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px 48px; }
+      section { padding: 56px 0; }
+      .facts-grid { grid-template-columns: 1fr; gap: 0; }
+      .pairing-grid { grid-template-columns: 1fr; }
+      .shots { grid-template-columns: 1fr 1fr; }
+      .tiers { grid-template-columns: 1fr; }
+      .kit-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 480px) {
+      .shots { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .fact dd { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
+        <li><a href="/pawmode/">PawMode</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-icon" src="/assets/apps/pawmode/icon.png" alt="PawMode app icon">
+      <span class="eyebrow">Press &amp; Media Kit</span><span class="status-pill">Coming soon</span>
+      <h1>PawMode</h1>
+      <p class="tagline">Monitor your pet in the car.</p>
+      <p class="lede">A Tesla-style Dog Mode for any vehicle &mdash; turn a spare iPhone into a live pet monitor you can check from anywhere.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/assets/apps/pawmode/press/pawmode-press-kit.zip" download>Download press kit (.zip)</a>
+        <a class="btn btn-outline" href="mailto:michelstorms@icloud.com?subject=PawMode%20%E2%80%94%20press%20%2F%20beta%20access">Request beta / press access</a>
+      </div>
+      <p class="hero-note">Currently in TestFlight beta and App Store review &mdash; not yet publicly available.</p>
+    </div>
+  </section>
+
+  <!-- Key art -->
+  <section class="showcase">
+    <img src="/assets/apps/pawmode/press/keyart.jpg" alt="PawMode key art — the paw-and-car mark with a thermal gauge and the tagline ‘Monitor your pet in the car’">
+  </section>
+
+  <!-- Facts -->
+  <section class="facts">
+    <div class="container">
+      <span class="section-label">At a glance</span>
+      <h2 class="section-title">The facts</h2>
+      <div class="facts-grid">
+        <dl>
+          <div class="fact"><dt>App name</dt><dd>PawMode</dd></div>
+          <div class="fact"><dt>Subtitle</dt><dd>Monitor Your Pet in the Car</dd></div>
+          <div class="fact"><dt>Platform</dt><dd>iOS — iPhone &amp; iPad</dd></div>
+          <div class="fact"><dt>Minimum iOS</dt><dd>18.5</dd></div>
+          <div class="fact"><dt>Status</dt><dd>TestFlight beta · in review</dd></div>
+          <div class="fact"><dt>Developer</dt><dd>Michel Storms (solo)</dd></div>
+        </dl>
+        <dl>
+          <div class="fact"><dt>Price</dt><dd>Free · Premium from $1.99</dd></div>
+          <div class="fact"><dt>Lifetime unlock</dt><dd>$49.99 (family-shareable)</dd></div>
+          <div class="fact"><dt>Website</dt><dd><a href="https://michelstorms.com/pawmode/">michelstorms.com/pawmode</a></dd></div>
+          <div class="fact"><dt>Privacy</dt><dd><a href="https://michelstorms.com/pawmode/privacy/">Privacy policy</a></dd></div>
+          <div class="fact"><dt>Terms</dt><dd><a href="https://michelstorms.com/pawmode/terms/">Terms of Use</a></dd></div>
+          <div class="fact"><dt>Press / contact</dt><dd><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- The hook -->
+  <section>
+    <div class="container">
+      <span class="section-label">The story</span>
+      <h2 class="section-title">Why it's different</h2>
+      <p class="section-subtitle" style="margin-bottom: 32px;">Tesla's Dog Mode is great &mdash; if you drive a Tesla. PawMode brings the same reassurance to <em>any</em> vehicle, using a spare iPhone you already own.</p>
+      <ul class="hook-list">
+        <li><strong>No special car, no extra hardware.</strong> A spare iPhone becomes the in-car Monitor; the phone in your pocket is the remote dashboard.</li>
+        <li><strong>Two phones, paired by QR, synced through your own Apple account.</strong> No sign-up, no third-party servers, no Bluetooth pairing dance &mdash; they check in every minute, even backgrounded.</li>
+        <li><strong>Thermal state + repeating alerts.</strong> Color-coded warnings and push notifications the moment conditions cross a threshold, the battery runs low, or the car phone drops offline.</li>
+        <li><strong>A reassurance message for passersby</strong> &mdash; with your contact and a scannable code &mdash; that <strong>auto-translates to the local language</strong>. Fewer broken windows, fewer worried calls.</li>
+        <li><strong>Doubles as a deterrent.</strong> A visible surveillance overlay (and a stealth mode that blanks the screen while the camera keeps running) helps protect belongings, not just pets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Two-device -->
+  <section class="pairing">
+    <div class="container">
+      <span class="section-label">How it works</span>
+      <h2 class="section-title">Two devices, one pairing</h2>
+      <div class="pairing-grid">
+        <div class="pairing-card">
+          <span class="badge">Monitor</span>
+          <h3>The phone in your vehicle</h3>
+          <p>Live front-camera feed, thermal-state display, a reassurance message for passersby, a contact QR code, video recording and timed auto-snapshots. Keeps the screen awake and auto-dims after inactivity; a passcode lock prevents tampering.</p>
+        </div>
+        <div class="pairing-card">
+          <span class="badge">Personal</span>
+          <h3>The phone you carry</h3>
+          <p>A remote dashboard with thermal state, battery level, charging status and sensor readings. Request snapshots, edit the displayed message, and get push alerts the instant conditions change or the Monitor drops offline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="gallery">
+    <div class="container">
+      <span class="section-label">Imagery</span>
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-subtitle">High-resolution versions are in the press kit .zip. A two-device pairing demo video is available on request.</p>
+      <div class="shots">
+        <figure><img src="/assets/apps/pawmode/press/mode-select.png" alt="PawMode mode selection — Monitor or Personal"><figcaption>Pick a mode</figcaption></figure>
+        <figure><img src="/assets/apps/pawmode/press/monitor.png" alt="PawMode Monitor dashboard, nominal thermal state"><figcaption>Monitor — all clear</figcaption></figure>
+        <figure><img src="/assets/apps/pawmode/press/monitor-alert.png" alt="PawMode Monitor dashboard, serious thermal alert"><figcaption>Monitor — thermal alert</figcaption></figure>
+        <figure><img src="/assets/apps/pawmode/press/personal-paired.png" alt="PawMode Personal dashboard, paired"><figcaption>Personal — paired</figcaption></figure>
+        <figure><img src="/assets/apps/pawmode/press/personal-unpaired.png" alt="PawMode Personal dashboard, pairing QR prompt"><figcaption>Personal — pair by QR</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features: free vs premium -->
+  <section class="features">
+    <div class="container">
+      <span class="section-label">What's in it</span>
+      <h2 class="section-title">Free to monitor, Premium for the rest</h2>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <p class="price">Everything you need to keep watch</p>
+          <ul>
+            <li>Live camera monitoring (15-minute session per launch)</li>
+            <li>Thermal-state monitoring with color-coded alerts</li>
+            <li>Reassurance message + contact QR for passersby</li>
+            <li>Two-device pairing by QR — no account</li>
+            <li>Battery, charging &amp; connection status on your phone</li>
+            <li>Push alerts for low battery and offline</li>
+            <li>4-digit passcode lock</li>
+          </ul>
+        </div>
+        <div class="tier pro">
+          <h3>PawMode Premium</h3>
+          <p class="price">Weekly $1.99 · Monthly $4.99 · Yearly $24.99 (3-day trial) · Lifetime $49.99</p>
+          <ul>
+            <li>Unlimited live camera time</li>
+            <li>Auto-translate the reassurance message to local languages</li>
+            <li>Remote photo snapshots on demand</li>
+            <li>Video recording &amp; timed auto-snapshots</li>
+            <li>Stealth mode — screen dark, camera running</li>
+            <li>Edit the displayed message remotely</li>
+            <li>Bluetooth thermometer support for true cabin temperature</li>
+            <li>Background heartbeat + the full alert set</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creator / press offer -->
+  <section class="callout-wrap">
+    <div class="container">
+      <div class="callout">
+        <div class="callout-inner">
+          <span class="section-label" style="color: var(--accent-light);">For reviewers &amp; press</span>
+          <h3>Free Premium &mdash; and a guided test pairing</h3>
+          <p>Reviewers and press: free PawMode Premium, plus a walkthrough of a live two-device pairing so you can demo it end-to-end. Email <a href="mailto:michelstorms@icloud.com" style="color:var(--accent-light); text-decoration:underline; text-underline-offset:3px;">michelstorms@icloud.com</a> &mdash; mention your outlet or channel.</p>
+          <a class="btn btn-primary" href="mailto:michelstorms@icloud.com?subject=PawMode%20%E2%80%94%20press%20enquiry">Email the developer</a>
+          <p class="sub">TestFlight beta invites available on request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press kit -->
+  <section class="kit">
+    <div class="container">
+      <span class="section-label">Downloads</span>
+      <h2 class="section-title">Press kit</h2>
+      <p class="section-subtitle">Everything below, full-resolution, in one archive.</p>
+
+      <div class="kit-previews">
+        <img class="thumb-icon" src="/assets/apps/pawmode/icon.png" alt="PawMode app icon">
+        <img class="thumb-art" src="/assets/apps/pawmode/press/keyart.jpg" alt="PawMode key art">
+      </div>
+
+      <a class="btn btn-primary" href="/assets/apps/pawmode/press/pawmode-press-kit.zip" download>Download press kit (.zip, ~7.5&nbsp;MB)</a>
+
+      <div class="kit-grid">
+        <div>
+          <h3 class="sub-head">Individual assets</h3>
+          <ul class="kit-list">
+            <li><span class="label">App icon (1024)</span><span class="links"><a href="/assets/apps/pawmode/icon.png">PNG</a><a href="/assets/apps/pawmode/press/pawmode-press-kit.zip">transparent in zip</a></span></li>
+            <li><span class="label">Key art / wallpaper</span><span class="links"><a href="/assets/apps/pawmode/press/keyart.jpg">JPG</a><a href="/assets/apps/pawmode/press/pawmode-press-kit.zip">3840px in zip</a></span></li>
+            <li><span class="label">Promo composite</span><span class="links"><a href="/assets/apps/pawmode/composite_promo.png">PNG</a></span></li>
+            <li><span class="label">Screenshots</span><span class="links"><a href="/assets/apps/pawmode/press/pawmode-press-kit.zip">in zip</a></span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-head">Brand basics</h3>
+          <div class="brand-basics">
+            <p class="row">It's <strong>PawMode</strong> &mdash; one word, capital P and M.</p>
+            <div class="swatch-row">
+              <span class="swatch"><i style="background:#14b8a6;"></i> #14b8a6 &middot; teal</span>
+              <span class="swatch"><i style="background:#1b8989;"></i> #1b8989 &middot; icon ground</span>
+            </div>
+            <p class="row"><strong>Fonts:</strong> Cormorant Garamond (headings), Inter (body).</p>
+            <p class="row"><strong>Tagline:</strong> "Monitor your pet in the car."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boilerplate -->
+  <section class="boiler">
+    <div class="container">
+      <span class="section-label" style="color: var(--accent-light);">Boilerplate</span>
+      <h2 class="section-title">In one paragraph</h2>
+      <blockquote>PawMode turns a spare iPhone into a live pet monitor for any parked car &mdash; a Tesla-style Dog Mode that works in any vehicle. Two phones pair by QR and sync through your own Apple account, with thermal alerts, remote check-ins, and a reassurance message for passersby. Built by independent developer Michel Storms. iPhone &amp; iPad.</blockquote>
+      <p>Press &amp; partnerships: <a class="mail" href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+      <div class="boiler-links">
+        <a href="/pawmode/">Product page</a>
+        <a href="https://michelstorms.com/pawmode/privacy/">Privacy</a>
+        <a href="https://michelstorms.com/pawmode/terms/">Terms</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/pawmode/license/">License Agreement</a>
+        <a href="https://michelstorms.com/pawmode/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
