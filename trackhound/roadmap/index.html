@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackHound — Roadmap</title>
+  <meta name="description" content="What's coming to TrackHound, by theme: navigation & guidance, routing modes & vehicles, trip planning, CarPlay & more devices, safety & data, and platform reach. Planned, not yet shipped.">
+  <link rel="canonical" href="https://michelstorms.com/trackhound/roadmap/">
+
+  <link rel="icon" type="image/png" href="/assets/logo-og.png">
+  <link rel="apple-touch-icon" href="/assets/logo-og.png">
+
+  <meta property="og:title" content="TrackHound — Roadmap">
+  <meta property="og:description" content="What's coming to TrackHound, by theme. Planned, not yet shipped — the live backlog is the GitHub issue tracker.">
+  <meta property="og:url" content="https://michelstorms.com/trackhound/roadmap/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2b1c10;
+      --navy-light: #3d2817;
+      --navy-dark: #180e08;
+      --white: #ffffff;
+      --off-white: #faf7f3;
+      --gray-100: #f3eee7;
+      --gray-200: #e6ded2;
+      --gray-300: #cabba9;
+      --gray-400: #9a8a78;
+      --gray-500: #5f5346;
+      --accent: #f28425;
+      --accent-light: #f7a155;
+      --accent-ink: #c2570f;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 10; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero { text-align: center; padding: 84px 24px 60px; background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(242,132,37,0.10) 0%, transparent 70%); border-radius: 50%; }
+    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
+    .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 18px; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 16px; }
+    .hero p.lede { font-size: 1.1rem; color: var(--gray-500); max-width: 620px; margin: 0 auto 16px; line-height: 1.75; }
+    .hero .backlog { font-size: 0.95rem; color: var(--gray-500); }
+    .hero .backlog a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
+
+    /* ===== Roadmap grid ===== */
+    .roadmap { padding: 72px 0 40px; background: var(--white); }
+    .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .theme-card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 30px 28px; }
+    .theme-card h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .theme-card .kicker { display: block; width: 36px; height: 3px; background: var(--accent); border-radius: 3px; margin-bottom: 16px; }
+    .theme-card ul { list-style: none; display: grid; gap: 13px; }
+    .theme-card li { position: relative; padding-left: 22px; font-size: 0.95rem; line-height: 1.55; color: var(--gray-500); }
+    .theme-card li::before { content: ''; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .theme-card li strong { color: var(--navy); font-weight: 600; }
+    .iss { color: var(--accent-ink); font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+    .iss:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ===== Closing note ===== */
+    .note-sec { padding: 24px 0 88px; background: var(--white); }
+    .note-box { background: var(--navy); color: var(--gray-300); border-radius: 18px; padding: 36px 34px; text-align: center; max-width: 860px; margin: 0 auto; }
+    .note-box p { max-width: 640px; margin: 0 auto 8px; line-height: 1.7; }
+    .note-box a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 2px; }
+    .note-box .links { margin-top: 18px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; font-size: 0.9rem; }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px 48px; }
+      .roadmap { padding: 56px 0 32px; }
+      .themes { grid-template-columns: 1fr; }
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="/trackhound/">TrackHound</a></li>
+        <li><a href="/trackhound/press/">Press</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Roadmap</span>
+      <h1>What's coming to TrackHound</h1>
+      <p class="lede">Planned work, grouped by theme. These are <strong>planned, not yet shipped</strong> &mdash; priorities and timing can change.</p>
+      <p class="backlog">The live backlog is the <a href="https://github.com/stormychel/TrackHound/issues">GitHub issue tracker</a>.</p>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="roadmap">
+    <div class="container">
+      <div class="themes">
+
+        <div class="theme-card">
+          <h2>Navigation &amp; guidance</h2><span class="kicker"></span>
+          <ul>
+            <li>Lane guidance at maneuvers <a class="iss" href="https://github.com/stormychel/TrackHound/issues/205">#205</a></li>
+            <li>3D / pitched course-up camera &mdash; map <a class="iss" href="https://github.com/stormychel/TrackHound/issues/349">#349</a> and CarPlay <a class="iss" href="https://github.com/stormychel/TrackHound/issues/348">#348</a>; speed-based zoom <a class="iss" href="https://github.com/stormychel/TrackHound/issues/268">#268</a></li>
+            <li>Save planned routes to reuse <a class="iss" href="https://github.com/stormychel/TrackHound/issues/371">#371</a></li>
+            <li>A different nav mode per leg of a multi-stop route <a class="iss" href="https://github.com/stormychel/TrackHound/issues/247">#247</a></li>
+            <li><strong>"Surprise me"</strong> &mdash; auto-generate a route through places worth visiting <a class="iss" href="https://github.com/stormychel/TrackHound/issues/87">#87</a></li>
+            <li>Dead-end (unpaved) warning with its length <a class="iss" href="https://github.com/stormychel/TrackHound/issues/255">#255</a></li>
+          </ul>
+        </div>
+
+        <div class="theme-card">
+          <h2>Routing modes &amp; vehicles</h2><span class="kicker"></span>
+          <ul>
+            <li>More modes: Bicycle <a class="iss" href="https://github.com/stormychel/TrackHound/issues/215">#215</a>, MTB <a class="iss" href="https://github.com/stormychel/TrackHound/issues/216">#216</a>, Hiking <a class="iss" href="https://github.com/stormychel/TrackHound/issues/213">#213</a>, Quad/ATV <a class="iss" href="https://github.com/stormychel/TrackHound/issues/217">#217</a>, Horse <a class="iss" href="https://github.com/stormychel/TrackHound/issues/214">#214</a></li>
+            <li>Prefer narrow roads for motorcycles <a class="iss" href="https://github.com/stormychel/TrackHound/issues/43">#43</a></li>
+            <li>Vehicle info + range &rarr; fuel/charging stops along a route <a class="iss" href="https://github.com/stormychel/TrackHound/issues/38">#38</a> <a class="iss" href="https://github.com/stormychel/TrackHound/issues/39">#39</a></li>
+            <li><strong>TruckHound</strong> &mdash; a variant for trucks, campers, caravans <a class="iss" href="https://github.com/stormychel/TrackHound/issues/70">#70</a></li>
+          </ul>
+        </div>
+
+        <div class="theme-card">
+          <h2>Trip planning</h2><span class="kicker"></span>
+          <ul>
+            <li>Camping / overnight stops along a route <a class="iss" href="https://github.com/stormychel/TrackHound/issues/37">#37</a></li>
+            <li>POIs on the map: gas &amp; EV charging as a stop <a class="iss" href="https://github.com/stormychel/TrackHound/issues/287">#287</a>; rider-contributed places <a class="iss" href="https://github.com/stormychel/TrackHound/issues/288">#288</a></li>
+            <li>Route padding: target-duration + smarter composition <a class="iss" href="https://github.com/stormychel/TrackHound/issues/262">#262</a> <a class="iss" href="https://github.com/stormychel/TrackHound/issues/263">#263</a> <a class="iss" href="https://github.com/stormychel/TrackHound/issues/264">#264</a></li>
+            <li>Next-hour weather nowcast <a class="iss" href="https://github.com/stormychel/TrackHound/issues/112">#112</a></li>
+          </ul>
+        </div>
+
+        <div class="theme-card">
+          <h2>CarPlay &amp; more devices</h2><span class="kicker"></span>
+          <ul>
+            <li>User-selectable CarPlay tiles <a class="iss" href="https://github.com/stormychel/TrackHound/issues/353">#353</a>, attitude safe-angle settings <a class="iss" href="https://github.com/stormychel/TrackHound/issues/354">#354</a>, auto-pick vehicle from the car's profile <a class="iss" href="https://github.com/stormychel/TrackHound/issues/355">#355</a></li>
+            <li>CarPlay Dashboard widget <a class="iss" href="https://github.com/stormychel/TrackHound/issues/341">#341</a>; "CarPlay mode" mirrored on the phone <a class="iss" href="https://github.com/stormychel/TrackHound/issues/363">#363</a></li>
+            <li>Apple Watch cues <a class="iss" href="https://github.com/stormychel/TrackHound/issues/139">#139</a>, iPad <a class="iss" href="https://github.com/stormychel/TrackHound/issues/343">#343</a>, Mac planning <a class="iss" href="https://github.com/stormychel/TrackHound/issues/90">#90</a>, Siri / App Intents <a class="iss" href="https://github.com/stormychel/TrackHound/issues/357">#357</a>, HealthKit workouts <a class="iss" href="https://github.com/stormychel/TrackHound/issues/86">#86</a></li>
+          </ul>
+        </div>
+
+        <div class="theme-card">
+          <h2>Safety &amp; data</h2><span class="kicker"></span>
+          <ul>
+            <li>Speed-camera alerts + community reporting <a class="iss" href="https://github.com/stormychel/TrackHound/issues/58">#58</a></li>
+            <li>STOP / give-way / signal data for crossroads warnings <a class="iss" href="https://github.com/stormychel/TrackHound/issues/154">#154</a></li>
+            <li>Ride telemetrics &mdash; acceleration, braking, lean angle <a class="iss" href="https://github.com/stormychel/TrackHound/issues/319">#319</a></li>
+          </ul>
+        </div>
+
+        <div class="theme-card">
+          <h2>Platform &amp; reach</h2><span class="kicker"></span>
+          <ul>
+            <li><strong>Android</strong> <a class="iss" href="https://github.com/stormychel/TrackHound/issues/200">#200</a> <a class="iss" href="https://github.com/stormychel/TrackHound/issues/321">#321&ndash;#325</a></li>
+            <li>Optional cloud (online) routing when there's signal <a class="iss" href="https://github.com/stormychel/TrackHound/issues/238">#238</a></li>
+            <li>Richer offline search gazetteer <a class="iss" href="https://github.com/stormychel/TrackHound/issues/344">#344</a>; true offline display-tile packs <a class="iss" href="https://github.com/stormychel/TrackHound/issues/366">#366</a></li>
+            <li>Accessibility: VoiceOver, Dynamic Type, eyes-free roadbook <a class="iss" href="https://github.com/stormychel/TrackHound/issues/88">#88</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing note -->
+  <section class="note-sec">
+    <div class="container">
+      <div class="note-box">
+        <p>This roadmap is a direction, not a promise &mdash; items ship, shift, or merge as the app evolves. For the always-current backlog, follow the issue tracker; to suggest or vote on something, open an issue.</p>
+        <div class="links">
+          <a href="https://github.com/stormychel/TrackHound/issues">GitHub issue tracker</a>
+          <a href="/trackhound/">TrackHound</a>
+          <a href="/trackhound/press/">Press kit</a>
+          <a href="mailto:michelstorms@icloud.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
