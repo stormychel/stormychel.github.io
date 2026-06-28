@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackHound — Press &amp; Media Kit</title>
+  <meta name="description" content="Press and media kit for TrackHound: offline iPhone navigation that deliberately routes onto small roads, farm tracks, and dirt. Facts, screenshots, CarPlay shots, and downloadable assets.">
+  <link rel="canonical" href="https://michelstorms.com/trackhound/press/">
+
+  <link rel="icon" type="image/png" href="/assets/logo-og.png">
+  <link rel="apple-touch-icon" href="/assets/logo-og.png">
+
+  <meta property="og:title" content="TrackHound — Press &amp; Media Kit">
+  <meta property="og:description" content="Offline iPhone navigation built to find small, narrow, traffic-free roads. Facts, screenshots, CarPlay, and a downloadable press kit.">
+  <meta property="og:url" content="https://michelstorms.com/trackhound/press/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TrackHound — Press &amp; Media Kit">
+  <meta name="twitter:description" content="Offline iPhone navigation built to find small, narrow, traffic-free roads. Downloadable press kit.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2b1c10;
+      --navy-light: #3d2817;
+      --navy-dark: #180e08;
+      --white: #ffffff;
+      --off-white: #faf7f3;
+      --gray-100: #f3eee7;
+      --gray-200: #e6ded2;
+      --gray-300: #cabba9;
+      --gray-400: #9a8a78;
+      --gray-500: #5f5346;
+      --accent: #f28425;
+      --accent-light: #f7a155;
+      --accent-ink: #c2570f;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--navy);
+    }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-block; border-radius: 8px; padding: 13px 26px;
+      font-size: 0.9rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      border: 1px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(242,132,37,0.28); }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--accent-light); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--gray-300); }
+    .btn-outline:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-ink); }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
+
+    .mas-badge { display: inline-block; transition: transform 0.2s, opacity 0.2s; }
+    .mas-badge:hover { transform: translateY(-2px); opacity: 0.85; }
+    .mas-badge img { height: 48px; width: auto; }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center; padding: 84px 24px 64px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -40%; right: -20%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(242, 132, 37, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 24px; box-shadow: 0 12px 34px rgba(0,0,0,0.18); }
+    .eyebrow {
+      display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent-ink); margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--font-heading); font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 700;
+      line-height: 1.08; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 8px;
+    }
+    .tagline {
+      font-family: var(--font-heading); font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 600;
+      color: var(--accent-ink); margin-bottom: 18px; font-style: italic;
+    }
+    .hero p.lede { font-size: 1.1rem; color: var(--gray-500); max-width: 600px; margin: 0 auto 32px; line-height: 1.75; }
+
+    /* ===== Key art showcase ===== */
+    .showcase { background: var(--navy-dark); padding: 0; overflow: hidden; }
+    .showcase img { width: 100%; max-width: 1600px; margin: 0 auto; }
+
+    /* ===== Sections ===== */
+    section { padding: 80px 0; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 14px; }
+    .section-title { font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 18px; letter-spacing: -0.02em; }
+    .section-subtitle { font-size: 1.02rem; color: var(--gray-500); max-width: 620px; line-height: 1.7; }
+    .center { text-align: center; }
+    .center .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    /* ===== Facts ===== */
+    .facts { background: var(--off-white); }
+    .facts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 8px; }
+    .facts-grid dl { display: contents; }
+    .fact { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--gray-200); }
+    .fact dt { color: var(--gray-500); font-weight: 500; flex: 0 0 auto; }
+    .fact dd { text-align: right; font-weight: 500; color: var(--navy); }
+    .fact dd a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ===== Hook ===== */
+    .hook-list { list-style: none; display: grid; gap: 16px; max-width: 860px; }
+    .hook-list li { position: relative; padding-left: 30px; color: var(--gray-500); line-height: 1.7; }
+    .hook-list li::before { content: ''; position: absolute; left: 0; top: 11px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .hook-list strong { color: var(--navy); font-weight: 600; }
+
+    /* ===== Gallery ===== */
+    .gallery { background: var(--off-white); }
+    .gallery-sub { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin: 40px 0 18px; }
+    .gallery-sub:first-of-type { margin-top: 24px; }
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .shots.wide { grid-template-columns: repeat(2, 1fr); }
+    figure { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; }
+    figure img { width: 100%; }
+    figcaption { font-size: 0.85rem; color: var(--gray-500); padding: 12px 14px; text-align: center; }
+    .note { font-size: 0.85rem; color: var(--gray-400); margin-top: 14px; }
+
+    /* ===== Demo placeholder ===== */
+    .demo-card {
+      background: var(--navy); color: var(--white); border-radius: 18px;
+      padding: 48px 32px; text-align: center; max-width: 860px; margin: 0 auto;
+      border: 1px dashed var(--gray-300);
+    }
+    .demo-card .play { width: 58px; height: 58px; border-radius: 50%; background: rgba(242,132,37,0.18); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .demo-card h3 { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 8px; }
+    .demo-card p { color: var(--gray-300); max-width: 520px; margin: 0 auto; }
+
+    /* ===== Features (free vs pro) ===== */
+    .features { background: var(--white); }
+    .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .tier { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 30px 28px; }
+    .tier.pro { background: var(--navy); border-color: var(--navy); color: var(--white); }
+    .tier h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 4px; color: inherit; }
+    .tier .price { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 18px; }
+    .tier.pro .price { color: var(--accent-light); }
+    .tier ul { list-style: none; display: grid; gap: 11px; }
+    .tier li { position: relative; padding-left: 26px; font-size: 0.95rem; line-height: 1.55; color: var(--gray-500); }
+    .tier.pro li { color: var(--gray-300); }
+    .tier li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+
+    /* ===== Callout ===== */
+    .callout-wrap { background: var(--off-white); }
+    .callout {
+      background: linear-gradient(135deg, #2b1c10 0%, #3d2817 100%); color: var(--white);
+      border-radius: 20px; padding: 44px 40px; max-width: 920px; margin: 0 auto; position: relative; overflow: hidden;
+    }
+    .callout::before { content: ''; position: absolute; top: -50%; right: -10%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(242,132,37,0.22) 0%, transparent 70%); border-radius: 50%; }
+    .callout-inner { position: relative; }
+    .callout h3 { font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 12px; }
+    .callout p { color: var(--gray-300); max-width: 620px; margin-bottom: 22px; }
+    .callout .sub { font-size: 0.9rem; color: var(--gray-400); margin-top: 14px; }
+
+    /* ===== Press kit ===== */
+    .kit { background: var(--white); }
+    .kit-previews { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; margin: 6px 0 28px; }
+    .kit-previews img { border-radius: 14px; border: 1px solid var(--gray-200); }
+    .kit-previews .thumb-icon { width: 92px; height: 92px; }
+    .kit-previews .thumb-art { width: 220px; height: auto; }
+    .kit-previews .thumb-qr { width: 92px; height: 92px; background: #fff; padding: 6px; }
+    .kit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px; margin-top: 30px; }
+    .kit-list { list-style: none; display: grid; gap: 10px; }
+    .kit-list li { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px solid var(--gray-200); padding-bottom: 10px; font-size: 0.95rem; }
+    .kit-list .links a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; margin-left: 10px; white-space: nowrap; }
+    .kit-list .label { color: var(--navy); font-weight: 500; }
+    .brand-basics { display: grid; gap: 12px; }
+    .swatch-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { display: flex; align-items: center; gap: 9px; font-size: 0.85rem; color: var(--gray-500); }
+    .swatch i { width: 26px; height: 26px; border-radius: 7px; display: inline-block; border: 1px solid var(--gray-200); }
+    .brand-basics .row { font-size: 0.92rem; color: var(--gray-500); }
+    .brand-basics .row strong { color: var(--navy); }
+
+    /* ===== Boilerplate / contact ===== */
+    .boiler { background: var(--navy); color: var(--white); text-align: center; }
+    .boiler .section-title { color: var(--white); }
+    .boiler blockquote { font-size: 1.1rem; color: var(--gray-300); max-width: 720px; margin: 0 auto 28px; line-height: 1.7; font-style: italic; }
+    .boiler a.mail { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+    .boiler-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 20px; font-size: 0.9rem; }
+    .boiler-links a { color: var(--gray-300); text-decoration: underline; text-underline-offset: 2px; }
+    .boiler-links a:hover { color: var(--white); }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px 48px; }
+      section { padding: 56px 0; }
+      .facts-grid { grid-template-columns: 1fr; gap: 0; }
+      .shots { grid-template-columns: 1fr 1fr; }
+      .shots.wide { grid-template-columns: 1fr; }
+      .tiers { grid-template-columns: 1fr; }
+      .kit-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 480px) {
+      .shots { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .fact dd { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html">Apps</a></li>
+        <li><a href="/trackhound/">TrackHound</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-icon" src="/assets/apps/trackhound/icon.png" alt="TrackHound app icon">
+      <span class="eyebrow">Press &amp; Media Kit</span>
+      <h1>TrackHound</h1>
+      <p class="tagline">Routes for the roads less taken.</p>
+      <p class="lede">Offline iPhone navigation for ADV motorcycles, supermoto, 4x4 / overlanding and gravel &mdash; routing built to find small, narrow, traffic-free roads.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/assets/apps/trackhound/press/trackhound-press-kit.zip" download>Download press kit (.zip)</a>
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key art -->
+  <section class="showcase">
+    <img src="/assets/apps/trackhound/press/keyart.jpg" alt="TrackHound key art — the dog-and-compass mark on a warm topographic background with the tagline ‘Routes for the roads less taken’">
+  </section>
+
+  <!-- Facts -->
+  <section class="facts">
+    <div class="container">
+      <span class="section-label">At a glance</span>
+      <h2 class="section-title">The facts</h2>
+      <div class="facts-grid">
+        <dl>
+          <div class="fact"><dt>App name</dt><dd>TrackHound</dd></div>
+          <div class="fact"><dt>App Store title</dt><dd>TrackHound: Navigation Remixed</dd></div>
+          <div class="fact"><dt>Subtitle</dt><dd>Customizable offline GPS maps</dd></div>
+          <div class="fact"><dt>Platform</dt><dd>iOS (iPhone) + CarPlay</dd></div>
+          <div class="fact"><dt>Minimum iOS</dt><dd>18.6</dd></div>
+          <div class="fact"><dt>Developer</dt><dd>Michel Storms (solo)</dd></div>
+        </dl>
+        <dl>
+          <div class="fact"><dt>Price</dt><dd>Free to plan; Pro unlocks more</dd></div>
+          <div class="fact"><dt>App Store</dt><dd><a href="https://apps.apple.com/app/id6762570002">apps.apple.com</a></dd></div>
+          <div class="fact"><dt>Website</dt><dd><a href="https://trackhoundapp.com">trackhoundapp.com</a></dd></div>
+          <div class="fact"><dt>Privacy</dt><dd><a href="https://michelstorms.com/trackhound/privacy/">Privacy policy</a></dd></div>
+          <div class="fact"><dt>Terms</dt><dd><a href="https://michelstorms.com/trackhound/terms/">Terms of Use</a></dd></div>
+          <div class="fact"><dt>Press / contact</dt><dd><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- The hook -->
+  <section>
+    <div class="container">
+      <span class="section-label">The story</span>
+      <h2 class="section-title">Why it's different</h2>
+      <p class="section-subtitle" style="margin-bottom: 32px;">Most apps optimise for speed or distance. TrackHound optimises for the opposite &mdash; the small, narrow, traffic-free roads that make a ride worth taking.</p>
+      <ul class="hook-list">
+        <li>Existing apps (OsmAnd, Komoot, Scenic, Google Maps, Gaia) optimise for <strong>speed or distance</strong>. TrackHound optimises for the opposite: small roads, farm tracks, dirt paths.</li>
+        <li><strong>"Farm road" isn't an OSM tag.</strong> A Belgian farm road is often perfectly paved &mdash; just narrow and nearly traffic-free. "Prefer unpaved" filters miss these because they filter on surface, not road class or traffic. TrackHound's costing model targets the <strong>character</strong> of the road, not just its surface.</li>
+        <li><strong>Compare All</strong> draws every routing preset on the map at once, so you pick the ride you want.</li>
+        <li><strong>Truly offline &amp; private:</strong> download a region once, route on-device in airplane mode; routes and trips stay on the phone. No tracking, no analytics, no ads.</li>
+        <li><strong>Rally-style roadbook:</strong> glance-readable maneuver arrow, route-alignment compass (green on course, red when you drift), speed-limit-coloured speedo &mdash; portrait and landscape.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="gallery">
+    <div class="container">
+      <span class="section-label">Imagery</span>
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-subtitle">High-resolution versions of everything below are in the press kit .zip.</p>
+
+      <h3 class="gallery-sub">On iPhone</h3>
+      <div class="shots">
+        <figure><img src="/assets/apps/trackhound/press/planner.png" alt="TrackHound route drawn on the map"><figcaption>Route on the map</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/presets.png" alt="TrackHound route-style picker"><figcaption>Four route styles</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/mapnav.png" alt="TrackHound live map navigation with heading compass"><figcaption>Live map navigation</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/roadbook.png" alt="TrackHound rally-style roadbook"><figcaption>Rally-style roadbook</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/offline.png" alt="TrackHound offline regions downloader"><figcaption>Offline regions</figcaption></figure>
+      </div>
+
+      <h3 class="gallery-sub">Landscape &amp; CarPlay</h3>
+      <div class="shots wide">
+        <figure><img src="/assets/apps/trackhound/press/roadbook-landscape.png" alt="TrackHound roadbook in landscape"><figcaption>Roadbook (landscape)</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/carplay-mapnav.jpg" alt="TrackHound CarPlay map navigation"><figcaption>CarPlay — map navigation</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/carplay-route.jpg" alt="TrackHound CarPlay route planning"><figcaption>CarPlay — route planning</figcaption></figure>
+        <figure><img src="/assets/apps/trackhound/press/carplay-roadbook.jpg" alt="TrackHound CarPlay roadbook"><figcaption>CarPlay — roadbook</figcaption></figure>
+      </div>
+      <p class="note">CarPlay navigation activates once Apple approves TrackHound's navigation entitlement.</p>
+    </div>
+  </section>
+
+  <!-- Demo clip -->
+  <section>
+    <div class="container">
+      <div class="demo-card">
+        <div class="play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--accent)"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        </div>
+        <h3>60-second demo &mdash; in production</h3>
+        <p>The key outreach clip &mdash; "plan a dirt route in 3 taps" &mdash; is being produced. It will be embedded here and added to the press kit when ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features: free vs pro -->
+  <section class="features">
+    <div class="container">
+      <span class="section-label">What's in it</span>
+      <h2 class="section-title">Free to plan, Pro for the road</h2>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <p class="price">Route planning is always free</p>
+          <ul>
+            <li>Four presets &mdash; Shortest, Fastest, Curviest, Unpavediest</li>
+            <li>Compare All &mdash; every preset drawn on the map at once</li>
+            <li>Fine-grained costing controls per ride</li>
+            <li>Closed-loop route preview from a target distance + start point</li>
+            <li>Download your first region; calculate routes on-device, offline</li>
+            <li>Export any route as GPX</li>
+            <li>Worldwide address search, pick-from-Contacts, long-press to set start/destination</li>
+          </ul>
+        </div>
+        <div class="tier pro">
+          <h3>TrackHound Pro</h3>
+          <p class="price">Subscription or one-time &middot; annual has a 14-day free trial</p>
+          <ul>
+            <li>Roadbook turn-by-turn navigation (maneuver arrow + distance + instruction, alignment compass, speed-limit-coloured speedometer, portrait &amp; landscape)</li>
+            <li>Navigate, save and export closed-loop rides</li>
+            <li>Import GPX from Files or Mail</li>
+            <li>Download additional regions beyond the first</li>
+            <li>Save custom route presets</li>
+            <li>CarPlay navigation (activates once Apple approves the navigation entitlement)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creator / press offer -->
+  <section class="callout-wrap">
+    <div class="container">
+      <div class="callout">
+        <div class="callout-inner">
+          <span class="section-label" style="color: var(--accent-light);">For creators &amp; press</span>
+          <h3>Free Pro &mdash; and a route built for your video</h3>
+          <p>Creators: free TrackHound Pro, plus a tailored small-roads route in your region for a video. Email <a href="mailto:michelstorms@icloud.com" style="color:var(--accent-light); text-decoration:underline; text-underline-offset:3px;">michelstorms@icloud.com</a> &mdash; mention your channel.</p>
+          <a class="btn btn-primary" href="mailto:michelstorms@icloud.com?subject=TrackHound%20%E2%80%94%20creator%20enquiry">Email the developer</a>
+          <p class="sub">Founder-code giveaways for your audience are possible &mdash; just ask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press kit -->
+  <section class="kit">
+    <div class="container">
+      <span class="section-label">Downloads</span>
+      <h2 class="section-title">Press kit</h2>
+      <p class="section-subtitle">Everything below, full-resolution, in one archive.</p>
+
+      <div class="kit-previews">
+        <img class="thumb-icon" src="/assets/apps/trackhound/icon.png" alt="TrackHound app icon">
+        <img class="thumb-art" src="/assets/apps/trackhound/press/keyart.jpg" alt="TrackHound key art">
+        <img class="thumb-qr" src="/assets/apps/trackhound/press/appstore-qr.png" alt="App Store QR code">
+      </div>
+
+      <a class="btn btn-primary" href="/assets/apps/trackhound/press/trackhound-press-kit.zip" download>Download press kit (.zip, ~10&nbsp;MB)</a>
+
+      <div class="kit-grid">
+        <div>
+          <h3 class="gallery-sub" style="margin-top:0;">Individual assets</h3>
+          <ul class="kit-list">
+            <li><span class="label">App icon (1024)</span><span class="links"><a href="/assets/apps/trackhound/icon.png">light</a><a href="/assets/apps/trackhound/press/icon-dark.png">dark</a></span></li>
+            <li><span class="label">Key art / wordmark</span><span class="links"><a href="/assets/apps/trackhound/press/keyart.jpg">JPG</a><a href="/assets/apps/trackhound/press/trackhound-press-kit.zip">SVG in zip</a></span></li>
+            <li><span class="label">App Store QR</span><span class="links"><a href="/assets/apps/trackhound/press/appstore-qr.png">PNG</a></span></li>
+            <li><span class="label">Screenshots &amp; CarPlay</span><span class="links"><a href="/assets/apps/trackhound/press/trackhound-press-kit.zip">in zip</a></span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="gallery-sub" style="margin-top:0;">Brand basics</h3>
+          <div class="brand-basics">
+            <p class="row">It's <strong>TrackHound</strong> &mdash; one word, capital T and H.</p>
+            <div class="swatch-row">
+              <span class="swatch"><i style="background:#f28425;"></i> #f28425 &middot; orange</span>
+              <span class="swatch"><i style="background:#180e08;"></i> #180e08 &middot; espresso</span>
+            </div>
+            <p class="row"><strong>Fonts:</strong> Cormorant Garamond (headings), Inter (body).</p>
+            <p class="row"><strong>Tagline:</strong> "Routes for the roads less taken."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boilerplate -->
+  <section class="boiler">
+    <div class="container">
+      <span class="section-label" style="color: var(--accent-light);">Boilerplate</span>
+      <h2 class="section-title">In one paragraph</h2>
+      <blockquote>TrackHound is offline, customisable navigation for riders and drivers who want the small roads. Built by independent developer Michel Storms. iPhone + CarPlay.</blockquote>
+      <p>Press &amp; partnerships: <a class="mail" href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+      <div class="boiler-links">
+        <a href="https://trackhoundapp.com">trackhoundapp.com</a>
+        <a href="https://apps.apple.com/app/id6762570002">App Store</a>
+        <a href="/trackhound/">Product page</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy</a>
+        <a href="https://michelstorms.com/trackhound/terms/">Terms</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
