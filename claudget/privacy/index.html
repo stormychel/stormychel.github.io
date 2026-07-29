@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ClaudGet Privacy Policy</title>
   <meta name="description" content="Privacy Policy for ClaudGet.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://michelstorms.com/claudget/privacy/">
   <style>
     :root { --bg:#f7f8fb; --fg:#202430; --muted:#5c6477; --card:#fff; --border:#e4e7ef; --accent:#d65a38; }
@@ -18,24 +18,24 @@
   <p><a href="/claudget/">← ClaudGet</a></p>
   <h1>ClaudGet Privacy Policy</h1>
   <p class="meta">Effective date: July 29, 2026</p>
-  <p>This Privacy Policy describes how ClaudGet (“App”) handles information on macOS.</p>
+  <p>This Privacy Policy describes how ClaudGet (“App”) handles information on macOS. The developer is Michel Storms and can be contacted at the address below.</p>
   <h2>1. Information Processed</h2>
   <ul>
-    <li>The App processes the Claude session you provide to request your usage information directly from Claude.</li>
-    <li>The session is stored in your macOS Keychain and is not shared with the widget.</li>
-    <li>Usage totals and reset times are cached locally in the App Group so WidgetKit can display them.</li>
-    <li>Diagnostic logs are stored locally and redact credentials.</li>
+    <li><strong>Authentication data:</strong> Claude web-session cookies obtained after you sign in. They are stored in your macOS Keychain and are not shared with the widget.</li>
+    <li><strong>Account and usage data:</strong> your organization identifier, plan label, usage percentages, reset times, and usage-credit values returned by Claude.</li>
+    <li><strong>Preferences:</strong> your selected refresh interval.</li>
+    <li><strong>Diagnostics:</strong> local timestamps, refresh outcomes, usage values, and widget status. Credentials and response bodies are not intentionally logged.</li>
   </ul>
   <h2>2. Network Requests</h2>
-  <p>The App sends your session only to Claude’s own web services to retrieve your account’s usage information. The developer does not operate an account service or analytics backend for ClaudGet.</p>
+  <p>When you sign in or refresh, the App connects directly to <code>claude.ai</code>. Your session cookie and organization identifier are transmitted to that service to authenticate and return account usage. Anthropic may also receive ordinary network information such as your IP address and device/browser request metadata. The developer does not proxy these requests and operates no ClaudGet account, analytics, advertising, or telemetry server.</p>
   <h2>3. Data Collection and Sharing</h2>
-  <p>The developer does not collect, sell, rent, or share your personal data. ClaudGet contains no third-party advertising or analytics SDKs.</p>
+  <p>The developer cannot access information processed locally by the App and does not collect, sell, rent, or share it. ClaudGet contains no third-party advertising or analytics SDKs. Data sent directly to Anthropic is handled under Anthropic’s own terms and privacy policy.</p>
   <h2>4. Retention and Control</h2>
-  <p>Your credential, cached usage snapshot, preferences, and diagnostics remain on your Mac. Disconnecting removes the saved credential and cached usage. Uninstalling removes App data subject to standard macOS behavior.</p>
+  <p>Your credential remains until you disconnect. Cached usage remains until it is replaced, you disconnect, or App data is removed. Preferences remain until App data is removed. Diagnostics remain until you clear them or remove App data. Use <strong>Disconnect</strong> to remove the credential and cached usage, and <strong>Diagnostics → Clear</strong> to erase the local log. You can also revoke the Claude session through your Claude account. Uninstalling removes App data subject to standard macOS and Keychain behavior.</p>
   <h2>5. Security</h2>
   <p>ClaudGet uses the macOS App Sandbox, Keychain, and a least-privilege App Group shared only with its WidgetKit extension.</p>
   <h2>6. Third-Party Service</h2>
-  <p>Your use of Claude remains subject to Anthropic’s terms and privacy practices. ClaudGet is independent and is not affiliated with or endorsed by Anthropic.</p>
+  <p>Your use of Claude remains subject to <a href="https://www.anthropic.com/legal/consumer-terms">Anthropic’s Consumer Terms</a> and <a href="https://www.anthropic.com/legal/privacy">Privacy Policy</a>. ClaudGet is independent and is not affiliated with, sponsored by, or endorsed by Anthropic. Claude and Anthropic are trademarks of Anthropic PBC.</p>
   <h2>7. Changes</h2>
   <p>This policy may be updated as the App changes. The effective date above identifies the latest version.</p>
   <h2>8. Contact</h2>
