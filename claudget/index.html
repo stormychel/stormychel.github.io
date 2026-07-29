@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,38 +6,95 @@
   <title>ClaudGet — Claude usage widgets for macOS</title>
   <meta name="description" content="Keep Claude session, weekly, model, and usage-credit limits visible in native macOS widgets.">
   <link rel="canonical" href="https://michelstorms.com/claudget/">
+  <link rel="icon" href="/assets/apps/claudget/icon.png">
+  <meta property="og:title" content="ClaudGet — Claude usage widgets for macOS">
+  <meta property="og:description" content="Your Claude usage, at a glance—without interrupting your work.">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/claudget/widget-hero.png">
+  <meta property="og:url" content="https://michelstorms.com/claudget/">
+  <meta property="og:type" content="website">
   <style>
-    :root { --bg: #f7f8fb; --fg: #202430; --muted: #5c6477; --card: #fff; --border: #e4e7ef; --accent: #d65a38; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--fg); background: var(--bg); line-height: 1.6; }
-    main { max-width: 920px; margin: 0 auto; padding: 72px 20px; }
-    article { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: clamp(28px, 6vw, 64px); box-shadow: 0 18px 60px rgba(32,36,48,.08); }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
-    h1 { margin: .35rem 0 1rem; font-size: clamp(2.4rem, 8vw, 5rem); line-height: 1; letter-spacing: -.045em; }
-    .lead { color: var(--muted); font-size: 1.2rem; max-width: 660px; }
-    ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 0; margin: 36px 0; list-style: none; }
-    li { border: 1px solid var(--border); border-radius: 12px; padding: 18px; background: #fbfbfd; }
-    a { color: var(--accent); font-weight: 600; }
-    footer { color: var(--muted); margin-top: 36px; font-size: .92rem; }
+    :root { --bg:#191b22; --panel:#24262e; --text:#f7f7f8; --muted:#b7bac5; --line:#383b45; --accent:#e7633e; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+    a { color:inherit; }
+    nav { border-bottom:1px solid var(--line); background:rgba(25,27,34,.88); backdrop-filter:blur(18px); position:sticky; top:0; z-index:2; }
+    .nav { max-width:1120px; height:64px; padding:0 24px; margin:auto; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:750; }
+    .brand img { width:34px; height:34px; border-radius:8px; }
+    .links { display:flex; gap:22px; color:var(--muted); font-size:.9rem; }
+    .links a { text-decoration:none; }
+    .links a:hover { color:var(--text); }
+    .hero { overflow:hidden; background:radial-gradient(circle at 80% 20%,rgba(231,99,62,.35),transparent 37%),var(--bg); }
+    .hero-inner { max-width:1120px; margin:auto; padding:100px 24px 78px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:750; }
+    h1 { margin:.4rem 0 1rem; font-size:clamp(3.2rem,7vw,6rem); line-height:.95; letter-spacing:-.055em; }
+    .lede { color:var(--muted); font-size:clamp(1.1rem,2vw,1.35rem); max-width:580px; }
+    .actions { display:flex; gap:12px; margin-top:30px; flex-wrap:wrap; }
+    .button { display:inline-block; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid var(--line); }
+    .button.primary { background:var(--accent); border-color:var(--accent); color:white; }
+    .hero-art img { width:100%; border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,.35); }
+    section { padding:84px 24px; }
+    .container { max-width:1120px; margin:auto; }
+    .section-title { font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.035em; margin:0 0 12px; }
+    .section-copy { color:var(--muted); max-width:680px; margin:0 0 38px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { padding:26px; border-radius:16px; border:1px solid var(--line); background:var(--panel); }
+    .card h3 { margin:0 0 8px; }
+    .card p { margin:0; color:var(--muted); }
+    .privacy { background:#f6f3f0; color:#22242a; }
+    .privacy .section-copy { color:#62646b; }
+    footer { max-width:1120px; margin:auto; padding:34px 24px 50px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.9rem; }
+    footer div { display:flex; gap:18px; flex-wrap:wrap; }
+    @media (max-width:800px) {
+      .hero-inner { grid-template-columns:1fr; padding-top:72px; }
+      .grid { grid-template-columns:1fr; }
+      .links a:not(:last-child) { display:none; }
+      footer { flex-direction:column; }
+    }
   </style>
 </head>
 <body>
+  <nav><div class="nav">
+    <a class="brand" href="/claudget/"><img src="/assets/apps/claudget/icon.png" alt="">ClaudGet</a>
+    <div class="links"><a href="#features">Features</a><a href="/claudget/privacy/">Privacy</a><a href="/claudget/support/">Support</a></div>
+  </div></nav>
+
   <main>
-    <article>
-      <p class="eyebrow">Native macOS utility</p>
-      <h1>ClaudGet</h1>
-      <p class="lead">Your Claude usage, at a glance. ClaudGet keeps current-session, weekly, model, and usage-credit limits visible in native desktop and Notification Center widgets.</p>
-      <ul>
-        <li><strong>Widget first</strong><br>Small, medium, and large layouts for the amount of detail you need.</li>
-        <li><strong>Private by design</strong><br>Your Claude session remains in the app’s Keychain and is never shared with the widget.</li>
-        <li><strong>Always current</strong><br>The host app refreshes usage and publishes a credential-free snapshot to WidgetKit.</li>
-      </ul>
-      <p>Support: <a href="mailto:stormychel@me.com">stormychel@me.com</a></p>
-      <footer>
-        ClaudGet is an independent app and is not affiliated with or endorsed by Anthropic.
-        <a href="./privacy/">Privacy Policy</a>
-      </footer>
-    </article>
+    <header class="hero"><div class="hero-inner">
+      <div>
+        <div class="eyebrow">Native macOS utility</div>
+        <h1>Know your limits.</h1>
+        <p class="lede">Your Claude usage, at a glance. ClaudGet keeps session, weekly, model, and usage-credit limits visible in native desktop and Notification Center widgets.</p>
+        <div class="actions">
+          <a class="button primary" href="https://apps.apple.com/app/id6795692636">View on the Mac App Store</a>
+          <a class="button" href="/claudget/support/">Get support</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="/assets/apps/claudget/widget-hero.png" alt="ClaudGet widget showing Claude usage limits"></div>
+    </div></header>
+
+    <section id="features"><div class="container">
+      <h2 class="section-title">Always visible. Never in the way.</h2>
+      <p class="section-copy">Choose the level of detail you need and keep working. ClaudGet refreshes your usage in the background and gives WidgetKit a safe, credential-free snapshot.</p>
+      <div class="grid">
+        <article class="card"><h3>Widget first</h3><p>Small, medium, and large widgets for your desktop and Notification Center.</p></article>
+        <article class="card"><h3>The limits that matter</h3><p>Current session, weekly usage, model-specific limits, and usage credits.</p></article>
+        <article class="card"><h3>Native and focused</h3><p>A lightweight Mac app with Keychain sign-in, manual refresh, and diagnostics.</p></article>
+      </div>
+    </div></section>
+
+    <section class="privacy"><div class="container">
+      <div class="eyebrow">Private by design</div>
+      <h2 class="section-title">Your credential stays in your Keychain.</h2>
+      <p class="section-copy">The widget never receives your Claude session. ClaudGet has no advertising or analytics SDKs, and the developer operates no account or tracking service.</p>
+      <a class="button" href="/claudget/privacy/">Read the Privacy Policy</a>
+    </div></section>
   </main>
+
+  <footer>
+    <span>ClaudGet is independent and is not affiliated with or endorsed by Anthropic.</span>
+    <div><a href="/claudget/privacy/">Privacy</a><a href="/claudget/terms/">Terms</a><a href="/claudget/support/">Support</a></div>
+  </footer>
 </body>
 </html>
