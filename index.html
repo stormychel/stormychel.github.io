@@ -3,1381 +3,190 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="meta.title">Michel Storms — Freelance Software Developer · Apple specialist, full-stack</title>
-  <meta name="description" content="Michel Storms is a freelance software developer specialised in Apple platforms — and equally at home building web frontends, backends and APIs, cross-platform mobile, and cloud-deployed services." data-i18n-attr="content:meta.desc">
-  <link rel="canonical" href="https://michelstorms.com">
-
-  <!-- Favicon -->
+  <title>Michel Storms — TrackHound, HoverCalc &amp; Independent Apple Apps</title>
+  <meta name="description" content="TrackHound, HoverCalc, and independent apps for Apple platforms by Michel Storms, built in Belgium.">
+  <link rel="canonical" href="https://michelstorms.com/">
   <link rel="icon" type="image/png" href="assets/logo-og.png">
   <link rel="apple-touch-icon" href="assets/logo-og.png">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Michel Storms — Freelance Apple Developer">
-  <meta property="og:description" content="Custom software solutions, advice, design and programming services for Apple Platforms.">
-  <meta property="og:url" content="https://michelstorms.com">
+  <meta property="og:title" content="Michel Storms — TrackHound, HoverCalc &amp; Independent Apple Apps">
+  <meta property="og:description" content="TrackHound leads a collection of useful, focused apps for Apple platforms by Michel Storms.">
+  <meta property="og:url" content="https://michelstorms.com/">
   <meta property="og:site_name" content="Michel Storms">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://michelstorms.com/assets/logo-og.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Michel Storms — Freelance Apple Developer">
-  <meta name="twitter:description" content="Custom software solutions, advice, design and programming services for Apple Platforms.">
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"Michel Storms","url":"https://michelstorms.com"}</script>
-
-  <!-- Fonts -->
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/composite_promo.jpg">
+  <meta property="og:image:alt" content="TrackHound route map, route-style picker, and turn-by-turn roadbook">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Michel Storms — TrackHound, HoverCalc &amp; Independent Apple Apps">
+  <meta name="twitter:description" content="TrackHound, HoverCalc, and useful independent apps for Apple platforms, built in Belgium.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/composite_promo.jpg">
+  <meta name="twitter:image:alt" content="TrackHound route map, route-style picker, and turn-by-turn roadbook">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://michelstorms.com/#website",
+        "name": "Michel Storms",
+        "url": "https://michelstorms.com/",
+        "description": "TrackHound, HoverCalc, and independent apps for Apple platforms by Michel Storms.",
+        "creator": { "@id": "https://michelstorms.com/#michel-storms" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://michelstorms.com/#michel-storms",
+        "name": "Michel Storms",
+        "url": "https://michelstorms.com/",
+        "sameAs": ["https://github.com/stormychel"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "TrackHound",
+        "url": "https://trackhoundapp.com/",
+        "downloadUrl": "https://apps.apple.com/app/id6762570002",
+        "operatingSystem": "iOS, CarPlay",
+        "applicationCategory": "NavigationApplication",
+        "author": { "@id": "https://michelstorms.com/#michel-storms" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "HoverCalc",
+        "url": "https://michelstorms.com/hovercalc/",
+        "downloadUrl": "https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "author": { "@id": "https://michelstorms.com/#michel-storms" }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== Reset & Base ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #2d2e3a;
-      --navy-light: #3d3e4e;
-      --navy-dark: #1a1b24;
-      --ink-soft: #40414f;
-      --white: #ffffff;
-      --off-white: #f8f8fa;
-      --gray-100: #f0f0f3;
-      --gray-200: #e2e2e7;
-      --gray-300: #c5c5ca;
-      --gray-400: #8c8c92;
-      --gray-500: #52525a;
-      --accent: #6366f1;
-      --accent-light: #818cf8;
-      --accent-soft: #eef0ff;
-      --gold: #c79a52;
-      --font-heading: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--navy);
-      background: var(--white);
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ===== Navigation ===== */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--gray-200);
-      transition: box-shadow 0.3s;
-    }
-
-    nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .nav-logo {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--navy);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--gray-500);
-      transition: color 0.2s;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links a:hover { color: var(--navy); }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--navy);
-      margin: 5px 0;
-      transition: 0.3s;
-      border-radius: 2px;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero-content { position: relative; max-width: 720px; }
-
-    .hero-copy {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .hero-logo {
-      width: 180px;
-      height: auto;
-      margin: 0 auto 32px;
-    }
-
-    .hero-label {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--navy);
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--gray-500);
-      max-width: 620px;
-      margin: 0 auto 40px;
-      line-height: 1.8;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(45, 46, 58, 0.1);
-      box-shadow: 0 10px 30px rgba(45, 46, 58, 0.06);
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--ink-soft);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .hero-chip:hover {
-      transform: translateY(-2px);
-      border-color: rgba(99, 102, 241, 0.35);
-      box-shadow: 0 14px 34px rgba(45, 46, 58, 0.1);
-    }
-
-    .hero-chip svg {
-      width: 16px;
-      height: 16px;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ===== Buttons ===== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: all 0.25s ease;
-      border: none;
-      cursor: pointer;
-      font-family: var(--font-body);
-    }
-
-    .btn-primary {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--navy-light);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(45, 46, 58, 0.2);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--navy);
-      border: 1.5px solid var(--gray-300);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--navy);
-      transform: translateY(-1px);
-    }
-
-    /* ===== Sections ===== */
-    section { padding: 100px 0; }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--navy);
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--gray-500);
-      max-width: 560px;
-      line-height: 1.7;
-    }
-
-    /* ===== About / Services ===== */
-    .about { background: var(--white); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-text .section-subtitle { margin-bottom: 32px; }
-
-    .services-list {
-      display: grid;
-      gap: 20px;
-    }
-
-    .service-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 24px;
-      background: var(--off-white);
-      border-radius: 12px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .service-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-
-    .service-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      background: var(--navy);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .service-icon svg { width: 22px; height: 22px; }
-
-    .service-item h3 {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .service-item p {
-      font-size: 0.9rem;
-      color: var(--gray-500);
-      line-height: 1.6;
-    }
-
-    /* ===== Testimonials ===== */
-    .testimonials {
-      background: var(--navy);
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    .testimonials .section-label { color: var(--accent-light); }
-    .testimonials .section-title { color: var(--white); }
-    .testimonials .section-subtitle { color: var(--gray-300); }
-
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .testimonials-header .section-subtitle {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 32px;
-      transition: transform 0.25s, background 0.25s;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .testimonial-quote {
-      position: relative;
-      margin-bottom: 24px;
-    }
-
-    .testimonial-quote::before {
-      content: '\201C';
-      font-family: var(--font-heading);
-      font-size: 4rem;
-      line-height: 1;
-      color: var(--accent-light);
-      opacity: 0.4;
-      position: absolute;
-      top: -16px;
-      left: -4px;
-    }
-
-    .testimonial-quote p {
-      font-size: 0.925rem;
-      line-height: 1.75;
-      color: var(--gray-200);
-      padding-top: 24px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .testimonial-avatar {
-      width: 40px;
-      height: 40px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .testimonial-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .testimonial-role {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-    }
-
-    /* ===== Contact ===== */
-    .contact { background: var(--off-white); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-info { padding-top: 8px; }
-
-    .contact-info .section-subtitle { margin-bottom: 40px; }
-
-    .contact-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .contact-method-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--white);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-
-    .contact-method-icon svg { width: 20px; height: 20px; color: var(--navy); }
-
-    .contact-method-label {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-      margin-bottom: 2px;
-    }
-
-    .contact-method-value {
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .contact-method-value a { transition: color 0.2s; }
-    .contact-method-value a:hover { color: var(--accent); }
-
-    .contact-quick-links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .quick-link-card {
-      padding: 20px;
-      border-radius: 16px;
-      background: var(--white);
-      border: 1px solid rgba(45, 46, 58, 0.08);
-      box-shadow: 0 12px 28px rgba(45, 46, 58, 0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .quick-link-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(99, 102, 241, 0.22);
-      box-shadow: 0 18px 34px rgba(45, 46, 58, 0.09);
-    }
-
-    .quick-link-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: var(--navy);
-    }
-
-    .quick-link-card p {
-      font-size: 0.88rem;
-      line-height: 1.65;
-      color: var(--gray-500);
-      margin-bottom: 14px;
-    }
-
-    .quick-link-card span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .quick-link-card svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    /* ===== Form ===== */
-    .contact-form {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 30px rgba(0,0,0,0.04);
-    }
-
-    .contact-form h3 {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .contact-form > p {
-      font-size: 0.9rem;
-      color: var(--gray-400);
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-      color: var(--navy);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1.5px solid var(--gray-200);
-      border-radius: 8px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 120px; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .btn-submit:hover {
-      background: var(--navy-light);
-      transform: translateY(-1px);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--navy-dark);
-      color: var(--gray-300);
-      padding: 48px 0 32px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin-bottom: 40px;
-    }
-
-    .footer-logo {
-      width: 160px;
-      height: auto;
-      margin-bottom: 16px;
-    }
-
-    .footer-brand .nav-logo { color: var(--white); margin-bottom: 8px; }
-
-    .footer-brand p {
-      font-size: 0.875rem;
-      color: var(--gray-400);
-      max-width: 280px;
-      line-height: 1.6;
-    }
-
-    .footer-links h4 {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gray-400);
-      margin-bottom: 16px;
-    }
-
-    .footer-links ul { list-style: none; }
-
-    .footer-links li { margin-bottom: 8px; }
-
-    .footer-links a {
-      font-size: 0.875rem;
-      color: var(--gray-300);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-bottom p {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-    }
-
-    .footer-bottom a {
-      color: var(--gray-400);
-      transition: color 0.2s;
-    }
-
-    .footer-bottom a:hover { color: var(--white); }
-
-    /* ===== Animations ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== Mobile Responsive ===== */
-    @media (max-width: 900px) {
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-        max-width: 520px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      section { padding: 72px 0; }
-
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        padding: 24px;
-        gap: 20px;
-        border-bottom: 1px solid var(--gray-200);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      }
-
-      .nav-toggle { display: block; }
-
-      .hero { min-height: auto; padding: 140px 24px 80px; }
-      .hero h1 { font-size: 2.4rem; }
-
-      .form-row { grid-template-columns: 1fr; }
-
-      .contact-form { padding: 28px; }
-      .contact-quick-links { grid-template-columns: 1fr; }
-
-      .footer-inner { flex-direction: column; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .btn { width: 100%; justify-content: center; }
-    }
-
-    /* ===== Print ===== */
-    @media print {
-      nav, .contact-form, .hero-buttons { display: none; }
-      section { padding: 24px 0; }
-    }
+    *,*::before,*::after{box-sizing:border-box}*{margin:0}html{scroll-behavior:smooth}body{font-family:"DM Sans",sans-serif;color:#17202a;background:#f7f8f5;line-height:1.65;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}.eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#506757}.section-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:40px}.section-head h2{font:800 clamp(2rem,4vw,3.5rem)/1.05 "Manrope",sans-serif;letter-spacing:-.05em;max-width:700px}.section-head p{color:#657068;max-width:430px}.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(24,45,31,.12);border-radius:99px;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.55)}.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#5e7e67}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:0 20px;border-radius:12px;font-weight:700;transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-dark{background:#16231a;color:#fff}.btn-light{background:#fff;border:1px solid #dce1dc}.text-link{font-weight:700;border-bottom:1px solid currentColor;padding-bottom:2px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:999}
+    nav{position:absolute;inset:0 0 auto;z-index:10}.nav-inner{height:86px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font:800 1rem "Manrope",sans-serif}.brand img{width:38px;height:38px;object-fit:contain}.nav-links{display:flex;align-items:center;gap:28px;list-style:none;font-size:.9rem;font-weight:600}.nav-links a{opacity:.72}.nav-links a:hover{opacity:1}.nav-contact{padding:10px 15px;border:1px solid rgba(23,32,42,.16);border-radius:10px}.menu{display:none;background:none;border:0;padding:8px;cursor:pointer}.menu span{display:block;width:23px;height:2px;background:#17202a;margin:5px}
+    .hero{min-height:760px;padding:150px 0 90px;background:#e7ede5;position:relative;overflow:hidden}.hero::before{content:"";position:absolute;width:760px;height:760px;border-radius:50%;background:#d4dfd2;right:-190px;top:-280px}.hero::after{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(37,70,45,.12);border-radius:50%;right:12%;bottom:-210px}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:80px}.hero h1{font:800 clamp(3.5rem,7vw,6.4rem)/.93 "Manrope",sans-serif;letter-spacing:-.075em;max-width:730px;margin:24px 0 28px}.hero-copy>p{font-size:clamp(1.06rem,1.8vw,1.3rem);color:#4f5d53;max-width:590px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.hero-visual{position:relative;min-height:490px}.hero-card{position:absolute;border-radius:25px;box-shadow:0 25px 70px rgba(32,50,38,.18);overflow:hidden}.hero-card img{width:100%;height:100%;object-fit:cover}.hero-card-main{inset:20px 50px 20px 0;background:#15261b;transform:rotate(-2deg);padding:22px}.hero-card-main img{object-fit:contain;border-radius:14px}.hero-card-small{width:185px;height:305px;right:0;bottom:-8px;background:#fbfcfa;padding:10px;transform:rotate(5deg)}.hero-card-small img{object-fit:cover;object-position:top;border-radius:16px}.floating-note{position:absolute;top:0;right:10px;z-index:3;background:#fff;padding:13px 16px;border-radius:14px;box-shadow:0 16px 40px rgba(32,50,38,.12);font-size:.82rem;font-weight:700}.floating-note span{color:#607267;font-weight:500;display:block}
+    .featured{padding:110px 0}.featured-card{display:grid;grid-template-columns:.92fr 1.08fr;min-height:590px;background:#17231b;color:#fff;border-radius:30px;overflow:hidden}.feature-copy{padding:64px;display:flex;flex-direction:column;align-items:start;justify-content:center}.feature-copy .eyebrow{color:#9bb2a0}.feature-copy h3{font:800 clamp(2.6rem,5vw,4.5rem)/1 "Manrope",sans-serif;letter-spacing:-.055em;margin:16px 0}.feature-copy>p{color:#c4cec7;font-size:1.12rem;max-width:470px}.feature-list{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 35px}.feature-list span{padding:7px 11px;background:rgba(255,255,255,.08);border-radius:99px;font-size:.78rem}.feature-copy .btn{background:#f7f8f5;color:#17231b}.feature-image{display:flex;align-items:center;justify-content:center;padding:50px;background:radial-gradient(circle at 50% 45%,#557460 0,#2b4433 45%,#203027 70%)}.feature-image img{filter:drop-shadow(0 28px 36px rgba(0,0,0,.38));max-height:490px;object-fit:contain}
+    .apps{padding:20px 0 115px}.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.app-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e2e5e0;border-radius:22px;overflow:hidden;transition:transform .25s,box-shadow .25s}.app-card:hover{transform:translateY(-5px);box-shadow:0 24px 55px rgba(24,45,31,.1)}.app-art{height:280px;padding:25px;position:relative;overflow:hidden}.app-art img{height:100%;width:100%;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 18px 25px rgba(0,0,0,.18))}.app-art.pdp{background:#f2ebe5}.app-art.unfold{background:#e8e9f1}.app-art.paw{background:#e9eee6}.abstract-icon{height:100%;display:grid;place-items:center;position:relative}.abstract-icon .glyph{width:130px;height:130px;border-radius:30px;display:grid;place-items:center;font:800 3rem "Manrope";box-shadow:0 20px 35px rgba(35,42,56,.2)}.unfold .glyph{background:linear-gradient(145deg,#333849,#11141c);color:#e6e8f2}.unfold .glyph::after{content:"";width:42px;height:54px;border:4px solid currentColor;border-top-width:13px;border-radius:7px}.paw .glyph{background:linear-gradient(145deg,#738b68,#2e4934);color:#fff}.paw .glyph::after{content:"●  ●";letter-spacing:9px;font-size:1.1rem}.app-body{padding:27px;display:flex;flex-direction:column;flex:1}.app-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.app-body h3{font:800 1.5rem "Manrope";letter-spacing:-.035em}.app-body>p{color:#667169;margin:13px 0 24px}.app-body .text-link{margin-top:auto;align-self:flex-start}.status{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#5e7164}.status.live{color:#24653a}
+    .about{padding:110px 0;background:#ecefe9}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:110px}.about h2{font:800 clamp(2.2rem,4vw,3.6rem)/1.05 "Manrope";letter-spacing:-.05em;margin-top:16px}.about-copy{font-size:1.1rem;color:#4f5b53}.about-copy p+p{margin-top:18px}.expertise{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}.expertise span{padding:8px 12px;border:1px solid #cbd3ca;border-radius:8px;background:rgba(255,255,255,.35);font-size:.82rem;font-weight:600}
+    .testimonials{padding:115px 0}.quotes{columns:3;column-gap:20px}.quote{break-inside:avoid;margin-bottom:20px;padding:27px;background:#fff;border:1px solid #e1e5df;border-radius:18px}.quote::before{content:"“";display:block;font:700 3.3rem/1 Georgia;color:#9aab9c}.quote blockquote{color:#4e5951}.person{display:flex;align-items:center;gap:11px;margin-top:24px}.avatar{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#e4ebe2;font-size:.7rem;font-weight:700}.person strong{font:700 .9rem "Manrope";display:block}.person span{font-size:.78rem;color:#778079}
+    .collab{padding:0 0 115px}.collab-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;background:#d9e2d7;border-radius:26px;padding:52px 58px}.collab h2{font:800 clamp(1.9rem,3.5vw,3rem)/1.1 "Manrope";letter-spacing:-.045em;margin:11px 0}.collab p{color:#536157;max-width:700px}.collab-actions{display:flex;gap:10px;flex-wrap:wrap}
+    footer{background:#152019;color:#dce3dd;padding:66px 0 30px}.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:45px}.footer-brand p{max-width:320px;color:#98a49b;margin-top:15px}.footer-col h3{font:700 .8rem "Manrope";text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}.footer-col ul{list-style:none;padding:0}.footer-col li{margin:9px 0}.footer-col a{color:#aeb8b0}.footer-col a:hover{color:#fff}.copyright{display:flex;justify-content:space-between;gap:20px;margin-top:55px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:#849087}
+    @media(max-width:900px){.hero-grid,.featured-card,.about-grid{grid-template-columns:1fr}.hero{padding-top:130px}.hero-grid{gap:30px}.hero-visual{min-height:430px;max-width:580px}.featured-card{min-height:0}.feature-copy{padding:46px}.feature-image{min-height:450px}.app-grid{grid-template-columns:repeat(2,1fr)}.app-card:last-child{grid-column:1/-1}.about-grid{gap:40px}.quotes{columns:2}.collab-card{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.wrap{width:min(100% - 32px,1180px)}.nav-inner{height:70px}.menu{display:block}.nav-links{display:none;position:absolute;top:70px;left:16px;right:16px;background:#fff;padding:18px;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,.12);flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-contact{text-align:center}.hero{min-height:auto;padding:115px 0 65px}.hero h1{font-size:clamp(3rem,15vw,4.7rem)}.hero-visual{min-height:340px}.hero-card-main{right:35px}.hero-card-small{width:135px;height:230px}.floating-note{display:none}.section-head{display:block}.section-head p{margin-top:16px}.featured,.about,.testimonials{padding:78px 0}.feature-copy{padding:35px 27px}.feature-image{padding:25px;min-height:350px}.app-grid{grid-template-columns:1fr}.app-card:last-child{grid-column:auto}.app-art{height:245px}.quotes{columns:1}.collab{padding-bottom:78px}.collab-card{padding:35px 26px}.collab-actions{flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.copyright{flex-direction:column}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.app-card{transition:none}}
   </style>
-
-  <!-- i18n: cloak non-English first paint to prevent a flash of untranslated (English) content -->
-  <script>
-  (function(){try{var l=localStorage.getItem('site-lang');if(!l){var a=navigator.languages||[navigator.language||'en'],i,x;for(i=0;i<a.length;i++){x=(a[i]||'').toLowerCase();if(x.indexOf('nl')===0){l='nl';break;}if(x.indexOf('fr')===0){l='fr';break;}if(x.indexOf('en')===0){l='en';break;}}}if(l&&l!=='en'){var d=document.documentElement;d.setAttribute('data-i18n-cloak','');d.lang=l;setTimeout(function(){d.removeAttribute('data-i18n-cloak');},1500);}}catch(e){}})();
-  </script>
-  <style>html[data-i18n-cloak] body{visibility:hidden}</style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Michel Storms</a>
-      <button class="nav-toggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav.toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="apps.html" data-i18n="nav.apps">Apps</a></li>
-        <li><a href="opensource.html">Open Source</a></li>
-        <li><a href="#about" data-i18n="nav.about">About</a></li>
-        <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-        <li><a href="accessibility-statement.html" data-i18n="nav.accessibility">Accessibility</a></li>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#apps"><img src="assets/logo.png" alt=""><span>Michel Storms</span></a>
+      <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="#apps">Apps</a></li><li><a href="#about">About</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="blog.html">Blog</a></li><li><a href="#collaborate">Collaborate</a></li>
       </ul>
     </div>
   </nav>
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content hero-copy">
-      <img src="assets/logo.png" alt="Michel Storms logo" class="hero-logo" data-i18n-attr="alt:hero.logo_alt">
-      <span class="hero-label" data-i18n="hero.label">Freelance Software Developer · Apple specialist, full-stack</span>
-      <h1 data-i18n="hero.h1">Crafting exceptional software, on Apple platforms and beyond</h1>
-      <p data-i18n="hero.p">Apple is my specialty — but I build with the same depth across the web, backends and APIs, and cross-platform mobile. Custom solutions, expert advice, and thoughtful design, end to end. To move fast, send a project brief or book a focused 30-minute call.</p>
-      <div class="hero-buttons">
-        <a href="https://cal.eu/michelstorms" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span data-i18n="hero.btn_book">Book 30 Minutes</span>
-        </a>
-        <a href="#contact" class="btn btn-outline">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span data-i18n="hero.btn_proposal">Get a Proposal</span>
-        </a>
-      </div>
-      <div class="hero-links">
-        <a href="mailto:michelstorms@icloud.com" class="hero-chip">
-          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span data-i18n="hero.chip_email">Email Me</span>
-        </a>
-        <a href="https://github.com/stormychel" class="hero-chip" target="_blank" rel="noopener noreferrer">
-          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.18 1.77 1.18 1.02 1.77 2.69 1.26 3.34.97.1-.75.4-1.26.72-1.55-2.56-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.18a10.99 10.99 0 0 1 5.81 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.42.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About & Services -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text fade-in">
-          <span class="section-label" data-i18n="about.label">About</span>
-          <h2 class="section-title" data-i18n="about.title">Apple at heart, fluent across the stack</h2>
-          <p class="section-subtitle" data-i18n="about.subtitle">Apple platforms are where I go deepest — Swift, SwiftUI, the whole toolchain — but they're not where I stop. From web frontends and backend APIs to Android, cross-platform, and containerised deployment, I bring the same expertise, clear communication, and a passion for quality to every project, whatever the stack.</p>
+  <main id="main">
+    <header class="hero" id="apps">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="pill">Flagship app · Available now</span>
+          <h1>TrackHound.</h1>
+          <p>Customisable offline navigation for every kind of drive or ride. Choose the fastest route, seek out the curviest roads, or deliberately head for gravel—with routing that keeps working when the signal disappears.</p>
+          <div class="hero-actions"><a class="btn btn-dark" href="https://apps.apple.com/app/id6762570002" target="_blank" rel="noopener noreferrer">Get TrackHound</a><a class="btn btn-light" href="https://trackhoundapp.com" target="_blank" rel="noopener noreferrer">Explore TrackHound</a></div>
         </div>
-        <div class="services-list fade-in">
-          <div class="service-item">
-            <div class="service-icon">
-              <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div>
-              <h3 data-i18n="services.macos.title">macOS Development</h3>
-              <p data-i18n="services.macos.desc">Native desktop apps built with SwiftUI, AppKit, and the latest Apple frameworks.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">
-              <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <div>
-              <h3 data-i18n="services.ios.title">iOS &amp; watchOS Apps</h3>
-              <p data-i18n="services.ios.desc">Mobile and wearable experiences designed to feel at home on every Apple device.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">
-              <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            </div>
-            <div>
-              <h3 data-i18n="services.web.title">Web, Backend &amp; Cross-Platform</h3>
-              <p data-i18n="services.web.desc">Full-stack web apps and APIs, Android and cross-platform mobile, and containerised, cloud-deployed services — held to the same standard as everything I ship on Apple.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">
-              <svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <h3 data-i18n="services.consulting.title">Consulting &amp; Architecture</h3>
-              <p data-i18n="services.consulting.desc">Technical guidance, code reviews, and architecture planning across platforms and stacks.</p>
-            </div>
-          </div>
+        <div class="hero-visual" aria-label="App previews">
+          <div class="floating-note">Routes for the roads less taken<span>iPhone · CarPlay · Offline</span></div>
+          <div class="hero-card hero-card-main"><img src="assets/apps/trackhound/composite_promo.jpg" alt="TrackHound route map, route-style picker, and turn-by-turn roadbook"></div>
+          <div class="hero-card hero-card-small"><img src="assets/apps/trackhound/03_roadbook.jpg" alt="TrackHound turn-by-turn roadbook on iPhone"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Testimonials -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header fade-in">
-        <span class="section-label" data-i18n="testimonials.label">Testimonials</span>
-        <h2 class="section-title" data-i18n="testimonials.title">What clients say</h2>
-        <p class="section-subtitle" data-i18n="testimonials.subtitle">I'm fortunate to have worked with great people who trusted me with their ideas.</p>
+    <section class="featured">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Also available</span><h2>Meet HoverCalc.</h2></div><p>A fast calculator that is there when you need it and out of the way when you don’t.</p></div>
+        <article class="featured-card">
+          <div class="feature-copy"><span class="eyebrow">For macOS</span><h3>Math, without breaking your flow.</h3><p>Run quick calculations from the menu bar, or detach HoverCalc into a floating panel that follows you across desktops and fullscreen apps.</p><div class="feature-list"><span>Global hotkey</span><span>Floating panel</span><span>Calculation history</span><span>Six themes</span></div><a class="btn" href="https://apps.apple.com/be/app/hovercalc/id6759318126?mt=12" target="_blank" rel="noopener noreferrer">View on the Mac App Store →</a></div>
+          <div class="feature-image"><img src="assets/apps/hovercalc/composite_promo.png" alt="HoverCalc floating calculator in multiple color themes"></div>
+        </article>
       </div>
-      <div class="testimonials-grid">
+    </section>
 
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t1.quote">Michael stands out as the most exceptional Apple developer I've encountered. Throughout our year-long collaboration, he has consistently met and exceeded the project goals. His innovative approach brought fresh ideas that significantly enhanced our project's scope and potential. His attention to detail, love for the project and commitment to quality are extraordinary.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">TS</div>
-            <div>
-              <div class="testimonial-name">Till Seyer</div>
-              <div class="testimonial-role">typegear.ai</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t2.quote">Competent and capable mac developer with solid software engineering skills. Takes ownership, including challenges, makes useful suggestions where there are options, and proceeds to take the project to a successful completion. Professional, Talented, and A-List. Recommended without reservation.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">TN</div>
-            <div>
-              <div class="testimonial-name">Trevor N.</div>
-              <div class="testimonial-role" data-i18n="testimonials.t2.role">Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t3.quote">Michael was incredible to work with and some of the best macOS code that I have seen. His quality is impeccable and he is so incredibly systematic. I would hire him for another project in a heartbeat.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">EB</div>
-            <div>
-              <div class="testimonial-name">Ethan Blount</div>
-              <div class="testimonial-role" data-i18n="testimonials.t3.role">Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t4.quote">Michel did a great job, excellent communication &amp; documentation of his work. He solved problems fast &amp; good, even in difficult situations he had every time a proposal how to solve. I'm looking forward to our next project.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">EB</div>
-            <div>
-              <div class="testimonial-name">Enrico Bansemer</div>
-              <div class="testimonial-role">TabFox &amp; MagicDesign</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t5.quote">Michel was a fantastic asset to the project and I will work with him again anytime. The Best of the Best!! Highly recommended!</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MS</div>
-            <div>
-              <div class="testimonial-name">Mans Shapshak</div>
-              <div class="testimonial-role" data-i18n="testimonials.t5.role">Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t6.quote">Very patient and good communication. Helped me walk through and troubleshoot the problem.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DT</div>
-            <div>
-              <div class="testimonial-name">Dayat Technologies</div>
-              <div class="testimonial-role">LLC</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t7.quote">Michel did an excellent job developing my macOS app and helped push it through deployment on the Mac App Store. He was professional, responsive, and delivered high-quality work with great attention to detail. I'm very happy with the final result and would definitely recommend him.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SK</div>
-            <div>
-              <div class="testimonial-name">Stepan Kandrushin</div>
-              <div class="testimonial-role" data-i18n="testimonials.t7.role">Client</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">
-            <p data-i18n="testimonials.t8.quote">Very knowledgable with anti-virus, security and the whole ecosystem. Thanks for helping us overcome some issues and your expert help.</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JF</div>
-            <div>
-              <div class="testimonial-name">Jack F.</div>
-              <div class="testimonial-role" data-i18n="testimonials.t8.role">Client</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info fade-in">
-          <span class="section-label" data-i18n="contact.label">Get in Touch</span>
-          <h2 class="section-title" data-i18n="contact.title">Let's build something great</h2>
-          <p class="section-subtitle" data-i18n="contact.subtitle">Have an idea for an app or need expert help with an Apple project? Reach out and I'll get back to you with a proposal.</p>
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div class="contact-method-label" data-i18n="contact.email_label">Email</div>
-                <div class="contact-method-value"><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <div class="contact-method-label" data-i18n="contact.phone_label">Phone</div>
-                <div class="contact-method-value"><a href="tel:+32487444733">+32 487 444 733</a></div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              </div>
-              <div>
-                <div class="contact-method-label" data-i18n="contact.calendar_label">Calendar</div>
-                <div class="contact-method-value"><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer" data-i18n="contact.calendar_value">Book an online 30-minute call</a></div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.18 1.77 1.18 1.02 1.77 2.69 1.26 3.34.97.1-.75.4-1.26.72-1.55-2.56-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.18a10.99 10.99 0 0 1 5.81 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.42.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-              </div>
-              <div>
-                <div class="contact-method-label" data-i18n="contact.github_label">GitHub</div>
-                <div class="contact-method-value"><a href="https://github.com/stormychel" target="_blank" rel="noopener noreferrer">github.com/stormychel</a></div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div class="contact-method-label" data-i18n="contact.location_label">Location</div>
-                <div class="contact-method-value" data-i18n="contact.location_value">Ingelmunster, Belgium</div>
-              </div>
-            </div>
-          </div>
-          <div class="contact-quick-links fade-in">
-            <a href="https://cal.eu/michelstorms" class="quick-link-card" target="_blank" rel="noopener noreferrer">
-              <strong data-i18n="contact.quicklink1.title">Prefer a live conversation?</strong>
-              <p data-i18n="contact.quicklink1.desc">Skip the back-and-forth and reserve time directly in the calendar.</p>
-              <span><span data-i18n="contact.quicklink1.cta">Open booking page</span>
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </span>
-            </a>
-            <a href="https://github.com/stormychel" class="quick-link-card" target="_blank" rel="noopener noreferrer">
-              <strong data-i18n="contact.quicklink2.title">Want to inspect how I work?</strong>
-              <p data-i18n="contact.quicklink2.desc">Browse the public GitHub profile for code, experiments, and shipped ideas.</p>
-              <span><span data-i18n="contact.quicklink2.cta">Visit GitHub</span>
-                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </span>
-            </a>
-          </div>
-        </div>
-        <form class="contact-form fade-in" action="https://formspree.io/f/xgejqkdp" method="POST">
-          <h3 data-i18n="contact.form.title">Get a Proposal</h3>
-          <p data-i18n="contact.form.desc">Describe your project and I'll send you a quote.</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name" data-i18n="contact.form.name_label">Name or Company</label>
-              <input type="text" id="name" name="name" required placeholder="Your name" data-i18n-attr="placeholder:contact.form.name_placeholder">
-            </div>
-            <div class="form-group">
-              <label for="email" data-i18n="contact.form.email_label">Email</label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="phone" data-i18n="contact.form.phone_label">Phone <span style="color: var(--gray-400); font-weight: 400;">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" data-i18n-attr="placeholder:contact.form.phone_placeholder">
-          </div>
-          <div class="form-group">
-            <label for="message" data-i18n="contact.form.message_label">Project Description</label>
-            <textarea id="message" name="message" required placeholder="Tell me about your app idea or project..." data-i18n-attr="placeholder:contact.form.message_placeholder"></textarea>
-          </div>
-          <button type="submit" class="btn-submit" data-i18n="contact.form.submit">Send Proposal Request</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/logo-white.png" alt="Michel Storms" class="footer-logo">
-          <p data-i18n="footer.brand.desc">Freelance Software Developer specialised in Apple, based in Belgium. Building quality software for macOS, iOS, and beyond.</p>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.nav.heading">Navigation</h4>
-          <ul>
-            <li><a href="#home" data-i18n="footer.nav.home">Home</a></li>
-            <li><a href="apps.html" data-i18n="footer.nav.apps">Apps</a></li>
-            <li><a href="#about" data-i18n="footer.nav.about">About</a></li>
-            <li><a href="#testimonials" data-i18n="footer.nav.testimonials">Testimonials</a></li>
-            <li><a href="#contact" data-i18n="footer.nav.contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.legal.heading">Legal</h4>
-          <ul>
-            <li><a href="accessibility-statement.html" data-i18n="footer.legal.accessibility">Accessibility Statement</a></li>
-            <li>BTW: 0765.873.990</li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.connect.heading">Connect</h4>
-          <ul>
-            <li><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer" data-i18n="footer.connect.book">Book 30 Minutes</a></li>
-            <li><a href="https://github.com/stormychel" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="mailto:michelstorms@icloud.com" data-i18n="footer.connect.email">Email</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.address.heading">Address</h4>
-          <ul>
-            <li>Gentstraat 196</li>
-            <li>8770 Ingelmunster</li>
-            <li>Belgium</li>
-          </ul>
+    <section class="apps" aria-labelledby="more-apps">
+      <div class="wrap"><div class="section-head"><div><span class="eyebrow">On the workbench</span><h2 id="more-apps">More useful ideas taking shape.</h2></div><p>Experiments and upcoming releases built around real, everyday friction.</p></div>
+        <div class="app-grid">
+          <article class="app-card"><div class="app-art pdp"><img src="assets/apps/pickdateplace/organizer-02.png" alt="PickDatePlace date options on iPhone"></div><div class="app-body"><div class="app-top"><h3>PickDatePlace</h3><span class="status">In development</span></div><p>Choose the date first, then the place. Create an availability poll in iMessage and find the time that works for everyone.</p><a class="text-link" href="pickdateplace/">Discover PickDatePlace →</a></div></article>
+          <article class="app-card"><div class="app-art unfold"><div class="abstract-icon"><div class="glyph" aria-hidden="true"></div></div></div><div class="app-body"><div class="app-top"><h3>Unfold</h3><span class="status">In development</span></div><p>A window-aware macOS app switcher. Move from an app directly to the exact window you need, without reaching for the mouse.</p><a class="text-link" href="unfold/">Discover Unfold →</a></div></article>
+          <article class="app-card"><div class="app-art paw"><div class="abstract-icon"><div class="glyph" aria-hidden="true"></div></div></div><div class="app-body"><div class="app-top"><h3>PawMode</h3><span class="status">In development</span></div><p>Turn a spare iPhone into a vehicle monitor that watches temperature and helps reassure passersby that your pet is safe.</p><a class="text-link" href="pawmode/">Discover PawMode →</a></div></article>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2021–2026 Michel Storms. <span data-i18n="footer.bottom.rights">All rights reserved.</span></p>
-        <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- i18n -->
+    <section class="about" id="about"><div class="wrap about-grid"><div><span class="eyebrow">Behind the apps</span><h2>Built with curiosity, care, and a healthy dislike of clutter.</h2></div><div class="about-copy"><p>I’m Michel Storms, an independent Apple-platform developer based in Belgium. My background spans architecture, manufacturing, machining, and programming—fields that taught me to think in systems and sweat the details.</p><p>I design and build native software across the Apple ecosystem, always aiming for the same thing: a clear idea, thoughtfully executed.</p><div class="expertise"><span>Swift &amp; SwiftUI</span><span>macOS</span><span>iOS &amp; iPadOS</span><span>watchOS</span><span>AppKit</span><span>UX &amp; product design</span><span>AI &amp; Core ML</span></div></div></div></section>
+
+    <section class="testimonials" id="testimonials"><div class="wrap"><div class="section-head"><div><span class="eyebrow">The craft behind the apps</span><h2>Built carefully. Proven in ambitious products.</h2></div><p>The same product thinking, engineering care, and attention to detail behind my apps—described by people I have shipped software with.</p></div><div class="quotes">
+      <article class="quote"><blockquote>Michael stands out as the most exceptional Apple developer I've encountered. Throughout our year-long collaboration, he has consistently met and exceeded the project goals. His innovative approach brought fresh ideas that significantly enhanced our project's scope and potential. His attention to detail, love for the project and commitment to quality are extraordinary.</blockquote><div class="person"><div class="avatar">TS</div><div><strong>Till Seyer</strong><span>typegear.ai</span></div></div></article>
+      <article class="quote"><blockquote>Competent and capable mac developer with solid software engineering skills. Takes ownership, including challenges, makes useful suggestions where there are options, and proceeds to take the project to a successful completion. Professional, Talented, and A-List. Recommended without reservation.</blockquote><div class="person"><div class="avatar">TN</div><div><strong>Trevor N.</strong><span>Client</span></div></div></article>
+      <article class="quote"><blockquote>Michael was incredible to work with and some of the best macOS code that I have seen. His quality is impeccable and he is so incredibly systematic. I would hire him for another project in a heartbeat.</blockquote><div class="person"><div class="avatar">EB</div><div><strong>Ethan Blount</strong><span>Client</span></div></div></article>
+      <article class="quote"><blockquote>Michel did a great job, excellent communication &amp; documentation of his work. He solved problems fast &amp; good, even in difficult situations he had every time a proposal how to solve. I'm looking forward to our next project.</blockquote><div class="person"><div class="avatar">EB</div><div><strong>Enrico Bansemer</strong><span>TabFox &amp; MagicDesign</span></div></div></article>
+      <article class="quote"><blockquote>Michel was a fantastic asset to the project and I will work with him again anytime. The Best of the Best!! Highly recommended!</blockquote><div class="person"><div class="avatar">MS</div><div><strong>Mans Shapshak</strong><span>Client</span></div></div></article>
+      <article class="quote"><blockquote>Very patient and good communication. Helped me walk through and troubleshoot the problem.</blockquote><div class="person"><div class="avatar">DT</div><div><strong>Dayat Technologies</strong><span>LLC</span></div></div></article>
+    </div></div></section>
+
+    <section class="collab" id="collaborate"><div class="wrap"><div class="collab-card"><div><span class="eyebrow">Selected collaborations</span><h2>Sometimes, I build with other people too.</h2><p>Alongside my own apps, I take on selected contract work where deep Apple-platform experience and product thinking can make a meaningful difference.</p></div><div class="collab-actions"><a class="btn btn-dark" href="mailto:michelstorms@icloud.com">Start a conversation</a><a class="btn btn-light" href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer">Book 30 minutes</a></div></div></div></section>
+  </main>
+  <footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#apps"><img src="assets/logo-white.png" alt=""><span>Michel Storms</span></a><p>Independent apps for Apple platforms, designed and built in Belgium.</p></div><div class="footer-col"><h3>Explore</h3><ul><li><a href="#apps">Apps</a></li><li><a href="blog.html">Blog</a></li><li><a href="#about">About</a></li></ul></div><div class="footer-col"><h3>Connect</h3><ul><li><a href="mailto:michelstorms@icloud.com">Email</a></li><li><a href="https://github.com/stormychel" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://cal.eu/michelstorms" target="_blank" rel="noopener noreferrer">Calendar</a></li></ul></div><div class="footer-col"><h3>Information</h3><ul><li><a href="accessibility-statement.html">Accessibility</a></li><li><a href="https://michelstorms.com/trackhound/privacy/">TrackHound Privacy</a></li><li><a href="https://michelstorms.com/trackhound/terms/">TrackHound Terms</a></li></ul></div></div><div class="copyright"><span>© 2021–2026 Michel Storms. All rights reserved.</span><span>Ingelmunster, Belgium · BTW 0765.873.990</span></div></div></footer>
   <script>
-  window.I18N_STRINGS = {
-    nl: {
-      "meta.title": "Michel Storms — Freelance softwareontwikkelaar · Apple-specialist, full-stack",
-      "meta.desc": "Michel Storms is een freelance softwareontwikkelaar gespecialiseerd in Apple-platformen — en even goed thuis in webfrontends, backends en API's, cross-platform mobiel en cloudgehoste services.",
-      "nav.toggle": "Menu openen",
-      "nav.apps": "Apps",
-      "nav.about": "Over mij",
-      "nav.testimonials": "Referenties",
-      "nav.contact": "Contact",
-      "nav.accessibility": "Toegankelijkheid",
-      "hero.logo_alt": "Michel Storms logo",
-      "hero.label": "Freelance softwareontwikkelaar · Apple-specialist, full-stack",
-      "hero.h1": "Uitzonderlijke software, op Apple-platformen en daarbuiten",
-      "hero.p": "Apple is mijn specialiteit — maar ik bouw met evenveel diepgang voor het web, backends en API's, en cross-platform mobiel. Oplossingen op maat, deskundig advies en doordacht design, van begin tot eind. Wil je snel van start? Stuur een projectbeschrijving of boek een gefocust gesprek van 30 minuten.",
-      "hero.btn_book": "Boek 30 minuten",
-      "hero.btn_proposal": "Vraag een offerte aan",
-      "hero.chip_email": "Stuur een e-mail",
-      "about.label": "Over mij",
-      "about.title": "Apple in hart en nieren, thuis in de hele stack",
-      "about.subtitle": "Op Apple-platformen ga ik het diepst — Swift, SwiftUI, de volledige toolchain — maar daar houdt het niet op. Van webfrontends en backend-API's tot Android, cross-platform en gecontaineriseerde deployment: ik breng dezelfde expertise, heldere communicatie en passie voor kwaliteit naar elk project, ongeacht de stack.",
-      "services.macos.title": "macOS-ontwikkeling",
-      "services.macos.desc": "Native desktopapps gebouwd met SwiftUI, AppKit en de nieuwste Apple-frameworks.",
-      "services.ios.title": "iOS- en watchOS-apps",
-      "services.ios.desc": "Mobiele en wearable-ervaringen die op elk Apple-apparaat als thuis aanvoelen.",
-      "services.web.title": "Web, backend &amp; cross-platform",
-      "services.web.desc": "Full-stack webapps en API's, Android- en cross-platform mobiel, en gecontaineriseerde, cloudgehoste services — met dezelfde kwaliteit als alles wat ik op Apple bouw.",
-      "services.consulting.title": "Consultancy &amp; Architectuur",
-      "services.consulting.desc": "Technisch advies, code-reviews en architectuurplanning over platformen en stacks heen.",
-      "testimonials.label": "Referenties",
-      "testimonials.title": "Wat klanten zeggen",
-      "testimonials.subtitle": "Ik heb het geluk gehad om met geweldige mensen te werken die mij hun ideeën toevertrouwden.",
-      "testimonials.t1.quote": "Michael onderscheidt zich als de meest uitzonderlijke Apple-ontwikkelaar die ik ben tegengekomen. Gedurende onze samenwerking van een jaar heeft hij de projectdoelen consequent gehaald én overtroffen. Zijn innovatieve aanpak bracht frisse ideeën die de reikwijdte en het potentieel van ons project aanzienlijk hebben vergroot. Zijn oog voor detail, liefde voor het project en toewijding aan kwaliteit zijn buitengewoon.",
-      "testimonials.t2.quote": "Competente en bekwame mac-ontwikkelaar met gedegen software-engineeringvaardigheden. Neemt eigenaarschap, ook bij uitdagingen, doet nuttige suggesties waar er keuzes zijn, en brengt het project tot een succesvolle afronding. Professioneel, getalenteerd en van het hoogste niveau. Zonder voorbehoud aanbevolen.",
-      "testimonials.t2.role": "Klant",
-      "testimonials.t3.quote": "Michael was geweldig om mee samen te werken en leverde een deel van de beste macOS-code die ik ooit heb gezien. Zijn kwaliteit is onberispelijk en hij werkt op een uiterst systematische manier. Ik zou hem zonder aarzeling voor een volgend project inhuren.",
-      "testimonials.t3.role": "Klant",
-      "testimonials.t4.quote": "Michel heeft uitstekend werk geleverd, met prima communicatie en documentatie. Hij loste problemen snel en goed op; zelfs in moeilijke situaties had hij altijd een voorstel klaar. Ik kijk uit naar ons volgende project.",
-      "testimonials.t5.quote": "Michel was een fantastische aanwinst voor het project en ik werk graag wanneer dan ook opnieuw met hem samen. De beste van de besten!! Sterk aanbevolen!",
-      "testimonials.t5.role": "Klant",
-      "testimonials.t6.quote": "Erg geduldig en goede communicatie. Hij hielp mij stap voor stap het probleem te doorgronden en op te lossen.",
-      "testimonials.t7.quote": "Michel heeft uitstekend werk geleverd bij de ontwikkeling van mijn macOS-app en hielp om ze door de uitrol in de Mac App Store te loodsen. Hij was professioneel, vlot bereikbaar en leverde werk van hoge kwaliteit met veel oog voor detail. Ik ben erg blij met het eindresultaat en zou hem zeker aanbevelen.",
-      "testimonials.t7.role": "Klant",
-      "testimonials.t8.quote": "Zeer onderlegd in antivirus, security en het hele ecosysteem. Bedankt voor de hulp bij het oplossen van enkele problemen en je deskundige ondersteuning.",
-      "testimonials.t8.role": "Klant",
-      "contact.label": "Neem contact op",
-      "contact.title": "Laten we iets geweldigs bouwen",
-      "contact.subtitle": "Heb je een app-idee of heb je expert hulp nodig bij een Apple-project? Neem contact op en ik kom terug met een voorstel.",
-      "contact.email_label": "E-mail",
-      "contact.phone_label": "Telefoon",
-      "contact.calendar_label": "Agenda",
-      "contact.calendar_value": "Boek een online gesprek van 30 minuten",
-      "contact.github_label": "GitHub",
-      "contact.location_label": "Locatie",
-      "contact.location_value": "Ingelmunster, België",
-      "contact.quicklink1.title": "Liever een live gesprek?",
-      "contact.quicklink1.desc": "Sla het heen-en-weer e-mailen over en reserveer tijd rechtstreeks in de agenda.",
-      "contact.quicklink1.cta": "Boekingspagina openen",
-      "contact.quicklink2.title": "Benieuwd hoe ik werk?",
-      "contact.quicklink2.desc": "Bekijk het publieke GitHub-profiel voor code, experimenten en afgeleverde projecten.",
-      "contact.quicklink2.cta": "Bezoek GitHub",
-      "contact.form.title": "Vraag een offerte aan",
-      "contact.form.desc": "Beschrijf je project en ik stuur je een prijsvoorstel.",
-      "contact.form.name_label": "Naam of bedrijf",
-      "contact.form.name_placeholder": "Jouw naam",
-      "contact.form.email_label": "E-mail",
-      "contact.form.phone_label": "Telefoon <span style=\"color: var(--gray-400); font-weight: 400;\">(optioneel)</span>",
-      "contact.form.phone_placeholder": "+32 123 456 789",
-      "contact.form.message_label": "Projectomschrijving",
-      "contact.form.message_placeholder": "Vertel me over je app-idee of project...",
-      "contact.form.submit": "Offerte aanvragen",
-      "footer.brand.desc": "Freelance softwareontwikkelaar gespecialiseerd in Apple, gevestigd in België. Kwalitatieve software voor macOS, iOS en meer.",
-      "footer.nav.heading": "Navigatie",
-      "footer.nav.home": "Home",
-      "footer.nav.apps": "Apps",
-      "footer.nav.about": "Over mij",
-      "footer.nav.testimonials": "Referenties",
-      "footer.nav.contact": "Contact",
-      "footer.legal.heading": "Juridisch",
-      "footer.legal.accessibility": "Toegankelijkheidsverklaring",
-      "footer.connect.heading": "Verbinden",
-      "footer.connect.book": "Boek 30 minuten",
-      "footer.connect.email": "E-mail",
-      "footer.address.heading": "Adres",
-      "footer.bottom.rights": "Alle rechten voorbehouden."
-    },
-    fr: {
-      "meta.title": "Michel Storms — Développeur logiciel indépendant · spécialiste Apple, full-stack",
-      "meta.desc": "Michel Storms est un développeur logiciel indépendant spécialisé dans les plateformes Apple — et tout aussi à l'aise avec le web, les backends et API, le mobile multiplateforme et les services déployés dans le cloud.",
-      "nav.toggle": "Ouvrir le menu",
-      "nav.apps": "Apps",
-      "nav.about": "À propos",
-      "nav.testimonials": "Témoignages",
-      "nav.contact": "Contact",
-      "nav.accessibility": "Accessibilité",
-      "hero.logo_alt": "Logo Michel Storms",
-      "hero.label": "Développeur logiciel indépendant · spécialiste Apple, full-stack",
-      "hero.h1": "Des logiciels d'exception, sur les plateformes Apple et au-delà",
-      "hero.p": "Apple est ma spécialité — mais je développe avec la même profondeur pour le web, les backends et API, et le mobile multiplateforme. Solutions sur mesure, conseils d'expert et design réfléchi, de bout en bout. Pour aller vite, envoyez un descriptif de projet ou réservez un appel ciblé de 30 minutes.",
-      "hero.btn_book": "Réserver 30 minutes",
-      "hero.btn_proposal": "Demander un devis",
-      "hero.chip_email": "M'envoyer un e-mail",
-      "about.label": "À propos",
-      "about.title": "Apple au cœur, à l'aise sur toute la stack",
-      "about.subtitle": "C'est sur les plateformes Apple que je vais le plus loin — Swift, SwiftUI, toute la chaîne d'outils — mais je ne m'y arrête pas. Du frontend web aux API backend, en passant par Android, le multiplateforme et le déploiement conteneurisé, j'apporte la même expertise, une communication claire et une passion pour la qualité à chaque projet, quelle que soit la stack.",
-      "services.macos.title": "Développement macOS",
-      "services.macos.desc": "Applications desktop natives créées avec SwiftUI, AppKit et les derniers frameworks Apple.",
-      "services.ios.title": "Apps iOS &amp; watchOS",
-      "services.ios.desc": "Expériences mobiles et wearable conçues pour s'intégrer parfaitement à chaque appareil Apple.",
-      "services.web.title": "Web, backend &amp; multiplateforme",
-      "services.web.desc": "Applications web full-stack et API, mobile Android et multiplateforme, et services conteneurisés déployés dans le cloud — au même niveau d'exigence que tout ce que je livre sur Apple.",
-      "services.consulting.title": "Conseil &amp; Architecture",
-      "services.consulting.desc": "Accompagnement technique, revues de code et planification d'architecture, toutes plateformes et stacks confondues.",
-      "testimonials.label": "Témoignages",
-      "testimonials.title": "Ce que disent les clients",
-      "testimonials.subtitle": "J'ai eu la chance de travailler avec des personnes remarquables qui m'ont confié leurs idées.",
-      "testimonials.t1.quote": "Michael se distingue comme le développeur Apple le plus exceptionnel que j'aie rencontré. Tout au long de notre collaboration d'un an, il a constamment atteint et dépassé les objectifs du projet. Son approche innovante a apporté des idées fraîches qui ont considérablement enrichi la portée et le potentiel de notre projet. Son souci du détail, son amour du projet et son engagement envers la qualité sont extraordinaires.",
-      "testimonials.t2.quote": "Développeur Mac compétent et capable, avec de solides compétences en génie logiciel. Il prend les choses en main, y compris face aux défis, fait des suggestions utiles lorsqu'il y a des options, et mène le projet à une conclusion réussie. Professionnel, talentueux, au meilleur niveau. Recommandé sans réserve.",
-      "testimonials.t2.role": "Client",
-      "testimonials.t3.quote": "Michael a été incroyable à travailler avec lui et a produit certains des meilleurs codes macOS que j'aie vus. Sa qualité est irréprochable et il est extrêmement méthodique. Je le réembaucherais pour un autre projet sans hésiter.",
-      "testimonials.t3.role": "Client",
-      "testimonials.t4.quote": "Michel a fait un excellent travail, avec une communication et une documentation de qualité. Il a résolu les problèmes rapidement et efficacement ; même dans des situations difficiles, il avait toujours une proposition de solution. J'attends avec impatience notre prochain projet.",
-      "testimonials.t5.quote": "Michel a été un atout fantastique pour le projet et je travaillerai à nouveau avec lui à n'importe quel moment. Le meilleur du meilleur ! Hautement recommandé !",
-      "testimonials.t5.role": "Client",
-      "testimonials.t6.quote": "Très patient et bonne communication. Il m'a guidé pas à pas pour comprendre et résoudre le problème.",
-      "testimonials.t7.quote": "Michel a réalisé un excellent travail dans le développement de mon app macOS et m'a aidé à la mener jusqu'au déploiement sur le Mac App Store. Il a été professionnel, réactif et a livré un travail de grande qualité avec un grand souci du détail. Je suis très satisfait du résultat final et le recommande sans hésiter.",
-      "testimonials.t7.role": "Client",
-      "testimonials.t8.quote": "Très compétent en antivirus, en sécurité et dans tout l'écosystème. Merci pour ton aide à surmonter certains problèmes et pour ton expertise.",
-      "testimonials.t8.role": "Client",
-      "contact.label": "Me contacter",
-      "contact.title": "Construisons quelque chose de grand",
-      "contact.subtitle": "Vous avez une idée d'application ou besoin d'une aide experte sur un projet Apple ? Contactez-moi et je vous ferai parvenir une proposition.",
-      "contact.email_label": "E-mail",
-      "contact.phone_label": "Téléphone",
-      "contact.calendar_label": "Agenda",
-      "contact.calendar_value": "Réserver un appel en ligne de 30 minutes",
-      "contact.github_label": "GitHub",
-      "contact.location_label": "Localisation",
-      "contact.location_value": "Ingelmunster, Belgique",
-      "contact.quicklink1.title": "Vous préférez échanger en direct ?",
-      "contact.quicklink1.desc": "Évitez les allers-retours par e-mail et réservez directement un créneau dans l'agenda.",
-      "contact.quicklink1.cta": "Ouvrir la page de réservation",
-      "contact.quicklink2.title": "Curieux de voir comment je travaille ?",
-      "contact.quicklink2.desc": "Consultez le profil GitHub public pour du code, des expérimentations et des projets livrés.",
-      "contact.quicklink2.cta": "Visiter GitHub",
-      "contact.form.title": "Demander un devis",
-      "contact.form.desc": "Décrivez votre projet et je vous enverrai une estimation.",
-      "contact.form.name_label": "Nom ou entreprise",
-      "contact.form.name_placeholder": "Votre nom",
-      "contact.form.email_label": "E-mail",
-      "contact.form.phone_label": "Téléphone <span style=\"color: var(--gray-400); font-weight: 400;\">(facultatif)</span>",
-      "contact.form.phone_placeholder": "+32 123 456 789",
-      "contact.form.message_label": "Description du projet",
-      "contact.form.message_placeholder": "Parlez-moi de votre idée d'application ou de votre projet...",
-      "contact.form.submit": "Envoyer la demande de devis",
-      "footer.brand.desc": "Développeur logiciel indépendant spécialisé Apple, basé en Belgique. Des logiciels de qualité pour macOS, iOS et bien plus.",
-      "footer.nav.heading": "Navigation",
-      "footer.nav.home": "Accueil",
-      "footer.nav.apps": "Apps",
-      "footer.nav.about": "À propos",
-      "footer.nav.testimonials": "Témoignages",
-      "footer.nav.contact": "Contact",
-      "footer.legal.heading": "Mentions légales",
-      "footer.legal.accessibility": "Déclaration d'accessibilité",
-      "footer.connect.heading": "Me rejoindre",
-      "footer.connect.book": "Réserver 30 minutes",
-      "footer.connect.email": "E-mail",
-      "footer.address.heading": "Adresse",
-      "footer.bottom.rights": "Tous droits réservés."
+    const menu = document.querySelector('.menu');
+    const links = document.querySelector('.nav-links');
+    const firstLink = links.querySelector('a');
+
+    function closeMenu({ returnFocus = false } = {}) {
+      links.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-label', 'Open navigation');
+      if (returnFocus) menu.focus();
     }
-  };
-  </script>
-  <script src="/assets/i18n.js"></script>
 
-  <!-- Minimal JS: scroll animations + navbar shadow -->
-  <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    menu.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      if (open) firstLink.focus();
     });
 
-    // Fade-in on scroll
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    links.addEventListener('click', event => {
+      if (event.target.closest('a')) closeMenu();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (!links.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
+        closeMenu({ returnFocus: true });
+      }
+
+      if (event.key === 'Tab') {
+        const focusable = [menu, ...links.querySelectorAll('a')];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
         }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(function(el) {
-      observer.observe(el);
+      }
     });
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.remove('open');
-      });
+    window.matchMedia('(min-width: 641px)').addEventListener('change', event => {
+      if (event.matches) closeMenu();
     });
   </script>
-
 </body>
 </html>
