@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackHound — you found a sticker</title>
+  <meta name="description" content="You scanned a TrackHound sticker. TrackHound routes you onto the small roads, farm tracks and dirt paths — paved or not. Free to plan; Pro for turn-by-turn.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://michelstorms.com/trackhound/sticker_290/">
+
+  <link rel="icon" type="image/png" href="/assets/logo-og.png">
+  <link rel="apple-touch-icon" href="/assets/logo-og.png">
+
+  <meta property="og:title" content="TrackHound — you found a sticker">
+  <meta property="og:description" content="Routes for the roads less taken. Scan led you here — get the app.">
+  <meta property="og:url" content="https://michelstorms.com/trackhound/sticker_290/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2b1c10;
+      --navy-light: #3d2817;
+      --navy-dark: #180e08;
+      --white: #ffffff;
+      --off-white: #faf7f3;
+      --gray-100: #f3eee7;
+      --gray-200: #e6ded2;
+      --gray-300: #cabba9;
+      --gray-400: #9a8a78;
+      --gray-500: #5f5346;
+      --accent: #f28425;
+      --accent-light: #f7a155;
+      --accent-ink: #c2570f;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 10; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero { text-align: center; padding: 96px 24px 88px; background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(242,132,37,0.12) 0%, transparent 70%); border-radius: 50%; }
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-logo { width: 108px; height: 108px; border-radius: 24%; margin: 0 auto 20px; display: block; box-shadow: 0 10px 28px rgba(24,14,8,0.22); }
+    .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 16px; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 18px; }
+    .hero p.lede { font-size: 1.1rem; color: var(--gray-500); max-width: 600px; margin: 0 auto 34px; line-height: 1.75; }
+    .hero p.lede strong { color: var(--navy); font-weight: 600; }
+
+    /* App Store badge */
+    .mas-badge { display: inline-block; transition: transform 0.15s, filter 0.15s; }
+    .mas-badge img { height: 58px; width: auto; display: block; }
+    .mas-badge:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .android-note { margin-top: 18px; font-size: 0.9rem; color: var(--gray-400); }
+    .android-note a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ===== What it is ===== */
+    .what { padding: 64px 0 88px; background: var(--white); }
+    .what-box { max-width: 760px; margin: 0 auto; text-align: center; }
+    .what h2 { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 12px; }
+    .what p { color: var(--gray-500); max-width: 620px; margin: 0 auto 26px; }
+    .pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .pill { border: 1px solid var(--gray-200); background: var(--off-white); border-radius: 999px; padding: 7px 16px; font-size: 0.85rem; font-weight: 500; color: var(--navy); }
+    .pill span { color: var(--accent-ink); }
+    .more-link { color: var(--accent-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    @media (max-width: 768px) { .hero { padding: 72px 24px 64px; } .nav-links { gap: 14px; } }
+    @media (max-width: 480px) { .footer-inner { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="/trackhound/">TrackHound</a></li>
+        <li><a href="/trackhound/roadmap/">Roadmap</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="/assets/apps/trackhound/icon.png" alt="TrackHound">
+      <span class="eyebrow">You found a TrackHound sticker</span>
+      <h1>Routes for the roads less taken.</h1>
+      <p class="lede">TrackHound deliberately routes you onto the <strong>small roads, farm tracks and dirt paths</strong> — paved or not. Built for ADV motorcycle, overlanding, 4&times;4 and gravel. Planning routes is free; go Pro for turn-by-turn.</p>
+      <!-- Only sticker scans reach this page, so ct=sticker-card attributes cleanly in App Analytics -->
+      <a class="mas-badge" href="https://apps.apple.com/app/id6762570002?ct=sticker-card" aria-label="Download TrackHound on the App Store">
+        <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+      </a>
+      <p class="android-note">Android? It's <a href="/trackhound/roadmap/">on the way</a> — this page will point you there when it lands.</p>
+    </div>
+  </section>
+
+  <!-- What it is -->
+  <section class="what">
+    <div class="container">
+      <div class="what-box">
+        <h2>Peel it. Stick it. Ride.</h2>
+        <p>That sticker's yours — put it on a pannier, helmet, top box or laptop. The app's the real thing: on-device routing that picks the quiet way through.</p>
+        <div class="pills">
+          <div class="pill"><span>&bull;</span> Offline maps</div>
+          <div class="pill"><span>&bull;</span> Route styles: Curviest &middot; Unpavediest</div>
+          <div class="pill"><span>&bull;</span> CarPlay</div>
+          <div class="pill"><span>&bull;</span> Turn-by-turn roadbook</div>
+        </div>
+        <a class="more-link" href="/trackhound/">See everything TrackHound does &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
