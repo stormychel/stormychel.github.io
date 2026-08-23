@@ -209,6 +209,10 @@
     }
 
     .showcase img {
+      /* `width` is required, not just `max-width`: the source image is 1920px wide, so a
+         bare `max-width: 960px` still rendered it at 960px on a phone and `overflow: hidden`
+         on the section cropped the right-hand side off instead of scaling it down. */
+      width: 100%;
       max-width: 960px;
       margin: 0 auto;
     }
