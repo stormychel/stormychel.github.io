@@ -15,12 +15,12 @@
   <meta property="og:url" content="https://michelstorms.com/pawmode/">
   <meta property="og:site_name" content="Michel Storms">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://michelstorms.com/assets/apps/pawmode/composite_promo.png">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/pawmode/press/keyart.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PawMode — Vehicle monitor for pets and belongings">
   <meta name="twitter:description" content="Turn a spare iPhone into a vehicle monitor with live camera, thermal alerts, reassurance messages, and remote monitoring from your pocket.">
-  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/pawmode/composite_promo.png">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/pawmode/press/keyart.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -209,6 +209,10 @@
     }
 
     .showcase img {
+      /* `width` is required, not just `max-width`: the source image is 1320px wide, so a
+         bare `max-width: 960px` still rendered it at 960px on a phone and `overflow: hidden`
+         on the section silently cropped the right-hand phone off. */
+      width: 100%;
       max-width: 960px;
       margin: 0 auto;
       border-radius: 12px;
@@ -477,7 +481,7 @@
   <!-- Screenshot Showcase -->
   <section class="showcase">
     <div class="container">
-      <img src="../assets/apps/pawmode/composite_promo.png" alt="PawMode — Monitor mode and Personal dashboard side by side" data-i18n-attr="alt:showcase.alt">
+      <img src="../assets/apps/pawmode/feature_promo.png" alt="PawMode — Monitor mode and Personal dashboard side by side" data-i18n-attr="alt:showcase.alt">
     </div>
   </section>
 
