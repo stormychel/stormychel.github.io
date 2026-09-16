@@ -455,7 +455,7 @@
       <h1>TrackHound</h1>
       <p data-i18n="hero.subtitle">One offline nav engine, tuned to how you actually drive or ride. Pick Fastest for the commute, Curviest for Sunday roads, or Unpavediest for dirt and gravel &mdash; then make it your own. Routing runs entirely on your iPhone, so it keeps working with no signal.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:hero.badge_aria">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002?ct=web-hero" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:hero.badge_aria">
           <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:hero.badge_alt">
         </a>
       </div>
@@ -595,7 +595,7 @@
       <h2 class="section-title" data-i18n="cta.title">One nav for every kind of ride</h2>
       <p class="section-subtitle" data-i18n="cta.subtitle">On the App Store for iPhone and CarPlay. Route planning is free; TrackHound Pro adds turn-by-turn. Made for everyday drives, motorcycle and bike rides, 4x4, and gravel.</p>
       <div class="hero-buttons">
-        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:cta.badge_aria">
+        <a class="mas-badge" href="https://apps.apple.com/app/id6762570002?ct=web-cta" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:cta.badge_aria">
           <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:cta.badge_alt">
         </a>
       </div>
@@ -734,6 +734,24 @@
       "footer.privacy": "Politique de confidentialité"
     }
   };
+  </script>
+  <script>
+  // Campaign attribution. A link of the form https://trackhoundapp.com/?s=<token>
+  // rewrites the App Store button's ct= value to that token, so an install can be
+  // traced back to the post or placement that sent the visitor. Without ?s= the
+  // static token in the markup stands (web-hero, web-cta). Token registry and
+  // naming rules live in Docs/campaign-tokens.md in the app repo.
+  (function () {
+    try {
+      var s = new URLSearchParams(window.location.search).get('s');
+      if (!s || !/^[a-z0-9][a-z0-9-]{0,31}$/.test(s)) return;
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+        var u = new URL(a.href);
+        u.searchParams.set('ct', s);
+        a.href = u.toString();
+      });
+    } catch (e) { /* leave the static token in place */ }
+  })();
   </script>
   <script src="/assets/i18n.js"></script>
 
