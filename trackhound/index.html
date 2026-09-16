@@ -744,7 +744,7 @@
   (function () {
     try {
       var s = new URLSearchParams(window.location.search).get('s');
-      if (!s || !/^[a-z0-9][a-z0-9-]{0,31}$/.test(s)) return;
+      if (!s || !/^[a-z0-9][a-z0-9-]{0,29}$/.test(s)) return;
       document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
         var u = new URL(a.href);
         u.searchParams.set('ct', s);
