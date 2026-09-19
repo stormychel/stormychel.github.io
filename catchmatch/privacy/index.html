@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatchMatch Privacy Policy</title>
+  <meta name="description" content="Privacy policy for CatchMatch.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://michelstorms.com/catchmatch/privacy/">
+  <style>
+    :root { --bg: #faf7f6; --fg: #2d2e3a; --muted: #5f5a58; --card: #ffffff; --border: #ebe1de; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--fg); background: var(--bg); line-height: 1.6; }
+    main { max-width: 860px; margin: 0 auto; padding: 40px 20px 64px; }
+    article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    h1 { margin-top: 0; font-size: 1.9rem; }
+    h2 { margin-top: 1.6rem; font-size: 1.15rem; }
+    article > p:first-of-type em { color: var(--muted); font-style: normal; }
+    ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    code { font-size: 0.9em; }
+    a { color: #c9433a; }
+    .back { display: inline-block; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">← CatchMatch</a>
+    <article>
+      <h1>CatchMatch Privacy Policy</h1>
+<p><em>Last updated: 2026-09-19. Applies to the CatchMatch macOS
+application.</em></p>
+<h2 id="short-version">Short version</h2>
+<ul>
+<li><strong>No telemetry, no analytics, no tracking.</strong> The app
+does not collect or transmit any usage data.</li>
+<li>The only outbound network calls the app makes are: (1) sending your
+license key to Gumroad to verify it on activation and once per 24 hours
+thereafter; (2) a one-shot reachability check (HEAD request to a public
+Apple URL) when the onboarding/setup sheet runs, used solely to tell you
+whether you're online; (3) checking for app updates; (4) using yt-dlp /
+ffmpeg, which contact the source URL you ask the app to process.</li>
+<li>Logs stay on your Mac unless you choose to copy them via Help → Copy
+Diagnostics.</li>
+<li>Nothing is sold or shared with third parties beyond what you
+explicitly trigger.</li>
+</ul>
+<h2 id="data-we-send">Data we send</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>When</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>License key</td>
+<td>Gumroad (<code>api.gumroad.com</code>)</td>
+<td>On activation, then ~daily</td>
+<td>Verify your license is active and not refunded. Gumroad's privacy
+policy applies to that exchange.</td>
+</tr>
+<tr>
+<td>Reachability HEAD</td>
+<td><code>apple.com</code></td>
+<td>When you open the onboarding/setup sheet</td>
+<td>Confirms the Mac is online so the setup checklist can show ✓/✗ for
+"Network reachable." No data is sent beyond the bare HTTP request.</td>
+</tr>
+<tr>
+<td>Update check</td>
+<td><code>michelstorms.com</code></td>
+<td>About once a day, and when you choose CatchMatch → Check for
+Updates…</td>
+<td>Fetches the list of available versions (Sparkle). The request
+identifies only the app and its version (in the User-Agent); no system
+profile is sent.</td>
+</tr>
+<tr>
+<td>URLs you submit</td>
+<td>The site at the URL itself, via yt-dlp</td>
+<td>When you press Convert &amp; Import</td>
+<td>This is the actual feature you asked for. We do not relay your URLs
+to any service we control. (URLs appear locally in the app's log — see
+the next section.)</td>
+</tr>
+</tbody>
+</table>
+<p>The app does <strong>not</strong> send: your name, email, IP address
+(beyond the unavoidable network-layer information), import history, file
+names, or anything related to the content you process.</p>
+<h2 id="data-we-store-on-your-mac">Data we store on your Mac</h2>
+<ul>
+<li>A persistent log file at
+<code>~/Library/Logs/dlp2music/dlp2music.log</code>. Capped at 5 MB with
+one rotated copy. <strong>URLs you submit appear here</strong> as part
+of the conversion script's output ("=== Processing: <URL> ==="). You can
+reveal it via Help → Reveal Log in Finder, copy a 200-line tail via Help
+→ Copy Diagnostics, or delete it at any time.</li>
+<li>Your settings (defaults, license state, trial counter) in macOS
+UserDefaults.</li>
+</ul>
+<p>None of this is uploaded. If you copy diagnostics via Help → Copy
+Diagnostics, recent log lines (which may include URLs) end up on your
+clipboard — share carefully.</p>
+<h2 id="crash-reports">Crash reports</h2>
+<p>The app does not include automatic crash reporting. If we ever add
+it, it will be <strong>opt-in</strong> and clearly disclosed in this
+document and in-app.</p>
+<h2 id="your-rights">Your rights</h2>
+<p>You can:</p>
+<ul>
+<li>Delete the app and any of the local files listed above at any
+time.</li>
+<li>Deactivate your license from Settings → License → Deactivate.</li>
+<li>Request information about data we hold by emailing <a
+href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a> —
+though we don't hold any account data on you to begin with, beyond what
+Gumroad has from your purchase.</li>
+</ul>
+<h2 id="children">Children</h2>
+<p>The app is not directed at children under 13.</p>
+<h2 id="changes">Changes</h2>
+<p>If this policy changes in a meaningful way, we'll publish the new
+version on the landing page and bump the date at the top.</p>
+<h2 id="contact">Contact</h2>
+<p><a
+href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </article>
+  </main>
+</body>
+</html>
