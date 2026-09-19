@@ -39,8 +39,10 @@ does not collect or transmit any usage data.</li>
 license key to Gumroad to verify it on activation and once per 24 hours
 thereafter; (2) a one-shot reachability check (HEAD request to a public
 Apple URL) when the onboarding/setup sheet runs, used solely to tell you
-whether you're online; (3) checking for app updates; (4) using yt-dlp /
-ffmpeg, which contact the source URL you ask the app to process.</li>
+whether you're online; (3) checking for app updates; (4) downloading
+yt-dlp from its GitHub releases when you choose Download yt-dlp; (5)
+using yt-dlp / ffmpeg, which contact the source URL you ask the app to
+process.</li>
 <li>Logs stay on your Mac unless you choose to copy them via Help → Copy
 Diagnostics.</li>
 <li>Nothing is sold or shared with third parties beyond what you
@@ -79,6 +81,14 @@ Updates…</td>
 <td>Fetches the list of available versions (Sparkle). The request
 identifies only the app and its version (in the User-Agent); no system
 profile is sent.</td>
+</tr>
+<tr>
+<td>yt-dlp download</td>
+<td>GitHub (<code>api.github.com</code>, <code>github.com</code>)</td>
+<td>Only when you choose Download yt-dlp</td>
+<td>Looks up the latest yt-dlp release and downloads its macOS build and
+checksum file. GitHub sees an ordinary download request; nothing about
+you or your library is sent.</td>
 </tr>
 <tr>
 <td>URLs you submit</td>

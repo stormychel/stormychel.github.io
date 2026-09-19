@@ -59,19 +59,24 @@ to the extent that applicable law expressly permits.</li>
 agreement; we may revoke your license, with no obligation to refund, on
 confirmation of such use.</p>
 <h2 id="4-third-party-tools">4. Third-party tools</h2>
-<p>CatchMatch orchestrates two open-source tools that <strong>you
-install separately</strong> via Homebrew:</p>
+<p>CatchMatch orchestrates two open-source tools. They are not part of
+CatchMatch; each is installed at your request:</p>
 <ul>
 <li><strong>yt-dlp</strong> — used to fetch online media. Distributed
-under the Unlicense. <a
+under the Unlicense. When you choose <em>Download yt-dlp</em>,
+CatchMatch fetches the official macOS build from the project's GitHub
+releases, checks it against the checksum published with that release,
+and stores it in
+<code>~/Library/Application Support/CatchMatch/bin</code>. You can also
+install it yourself with Homebrew. <a
 href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></li>
 <li><strong>FFmpeg</strong> — used to transcode and extract audio. Used
 dynamically via the LGPL-2.1+ build distributed by Homebrew. <a
 href="https://ffmpeg.org/legal.html">https://ffmpeg.org/legal.html</a></li>
 </ul>
-<p>These tools are not bundled with CatchMatch, are not warranted by us,
-and may change behavior or break compatibility independently of the app.
-The app's compatibility with future versions of these tools is
+<p>These tools are not bundled inside CatchMatch, are not warranted by
+us, and may change behavior or break compatibility independently of the
+app. The app's compatibility with future versions of these tools is
 best-effort, not guaranteed.</p>
 <h2 id="5-apple-music--itunes-match">5. Apple Music / iTunes Match</h2>
 <p>CatchMatch does not include or grant any Apple service. iTunes Match
