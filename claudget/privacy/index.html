@@ -12,33 +12,43 @@
     * { box-sizing:border-box; } body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--fg); background:var(--bg); line-height:1.65; }
     main { max-width:860px; margin:auto; padding:40px 20px 64px; } article { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:clamp(26px,5vw,48px); }
     h1 { margin-top:0; font-size:2rem; } h2 { margin-top:1.8rem; font-size:1.15rem; } .meta { color:var(--muted); margin-top:-8px; } ul { padding-left:20px; } a { color:var(--accent); }
+    table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.92rem; } th, td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--border); }
   </style>
 </head>
 <body><main><article>
   <p><a href="/claudget/">← ClaudGet</a></p>
   <h1>ClaudGet Privacy Policy</h1>
-  <p class="meta">Effective date: July 29, 2026</p>
-  <p>This Privacy Policy describes how ClaudGet (“App”) handles information on macOS. The developer is Michel Storms and can be contacted at the address below.</p>
-  <h2>1. Information Processed</h2>
+  <p class="meta">Last updated: September 21, 2026. Applies to the ClaudGet macOS application sold through Gumroad.</p>
+  <h2>Short version</h2>
   <ul>
-    <li><strong>Authentication data:</strong> Claude web-session cookies obtained after you sign in. They are stored in your macOS Keychain and are not shared with the widget.</li>
-    <li><strong>Account and usage data:</strong> your organization identifier, plan label, usage percentages, reset times, and usage-credit values returned by Claude.</li>
-    <li><strong>Preferences:</strong> your selected refresh interval.</li>
-    <li><strong>Diagnostics:</strong> local timestamps, refresh outcomes, usage values, and widget status. Credentials and response bodies are not intentionally logged.</li>
+    <li><strong>No telemetry, no analytics, no tracking.</strong> The developer runs no ClaudGet server and receives nothing from the app.</li>
+    <li>The app talks to three places: <strong>claude.ai</strong> for your usage, <strong>Gumroad</strong> to verify your license key, and <strong>michelstorms.com</strong> to check for updates.</li>
+    <li>Your Claude session stays in your Mac’s Keychain. The widgets only ever see usage numbers.</li>
   </ul>
-  <h2>2. Network Requests</h2>
-  <p>When you sign in or refresh, the App connects directly to <code>claude.ai</code>. Your session cookie and organization identifier are transmitted to that service to authenticate and return account usage. Anthropic may also receive ordinary network information such as your IP address and device/browser request metadata. The developer does not proxy these requests and operates no ClaudGet account, analytics, advertising, or telemetry server.</p>
-  <h2>3. Data Collection and Sharing</h2>
-  <p>The developer cannot access information processed locally by the App and does not collect, sell, rent, or share it. ClaudGet contains no third-party advertising or analytics SDKs. Data sent directly to Anthropic is handled under Anthropic’s own terms and privacy policy.</p>
-  <h2>4. Retention and Control</h2>
-  <p>Your credential remains until you disconnect. Cached usage remains until it is replaced, you disconnect, or App data is removed. Preferences remain until App data is removed. Diagnostics remain until you clear them or remove App data. Use <strong>Disconnect</strong> to remove the credential and cached usage, and <strong>Diagnostics → Clear</strong> to erase the local log. You can also revoke the Claude session through your Claude account. Uninstalling removes App data subject to standard macOS and Keychain behavior.</p>
-  <h2>5. Security</h2>
-  <p>ClaudGet uses the macOS App Sandbox, Keychain, and a least-privilege App Group shared only with its WidgetKit extension.</p>
-  <h2>6. Third-Party Service</h2>
-  <p>Your use of Claude remains subject to <a href="https://www.anthropic.com/legal/consumer-terms">Anthropic’s Consumer Terms</a> and <a href="https://www.anthropic.com/legal/privacy">Privacy Policy</a>. ClaudGet is independent and is not affiliated with, sponsored by, or endorsed by Anthropic. Claude and Anthropic are trademarks of Anthropic PBC.</p>
-  <h2>7. Changes</h2>
-  <p>This policy may be updated as the App changes. The effective date above identifies the latest version.</p>
-  <h2>8. Contact</h2>
-  <p>Privacy and support requests: <a href="mailto:stormychel@me.com">stormychel@me.com</a></p>
+  <h2>Data the app sends</h2>
+  <table>
+    <thead><tr><th>What</th><th>Where</th><th>When</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Your Claude session cookie and organization identifier</td><td><code>claude.ai</code> (Anthropic)</td><td>When you sign in and on every refresh</td><td>To read your plan and usage limits. Anthropic also sees ordinary network information such as your IP address. Anthropic’s privacy policy applies.</td></tr>
+      <tr><td>License key</td><td>Gumroad (<code>api.gumroad.com</code>)</td><td>On activation, then about once a day</td><td>To confirm the license is valid and not refunded. Gumroad’s privacy policy applies.</td></tr>
+      <tr><td>Update check</td><td><code>michelstorms.com</code></td><td>About once a day, and when you choose Check for Updates…</td><td>To fetch the list of available versions (Sparkle). The request identifies only the app and its version; no system profile is sent.</td></tr>
+    </tbody>
+  </table>
+  <p>The app does <strong>not</strong> send your prompts, conversations, name, email, or usage figures to the developer or anyone else.</p>
+  <h2>Data stored on your Mac</h2>
+  <ul>
+    <li><strong>Keychain:</strong> your claude.ai session, until you choose Disconnect.</li>
+    <li><strong>App Group container</strong> (shared only with ClaudGet’s own widget): the latest usage numbers, and a local diagnostics log of refresh outcomes. Credentials are redacted from it.</li>
+    <li><strong>Preferences:</strong> refresh interval, Dock visibility, trial start date, and license state.</li>
+  </ul>
+  <p>None of this is uploaded. Disconnect removes the session and cached usage; deleting the app and its container removes the rest.</p>
+  <h2>Purchases</h2>
+  <p>If you buy ClaudGet, Gumroad processes the payment and holds your purchase record (email, order, license key). The developer sees what Gumroad shows sellers about a sale.</p>
+  <h2>Children</h2>
+  <p>ClaudGet is not directed at children under 13.</p>
+  <h2>Changes</h2>
+  <p>Meaningful changes are published on the ClaudGet page, with the date above updated.</p>
+  <h2>Contact</h2>
+  <p><a href="mailto:stormychel@me.com">stormychel@me.com</a></p>
 </article></main></body>
 </html>
