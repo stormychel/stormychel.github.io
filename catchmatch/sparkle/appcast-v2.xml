@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="https://sparkle-project.org/xmlns/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>CatchMatch Updates</title>
+    <link>https://michelstorms.com/catchmatch/sparkle/appcast-v2.xml</link>
+    <description>Release feed for CatchMatch</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 14:40:24 +0000</lastBuildDate>
+
+    <item>
+      <title>New version 1.0.0 - First release.</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/catchmatch/sparkle/notes/catchmatch-1.0.0.html</sparkle:releaseNotesLink>
+      <pubDate>Mon, 21 Sep 2026 14:40:24 +0000</pubDate>
+
+      <enclosure
+          url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.0.0_15.zip"
+          sparkle:shortVersionString="1.0.0"
+          sparkle:version="15"
+          sparkle:minimumSystemVersion="14.6"
+          sparkle:os="macos"
+          sparkle:edSignature="FzvzwCnlYB8+f0bEufgwQxm388fAmmzexbzTin1okU895pRqLBWtEsRO51C3B4jUoyuMrGO6OqUfV5D0irmyAA=="
+          length="3767876"
+          type="application/octet-stream" />
+
+      <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
+    </item>
+
+  </channel>
+</rss>
