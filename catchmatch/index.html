@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatchMatch — Your recordings and purchases, in Apple Music</title>
+  <meta name="description" content="CatchMatch is a macOS app that adds your own recordings, Bandcamp purchases and openly licensed video to your Apple Music and Apple TV libraries.">
+  <link rel="canonical" href="https://michelstorms.com/catchmatch/">
+  <link rel="icon" type="image/png" href="/assets/apps/catchmatch/icon.png">
+  <meta property="og:title" content="CatchMatch — Your recordings and purchases, in Apple Music">
+  <meta property="og:description" content="Paste a link or drop a file. CatchMatch converts it and adds it to Apple Music and Apple TV on your Mac.">
+  <meta property="og:url" content="https://michelstorms.com/catchmatch/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/catchmatch/icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CatchMatch — Your recordings and purchases, in Apple Music">
+  <meta name="twitter:description" content="Paste a link or drop a file. CatchMatch converts it and adds it to Apple Music and Apple TV on your Mac.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/catchmatch/icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CatchMatch",
+    "url": "https://michelstorms.com/catchmatch/",
+    "operatingSystem": "macOS 14 or later",
+    "applicationCategory": "MultimediaApplication",
+    "offers": { "@type": "Offer", "price": "9.99", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Michel Storms", "url": "https://michelstorms.com/" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2d2e3a; --navy-light: #3d3e4e; --navy-dark: #1a1b24;
+      --white: #ffffff; --off-white: #f8f8fa;
+      --gray-100: #f0f0f3; --gray-200: #e2e2e7; --gray-300: #c5c5ca; --gray-400: #8c8c92; --gray-500: #52525a;
+      --accent: #e5544a; --accent-light: #f07a70;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    body { font-family: "Inter", sans-serif; font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1100px, 100% - 48px); margin-inline: auto; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+
+    .topbar { position: sticky; top: 0; z-index: 10; height: 64px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); }
+    .topbar .container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.35rem; text-decoration: none; }
+    .topbar nav { display: flex; gap: 24px; font-weight: 500; font-size: 0.92rem; }
+    .topbar nav a { text-decoration: none; color: var(--gray-500); }
+    .topbar nav a:hover { color: var(--navy); }
+
+    .hero { position: relative; overflow: hidden; text-align: center; padding: 88px 0; background: linear-gradient(180deg, var(--white), var(--off-white) 60%, var(--gray-100)); }
+    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; left: 50%; top: -280px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(229,84,74,0.14), transparent 70%); }
+    .hero > .container { position: relative; }
+    .hero .icon { width: 112px; height: 112px; margin: 0 auto 24px; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.16)); }
+    .label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); max-width: 780px; margin: 0 auto 18px; }
+    .hero p.sub { color: var(--gray-500); font-size: 1.12rem; max-width: 620px; margin: 0 auto 32px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; border-radius: 8px; padding: 14px 32px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: var(--accent-light); }
+    .btn-outline { border: 1px solid var(--gray-300); color: var(--navy); }
+    .fineprint { margin-top: 18px; font-size: 0.88rem; color: var(--gray-400); }
+
+    section { padding: 88px 0; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .section-head p { color: var(--gray-500); }
+
+    .dark { background: var(--navy); color: var(--white); }
+    .dark .section-head p { color: var(--gray-300); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+    .step { border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px 28px; }
+    .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); font-weight: 600; margin-bottom: 16px; }
+    .step h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .step p { color: var(--gray-300); font-size: 0.95rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 32px 28px; transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(45,46,58,0.08); }
+    .card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .card p { color: var(--gray-500); font-size: 0.95rem; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { position: relative; padding: 14px 0 14px 34px; border-bottom: 1px solid var(--gray-200); color: var(--gray-500); }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 14px; color: var(--accent); font-weight: 600; }
+    .checklist strong { color: var(--navy); }
+
+    .faq { max-width: 760px; margin: 0 auto; }
+    .faq details { border-bottom: 1px solid var(--gray-200); padding: 20px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; list-style: none; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; float: right; color: var(--accent); font-weight: 600; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { margin-top: 12px; color: var(--gray-500); }
+    code { font-size: 0.9em; background: var(--gray-100); padding: 1px 6px; border-radius: 4px; }
+
+    .cta { text-align: center; }
+    .cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .cta p { color: var(--gray-300); margin-bottom: 32px; }
+
+    footer { background: var(--navy-dark); color: var(--gray-400); padding: 32px 0; font-size: 0.88rem; }
+    footer .container { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    footer a { color: var(--gray-300); }
+
+    @media (max-width: 860px) {
+      section, .hero { padding: 64px 0; }
+      .steps, .grid, .split { grid-template-columns: 1fr; }
+      .topbar nav a:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="logo" href="/">Michel Storms</a>
+      <nav><a href="/">Home</a><a href="/apps.html">Apps</a><a href="#buy">Buy CatchMatch</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <img class="icon" src="/assets/apps/catchmatch/icon.png" alt="CatchMatch app icon">
+        <span class="label">For macOS</span>
+        <h1>Catch a video. Match it into Apple&nbsp;Music.</h1>
+        <p class="sub">Paste a link or drop in a video file. CatchMatch converts it and puts it where you want it: Apple Music, Apple TV, or simply your Downloads folder. No subscription needed.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://stormychel.gumroad.com/l/catchmatch" target="_blank" rel="noopener noreferrer">Buy — $9.99, one time</a>
+          <a class="btn btn-outline" href="#before-you-buy">Before you buy</a>
+        </div>
+        <p class="fineprint">Three free imports to try it. 14-day refund. Personal use on all your Macs.</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="container">
+        <img src="/assets/apps/catchmatch/window.png" alt="The CatchMatch window: a queue of items, each with Song, Video and TV buttons, importing." style="border-radius: 14px; box-shadow: 0 24px 60px rgba(45,46,58,.22); width: min(980px, 100%); margin-inline: auto;">
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">How it works</span>
+          <h2>Three steps, no Terminal.</h2>
+          <p>Everything runs on your Mac. Nothing you import passes through a server of ours.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>Add a link or a file</h3><p>Paste one or more URLs, drop them onto the window, or choose a local video. Playlists and channels expand into individual items.</p></div>
+          <div class="step"><h3>CatchMatch converts it</h3><p>It fetches the best available quality, keeps Apple-compatible streams untouched, and cleans up the title and artist.</p></div>
+          <div class="step"><h3>It lands where you want it</h3><p>The song goes to Apple Music and the video to Apple TV, through the folders Apple's apps import from automatically — or straight to your Downloads folder, if a library isn't where you keep things.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="label">What people use it for</span>
+          <h2>Music that isn't in the catalogue.</h2>
+          <p>For material you have the right to use: things Apple Music will never carry.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>Open archives</h3><p>Concerts, sessions and lectures from Archive.org and other public-domain or Creative Commons sources, next to the albums you already own.</p></div>
+          <div class="card"><h3>Live takes of music you own</h3><p>The acoustic version an artist posted themselves, filed alongside the studio recording you bought.</p></div>
+          <div class="card"><h3>Your own recordings</h3><p>A gig filmed on your phone or a recorded talk: drop in the file and listen to it anywhere Apple Music runs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--off-white);">
+      <div class="container split">
+        <div>
+          <span class="label">In the app</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 16px;">Small, focused, and out of your way.</h2>
+          <p style="color: var(--gray-500);">A native Mac app, signed with an Apple Developer ID and notarized by Apple. No account and no telemetry.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>Links and local files</strong>: paste, drop, or choose a file</li>
+          <li><strong>Apple Music and Apple TV</strong>: the song, the music video, or both, per item</li>
+          <li><strong>Or just the file</strong>: send it to your Downloads folder instead — no library needed</li>
+          <li><strong>Import queue</strong> that checks every item before it runs</li>
+          <li><strong>Cleaner titles</strong>: artist and title worked out from messy video names</li>
+          <li><strong>Subtitles kept</strong> in imported video</li>
+          <li><strong>Send from your iPhone</strong>: text a link to a chosen iMessage chat and the Mac imports it</li>
+          <li><strong>Automatic updates</strong> built in</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="before-you-buy">
+      <div class="container split">
+        <div>
+          <span class="label">Before you buy</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 16px;">Check this fits your setup.</h2>
+          <p style="color: var(--gray-500);">If something here doesn't match, please don't buy. If it wasn't clear and you already did, just ask for a refund.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>macOS 14 Sonoma</strong> or later</li>
+          <li><strong>Apple Music with Sync Library</strong>, or iTunes Match, <strong>only if</strong> you want tracks on your other devices. Importing on this Mac — including straight to Downloads — needs neither.</li>
+          <li><strong>A one-time setup step</strong> installs the media components the app needs. The first-run check walks you through it.</li>
+          <li><strong>Material you have the right to use.</strong> That part is up to you.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="background: var(--off-white);">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Questions</span>
+          <h2>Frequently asked.</h2>
+        </div>
+        <div class="faq">
+          <details><summary>What can I use it with?</summary><p>Material you have the right to use: your own recordings, music you bought on Bandcamp, and public-domain or Creative Commons sources like Archive.org. It converts the links or files you give it with open-source components, then hands the result to Apple Music, Apple TV or your Downloads folder. It doesn't get around DRM, and it isn't meant for services whose terms forbid downloading.</p></details>
+          <details><summary>Do I need Apple Music or iTunes Match?</summary><p>No. Turn on <strong>Downloads</strong> and the finished file lands in your Downloads folder, with no library involved. Apple Music with Sync Library, or iTunes Match, is what carries a track from your Mac to your iPhone, iPad and HomePod — useful, not required.</p></details>
+          <details><summary>Why isn't it on the Mac App Store?</summary><p>The App Store doesn't accept apps built on the open-source components this one needs. CatchMatch is signed with an Apple Developer ID and notarized by Apple, so macOS opens it normally.</p></details>
+          <details><summary>What happens after the three free imports?</summary><p>Enter the license key from your Gumroad receipt in Settings and the limit goes away. One purchase covers all the Macs you personally use.</p></details>
+          <details><summary>How do refunds work?</summary><p>Within 14 days, for any reason. Email me with your Gumroad order number. See the <a href="refunds/">refund policy</a>.</p></details>
+          <details><summary>Is there an iPhone app?</summary><p>Not a separate one. You can already send links from your iPhone through an iMessage chat the Mac watches.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark cta" id="buy">
+      <div class="container">
+        <span class="label">CatchMatch for macOS</span>
+        <h2>Bring it into your library.</h2>
+        <p>$9.99, one time. Try three imports first.</p>
+        <a class="btn btn-primary" href="https://stormychel.gumroad.com/l/catchmatch" target="_blank" rel="noopener noreferrer">Buy on Gumroad</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2025–2026 Michel Storms. All rights reserved.</span>
+      <nav>
+        <a href="terms/">License Agreement</a>
+        <a href="privacy/">Privacy Policy</a>
+        <a href="refunds/">Refund Policy</a>
+      </nav>
+      <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a>
+    </div>
+  </footer>
+</body>
+</html>
