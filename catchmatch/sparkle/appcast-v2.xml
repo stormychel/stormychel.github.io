@@ -19,7 +19,7 @@
           url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.0.0_15.zip"
           sparkle:shortVersionString="1.0.0"
           sparkle:version="15"
-          sparkle:minimumSystemVersion="14.6"
+          sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
           sparkle:edSignature="FzvzwCnlYB8+f0bEufgwQxm388fAmmzexbzTin1okU895pRqLBWtEsRO51C3B4jUoyuMrGO6OqUfV5D0irmyAA=="
           length="3767876"
