@@ -133,7 +133,7 @@
         <img class="icon" src="/assets/apps/catchmatch/icon.png" alt="CatchMatch app icon">
         <span class="label">For macOS</span>
         <h1>Catch a video. Match it into Apple&nbsp;Music.</h1>
-        <p class="sub">Paste a link or drop in a video file. CatchMatch converts it and adds it to Apple Music and Apple TV on your Mac, and Sync Library or iTunes Match carries it to your iPhone, iPad and HomePod.</p>
+        <p class="sub">Paste a link or drop in a video file. CatchMatch converts it and puts it where you want it: Apple Music, Apple TV, or simply your Downloads folder. No subscription needed.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://stormychel.gumroad.com" target="_blank" rel="noopener noreferrer">Buy — $9.99, one time</a>
           <a class="btn btn-outline" href="#before-you-buy">Before you buy</a>
@@ -157,8 +157,8 @@
         </div>
         <div class="steps">
           <div class="step"><h3>Add a link or a file</h3><p>Paste one or more URLs, drop them onto the window, or choose a local video. Playlists and channels expand into individual items.</p></div>
-          <div class="step"><h3>CatchMatch converts it</h3><p>It fetches the best available quality with the open-source yt-dlp, keeps Apple-compatible streams untouched, and cleans up the title and artist.</p></div>
-          <div class="step"><h3>It lands in your library</h3><p>The audio goes to Apple Music and the video to Apple TV, through the folders Apple's apps import from automatically.</p></div>
+          <div class="step"><h3>CatchMatch converts it</h3><p>It fetches the best available quality, keeps Apple-compatible streams untouched, and cleans up the title and artist.</p></div>
+          <div class="step"><h3>It lands where you want it</h3><p>The song goes to Apple Music and the video to Apple TV, through the folders Apple's apps import from automatically — or straight to your Downloads folder, if a library isn't where you keep things.</p></div>
         </div>
       </div>
     </section>
@@ -188,6 +188,7 @@
         <ul class="checklist">
           <li><strong>Links and local files</strong>: paste, drop, or choose a file</li>
           <li><strong>Apple Music and Apple TV</strong>: the song, the music video, or both, per item</li>
+          <li><strong>Or just the file</strong>: send it to your Downloads folder instead — no library needed</li>
           <li><strong>Import queue</strong> that checks every item before it runs</li>
           <li><strong>Cleaner titles</strong>: artist and title worked out from messy video names</li>
           <li><strong>Subtitles kept</strong> in imported video</li>
@@ -206,8 +207,8 @@
         </div>
         <ul class="checklist">
           <li><strong>macOS 14 Sonoma</strong> or later</li>
-          <li><strong>Apple Music with Sync Library</strong>, or iTunes Match, if you want tracks on your other devices. Without either they stay in your Mac's library.</li>
-          <li><strong>yt-dlp</strong>: the app downloads it for you, no Terminal needed. <strong>FFmpeg</strong> is installed once with Homebrew, and the first-run check walks you through it.</li>
+          <li><strong>Apple Music with Sync Library</strong>, or iTunes Match, <strong>only if</strong> you want tracks on your other devices. Importing on this Mac — including straight to Downloads — needs neither.</li>
+          <li><strong>A one-time setup step</strong> installs the media components the app needs. The first-run check walks you through it.</li>
           <li><strong>Material you have the right to use.</strong> That part is up to you.</li>
         </ul>
       </div>
@@ -220,9 +221,9 @@
           <h2>Frequently asked.</h2>
         </div>
         <div class="faq">
-          <details><summary>What can I use it with?</summary><p>Material you have the right to use: your own recordings, music you bought on Bandcamp, and public-domain or Creative Commons sources like Archive.org. It runs the open-source <code>yt-dlp</code> and <code>FFmpeg</code> on the links or files you give it, then hands the result to Apple Music. It doesn't get around DRM, and it isn't meant for services whose terms forbid downloading.</p></details>
-          <details><summary>Do I need Apple Music or iTunes Match?</summary><p>Not to convert. They're what carries a track from your Mac to your other devices. Without Sync Library or iTunes Match, imports stay in your Mac's library.</p></details>
-          <details><summary>Why isn't it on the Mac App Store?</summary><p>The App Store doesn't accept apps built around media-extraction tools like yt-dlp. CatchMatch is signed with an Apple Developer ID and notarized by Apple, so macOS opens it normally.</p></details>
+          <details><summary>What can I use it with?</summary><p>Material you have the right to use: your own recordings, music you bought on Bandcamp, and public-domain or Creative Commons sources like Archive.org. It converts the links or files you give it with open-source components, then hands the result to Apple Music, Apple TV or your Downloads folder. It doesn't get around DRM, and it isn't meant for services whose terms forbid downloading.</p></details>
+          <details><summary>Do I need Apple Music or iTunes Match?</summary><p>No. Turn on <strong>Downloads</strong> and the finished file lands in your Downloads folder, with no library involved. Apple Music with Sync Library, or iTunes Match, is what carries a track from your Mac to your iPhone, iPad and HomePod — useful, not required.</p></details>
+          <details><summary>Why isn't it on the Mac App Store?</summary><p>The App Store doesn't accept apps built on the open-source components this one needs. CatchMatch is signed with an Apple Developer ID and notarized by Apple, so macOS opens it normally.</p></details>
           <details><summary>What happens after the 5 free imports?</summary><p>Enter the license key from your Gumroad receipt in Settings and the limit goes away. One purchase covers all the Macs you personally use.</p></details>
           <details><summary>How do refunds work?</summary><p>Within 14 days, for any reason. Email me with your Gumroad order number. See the <a href="refunds/">refund policy</a>.</p></details>
           <details><summary>Is there an iPhone app?</summary><p>Not a separate one. You can already send links from your iPhone through an iMessage chat the Mac watches.</p></details>
