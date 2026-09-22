@@ -11,18 +11,18 @@
     <lastBuildDate>Mon, 21 Sep 2026 14:40:24 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.0.1 - Faster imports, and you can see them working</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/catchmatch/sparkle/notes/catchmatch-1.0.1.html</sparkle:releaseNotesLink>
+      <title>New version 1.1.0 - Send pages from Safari, and no more Homebrew</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/catchmatch/sparkle/notes/catchmatch-1.1.0.html</sparkle:releaseNotesLink>
       <pubDate>Mon, 21 Sep 2026 14:40:24 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.0.1_17.zip"
-          sparkle:shortVersionString="1.0.1"
-          sparkle:version="17"
+          url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.1.0_18.zip"
+          sparkle:shortVersionString="1.1.0"
+          sparkle:version="18"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="BUp1LXJFCSywKSe96Y/AE0Gshj5x348q8sn/dU/RF9XZgarPGt1sNYNs+IheEfCBFc/K3Ot0YSko7QlKRhXICA=="
-          length="3774802"
+          sparkle:edSignature="iKvWQ0wil6jFF7uxbLmYIsAYCalS4Wcid/NtTc841ogxE3QzBniz7s/jHTffMKHFyr6N2Mzfh0w99dvwvQlxDA=="
+          length="3870184"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
