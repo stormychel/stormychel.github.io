@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="https://sparkle-project.org/xmlns/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>ClaudGet Updates</title>
+    <link>https://michelstorms.com/claudget/sparkle/appcast-v2.xml</link>
+    <description>Release feed for ClaudGet</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 22 Sep 2026 04:54:33 +0000</lastBuildDate>
+
+    <item>
+      <title>New version 1.0.0 - First release</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.0.0.html</sparkle:releaseNotesLink>
+      <pubDate>Tue, 22 Sep 2026 04:54:33 +0000</pubDate>
+
+      <enclosure
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.0.0_3.zip"
+          sparkle:shortVersionString="1.0.0"
+          sparkle:version="3"
+          sparkle:minimumSystemVersion="14.0"
+          sparkle:os="macos"
+          sparkle:edSignature="ArRYp0jnsxrwZ28/Uh7rw8EKbrKZjisbrSl2gwXiylzZ4mxWGSU4/ygMg7vS+tLBp2KwIt9Un/CqgMhKFBDLCg=="
+          length="4565127"
+          type="application/octet-stream" />
+
+      <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
+    </item>
+
+  </channel>
+</rss>
