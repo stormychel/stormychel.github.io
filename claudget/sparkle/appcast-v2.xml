@@ -11,18 +11,18 @@
     <lastBuildDate>Tue, 22 Sep 2026 04:54:33 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.1.0 - Weekly pace and Sign In Again</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.1.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.2.0 - Codex usage, with its own widget</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.2.0.html</sparkle:releaseNotesLink>
       <pubDate>Tue, 22 Sep 2026 04:54:33 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.1.0_4.zip"
-          sparkle:shortVersionString="1.1.0"
-          sparkle:version="4"
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.2.0_5.zip"
+          sparkle:shortVersionString="1.2.0"
+          sparkle:version="5"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="uprz0wl79o17ELuTURmX67A0D+TDbNJk6yHfIWyCowG3gdmQOItnizeOh4+cQibbszByjpENyTbTmTjIOJYqBg=="
-          length="4603049"
+          sparkle:edSignature="8lnaG0ZRBhVGyTYaNvZDCrA+Ie/D93Z52EyjzUyR9VWceYs/gA5f4wkdK0IeyMTmeTgiz8mEJ0QJ4C9AIBnfCQ=="
+          length="4667253"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
