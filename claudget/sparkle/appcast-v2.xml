@@ -11,18 +11,18 @@
     <lastBuildDate>Sun, 27 Sep 2026 07:00:57 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.3.0 - Grok usage, with its own widget</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.3.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.3.1 - The window no longer cuts off its own content</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.3.1.html</sparkle:releaseNotesLink>
       <pubDate>Sun, 27 Sep 2026 07:00:57 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.3.0_6.zip"
-          sparkle:shortVersionString="1.3.0"
-          sparkle:version="6"
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.3.1_7.zip"
+          sparkle:shortVersionString="1.3.1"
+          sparkle:version="7"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="U+tK/jHa/t36r0SP0xNhuJBuDAELnVxEcjQJHZ7TRtCFCZLCo5ox9biJSXxlqT6dJujmeII8JZSuk2/+rdWuDA=="
-          length="4668590"
+          sparkle:edSignature="q0o1EjDYutpKqD3i3/NxcMQJPTHWHSv57mdjZlwi/uyYuFkHCB6w5DuiAimuZZQvjGWxGwfT3Or6Ru0o6gfQAA=="
+          length="4669199"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
