@@ -24,39 +24,44 @@
   <main>
     <article>
       <h1>TrackHound Privacy Policy</h1>
-      <p class="meta">Effective date: May 27, 2026</p>
-      <p>This Privacy Policy describes how TrackHound ("App") handles information when you use the app on Apple platforms.</p>
+      <p class="meta">Effective date: October 8, 2026</p>
+      <p>This Privacy Policy describes how TrackHound ("App") handles information when you use the app. It covers the iOS, iPadOS, macOS, watchOS and Android versions. Where a platform differs, it says so.</p>
 
       <h2>1. Data We Process</h2>
       <ul>
-        <li><strong>Location data:</strong> with your permission, your device location is used to display your position on the map and to plan routes from your current location. Location is processed on-device and is not transmitted to us or to third parties.</li>
-        <li><strong>Contacts:</strong> if you choose to pick a destination from Contacts, the App reads the selected contact's first postal address and converts it to coordinates via Apple's geocoding service. The App does not read or store other contact data.</li>
-        <li><strong>Map tiles and routing data:</strong> map style tiles are fetched from OpenFreeMap (tiles.openfreemap.org). Routing is performed entirely on your device using locally stored map data; no route requests are sent to our servers.</li>
-        <li><strong>Routes and waypoints:</strong> routes you create, waypoints you set, and route preferences (vehicle, style) are stored locally on your device. They are not synced to us or to third parties.</li>
-        <li><strong>Downloaded regions:</strong> regional map and routing data you choose to download are stored locally on your device.</li>
-        <li><strong>Diagnostics:</strong> standard Apple system logs are written via Apple's unified logging framework and remain on your device unless you choose to share them with us.</li>
+        <li><strong>Location data:</strong> with your permission, your device location is used to show your position on the map, to plan routes from where you are, and to record a ride if you start one. Routing runs on your device. Your position is not sent to us, and it is not sent to anyone for advertising or tracking. When the app needs the name of a place you are at, or which country you are riding in, that coordinate is passed to the operating system's own geocoding service.</li>
+        <li><strong>Searches you type:</strong> a destination search is answered from a region pack you have downloaded whenever it can be. When it cannot, the text you typed is sent to the operating system's geocoding service, and on Android to Photon (photon.komoot.io) if the system has no answer for it. Only the text goes. No coordinate travels with it, so a search does not reveal where you are. Searches shorter than two characters, and anything that parses as a coordinate or a map link, are not sent at all. Recent searches are kept on your device so you can pick them again, and you can clear them in the app.</li>
+        <li><strong>Contacts:</strong> if you choose to pick a destination from Contacts, the app reads that contact's first postal address and turns it into coordinates using the operating system's geocoding service. It does not read or store any other contact data.</li>
+        <li><strong>Calendar:</strong> if you choose to ride to something in your calendar, the app reads the titles, times and locations of your upcoming events so it can offer the ones with somewhere to go. Titles and times stay on your device. To put an event's address on the map, that address is passed to the operating system's own geocoding service, the one your phone already uses for its own addresses, and never to Photon. The app only ever reads your calendar. A leave by reminder is handed to your calendar app pre-filled, for you to save or discard, so nothing is written, changed or deleted without you doing it.</li>
+        <li><strong>Map tiles and region packs:</strong> map style tiles come from OpenFreeMap (tiles.openfreemap.org). Region packs you choose to download come from our release storage. Like any download, these requests show the server your IP address and which area you asked for. Routing itself runs entirely on your device against the data you have downloaded, so no route request is ever sent anywhere.</li>
+        <li><strong>Routes and waypoints:</strong> routes you create, waypoints you set, favourites you save, recorded rides and your preferences (vehicle, route style, units) are stored on your device. They are not synced to us or to anyone else.</li>
+        <li><strong>Purchases:</strong> TrackHound Pro is sold through Apple's App Store or Google Play, whichever you installed from. The store handles the payment and tells the app what you are entitled to. We never see your payment details. To check an entitlement the store identifies your device or account to itself, which is why the Google Play listing notes a device identifier.</li>
+        <li><strong>Diagnostics:</strong> system logs are written through the platform's own logging (Apple's unified logging, or Android's logcat) and stay on your device. The app can also assemble a settings diagnostic report, which stays on your device unless you choose to send it to us. There is no analytics SDK, no crash reporting service and no advertising SDK in the app.</li>
       </ul>
 
       <h2>2. How Data Is Used</h2>
-      <p>Data is used only to operate core app functionality: showing your position on the map, planning and displaying routes, geocoding addresses you provide, and managing offline regions. Routing happens fully on-device.</p>
+      <p>Data is used only to run the app: showing your position, planning and showing routes, turning an address you chose into a point on the map, recording a ride if you asked for one, and managing the regions you have downloaded. Nothing is profiled, and nothing is used to advertise to you. Routing happens entirely on your device.</p>
 
       <h2>3. Data Sharing</h2>
-      <p>We do not sell personal data. The App does not include analytics, advertising, or third-party tracking SDKs. Map tile requests to OpenFreeMap are governed by their own terms.</p>
+      <p>We do not sell personal data, and we do not share it for advertising. The app contains no analytics, advertising or third-party tracking SDKs. Three outside services see anything at all, and only what is described above: OpenFreeMap serves map tiles, Photon answers an Android search the system could not, and the operating system's own geocoding service turns addresses into coordinates. Each is governed by its own terms.</p>
 
       <h2>4. Data Retention</h2>
-      <p>Locally stored data (routes, waypoints, preferences, downloaded regions) remains on your device until you remove it from within the App or uninstall the App.</p>
+      <p>Data stored on your device (routes, waypoints, favourites, recorded rides, recent searches, preferences and downloaded regions) stays there until you remove it in the app or uninstall the app. Addresses sent for geocoding are used to answer that one request and are not retained by us. We hold no account and no server-side copy of your data, because there is no account to hold.</p>
 
       <h2>5. Security</h2>
-      <p>We rely on Apple platform protections, including app sandboxing, to help protect data processed by the app.</p>
+      <p>We rely on the protections the platform provides, including app sandboxing on Apple platforms and Android. Every request the app makes to a network leaves over HTTPS. Because there is no account and no server of ours holding your data, the usual target is not there to attack.</p>
 
-      <h2>6. Children's Privacy</h2>
+      <h2>6. Your Data and Deleting It</h2>
+      <p>There is no TrackHound account, so we hold nothing of yours to hand over or erase. Everything the app keeps is on your device: clear recent searches, favourites, saved routes and recorded rides in the app, delete a downloaded region from the Regions screen, or uninstall the app to remove all of it at once. If you have sent us a diagnostic report and want it deleted, write to the address below and we will delete it.</p>
+
+      <h2>7. Children's Privacy</h2>
       <p>TrackHound is not directed at children under 13 and does not knowingly collect personal data from children.</p>
 
-      <h2>7. Policy Changes</h2>
+      <h2>8. Policy Changes</h2>
       <p>We may update this Privacy Policy from time to time. The effective date at the top indicates the latest version.</p>
 
-      <h2>8. Contact</h2>
-      <p>Privacy requests and support: <a href="https://michelstorms.com/">https://michelstorms.com/</a></p>
+      <h2>9. Contact</h2>
+      <p>Privacy requests and support: <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a>, or <a href="https://michelstorms.com/">https://michelstorms.com/</a></p>
     </article>
   </main>
 </body>
