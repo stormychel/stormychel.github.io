@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostPlug — any resolution for a Mac without a monitor</title>
+  <meta name="description" content="The HDMI dummy plug, minus the plug: run a headless Mac at any resolution, from the menu bar.">
+  <link rel="canonical" href="https://michelstorms.com/ghostplug/">
+  <link rel="icon" href="/assets/apps/ghostplug/icon.png">
+  <meta property="og:title" content="GhostPlug — any resolution for a Mac without a monitor">
+  <meta property="og:description" content="The HDMI dummy plug, minus the plug.">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/ghostplug/countdown-hero.png">
+  <meta property="og:url" content="https://michelstorms.com/ghostplug/">
+  <meta property="og:type" content="website">
+  <style>
+    * { box-sizing: border-box; }
+    :root { --bg:#191b22; --panel:#24262e; --text:#f7f7f8; --muted:#b7bac5; --line:#383b45; --accent:#6c63e6; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+    a { color:inherit; }
+    nav { border-bottom:1px solid var(--line); background:rgba(25,27,34,.88); backdrop-filter:blur(18px); position:sticky; top:0; z-index:2; }
+    .nav { max-width:1120px; height:64px; padding:0 24px; margin:auto; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:750; }
+    .brand img { width:34px; height:34px; border-radius:8px; }
+    .links { display:flex; gap:22px; color:var(--muted); font-size:.9rem; }
+    .links a { text-decoration:none; }
+    .links a:hover { color:var(--text); }
+    .hero { overflow:hidden; background:radial-gradient(circle at 80% 20%,rgba(108,99,230,.4),transparent 37%),var(--bg); }
+    .hero-inner { max-width:1120px; margin:auto; padding:100px 24px 78px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:750; }
+    h1 { margin:.4rem 0 1rem; font-size:clamp(3.2rem,7vw,6rem); line-height:.95; letter-spacing:-.055em; }
+    .lede { color:var(--muted); font-size:clamp(1.1rem,2vw,1.35rem); max-width:580px; }
+    .actions { display:flex; gap:12px; margin-top:30px; flex-wrap:wrap; }
+    .button { display:inline-block; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid var(--line); }
+    .button.primary { background:var(--accent); border-color:var(--accent); color:white; }
+    .hero-art img { width:100%; max-width:460px; display:block; margin:auto; filter:drop-shadow(0 30px 60px rgba(0,0,0,.45)); }
+    section { padding:84px 24px; }
+    .container { max-width:1120px; margin:auto; }
+    .section-title { font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.035em; margin:0 0 12px; }
+    .section-copy { color:var(--muted); max-width:680px; margin:0 0 38px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { padding:26px; border-radius:16px; border:1px solid var(--line); background:var(--panel); }
+    .card h3 { margin:0 0 8px; }
+    .card p { margin:0; color:var(--muted); }
+    .privacy { background:#f6f3f0; color:#22242a; }
+    .privacy .section-copy { color:#62646b; }
+    .fineprint { color:var(--muted); font-size:.85rem; margin-top:16px; }
+    .faq { max-width:760px; }
+    .faq details { border-bottom:1px solid var(--line); padding:20px 0; }
+    .faq summary { cursor:pointer; font-weight:700; list-style:none; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::after { content:"+"; float:right; color:var(--accent); font-weight:700; }
+    .faq details[open] summary::after { content:"\2212"; }
+    .faq details p { margin:12px 0 0; color:var(--muted); }
+    footer { max-width:1120px; margin:auto; padding:34px 24px 50px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.9rem; }
+    footer div { display:flex; gap:18px; flex-wrap:wrap; }
+    @media (max-width:800px) {
+      .hero-inner { grid-template-columns:1fr; padding-top:72px; }
+      .grid { grid-template-columns:1fr; }
+      .links a:not(:last-child) { display:none; }
+      footer { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="nav">
+    <a class="brand" href="/ghostplug/"><img src="/assets/apps/ghostplug/icon.png" alt="">GhostPlug</a>
+    <div class="links"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="/ghostplug/privacy/">Privacy</a><a href="/ghostplug/support/">Support</a></div>
+  </div></nav>
+
+  <main>
+    <header class="hero"><div class="hero-inner">
+      <div>
+        <div class="eyebrow">Native macOS utility</div>
+        <h1>The dummy plug, minus the plug.</h1>
+        <p class="lede">A Mac with no monitor falls back to a small, fixed resolution. GhostPlug lets you pick any resolution from the menu bar, so Screen Sharing into a Mac mini shows the desktop you want.</p>
+        <div class="actions">
+          <a class="button primary" href="https://orchardoutlaws.com/l/ghostplug" target="_blank" rel="noopener noreferrer">Buy — $4.99, one time</a>
+          <a class="button" href="https://michelstorms.com/ghostplug/sparkle/releases/GhostPlug_latest.dmg">Download the free trial</a>
+          <a class="button" href="/ghostplug/support/">Get support</a>
+        </div>
+        <p class="fineprint">$4.99, one time, with free updates, on all your own Macs. 7-day free trial from first launch.</p>
+      </div>
+      <div class="hero-art"><img src="/assets/apps/ghostplug/countdown-hero.png" alt="GhostPlug's countdown asking to keep a new resolution"></div>
+    </div></header>
+
+    <section id="features"><div class="container">
+      <h2 class="section-title">Any resolution. Always a way back.</h2>
+      <p class="section-copy">GhostPlug creates a virtual display at the size you choose and mirrors the Mac's own displays onto it. Every change waits for you to click Keep, so a bad mode can never lock you out.</p>
+      <div class="grid">
+        <article class="card"><h3>Pick it from the menu bar</h3><p>Presets for 16:9, 16:10, 4:3 and ultrawide, sizes that match a MacBook, a Studio Display or an iPad, custom sizes, favourites, and Retina modes.</p></article>
+        <article class="card"><h3>Keep, or it goes back</h3><p>Each new resolution counts down. Only a click on Keep confirms; without it the screen returns by itself. If the app quits, the Mac is back on its own display.</p></article>
+        <article class="card"><h3>Set it and leave it</h3><p>Launch at login, the resolution you kept after a restart, and recovery after sleep or a Screen Sharing reconnect. A command line tool for scripts.</p></article>
+      </div>
+    </div></section>
+
+    <section class="privacy"><div class="container">
+      <div class="eyebrow">Private by design</div>
+      <h2 class="section-title">It changes your screen. It never looks at it.</h2>
+      <p class="section-copy">GhostPlug has no advertising or analytics SDKs, and the developer operates no account or tracking service. The only network requests are the licence check and the update check.</p>
+      <a class="button" href="/ghostplug/privacy/">Read the Privacy Policy</a>
+    </div></section>
+
+    <section id="faq"><div class="container">
+      <h2 class="section-title">Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Why isn't it on the Mac App Store?</summary>
+          <p>GhostPlug uses a display interface that macOS provides but Apple does not document, which the Mac App Store does not allow. It's signed with an Apple Developer ID and notarized by Apple, so macOS opens it normally.</p>
+        </details>
+        <details>
+          <summary>Could a macOS update break it?</summary>
+          <p>It could. Try a new macOS version before updating a Mac you can only reach remotely. If GhostPlug stops working, the Mac simply runs on its own display.</p>
+        </details>
+        <details>
+          <summary>What happens after the 7-day trial?</summary>
+          <p>The resolution you kept stays, and is still restored after a restart. You can always go back to the Mac's own display. Applying a new resolution needs a license key from your Gumroad receipt.</p>
+        </details>
+        <details>
+          <summary>What about a Mac that restarts unattended?</summary>
+          <p>Turn on automatic login and turn off FileVault. Otherwise the Mac waits at the login window and GhostPlug only starts once someone logs in.</p>
+        </details>
+        <details>
+          <summary>How do refunds work?</summary>
+          <p>14 days, no questions asked. See the <a href="/ghostplug/refunds/">refund policy</a>.</p>
+        </details>
+      </div>
+    </div></section>
+  </main>
+
+  <footer>
+    <span>GhostPlug is independent and is not affiliated with or endorsed by Apple. Sold by Michel Storms in the <a href="https://orchardoutlaws.com">Orchard Outlaws</a> store.</span>
+    <div><a href="/ghostplug/terms/">Terms</a><a href="/ghostplug/privacy/">Privacy</a><a href="/ghostplug/refunds/">Refunds</a><a href="/ghostplug/support/">Support</a></div>
+  </footer>
+</body>
+</html>
