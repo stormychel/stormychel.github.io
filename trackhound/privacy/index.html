@@ -24,7 +24,7 @@
   <main>
     <article>
       <h1>TrackHound Privacy Policy</h1>
-      <p class="meta">Effective date: October 8, 2026</p>
+      <p class="meta">Effective date: October 12, 2026</p>
       <p>This Privacy Policy describes how TrackHound ("App") handles information when you use the app. It covers the iOS, iPadOS, macOS, watchOS and Android versions. Where a platform differs, it says so.</p>
 
       <h2>1. Data We Process</h2>
@@ -36,14 +36,15 @@
         <li><strong>Map tiles and region packs:</strong> map style tiles come from OpenFreeMap (tiles.openfreemap.org). Region packs you choose to download come from our release storage. Like any download, these requests show the server your IP address and which area you asked for. Routing itself runs entirely on your device against the data you have downloaded, so no route request is ever sent anywhere.</li>
         <li><strong>Routes and waypoints:</strong> routes you create, waypoints you set, favourites you save, recorded rides and your preferences (vehicle, route style, units) are stored on your device. They are not synced to us or to anyone else.</li>
         <li><strong>Purchases:</strong> TrackHound Pro is sold through Apple's App Store or Google Play, whichever you installed from. The store handles the payment and tells the app what you are entitled to. We never see your payment details. To check an entitlement the store identifies your device or account to itself, which is why the Google Play listing notes a device identifier.</li>
-        <li><strong>Diagnostics:</strong> system logs are written through the platform's own logging (Apple's unified logging, or Android's logcat) and stay on your device. The app can also assemble a settings diagnostic report, which stays on your device unless you choose to send it to us. There is no analytics SDK, no crash reporting service and no advertising SDK in the app.</li>
+        <li><strong>Diagnostics:</strong> system logs are written through the platform's own logging (Apple's unified logging, or Android's logcat) and stay on your device. The app can also assemble a settings diagnostic report, which stays on your device unless you choose to send it to us. There is no crash reporting service and no advertising SDK in the app, and no analytics at all in the Android version. The iOS version carries one measurement SDK, described next.</li>
+        <li><strong>Counting which ads work (iOS, from version 1.16.19):</strong> the iOS app includes Google Analytics for Firebase, for one job only, which is telling us whether an ad actually brought a rider in. It reports that the app was opened for the first time, plus coarse facts like device model, language and country, and an app instance identifier Google generates. <strong>No advertising identifier is collected and you will never see a tracking permission prompt</strong>, because the part of the SDK that reads one is not in the app at all. Ad personalisation and the two advertising consent signals are switched off, so this is counting, not profiling, and nothing is used to target ads at you. None of it involves where you ride: no route, no position and no trip is sent. The Android version has none of this.</li>
       </ul>
 
       <h2>2. How Data Is Used</h2>
       <p>Data is used only to run the app: showing your position, planning and showing routes, turning an address you chose into a point on the map, recording a ride if you asked for one, and managing the regions you have downloaded. Nothing is profiled, and nothing is used to advertise to you. Routing happens entirely on your device.</p>
 
       <h2>3. Data Sharing</h2>
-      <p>We do not sell personal data, and we do not share it for advertising. The app contains no analytics, advertising or third-party tracking SDKs. Three outside services see anything at all, and only what is described above: OpenFreeMap serves map tiles, Photon answers an Android search the system could not, and the operating system's own geocoding service turns addresses into coordinates. Each is governed by its own terms.</p>
+      <p>We do not sell personal data, and we do not share it for advertising. The app contains no advertising SDK and no cross-app tracking. Four outside services see anything at all, and only what is described above: OpenFreeMap serves map tiles, Photon answers an Android search the system could not, the operating system's own geocoding service turns addresses into coordinates, and on iOS Google Analytics for Firebase counts first opens so we can tell which ads work. Each is governed by its own terms.</p>
 
       <h2>4. Data Retention</h2>
       <p>Data stored on your device (routes, waypoints, favourites, recorded rides, recent searches, preferences and downloaded regions) stays there until you remove it in the app or uninstall the app. Addresses sent for geocoding are used to answer that one request and are not retained by us. We hold no account and no server-side copy of your data, because there is no account to hold.</p>
