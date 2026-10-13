@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="https://sparkle-project.org/xmlns/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>GhostPlug Updates</title>
+    <link>https://michelstorms.com/ghostplug/sparkle/appcast.xml</link>
+    <description>Release feed for GhostPlug</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Oct 2026 14:14:25 +0000</lastBuildDate>
+
+    <item>
+      <title>New version 1.1.0 - Your last 3 kept resolutions are now at the top of the menu for a one-click switch</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/ghostplug/sparkle/notes/ghostplug-1.1.0.html</sparkle:releaseNotesLink>
+      <pubDate>Tue, 13 Oct 2026 14:14:25 +0000</pubDate>
+
+      <enclosure
+          url="https://michelstorms.com/ghostplug/sparkle/releases/GhostPlug_v1.1.0_2.zip"
+          sparkle:shortVersionString="1.1.0"
+          sparkle:version="2"
+          sparkle:minimumSystemVersion="13.0"
+          sparkle:os="macos"
+          sparkle:edSignature="9TJ6XOUunuvwxAuWX8GvWaQGbuh+UbLkCWS0+YG9FzbBiQwLvKvR95O380ptiuubTZzST/3kWGFFD5tsiRa1BQ=="
+          length="2048741"
+          type="application/octet-stream" />
+
+      <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
+    </item>
+
+  </channel>
+</rss>
