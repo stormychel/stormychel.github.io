@@ -11,18 +11,18 @@
     <lastBuildDate>Sun, 27 Sep 2026 07:00:57 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.4.0 - Open at login: ClaudGet can now start with your Mac</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.4.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.5.0 - Claude usage now comes straight from Claude Code on your Mac: no sign-in, and nothing is sent to Anthropic. After updating, click Connect Claude once.</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.5.0.html</sparkle:releaseNotesLink>
       <pubDate>Sun, 27 Sep 2026 07:00:57 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.4.0_8.zip"
-          sparkle:shortVersionString="1.4.0"
-          sparkle:version="8"
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.5.0_9.zip"
+          sparkle:shortVersionString="1.5.0"
+          sparkle:version="9"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="52W1iEQhXC5EURKn3taoIDeQ1RZYhUFtNgF8m4qLqnoLZxqQFNs9/s6Smzm80ERqP9yqw866Tz0DcVpjj0t/BA=="
-          length="4676389"
+          sparkle:edSignature="WDqshGZmt3J3zaN4TAT4hDyl/bp4joGTZ/o2hzXsxAiECYKmy617DhWVnPmkI1X8ducDtQI+Myqxg7pnGyCTAg=="
+          length="4654163"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
