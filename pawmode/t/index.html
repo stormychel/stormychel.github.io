@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature inside the car &middot; PawMode</title>
+  <meta name="description" content="The temperature inside a car with a PawMode window sign.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- The address carries the sign's code after the #. It must not travel on in a Referer. -->
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src https://pawmode-watchdog.stormychel.workers.dev; base-uri 'none'; form-action 'none'">
+  <style>
+    :root { --bg: #041414; --panel: #0f3636; --fg: #e8f7f7; --muted: #9cc9c6; --mint: #4bb8b0; --warn: #e6a832; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--fg); background: var(--bg); line-height: 1.45; -webkit-text-size-adjust: 100%; }
+    main { min-height: 100%; max-width: 520px; margin: 0 auto; padding: 28px 16px 32px; display: flex; flex-direction: column; gap: 18px; }
+    header { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mint); text-align: center; }
+    section { background: var(--panel); border-radius: 22px; padding: 28px 20px; text-align: center; }
+    h1 { margin: 0 0 10px; font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+    .temperature { font-size: clamp(3.6rem, 22vw, 6rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+    .other { margin-top: 8px; font-size: 1.5rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .age { margin-top: 18px; font-size: 1.1rem; font-weight: 600; }
+    .old { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(230, 168, 50, 0.16); color: var(--warn); font-weight: 700; }
+    .state { font-size: 1.5rem; font-weight: 800; line-height: 1.2; }
+    .detail { margin-top: 12px; color: var(--muted); font-size: 1.02rem; }
+    .advice { color: var(--muted); font-size: 0.98rem; text-align: center; padding: 0 6px; }
+    footer { margin-top: auto; text-align: center; font-size: 0.85rem; color: var(--muted); }
+    a { color: var(--mint); }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>PawMode</header>
+
+    <section aria-live="polite">
+      <div id="loading">
+        <div class="state">Checking the temperature&hellip;</div>
+      </div>
+
+      <div id="reading" hidden>
+        <h1>Temperature inside the car</h1>
+        <div class="temperature" id="primary"></div>
+        <div class="other" id="secondary"></div>
+        <div class="age" id="age"></div>
+        <div class="old" id="old" hidden>This is an old reading. The car may be warmer or cooler now.</div>
+      </div>
+
+      <div id="noReading" hidden>
+        <div class="state">No temperature reading right now</div>
+        <div class="detail">The thermometer in this car is not reporting at the moment. That says nothing about how warm the car is.</div>
+      </div>
+
+      <div id="inactive" hidden>
+        <div class="state">This code is not active</div>
+        <div class="detail">It may have been switched off or replaced by the sign's owner. There is no temperature to show.</div>
+      </div>
+
+      <div id="unavailable" hidden>
+        <div class="state">Couldn&rsquo;t check the temperature</div>
+        <div class="detail">This page will try again shortly. That says nothing about how warm the car is.</div>
+      </div>
+    </section>
+
+    <p class="advice">The reading comes from a thermometer the owner placed in the car. If the animal looks unwell, call the number on the sign or your local emergency number.</p>
+
+    <footer>
+      <a href="https://michelstorms.com/pawmode/" rel="noreferrer">PawMode</a> lets an owner watch over a pet in a parked car.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+      // The service that holds the readings. The printed code leads here, to this page,
+      // so the service can move without a single sign having to be reprinted.
+      var SERVICE = 'https://pawmode-watchdog.stormychel.workers.dev';
+      var ID = /^[A-Za-z0-9_-]{22}$/;
+      // Past this a reading is called old. The Monitor reports about once a minute, but a
+      // phone with its screen locked can hold its reports back for much longer.
+      var OLD_AFTER_SECONDS = 5 * 60;
+      var REFRESH_MS = 30 * 1000;
+
+      var panels = ['loading', 'reading', 'noReading', 'inactive', 'unavailable'];
+      var reading = null;   // { celsius, ageSeconds, at }
+      var timer = null;
+      // Which code the page is showing. An answer for an earlier one is dropped.
+      var generation = 0;
+      var pending = null;
+
+      // A clock that only goes forward. The wall clock can be set back, and an age
+      // worked out from it would then shrink and take the "old reading" warning with it.
+      function elapsed() {
+        return typeof performance === 'object' && performance && typeof performance.now === 'function' ? performance.now() : Date.now();
+      }
+
+      function el(id) { return document.getElementById(id); }
+
+      function show(name) {
+        panels.forEach(function (panel) { el(panel).hidden = panel !== name; });
+      }
+
+      // Fahrenheit first only where Fahrenheit is what people read. Both are always shown.
+      function fahrenheitFirst() {
+        return /[-_](US|BS|BZ|KY|PW|LR|FM|MH)\b/i.test(navigator.language || '');
+      }
+
+      function degrees(value, unit) {
+        var text;
+        try {
+          text = new Intl.NumberFormat(navigator.language, { maximumFractionDigits: unit === 'C' ? 1 : 0 }).format(value);
+        } catch (error) {
+          text = String(Math.round(value * 10) / 10);
+        }
+        return text + ' °' + unit;
+      }
+
+      function ago(seconds) {
+        // "Reported", not "measured": the age is how long ago the car's phone sent the
+        // reading. The thermometer may have taken it a few minutes before that.
+        if (seconds < 60) return 'Reported less than a minute ago';
+        var unit = 'minute', amount = Math.floor(seconds / 60);
+        if (amount >= 60) { unit = 'hour'; amount = Math.floor(amount / 60); }
+        return 'Reported ' + amount + ' ' + unit + (amount === 1 ? '' : 's') + ' ago';
+      }
+
+      function render() {
+        if (!reading) return;
+        var celsius = reading.celsius;
+        var fahrenheit = celsius * 9 / 5 + 32;
+        var first = fahrenheitFirst();
+        el('primary').textContent = first ? degrees(fahrenheit, 'F') : degrees(celsius, 'C');
+        el('secondary').textContent = first ? degrees(celsius, 'C') : degrees(fahrenheit, 'F');
+        // The age keeps counting between checks: a reading does not stay "a minute old"
+        // because the page was left open.
+        var age = reading.ageSeconds + Math.max(0, Math.floor((elapsed() - reading.at) / 1000));
+        el('age').textContent = ago(age);
+        el('old').hidden = age < OLD_AFTER_SECONDS;
+        show('reading');
+      }
+
+      function check(id) {
+        var asked = generation;
+        // Counted from before the request went out: the time it spends in transit is
+        // time the reading aged, and anchoring on arrival would lose it.
+        var sentAt = elapsed();
+        if (pending) pending.abort();
+        var controller = typeof AbortController === 'function' ? new AbortController() : null;
+        pending = controller;
+        var deadline = controller ? setTimeout(function () { controller.abort(); }, 12000) : null;
+        fetch(SERVICE + '/v1/signs/' + id, {
+          cache: 'no-store',
+          credentials: 'omit',
+          referrerPolicy: 'no-referrer',
+          signal: controller ? controller.signal : undefined
+        }).then(function (response) {
+          return response.json().then(function (body) { return { status: response.status, body: body }; });
+        }).then(function (answer) {
+          if (asked !== generation) return;
+          var body = answer.body || {};
+          if (answer.status === 200 && body.state === 'reading' && typeof body.celsius === 'number' && isFinite(body.celsius)
+              && typeof body.ageSeconds === 'number' && isFinite(body.ageSeconds)) {
+            reading = { celsius: body.celsius, ageSeconds: Math.max(0, body.ageSeconds), at: sentAt };
+            render();
+          } else if (answer.status === 200 && body.state === 'noReading') {
+            reading = null;
+            show('noReading');
+          } else if (answer.status === 404) {
+            reading = null;
+            show('inactive');
+          } else {
+            failed(asked);
+          }
+        }).catch(function () { failed(asked); }).then(function () { if (deadline) clearTimeout(deadline); });
+      }
+
+      // A check that failed says nothing new. A reading already on the page stays, and
+      // goes on ageing, rather than being replaced by an error about the network.
+      function failed(asked) {
+        if (asked !== generation) return;
+        if (reading) { render(); } else { show('unavailable'); }
+      }
+
+      function start() {
+        if (timer) { clearInterval(timer); timer = null; }
+        generation += 1;
+        if (pending) { pending.abort(); pending = null; }
+        reading = null;
+        var id = (location.hash || '').replace(/^#/, '');
+        if (!ID.test(id)) { show('inactive'); return; }
+        show('loading');
+        check(id);
+        var sinceCheck = 0;
+        timer = setInterval(function () {
+          render();
+          sinceCheck += 1000;
+          if (sinceCheck >= REFRESH_MS && !document.hidden) { sinceCheck = 0; check(id); }
+        }, 1000);
+      }
+
+      window.addEventListener('hashchange', start);
+      start();
+    })();
+  </script>
+</body>
+</html>
