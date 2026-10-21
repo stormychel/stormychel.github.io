@@ -8,7 +8,21 @@
     <link>https://michelstorms.com/applemailmcp/sparkle/appcast.xml</link>
     <description>Release feed for the AppleMailMCP menu-bar app</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 06:09:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 06:47:26 +0000</lastBuildDate>
+
+    <item>
+      <title>Version 1.0.1</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/applemailmcp/sparkle/notes/applemailmcp-1.0.1.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, 21 Oct 2026 06:47:26 +0000</pubDate>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+          url="https://michelstorms.com/applemailmcp/sparkle/releases/AppleMailMCP_v1.0.1_2.zip"
+          sparkle:shortVersionString="1.0.1"
+          sparkle:version="2"
+          sparkle:os="macos"
+          sparkle:edSignature="2vKByuIUh0d0uQw3UZrxr1MoLyuawmOz9/nWthyDWDdHRj26FkekAK6qj5uuApp/Ioe0+qWfN+wFnoPi6+RNDw==" length="1305391"
+          type="application/octet-stream" />
+    </item>
 
     <item>
       <title>Version 1.0.0</title>
