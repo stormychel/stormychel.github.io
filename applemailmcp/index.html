@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AppleMailMCP — Your Mac's Mail, Calendar, Messages and Notes, for Claude</title>
+  <meta name="description" content="AppleMailMCP connects Claude to the Mail, Calendar, Messages, Reminders and Notes on your Mac. Local, private, set up in a few minutes.">
+  <link rel="canonical" href="https://michelstorms.com/applemailmcp/">
+  <link rel="icon" type="image/png" href="/assets/apps/applemailmcp/icon.png">
+  <meta property="og:title" content="AppleMailMCP — your Mac's apps, for Claude">
+  <meta property="og:description" content="Give Claude your Mac's Mail, Calendar, Messages, Reminders and Notes. Local and private.">
+  <meta property="og:url" content="https://michelstorms.com/applemailmcp/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/applemailmcp/icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AppleMailMCP — your Mac's apps, for Claude">
+  <meta name="twitter:description" content="Give Claude your Mac's Mail, Calendar, Messages, Reminders and Notes. Local and private.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/applemailmcp/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2d2e3a; --navy-light: #3d3e4e; --navy-dark: #1a1b24;
+      --white: #ffffff; --off-white: #f8f8fa;
+      --gray-100: #f0f0f3; --gray-200: #e2e2e7; --gray-300: #c5c5ca; --gray-400: #8c8c92; --gray-500: #52525a;
+      --accent: #2f6bf9; --accent-light: #46a6f5;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    body { font-family: "Inter", sans-serif; font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1100px, 100% - 48px); margin-inline: auto; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+
+    .topbar { position: sticky; top: 0; z-index: 10; height: 64px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); }
+    .topbar .container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.35rem; text-decoration: none; }
+    .topbar nav { display: flex; gap: 24px; font-weight: 500; font-size: 0.92rem; }
+    .topbar nav a { text-decoration: none; color: var(--gray-500); }
+    .topbar nav a:hover { color: var(--navy); }
+
+    .hero { position: relative; overflow: hidden; text-align: center; padding: 88px 0; background: linear-gradient(180deg, var(--white), var(--off-white) 60%, var(--gray-100)); }
+    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; left: 50%; top: -280px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(47,107,249,0.14), transparent 70%); }
+    .hero > .container { position: relative; }
+    .hero .icon { width: 112px; height: 112px; margin: 0 auto 24px; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.16)); }
+    .label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); max-width: 780px; margin: 0 auto 18px; }
+    .hero p.sub { color: var(--gray-500); font-size: 1.12rem; max-width: 620px; margin: 0 auto 32px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; border-radius: 8px; padding: 14px 32px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: var(--accent-light); }
+    .btn-outline { border: 1px solid var(--gray-300); color: var(--navy); }
+    .fineprint { margin-top: 18px; font-size: 0.88rem; color: var(--gray-400); }
+
+    section { padding: 88px 0; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .section-head p { color: var(--gray-500); }
+
+    .dark { background: var(--navy); color: var(--white); }
+    .dark .section-head p { color: var(--gray-300); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+    .step { border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px 28px; }
+    .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); font-weight: 600; margin-bottom: 16px; }
+    .step h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .step p { color: var(--gray-300); font-size: 0.95rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 32px 28px; transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(45,46,58,0.08); }
+    .card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .card p { color: var(--gray-500); font-size: 0.95rem; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { position: relative; padding: 14px 0 14px 34px; border-bottom: 1px solid var(--gray-200); color: var(--gray-500); }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 14px; color: var(--accent); font-weight: 600; }
+    .checklist strong { color: var(--navy); }
+
+    .faq { max-width: 760px; margin: 0 auto; }
+    .faq details { border-bottom: 1px solid var(--gray-200); padding: 20px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; list-style: none; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; float: right; color: var(--accent); font-weight: 600; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { margin-top: 12px; color: var(--gray-500); }
+    code { font-size: 0.9em; background: var(--gray-100); padding: 1px 6px; border-radius: 4px; }
+
+    .cta { text-align: center; }
+    .cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .cta p { color: var(--gray-300); margin-bottom: 32px; }
+
+    footer { background: var(--navy-dark); color: var(--gray-400); padding: 32px 0; font-size: 0.88rem; }
+    footer .container { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    footer a { color: var(--gray-300); }
+
+    @media (max-width: 860px) {
+      section, .hero { padding: 64px 0; }
+      .steps, .grid, .split { grid-template-columns: 1fr; }
+      .topbar nav a:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="logo" href="/">Michel Storms</a>
+      <nav><a href="/">Home</a><a href="/apps.html">Apps</a><a href="#buy">Buy AppleMailMCP</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <img class="icon" src="/assets/apps/applemailmcp/icon.png" alt="AppleMailMCP app icon">
+        <span class="label">For Claude on your Mac</span>
+        <h1>Your Mac's mail, calendar and notes, for&nbsp;Claude.</h1>
+        <p class="sub">AppleMailMCP connects Claude Desktop and Claude Code to Mail, Calendar, Messages, Reminders and Notes. Ask about your week, your inbox or that note from March, and Claude answers from what is on your Mac.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://orchardoutlaws.com/l/applemailmcp" target="_blank" rel="noopener noreferrer">Buy — €4.99, one time</a>
+          <a class="btn btn-outline" href="#getting-started">Getting started</a>
+        </div>
+        <p class="fineprint">Apple silicon, macOS 14 or later. Up to three of your Macs. Updates included.</p>
+      </div>
+    </section>
+
+    <section class="dark" id="getting-started">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Getting started</span>
+          <h2>A few minutes, no Terminal.</h2>
+          <p>The app's Setup window walks you through it and ticks each step off as it works.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>Install and activate</h3><p>Unzip AppleMailMCP, move it to Applications and open it. Paste the license key from your Gumroad receipt and click Activate.</p></div>
+          <div class="step"><h3>Connect Claude</h3><p>Click Connect for Claude Desktop, Claude Code, or both. Quit and reopen Claude Desktop so it picks the new tools up.</p></div>
+          <div class="step"><h3>Allow Full Disk Access</h3><p>In System Settings, turn on Full Disk Access for Claude, and for your terminal app if you use Claude Code. Quit and reopen it, then ask Claude about your latest email.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="label">What Claude can do with it</span>
+          <h2>Five apps, one connection.</h2>
+          <p>Reading is on from the start. Anything that changes your data is off until you switch it on.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>Mail</h3><p>Search every account by sender, subject, date or the text of the message, read threads, and, if you allow it, flag, move or draft a reply for you to send.</p></div>
+          <div class="card"><h3>Calendar</h3><p>See what is on your calendars, find an event, and, if you allow it, add one.</p></div>
+          <div class="card"><h3>Messages</h3><p>Search your iMessage and SMS conversations and read a chat back.</p></div>
+          <div class="card"><h3>Reminders</h3><p>Read your lists and what is due, and, if you allow it, add a reminder.</p></div>
+          <div class="card"><h3>Notes</h3><p>Search your notes and folders and read a note in full.</p></div>
+          <div class="card"><h3>Private by design</h3><p>Your data is read on your Mac and handed only to the Claude apps you connect. AppleMailMCP sends none of it anywhere: no server, no account, no analytics.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--off-white);">
+      <div class="container split">
+        <div>
+          <span class="label">Before you buy</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 16px;">Check this fits your setup.</h2>
+          <p style="color: var(--gray-500);">If something here doesn't match, please don't buy. If it wasn't clear and you already did, ask for a refund.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>A Mac with Apple silicon</strong> (M1 or later) and <strong>macOS 14</strong> or later</li>
+          <li><strong>Claude Desktop or Claude Code</strong>, with a Claude account</li>
+          <li><strong>Mail, Calendar, Messages, Reminders or Notes in use on this Mac</strong>: AppleMailMCP reads what they keep locally</li>
+          <li><strong>Full Disk Access</strong> for the Claude app, which macOS asks you to grant once</li>
+          <li><strong>What Claude does with your data</strong> is between you and your Claude account; AppleMailMCP only hands it over when Claude asks</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Questions</span>
+          <h2>Frequently asked.</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Does my mail go to a server of yours?</summary><p>No. AppleMailMCP runs entirely on your Mac. The only things it sends over the network are the license check to Gumroad (your key, nothing else) and the check for app updates.</p></details>
+          <details><summary>Can Claude send email or messages for me?</summary><p>No. With the compose switch on, Claude can open a filled-in draft in Mail; you read it and press Send yourself. Messages is read-only.</p></details>
+          <details><summary>Why does it need Full Disk Access?</summary><p>macOS keeps Mail, Messages and Notes private. Full Disk Access is how you let an app read them, and it belongs to the app that runs the tools: Claude, or your terminal for Claude Code.</p></details>
+          <details><summary>Does it work with Intel Macs?</summary><p>No, it needs Apple silicon.</p></details>
+          <details><summary>Something isn't working.</summary><p>Open the menu-bar icon, choose More → Copy Diagnostics, and reply to your Gumroad receipt with what you pasted. It contains setup details only, never your mail or messages.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark cta" id="buy">
+      <div class="container">
+        <span class="label">AppleMailMCP for macOS</span>
+        <h2>Give Claude your Mac.</h2>
+        <p>€4.99, one time. Up to three of your Macs.</p>
+        <a class="btn btn-primary" href="https://orchardoutlaws.com/l/applemailmcp" target="_blank" rel="noopener noreferrer">Buy on Gumroad</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Michel Storms. All rights reserved. An <a href="https://orchardoutlaws.com" target="_blank" rel="noopener noreferrer">Orchard Outlaws</a> app.</span>
+      <nav>
+        <a href="terms/">License Agreement</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
