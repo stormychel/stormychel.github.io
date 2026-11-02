@@ -11,18 +11,18 @@
     <lastBuildDate>Mon, 21 Sep 2026 14:40:24 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.2.0 - Downloads your way, and a count on the Dock</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/catchmatch/sparkle/notes/catchmatch-1.2.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.3.0 - CatchMatch learns where things go</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/catchmatch/sparkle/notes/catchmatch-1.3.0.html</sparkle:releaseNotesLink>
       <pubDate>Mon, 21 Sep 2026 14:40:24 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.2.0_19.zip"
-          sparkle:shortVersionString="1.2.0"
-          sparkle:version="19"
+          url="https://michelstorms.com/catchmatch/sparkle/releases/CatchMatch_v1.3.0_20.zip"
+          sparkle:shortVersionString="1.3.0"
+          sparkle:version="20"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="BLQu6RCpwopbSGweo2Z3QQNI4y8sNNZ35d2e0t/jdFmy00uJxFZdbICPX6S+dufpEWgvFbLmXnbLxepcmIx6DQ=="
-          length="3908519"
+          sparkle:edSignature="BnwxA5JqUrHVRlPh+gUpGeJdx3n7FMiIoiCPQn4VVvuLlB1Q9iiM7/QVLk3gy4W2D78GlNl16ljiv4lhuQupDQ=="
+          length="3931162"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
