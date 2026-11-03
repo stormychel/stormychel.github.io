@@ -29,32 +29,36 @@
 
       <h2>1. Data We Process</h2>
       <ul>
-        <li>Poll content you enter: titles, descriptions, date/time options and place options.</li>
-        <li>Responses: the availability you select for each option and, if you enter one, a display name.</li>
-        <li>Identifiers: an anonymous iCloud user identifier for the account you vote or create polls with (when signed in to iCloud), and an app-generated device identifier (Apple's identifier for vendor on iPhone and iPad, a random identifier on Mac and in the browser). These are not your Apple ID, email address or phone number.</li>
+        <li>Poll content you enter: titles, descriptions, date/time options, place options and group size.</li>
+        <li>Responses: the availability you select for each option and when you responded. Responses are not stored with your name.</li>
+        <li>Identifiers: when you are signed in to iCloud, an anonymous iCloud user identifier for your account (CloudKit also records it as the creator of each poll and response); and an app-generated device identifier (Apple's identifier for vendor on iPhone and iPad, a random identifier on Mac), stored with polls you create and with votes cast without iCloud, or alongside the iCloud identifier when an earlier vote from that device is moved to it. These are not your Apple ID, email address or phone number.</li>
         <li>Purchase and entitlement information provided by Apple StoreKit.</li>
       </ul>
+      <p>Voting on the web page requires signing in with your Apple ID through Apple's CloudKit JS. Apple keeps the sign-in in your browser; the page also keeps a random identifier in your browser's local storage, which is not uploaded.</p>
 
       <h2>2. How Data Is Used</h2>
-      <p>We use data only to operate core app functionality: creating polls, recording responses, syncing polls between your devices, the iMessage extension, the widget, Apple Watch and the web voting page, recognising the organizer of a poll, and validating paid organizer access. The identifiers make sure a person's vote counts once, whether they vote from iPhone, iPad, Mac or the web, and let them change their vote later. They are not used for advertising or tracking.</p>
+      <p>We use data only to operate core app functionality: creating polls, recording responses, showing polls on your devices, in the iMessage extension, the widget, on Apple Watch and on the web voting page, recognising the organizer of a poll, and validating paid organizer access. The identifiers make sure a person's vote counts once, whether they vote from iPhone, iPad, Mac or the web, and let them change their vote later. They are not used for advertising or tracking.</p>
 
-      <h2>3. Data Sharing and Visibility</h2>
-      <p>Polls and responses are stored in Apple's CloudKit public database so that everyone invited can see them. Anyone who has a poll's link can read that poll, its responses and display names, and the identifiers stored with each response. Share poll links only with the people you are planning with.</p>
-      <p>We do not sell personal data and do not share it with third parties for advertising. CloudKit and payments are provided by Apple, and Apple processes related data under its own terms and privacy policies.</p>
+      <h2>3. Calendar Access</h2>
+      <p>If you allow calendar access, the app reads your calendar on your device to show conflicts and suggest times, can add "Hold" events for options you are considering, and can add the chosen time to your calendar. Your calendar contents are never uploaded or shared.</p>
 
-      <h2>4. Data Retention</h2>
-      <p>Poll and response data is stored on your devices and in CloudKit. Deleting a poll in the app, or uninstalling the app, removes the copy on that device; the shared copy in CloudKit stays available to people with the link. To have a poll or response removed from CloudKit, contact us.</p>
+      <h2>4. Data Sharing and Visibility</h2>
+      <p>Polls and responses are stored in Apple's CloudKit public database so that everyone invited can see them. A poll link contains the poll's unique identifier, and anyone who has the link can read that poll (including its places, group size and lock state), its responses and response times, and the identifiers stored with the poll and each response. Share poll links only with the people you are planning with.</p>
+      <p>We do not sell personal data and do not share it with third parties for advertising. CloudKit, sign-in and payments are provided by Apple, which processes related data under its own terms and privacy policies. The web voting page is hosted on Cloudflare Pages, which may process technical data such as IP addresses to deliver it.</p>
 
-      <h2>5. Security</h2>
+      <h2>5. Data Retention</h2>
+      <p>Poll and response data is stored on your devices and in CloudKit. Voting again replaces your earlier response. Deleting a poll in the app, or uninstalling the app, removes the copy on that device; the shared copy in CloudKit stays available to people with the link. To have a poll or response removed from CloudKit, contact us.</p>
+
+      <h2>6. Security</h2>
       <p>We use platform-provided protections (Apple frameworks and app sandboxing). No method of storage or transmission is completely secure.</p>
 
-      <h2>6. Children's Privacy</h2>
+      <h2>7. Children's Privacy</h2>
       <p>PickDatePlace is rated 4+ on the App Store. We do not knowingly collect personal data online from children. If you believe a child has provided personal data in connection with the App, contact us and we will review and remove it where appropriate.</p>
 
-      <h2>7. Policy Changes</h2>
+      <h2>8. Policy Changes</h2>
       <p>We may update this Privacy Policy from time to time. The effective date at the top indicates the latest version.</p>
 
-      <h2>8. Contact</h2>
+      <h2>9. Contact</h2>
       <p>Privacy requests and support: <a href="https://michelstorms.com/">https://michelstorms.com/</a></p>
     </article>
   </main>
