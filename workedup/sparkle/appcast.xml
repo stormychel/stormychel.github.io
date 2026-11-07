@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="https://sparkle-project.org/xmlns/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>WorkedUp Updates</title>
+    <link>https://michelstorms.com/workedup/sparkle/appcast.xml</link>
+    <description>Release feed for WorkedUp</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Nov 2026 09:08:05 +0000</lastBuildDate>
+
+    <item>
+      <title>New version 1.6.0 - Billable Only display mode and automatic updates</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/workedup/sparkle/notes/workedup-1.6.0.html</sparkle:releaseNotesLink>
+      <pubDate>Sat, 07 Nov 2026 09:08:05 +0000</pubDate>
+
+      <enclosure
+          url="https://michelstorms.com/workedup/sparkle/releases/WorkedUp_v1.6.0_18.zip"
+          sparkle:shortVersionString="1.6.0"
+          sparkle:version="18"
+          sparkle:minimumSystemVersion="13.1"
+          sparkle:os="macos"
+          sparkle:edSignature="b772Qkqo60gT+eARaRjHh/dpw8P3em5y9MxOnGfaDKxNyuP9EIM99fBpBdW3W6NF6PZpjdxx14htov15HsYWDA=="
+          length="2383173"
+          type="application/octet-stream" />
+
+      <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
+    </item>
+
+  </channel>
+</rss>
