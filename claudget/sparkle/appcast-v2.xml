@@ -11,18 +11,18 @@
     <lastBuildDate>Sun, 27 Sep 2026 07:00:57 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.5.0 - Claude usage now comes straight from Claude Code on your Mac: no sign-in, and nothing is sent to Anthropic. After updating, click Connect Claude once.</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.5.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.6.0 - Mistral usage, menu bar choices and collapsible cards</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.6.0.html</sparkle:releaseNotesLink>
       <pubDate>Sun, 27 Sep 2026 07:00:57 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.5.0_9.zip"
-          sparkle:shortVersionString="1.5.0"
-          sparkle:version="9"
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.6.0_10.zip"
+          sparkle:shortVersionString="1.6.0"
+          sparkle:version="10"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="WDqshGZmt3J3zaN4TAT4hDyl/bp4joGTZ/o2hzXsxAiECYKmy617DhWVnPmkI1X8ducDtQI+Myqxg7pnGyCTAg=="
-          length="4654163"
+          sparkle:edSignature="DaDmVq2pbB1wnYpfAJU/7IBTPbJ9JilYTSfpazU3zGBJJbth9Si3DZDzWHpf34NdjbzY/TkfhwBQhM/2K5TcAQ=="
+          length="4672200"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
