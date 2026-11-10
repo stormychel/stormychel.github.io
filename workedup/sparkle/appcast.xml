@@ -11,18 +11,18 @@
     <lastBuildDate>Sat, 07 Nov 2026 09:08:05 +0000</lastBuildDate>
 
     <item>
-      <title>New version 1.6.0 - Billable Only display mode and automatic updates</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/workedup/sparkle/notes/workedup-1.6.0.html</sparkle:releaseNotesLink>
+      <title>New version 1.6.1 - Upwork / Tyme mode shows only Tyme billable time</title>
+      <sparkle:releaseNotesLink>https://michelstorms.com/workedup/sparkle/notes/workedup-1.6.1.html</sparkle:releaseNotesLink>
       <pubDate>Sat, 07 Nov 2026 09:08:05 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/workedup/sparkle/releases/WorkedUp_v1.6.0_18.zip"
-          sparkle:shortVersionString="1.6.0"
-          sparkle:version="18"
+          url="https://michelstorms.com/workedup/sparkle/releases/WorkedUp_v1.6.1_19.zip"
+          sparkle:shortVersionString="1.6.1"
+          sparkle:version="19"
           sparkle:minimumSystemVersion="13.1"
           sparkle:os="macos"
-          sparkle:edSignature="b772Qkqo60gT+eARaRjHh/dpw8P3em5y9MxOnGfaDKxNyuP9EIM99fBpBdW3W6NF6PZpjdxx14htov15HsYWDA=="
-          length="2383173"
+          sparkle:edSignature="Qos+JO7W0/CrDR1nYJDQfVC3qHKwTw8Dcm8UFfYvnstytCPOV6YGgaLBEBjmqRWCYR/WtgKXKEYa2ds4+HO0DQ=="
+          length="2383072"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
