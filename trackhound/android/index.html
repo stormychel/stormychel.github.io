@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackHound for Android: test it before launch</title>
+  <meta name="description" content="TrackHound is live on iPhone and in closed testing on Android. Join the test with your Google account, ride with it for 14 days, and help it reach Google Play.">
+  <link rel="canonical" href="https://michelstorms.com/trackhound/android/">
+
+  <link rel="icon" type="image/png" href="/assets/logo-og.png">
+  <link rel="apple-touch-icon" href="/assets/logo-og.png">
+
+  <meta property="og:title" content="Test TrackHound on Android">
+  <meta property="og:description" content="Offline routing for small roads, gravel and dirt. Live on iPhone, in closed testing on Android. Join with your Google account.">
+  <meta property="og:url" content="https://michelstorms.com/trackhound/android/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/trackhound/press/keyart.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2b1c10;
+      --navy-light: #3d2817;
+      --navy-dark: #180e08;
+      --white: #ffffff;
+      --off-white: #faf7f3;
+      --gray-100: #f3eee7;
+      --gray-200: #e6ded2;
+      --gray-300: #cabba9;
+      --gray-400: #9a8a78;
+      --gray-500: #5f5346;
+      --accent: #f28425;
+      --accent-light: #f7a155;
+      --accent-ink: #c2570f;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--navy); background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 10; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero { text-align: center; padding: 84px 24px 60px; background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(242,132,37,0.10) 0%, transparent 70%); border-radius: 50%; }
+    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
+    .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 18px; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 16px; }
+    .hero p.lede { font-size: 1.1rem; color: var(--gray-500); max-width: 620px; margin: 0 auto; line-height: 1.75; }
+
+    /* ===== Steps ===== */
+    .steps-sec { padding: 72px 0 32px; background: var(--white); }
+    .steps { list-style: none; display: grid; gap: 20px; max-width: 760px; margin: 0 auto; counter-reset: step; }
+    .step { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 28px 28px 28px 84px; position: relative; counter-increment: step; }
+    .step::before { content: counter(step); position: absolute; left: 28px; top: 26px; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 600; display: flex; align-items: center; justify-content: center; }
+    .step h2 { font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .step p { color: var(--gray-500); font-size: 0.97rem; }
+    .step p + p { margin-top: 8px; }
+    .btn { display: inline-block; margin-top: 14px; padding: 12px 26px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; background: var(--navy); color: var(--white); transition: background 0.2s, transform 0.2s; }
+    .btn:hover { background: var(--navy-light); transform: translateY(-2px); }
+    .btn:focus-visible, .note-box a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    /* ===== Notes ===== */
+    .note-sec { padding: 24px 0 88px; background: var(--white); }
+    .note-box { background: var(--navy); color: var(--gray-300); border-radius: 18px; padding: 36px 34px; max-width: 760px; margin: 0 auto; }
+    .note-box h2 { font-family: var(--font-heading); color: var(--white); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+    .note-box p { line-height: 1.7; }
+    .note-box p + p, .note-box p + h2 { margin-top: 12px; }
+    .note-box h2:not(:first-child) { margin-top: 26px; }
+    .note-box a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px 48px; }
+      .steps-sec { padding: 56px 0 24px; }
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 480px) {
+      .step { padding: 76px 22px 24px; }
+      .step::before { left: 22px; top: 24px; }
+      .note-box { padding: 30px 22px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .btn:hover { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="/trackhound/">TrackHound</a></li>
+        <li><a href="/trackhound/press/">Press</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Android closed test</span>
+      <h1>Ride TrackHound on Android before it launches</h1>
+      <p class="lede">TrackHound plans routes onto the small roads, farm tracks and gravel that other apps steer you away from, and it works offline. It is live on iPhone. On Android it is in closed testing, and Google needs twelve riders using it for fourteen days before it can go on Google Play for everyone. I build it on my own, so every tester counts.</p>
+    </div>
+  </section>
+
+  <section class="steps-sec">
+    <div class="container">
+      <ol class="steps">
+        <li class="step">
+          <h2>Join the tester group</h2>
+          <p>Sign in with the Google account you use on the Play Store on your phone, then join the group. That is what puts you on the test list. No form, nothing else to fill in.</p>
+          <a class="btn" href="https://groups.google.com/g/trackhound-android-testers">Join the group</a>
+        </li>
+        <li class="step">
+          <h2>Opt in to the test</h2>
+          <p>Open the test page with the same Google account and tap <strong>Become a tester</strong>. If it says the app is not available yet, give the group a minute to catch up and reload.</p>
+          <a class="btn" href="https://play.google.com/apps/testing/com.michelstorms.TrackHound">Become a tester</a>
+        </li>
+        <li class="step">
+          <h2>Install it from Google Play</h2>
+          <p>TrackHound now shows up in the Play Store like any other app, and updates arrive the same way. Download a region, plan a ride, and take it out.</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.michelstorms.TrackHound">Open in Google Play</a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="note-sec">
+    <div class="container">
+      <div class="note-box">
+        <h2>Please stay for fourteen days</h2>
+        <p>Google counts testers who stay opted in for fourteen days in a row. Leaving early does not cause you any trouble, but it means one more rider has to be found before the launch. You can uninstall and leave the test at any time after that.</p>
+
+        <h2>What is free</h2>
+        <p>Everything in the Android test is unlocked while it runs. You need an Android phone with Google Play, and a region pack takes some storage.</p>
+
+        <h2>Your address</h2>
+        <p>Joining the group shares your Google account address with me, the group owner. It is used only to give you access to the test. It is never shown to other members, never shared, and never used for anything else. Leave the group and it is gone. For anything else, see the <a href="/trackhound/privacy/">privacy policy</a>.</p>
+
+        <h2>Found something?</h2>
+        <p>Tell me at <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a>. A short note on where you rode and what the route did is the most useful thing a tester can send.</p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
