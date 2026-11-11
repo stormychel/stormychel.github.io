@@ -12,17 +12,17 @@
 
     <item>
       <title>New version 1.6.1 - Check for Updates from the menu bar and the main window</title>
-      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.6.1.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://michelstorms.com/claudget/sparkle/notes/claudget-1.6.2.html</sparkle:releaseNotesLink>
       <pubDate>Sun, 27 Sep 2026 07:00:57 +0000</pubDate>
 
       <enclosure
-          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.6.1_11.zip"
-          sparkle:shortVersionString="1.6.1"
-          sparkle:version="11"
+          url="https://michelstorms.com/claudget/sparkle/releases/ClaudGet_v1.6.2_12.zip"
+          sparkle:shortVersionString="1.6.2"
+          sparkle:version="12"
           sparkle:minimumSystemVersion="14.0"
           sparkle:os="macos"
-          sparkle:edSignature="NL1BdV3/d1G0a+ygty0bgr3Nukf1TFTTqXYnVN5WOMcCGtgYaQ3Jz6OItoQUGy4jzbGKXaJp3hOHL+FZL7yFDg=="
-          length="4673744"
+          sparkle:edSignature="9hUK2iLFCoZpRzx7qazRJ/CTfeF9Z3o20WhcNbfBiL0B+85WF1Gj+Ta494RyMB3nq9jB5fLyTp/i2Nt2rlDPBA=="
+          length="4673816"
           type="application/octet-stream" />
 
       <sparkle:minimumAutoupdateVersion>2.0</sparkle:minimumAutoupdateVersion>
