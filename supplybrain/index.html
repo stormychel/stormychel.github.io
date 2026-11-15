@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">SupplyBrain — Know what is in your fridge, freezer and pantry</title>
+  <meta name="description" content="SupplyBrain keeps stock of your fridge, freezer and pantry. Snap a product and on-device Apple Intelligence fills in the name, weight and best-before date. Share with a QR code. Private, no accounts." data-i18n-attr="content:meta.description">
+  <link rel="canonical" href="https://michelstorms.com/supplybrain/">
+
+  <link rel="icon" type="image/png" href="../assets/apps/supplybrain/icon.png">
+  <link rel="apple-touch-icon" href="../assets/apps/supplybrain/icon.png">
+
+  <meta property="og:title" content="SupplyBrain — Know what is in your fridge, freezer and pantry">
+  <meta property="og:description" content="Snap a product and SupplyBrain fills in the name, weight and best-before date on your device. Share containers with a QR code. Private, with no accounts.">
+  <meta property="og:url" content="https://michelstorms.com/supplybrain/">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/apps/supplybrain/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SupplyBrain app icon, name and home screen on a green background">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SupplyBrain — Know what is in your fridge, freezer and pantry">
+  <meta name="twitter:description" content="Snap a product and SupplyBrain fills in the name, weight and best-before date on your device. Share containers with a QR code. Private, with no accounts.">
+  <meta name="twitter:image" content="https://michelstorms.com/assets/apps/supplybrain/og.jpg">
+  <meta name="twitter:image:alt" content="SupplyBrain app icon, name and home screen on a green background">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      /* Green/teal taken from the app icon (#0e8f7c to #42c1aa). */
+      --accent: #0e8f7c;
+      --accent-light: #3ab7a1;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 72px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 50%, var(--gray-100) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14, 143, 124, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+
+    .hero-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      margin: 0 auto 28px;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary { background: var(--navy); color: var(--white); }
+    .btn-primary:hover { background: var(--navy-light); transform: translateY(-2px); }
+
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--gray-300); }
+    .btn-outline:hover { border-color: var(--navy); }
+
+    .cta .btn-primary { background: var(--white); color: var(--navy); }
+    .cta .btn-primary:hover { background: var(--gray-100); }
+
+    /* ===== App Store badge (iOS) ===== */
+    .mas-badge { display: inline-block; transition: transform 0.2s, opacity 0.2s; }
+    .mas-badge:hover { transform: translateY(-2px); opacity: 0.85; }
+    .mas-badge img { height: 48px; width: auto; }
+    .mas-badge[hidden] { display: none; }
+
+    .hero .hero-note { font-size: 0.85rem; color: var(--gray-400); margin: 18px auto 0; }
+
+    /* ===== Screenshot Showcase ===== */
+    .showcase { background: var(--navy); padding: 72px 0; overflow: hidden; }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .shots img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 88px 0; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ===== Features ===== */
+    .features { background: var(--white); }
+    .features-header { text-align: center; margin-bottom: 56px; }
+    .features-header .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .feature-card p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* ===== Pricing ===== */
+    .pricing { background: var(--off-white); }
+
+    .pricing-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .price-card.plus { border-color: var(--accent); box-shadow: 0 8px 30px rgba(14, 143, 124, 0.1); }
+
+    .price-card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(14, 143, 124, 0.1);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .price-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .price-card ul { margin: 14px 0 0; }
+
+    .price-card li {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      padding: 6px 0 6px 26px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .price-card li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 12px;
+      width: 6px;
+      height: 11px;
+      border: solid var(--accent);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) scale(0.8);
+      transform-origin: center;
+    }
+
+    .price-line { font-size: 0.95rem; color: var(--navy); font-weight: 500; line-height: 1.6; }
+    .price-note { font-size: 0.85rem; color: var(--gray-400); margin-top: 14px; text-align: center; }
+
+    /* ===== CTA ===== */
+    .cta { background: var(--navy); color: var(--white); text-align: center; }
+    .cta .section-label { color: var(--accent-light); }
+    .cta .section-title { color: var(--white); }
+    .cta .section-subtitle { color: var(--gray-300); margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+    .cta-note { font-size: 0.85rem; color: var(--gray-400); margin-top: 20px; }
+
+    .cta-link { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
+    .cta-link:hover { color: var(--white); }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p { font-size: 0.8rem; color: var(--gray-400); }
+    .footer-inner a { color: var(--gray-300); transition: color 0.2s; }
+    .footer-inner a:hover { color: var(--white); }
+
+    .legal-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; }
+    .legal-links a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-links a:hover { color: var(--white); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .shots { grid-template-columns: repeat(2, 1fr); max-width: 460px; margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 72px 24px 56px; }
+      .hero h1 { font-size: 2.4rem; }
+      section { padding: 64px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-inner { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+      .showcase { padding: 48px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+  <!-- i18n: cloak non-English first paint to prevent a flash of untranslated (English) content -->
+  <script>
+  (function(){try{var l=localStorage.getItem('site-lang');if(!l){var a=navigator.languages||[navigator.language||'en'],i,x;for(i=0;i<a.length;i++){x=(a[i]||'').toLowerCase();if(x.indexOf('nl')===0){l='nl';break;}if(x.indexOf('fr')===0){l='fr';break;}if(x.indexOf('en')===0){l='en';break;}}}if(l&&l!=='en'){var d=document.documentElement;d.setAttribute('data-i18n-cloak','');d.lang=l;setTimeout(function(){d.removeAttribute('data-i18n-cloak');},1500);}}catch(e){}})();
+  </script>
+  <style>html[data-i18n-cloak] body{visibility:hidden}</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="https://michelstorms.com/" data-i18n="nav.home">Home</a></li>
+        <li><a href="https://michelstorms.com/apps.html" data-i18n="nav.apps">Apps</a></li>
+        <li><a href="https://michelstorms.com/blog.html" data-i18n="nav.blog">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-icon" src="../assets/apps/supplybrain/icon.png" alt="SupplyBrain app icon" width="108" height="108" data-i18n-attr="alt:hero.icon_alt">
+      <span class="hero-label" data-i18n="hero.label">iPhone &amp; iPad</span>
+      <h1>SupplyBrain</h1>
+      <p data-i18n="hero.subtitle">Keep stock of your fridge, freezer, pantry and any container you name. Snap a product and your device fills in the name, weight and best-before date.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://testflight.apple.com/join/GaTrr85r" target="_blank" rel="noopener noreferrer" data-i18n="hero.beta">Join the beta</a>
+        <!-- APP STORE BADGE: hidden until SupplyBrain is live. At launch, delete the `hidden` attribute
+             here and in the CTA section below, then drop the "Coming soon" notes (hero-note, cta-note). -->
+        <a class="mas-badge" hidden href="https://apps.apple.com/app/id6809114586" aria-label="Download SupplyBrain on the App Store" data-i18n-attr="aria-label:hero.badge_aria">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:hero.badge_alt">
+        </a>
+      </div>
+      <p class="hero-note" data-i18n="hero.note">Coming soon to the App Store. Requires iOS 26 or iPadOS 26.</p>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="showcase">
+    <div class="container">
+      <div class="shots">
+        <img src="../assets/apps/supplybrain/en-01-home.jpg" alt="Home screen listing the fridge, freezer and pantry with items expiring soon" width="700" height="1500" loading="lazy" data-i18n-attr="src:shot1.src;alt:shot1.alt">
+        <img src="../assets/apps/supplybrain/en-06-scan-add-review.jpg" alt="Add item screen with name, amount, weight and best-before date filled in from a photo" width="700" height="1500" loading="lazy" data-i18n-attr="src:shot2.src;alt:shot2.alt">
+        <img src="../assets/apps/supplybrain/en-08-scan-remove-review.jpg" alt="Snap to remove screen matching a photographed product to a stock line" width="700" height="1500" loading="lazy" data-i18n-attr="src:shot3.src;alt:shot3.alt">
+        <img src="../assets/apps/supplybrain/en-02-container.jpg" alt="A container with its items and best-before dates" width="700" height="1500" loading="lazy" data-i18n-attr="src:shot4.src;alt:shot4.alt">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label" data-i18n="features.label">Features</span>
+        <h2 class="section-title" data-i18n="features.title">Know what you have, before you shop</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">Photos do the typing. Your data stays yours.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <h3 data-i18n="features.f1.title">Snap to add, snap to remove</h3>
+          <p data-i18n="features.f1.desc">Point the camera at a product. Apple Vision and on-device Apple Intelligence fill in the name, amount, weight and best-before date. Took something out? Snap it and SupplyBrain matches the stock line for you.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+          <h3 data-i18n="features.f2.title">Remembers your products</h3>
+          <p data-i18n="features.f2.desc">Snap the front for the name and the back for the weight and date. The next time you snap the same product, it fills in at once.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20h1"/></svg></div>
+          <h3 data-i18n="features.f3.title">Share with a QR code</h3>
+          <p data-i18n="features.f3.desc">Share a container with a QR code or an invite link. It works across Apple IDs, is end-to-end encrypted over CloudKit, and needs no accounts.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <h3 data-i18n="features.f4.title">Expiry reminders</h3>
+          <p data-i18n="features.f4.desc">Get a reminder before things expire, or see what is running out at a glance with the Expiring soon widget and the Lock Screen count.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3 data-i18n="features.f5.title">Widgets for every container</h3>
+          <p data-i18n="features.f5.desc">Put a widget on your Home Screen for any container, with Snap to add and Snap to remove one tap away.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3 data-i18n="features.f6.title">Private by design</h3>
+          <p data-i18n="features.f6.desc">No accounts, no servers, no tracking. Recognition runs on your device and nothing is collected. In English and Dutch.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <div class="container">
+      <div class="features-header" style="margin-bottom: 40px;">
+        <span class="section-label" data-i18n="pricing.label">Pricing</span>
+        <h2 class="section-title" data-i18n="pricing.title">Free to start, Plus when you need more</h2>
+      </div>
+      <div class="pricing-inner">
+        <div class="price-card">
+          <span class="badge" data-i18n="price.free.badge">Free</span>
+          <h3 data-i18n="price.free.title">SupplyBrain</h3>
+          <ul><li><span data-i18n="price.free.1">Up to 30 items</span></li><li><span data-i18n="price.free.2">3 containers</span></li><li><span data-i18n="price.free.3">10 photo scans</span></li></ul>
+        </div>
+        <div class="price-card plus">
+          <span class="badge" data-i18n="price.plus.badge">Plus</span>
+          <h3 data-i18n="price.plus.title">SupplyBrain Plus</h3>
+          <p class="price-line" data-i18n="price.plus.price">$19.99 per year with a 7-day free trial, $3.99 per month, or $49.99 once for lifetime.</p>
+          <ul><li><span data-i18n="price.plus.1">No limits on items, containers or scans</span></li><li><span data-i18n="price.plus.2">Share containers with family and friends</span></li><li><span data-i18n="price.plus.3">Covers the containers you share</span></li><li><span data-i18n="price.plus.4">Family Sharing</span></li></ul>
+        </div>
+      </div>
+      <p class="price-note" data-i18n="price.note">Prices shown in US dollars; your App Store shows the price for your country.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <span class="section-label" data-i18n="cta.label">Get SupplyBrain</span>
+      <h2 class="section-title" data-i18n="cta.title">Never wonder what is in the back of the fridge</h2>
+      <p class="section-subtitle" data-i18n="cta.subtitle">Try the beta on TestFlight today. The App Store release is on its way.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://testflight.apple.com/join/GaTrr85r" target="_blank" rel="noopener noreferrer" data-i18n="cta.beta">Join the beta</a>
+        <!-- APP STORE BADGE: remove `hidden` at launch (see the hero). -->
+        <a class="mas-badge" hidden href="https://apps.apple.com/app/id6809114586" aria-label="Download SupplyBrain on the App Store" data-i18n-attr="aria-label:cta.badge_aria">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:cta.badge_alt">
+        </a>
+      </div>
+      <p class="cta-note"><a class="cta-link" href="/supplybrain/support/" data-i18n="cta.support">Support</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p data-i18n="footer.rights">&copy; 2026 Michel Storms. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="/supplybrain/terms/" data-i18n="footer.terms">Terms of Use</a>
+        <a href="/supplybrain/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="/supplybrain/support/" data-i18n="footer.support">Support</a>
+      </div>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+
+  <!-- i18n -->
+  <script>
+  window.I18N_STRINGS = {
+    nl: {
+      "features.f1.title": "Foto om toe te voegen, foto om te verwijderen",
+      "features.f1.desc": "Richt de camera op een product. Apple Vision en Apple Intelligence op je toestel vullen naam, aantal, gewicht en houdbaarheidsdatum in. Iets uit de voorraad gehaald? Maak een foto en SupplyBrain zoekt de juiste regel erbij.",
+      "features.f2.title": "Onthoudt je producten",
+      "features.f2.desc": "Foto van de voorkant voor de naam, van de achterkant voor gewicht en datum. De volgende keer dat je hetzelfde product fotografeert, staat alles er meteen in.",
+      "features.f3.title": "Delen met een QR-code",
+      "features.f3.desc": "Deel een container met een QR-code of uitnodigingslink. Werkt tussen verschillende Apple-ID's, end-to-end versleuteld via CloudKit, zonder accounts.",
+      "features.f4.title": "Herinneringen voor de houdbaarheid",
+      "features.f4.desc": "Krijg een herinnering voordat iets verloopt, of zie in één oogopslag wat bijna op is met de widget Binnenkort verlopen en de teller op het toegangsscherm.",
+      "features.f5.title": "Widgets voor elke container",
+      "features.f5.desc": "Zet een widget op je beginscherm voor elke container, met Foto toevoegen en Foto verwijderen binnen één tik.",
+      "features.f6.title": "Privé van opzet",
+      "features.f6.desc": "Geen accounts, geen servers, geen tracking. Herkenning draait op je toestel en er wordt niets verzameld. In het Nederlands en Engels.",
+      "shot1.alt": "Beginscherm met koelkast, diepvries en voorraadkast en producten die bijna verlopen",
+      "shot1.src": "../assets/apps/supplybrain/nl-01-home.jpg",
+      "shot2.alt": "Scherm Product toevoegen met naam, aantal, gewicht en houdbaarheidsdatum ingevuld vanuit een foto",
+      "shot2.src": "../assets/apps/supplybrain/nl-06-scan-add-review.jpg",
+      "shot3.alt": "Scherm Foto verwijderen dat een gefotografeerd product koppelt aan een voorraadregel",
+      "shot3.src": "../assets/apps/supplybrain/nl-08-scan-remove-review.jpg",
+      "shot4.alt": "Een container met producten en houdbaarheidsdata",
+      "shot4.src": "../assets/apps/supplybrain/nl-02-container.jpg",
+      "price.free.1": "Tot 30 producten",
+      "price.free.2": "3 containers",
+      "price.free.3": "10 fotoscans",
+      "price.plus.1": "Geen limiet op producten, containers of scans",
+      "price.plus.2": "Containers delen met familie en vrienden",
+      "price.plus.3": "Dekt ook de containers die je deelt",
+      "price.plus.4": "Delen met gezin",
+      "hero.label": "iPhone &amp; iPad",
+      "hero.subtitle": "Houd de voorraad bij van je koelkast, diepvries, voorraadkast en elke container die je een naam geeft. Maak een foto en je toestel vult naam, gewicht en houdbaarheidsdatum in.",
+      "hero.beta": "Doe mee met de bèta",
+      "hero.note": "Binnenkort in de App Store. Vereist iOS 26 of iPadOS 26.",
+      "features.label": "Functies",
+      "features.title": "Weet wat je hebt, voordat je boodschappen doet",
+      "features.subtitle": "Foto's doen het typwerk. Je gegevens blijven van jou.",
+      "pricing.label": "Prijzen",
+      "pricing.title": "Gratis om te beginnen, Plus als je meer nodig hebt",
+      "price.free.badge": "Gratis",
+      "price.free.title": "SupplyBrain",
+      "price.plus.badge": "Plus",
+      "price.plus.title": "SupplyBrain Plus",
+      "price.plus.price": "$19,99 per jaar met 7 dagen gratis proef, $3,99 per maand, of eenmalig $49,99 voor het leven.",
+      "price.note": "Prijzen in Amerikaanse dollar; je App Store toont de prijs voor jouw land.",
+      "cta.label": "Haal SupplyBrain",
+      "cta.title": "Vraag je nooit meer af wat achterin de koelkast staat",
+      "cta.subtitle": "Probeer de bèta vandaag via TestFlight. De App Store-versie komt eraan.",
+      "cta.beta": "Doe mee met de bèta",
+      "footer.rights": "&copy; 2026 Michel Storms. Alle rechten voorbehouden.",
+      "footer.terms": "Gebruiksvoorwaarden",
+      "footer.privacy": "Privacybeleid",
+      "footer.support": "Ondersteuning",
+      "meta.title": "SupplyBrain — Weet wat er in je koelkast, diepvries en voorraadkast zit",
+      "meta.description": "SupplyBrain houdt de voorraad van je koelkast, diepvries en voorraadkast bij. Maak een foto en Apple Intelligence op je toestel vult naam, gewicht en houdbaarheidsdatum in. Deel met een QR-code. Privé, zonder accounts.",
+      "nav.home": "Home",
+      "nav.apps": "Apps",
+      "nav.blog": "Blog",
+      "hero.icon_alt": "SupplyBrain app-icoon",
+      "hero.badge_alt": "Download in de App Store",
+      "hero.badge_aria": "Download SupplyBrain in de App Store",
+      "cta.badge_alt": "Download in de App Store",
+      "cta.badge_aria": "Download SupplyBrain in de App Store",
+      "cta.support": "Ondersteuning"
+}
+  };
+  </script>
+  <script src="/assets/i18n.js"></script>
+
+</body>
+</html>
