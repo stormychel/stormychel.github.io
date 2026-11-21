@@ -32,10 +32,10 @@
 <p><em>Last updated: 2026-11-21. Applies to the CatchMatch macOS application.</em></p>
 <h2 id="short-version">Short version</h2>
 <ul>
-<li><strong>No tracking, and nothing about what you import.</strong> The app sends anonymous usage counts to Google Analytics (launches, imports finished or failed) so we can see where people get stuck. You can turn this off in Settings → General → Privacy.</li>
-<li>The only outbound network calls the app makes are: (1) a one-shot reachability check (HEAD request to a public Apple URL) when the onboarding/setup sheet runs, used solely to tell you whether you’re online; (2) checking for app updates; (3) downloading yt-dlp from its GitHub releases when you choose Download yt-dlp; (4) using yt-dlp / ffmpeg, which contact the source URL you ask the app to process; (5) the usage counts above, unless you turn them off.</li>
+<li><strong>No analytics, no tracking.</strong> The app collects no usage data and sends nothing about you or what you import.</li>
+<li>The only outbound network calls the app makes are: (1) a one-shot reachability check (HEAD request to a public Apple URL) when the onboarding/setup sheet runs, used solely to tell you whether you’re online; (2) checking for app updates; (3) downloading yt-dlp from its GitHub releases when you choose Download yt-dlp; (4) using yt-dlp / ffmpeg, which contact the source URL you ask the app to process.</li>
 <li>Logs stay on your Mac unless you choose to copy them via Help → Copy Diagnostics.</li>
-<li>Nothing is sold. Apart from the usage counts above, nothing is shared with third parties beyond what you explicitly trigger.</li>
+<li>Nothing is sold, and nothing is shared with third parties beyond what you explicitly trigger.</li>
 </ul>
 <h2 id="data-we-send">Data we send</h2>
 <table>
@@ -73,12 +73,6 @@
 <td>Looks up the latest yt-dlp release and downloads its macOS build and checksum file. GitHub sees an ordinary download request; nothing about you or your library is sent.</td>
 </tr>
 <tr>
-<td>Usage counts</td>
-<td>Google Analytics (<code>www.google-analytics.com</code>)</td>
-<td>At launch and when an import finishes or fails — unless you turn it off in Settings → General → Privacy</td>
-<td>Shows where people get stuck. Each count carries the event’s name, where the import came from (queue or iMessage), the app version, and a random identifier made for this install (not derived from your Mac or your account). Turning the setting off deletes that identifier. Google processes this as our processor, under its <a href="https://business.safety.google/adsprocessorterms/">Data Processing Terms</a>; ad personalization is off.</td>
-</tr>
-<tr>
 <td>URLs you submit</td>
 <td>The site at the URL itself, via yt-dlp</td>
 <td>When you press Convert &amp; Import</td>
@@ -86,7 +80,7 @@
 </tr>
 </tbody>
 </table>
-<p>The app does <strong>not</strong> send: your name, email, IP address (beyond the unavoidable network-layer information), import history, links, titles, file names, or anything related to the content you process — to Google or anyone else.</p>
+<p>The app does <strong>not</strong> send: your name, email, IP address (beyond the unavoidable network-layer information), import history, links, titles, file names, or anything related to the content you process — to anyone.</p>
 <h2 id="data-we-store-on-your-mac">Data we store on your Mac</h2>
 <ul>
 <li>A persistent log file at <code>~/Library/Logs/dlp2music/dlp2music.log</code>, capped at 5 MB with one rotated copy. It records what each import did, so a failure can be diagnosed. That means it contains:
@@ -98,15 +92,14 @@
 <li>iMessage watcher activity, if you use it — how many links arrived, whether they were imported or why not, and whether a reply was sent. The links themselves appear only for the ones it went on to process.</li>
 </ul>
 You can reveal it via Help → Reveal Log in Finder, copy a 200-line tail via Help → Copy Diagnostics, or delete it at any time.</li>
-<li>Your settings (defaults and the usage-count identifier) in macOS UserDefaults.</li>
+<li>Your settings (your defaults) in macOS UserDefaults.</li>
 </ul>
-<p>None of this is uploaded, apart from the usage-count identifier, which goes with each count as described above. If you copy diagnostics via Help → Copy Diagnostics, recent log lines end up on your clipboard — including links, titles, file names and folder paths as described above. Read it before you send it to anyone, and remove anything you’d rather not share.</p>
+<p>None of this is uploaded. If you copy diagnostics via Help → Copy Diagnostics, recent log lines end up on your clipboard — including links, titles, file names and folder paths as described above. Read it before you send it to anyone, and remove anything you’d rather not share.</p>
 <h2 id="crash-reports">Crash reports</h2>
 <p>The app does not include automatic crash reporting. If we ever add it, it will be <strong>opt-in</strong> and clearly disclosed in this document and in-app.</p>
 <h2 id="your-rights">Your rights</h2>
 <p>You can:
 - Delete the app and any of the local files listed above at any time.
-- Turn off usage counts from Settings → General → Privacy, which also deletes the install’s identifier.
 - Request information about data we hold by emailing catchmatchapp@michelstorms.dev — though we don’t hold any account data on you to begin with.</p>
 <h2 id="children">Children</h2>
 <p>The app is not directed at children under 13.</p>
