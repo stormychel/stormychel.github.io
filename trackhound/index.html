@@ -201,20 +201,24 @@
     .play-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 6px;
+      box-sizing: border-box;
+      width: 143.6px;  /* the App Store badge at 48px tall (SVG is 119.66 x 40) */
       height: 48px;
-      padding: 0 16px 0 12px;
+      padding: 0 8px;
       background: #000;
       color: #fff;
       border: 1px solid #a6a6a6;
       border-radius: 9px;
       text-decoration: none;
       text-align: left;
+      white-space: nowrap;
       transition: transform 0.2s, opacity 0.2s;
     }
     .play-badge:hover { transform: translateY(-2px); opacity: 0.85; color: #fff; }
-    .play-badge svg { width: 30px; height: 30px; flex: none; }
-    .play-badge .play-small { display: block; font-size: 0.62rem; line-height: 1.1; letter-spacing: 0.02em; }
+    .play-badge svg { width: 24px; height: 24px; flex: none; }
+    .play-badge .play-small { display: block; font-size: 0.6rem; line-height: 1.1; letter-spacing: 0.02em; }
     .play-badge .play-big { display: block; font-size: 1.05rem; font-weight: 600; line-height: 1.15; }
     .hero-note {
       font-size: 0.85rem;
@@ -480,7 +484,7 @@
         </a>
         <a class="play-badge" href="/trackhound/android/" aria-label="On Android? Join the closed test on Google Play" data-i18n-attr="aria-label:hero.android_aria">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#3DDC84" stroke-width="1.8"/><rect x="10" y="18.2" width="4" height="1.4" rx="0.7" fill="#3DDC84"/><path d="M12 6.2v6.6M9.2 10.2 12 13l2.8-2.8" fill="none" stroke="#3DDC84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><span class="play-small" data-i18n="hero.android_small">On Android? Join the test on</span><span class="play-big">Google Play</span></span>
+          <span><span class="play-small" data-i18n="hero.android_small">Android test on</span><span class="play-big">Google Play</span></span>
         </a>
       </div>
       <p class="hero-note" data-i18n="hero.note">Now on the App Store for iPhone and CarPlay &mdash; route planning is free.</p>
@@ -641,7 +645,7 @@
         </a>
         <a class="play-badge" href="/trackhound/android/" aria-label="On Android? Join the closed test on Google Play" data-i18n-attr="aria-label:cta.android_aria">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#3DDC84" stroke-width="1.8"/><rect x="10" y="18.2" width="4" height="1.4" rx="0.7" fill="#3DDC84"/><path d="M12 6.2v6.6M9.2 10.2 12 13l2.8-2.8" fill="none" stroke="#3DDC84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><span class="play-small" data-i18n="cta.android_small">On Android? Join the test on</span><span class="play-big">Google Play</span></span>
+          <span><span class="play-small" data-i18n="cta.android_small">Android test on</span><span class="play-big">Google Play</span></span>
         </a>
       </div>
     </div>
@@ -676,9 +680,9 @@
       "hero.badge_alt": "Download in de App Store",
       "hero.note": "Nu in de App Store voor iPhone en CarPlay &mdash; routes plannen is gratis.",
       "hero.android_aria": "Op Android? Doe mee aan de gesloten test op Google Play",
-      "hero.android_small": "Op Android? Doe mee via",
+      "hero.android_small": "Android-test via",
       "cta.android_aria": "Op Android? Doe mee aan de gesloten test op Google Play",
-      "cta.android_small": "Op Android? Doe mee via",
+      "cta.android_small": "Android-test via",
       "showcase.alt": "TrackHound — route op de kaart, de routestijlkiezer en het bochtenboek",
       "features.label": "Functies",
       "features.title": "Gebouwd om te passen bij hoe jij rijdt",
@@ -741,9 +745,9 @@
       "hero.badge_alt": "Télécharger sur l'App Store",
       "hero.note": "Maintenant sur l'App Store pour iPhone et CarPlay &mdash; la planification d'itinéraires est gratuite.",
       "hero.android_aria": "Sur Android ? Rejoignez le test fermé sur Google Play",
-      "hero.android_small": "Sur Android ? Rejoignez le test sur",
+      "hero.android_small": "Test Android sur",
       "cta.android_aria": "Sur Android ? Rejoignez le test fermé sur Google Play",
-      "cta.android_small": "Sur Android ? Rejoignez le test sur",
+      "cta.android_small": "Test Android sur",
       "showcase.alt": "TrackHound — itinéraire sur la carte, le sélecteur de style de route et le road book étape par étape",
       "features.label": "Fonctionnalités",
       "features.title": "Conçu pour s'adapter à votre conduite",

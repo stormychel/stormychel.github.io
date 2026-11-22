@@ -73,10 +73,10 @@
     .mas-badge img { height: 58px; width: auto; display: block; }
     .mas-badge:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .store-badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
-    .play-badge { display: inline-flex; align-items: center; gap: 10px; height: 58px; padding: 0 18px 0 14px; background: #000; color: #fff; border: 1px solid #a6a6a6; border-radius: 11px; text-decoration: none; text-align: left; transition: transform 0.15s, filter 0.15s; }
+    .play-badge { display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; width: 173.5px; /* App Store badge at 58px */ height: 58px; padding: 0 8px; background: #000; color: #fff; border: 1px solid #a6a6a6; border-radius: 11px; text-decoration: none; text-align: left; white-space: nowrap; transition: transform 0.15s, filter 0.15s; }
     .play-badge:hover { transform: translateY(-2px); filter: brightness(1.05); color: #fff; }
-    .play-badge svg { width: 34px; height: 34px; flex: none; }
-    .play-badge .play-small { display: block; font-size: 0.72rem; line-height: 1.1; }
+    .play-badge svg { width: 30px; height: 30px; flex: none; }
+    .play-badge .play-small { display: block; font-size: 0.7rem; line-height: 1.1; }
     .play-badge .play-big { display: block; font-size: 1.25rem; font-weight: 600; line-height: 1.15; }
 
     /* ===== What it is ===== */
@@ -130,7 +130,7 @@
         </a>
         <a class="play-badge" href="/trackhound/android/" aria-label="On Android? Join the closed test on Google Play">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#3DDC84" stroke-width="1.8"/><rect x="10" y="18.2" width="4" height="1.4" rx="0.7" fill="#3DDC84"/><path d="M12 6.2v6.6M9.2 10.2 12 13l2.8-2.8" fill="none" stroke="#3DDC84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><span class="play-small">On Android? Join the test on</span><span class="play-big">Google Play</span></span>
+          <span><span class="play-small">Android test on</span><span class="play-big">Google Play</span></span>
         </a>
       </div>
     </div>
