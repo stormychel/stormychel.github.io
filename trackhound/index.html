@@ -195,9 +195,27 @@
       width: auto;
     }
 
-    .hero-note.hero-android { margin-top: 6px; }
-    .hero-android a { text-decoration: underline; text-underline-offset: 3px; }
-    .hero-android a:hover { color: var(--navy); }
+    .footer-attribution { font-size: 0.7rem; opacity: 0.6; max-width: 620px; margin: 8px auto 0; }
+
+    /* ===== Android closed-test badge (same footprint as the App Store badge) ===== */
+    .play-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 48px;
+      padding: 0 16px 0 12px;
+      background: #000;
+      color: #fff;
+      border: 1px solid #a6a6a6;
+      border-radius: 9px;
+      text-decoration: none;
+      text-align: left;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .play-badge:hover { transform: translateY(-2px); opacity: 0.85; color: #fff; }
+    .play-badge svg { width: 30px; height: 30px; flex: none; }
+    .play-badge .play-small { display: block; font-size: 0.62rem; line-height: 1.1; letter-spacing: 0.02em; }
+    .play-badge .play-big { display: block; font-size: 1.05rem; font-weight: 600; line-height: 1.15; }
     .hero-note {
       font-size: 0.85rem;
       color: var(--gray-400);
@@ -460,9 +478,12 @@
         <a class="mas-badge" href="https://apps.apple.com/app/apple-store/id6762570002?pt=617157&amp;ct=web-hero&amp;mt=8" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:hero.badge_aria">
           <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:hero.badge_alt">
         </a>
+        <a class="play-badge" href="/trackhound/android/" aria-label="On Android? Join the closed test on Google Play" data-i18n-attr="aria-label:hero.android_aria">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#3DDC84" stroke-width="1.8"/><rect x="10" y="18.2" width="4" height="1.4" rx="0.7" fill="#3DDC84"/><path d="M12 6.2v6.6M9.2 10.2 12 13l2.8-2.8" fill="none" stroke="#3DDC84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="play-small" data-i18n="hero.android_small">On Android? Join the test on</span><span class="play-big">Google Play</span></span>
+        </a>
       </div>
       <p class="hero-note" data-i18n="hero.note">Now on the App Store for iPhone and CarPlay &mdash; route planning is free.</p>
-      <p class="hero-note hero-android"><a href="/trackhound/android/" data-i18n="hero.android">On Android? Join the closed test on Google Play</a></p>
     </div>
   </section>
 
@@ -618,6 +639,10 @@
         <a class="mas-badge" href="https://apps.apple.com/app/apple-store/id6762570002?pt=617157&amp;ct=web-cta&amp;mt=8" aria-label="Download TrackHound on the App Store" data-i18n-attr="aria-label:cta.badge_aria">
           <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" data-i18n-attr="alt:cta.badge_alt">
         </a>
+        <a class="play-badge" href="/trackhound/android/" aria-label="On Android? Join the closed test on Google Play" data-i18n-attr="aria-label:cta.android_aria">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#3DDC84" stroke-width="1.8"/><rect x="10" y="18.2" width="4" height="1.4" rx="0.7" fill="#3DDC84"/><path d="M12 6.2v6.6M9.2 10.2 12 13l2.8-2.8" fill="none" stroke="#3DDC84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="play-small" data-i18n="cta.android_small">On Android? Join the test on</span><span class="play-big">Google Play</span></span>
+        </a>
       </div>
     </div>
   </section>
@@ -631,6 +656,7 @@
         <a href="https://michelstorms.com/trackhound/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
       </div>
       <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+      <p class="footer-attribution">Android and Google Play are trademarks of Google LLC.</p>
     </div>
   </footer>
 
@@ -649,7 +675,10 @@
       "hero.badge_aria": "Download TrackHound in de App Store",
       "hero.badge_alt": "Download in de App Store",
       "hero.note": "Nu in de App Store voor iPhone en CarPlay &mdash; routes plannen is gratis.",
-      "hero.android": "Op Android? Doe mee aan de gesloten test op Google Play",
+      "hero.android_aria": "Op Android? Doe mee aan de gesloten test op Google Play",
+      "hero.android_small": "Op Android? Doe mee via",
+      "cta.android_aria": "Op Android? Doe mee aan de gesloten test op Google Play",
+      "cta.android_small": "Op Android? Doe mee via",
       "showcase.alt": "TrackHound — route op de kaart, de routestijlkiezer en het bochtenboek",
       "features.label": "Functies",
       "features.title": "Gebouwd om te passen bij hoe jij rijdt",
@@ -711,7 +740,10 @@
       "hero.badge_aria": "Télécharger TrackHound sur l'App Store",
       "hero.badge_alt": "Télécharger sur l'App Store",
       "hero.note": "Maintenant sur l'App Store pour iPhone et CarPlay &mdash; la planification d'itinéraires est gratuite.",
-      "hero.android": "Sur Android ? Rejoignez le test fermé sur Google Play",
+      "hero.android_aria": "Sur Android ? Rejoignez le test fermé sur Google Play",
+      "hero.android_small": "Sur Android ? Rejoignez le test sur",
+      "cta.android_aria": "Sur Android ? Rejoignez le test fermé sur Google Play",
+      "cta.android_small": "Sur Android ? Rejoignez le test sur",
       "showcase.alt": "TrackHound — itinéraire sur la carte, le sélecteur de style de route et le road book étape par étape",
       "features.label": "Fonctionnalités",
       "features.title": "Conçu pour s'adapter à votre conduite",
