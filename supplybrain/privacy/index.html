@@ -12,15 +12,16 @@
 </head>
 <body>
 <h1>SupplyBrain Privacy Policy</h1>
-<p><em>Last updated: 13 November 2026</em></p>
+<p><em>Last updated: 22 November 2026</em></p>
 
 <p>SupplyBrain keeps stock of what is in your fridge, freezer, pantry and other containers. It is built so that your data stays yours.</p>
 
 <h2>What the app stores</h2>
 <p>Container names, item names, amounts, weights, expiry dates, notes and small product thumbnails you add. This data is stored on your device and, when you are signed in to iCloud, in your private iCloud database so it syncs between your devices.</p>
 
-<h2>Photos and on-device recognition</h2>
-<p>When you snap a product, the photo is analysed on your device using Apple's Vision framework and, where available, Apple Intelligence (Foundation Models). Photos are never sent to us or to any third party. Only a small thumbnail is kept with the item if you save it, and that thumbnail syncs with your stock in your own iCloud.</p>
+<h2>Photos and recognition</h2>
+<p>When you snap a product, the app first reads the label on your device with Apple's Vision framework. It then sends a reduced copy of the photo (at most 1024 pixels on the long side), together with the label text and barcode it read, the kind of container and today's date, to Google's Gemini API, which returns the product details: name, brand, amount, weight and best-before date. The request goes straight from your device to Google and does not pass through us. It carries no name, account or other personal identifier from SupplyBrain; like any internet request, it reveals your IP address to Google. Google processes it under the <a href="https://ai.google.dev/gemini-api/terms">Gemini API Additional Terms of Service</a>.</p>
+<p>Without a connection, the photo is read on your device only, with Apple Intelligence (Foundation Models) where available. Photos are never sent to us. Only a small thumbnail is kept with the item if you save it, and that thumbnail syncs with your stock in your own iCloud.</p>
 
 <h2>Remembered products</h2>
 <p>So the next photo of the same product fills in its details, SupplyBrain remembers products you add: the name, brand and amount you saved, the barcode or label text it read, and a small thumbnail. This is stored on your device and in your private iCloud database, never shared. Settings → Remembered products lists it, and you can forget one product or all of them.</p>
@@ -38,7 +39,7 @@
 <ul>
   <li>No accounts, no sign-up, no email addresses.</li>
   <li>No analytics, no advertising, no tracking, no third-party SDKs.</li>
-  <li>No servers of ours: the app talks only to Apple's iCloud and the App Store on your behalf.</li>
+  <li>No servers of ours: the app talks to Apple's iCloud and the App Store, and sends product photos to Google's Gemini API for recognition, as described above.</li>
 </ul>
 
 <h2>Your control</h2>
