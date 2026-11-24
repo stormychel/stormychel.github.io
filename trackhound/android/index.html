@@ -86,6 +86,20 @@
     .note-box h2:not(:first-child) { margin-top: 26px; }
     .note-box a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 2px; }
 
+    /* ===== Direct APK (secondary) ===== */
+    .apk-sec { padding: 8px 0 40px; background: var(--white); }
+    .apk-box { max-width: 760px; margin: 0 auto; border: 1px dashed var(--gray-300); border-radius: 16px; padding: 28px; background: var(--white); }
+    .apk-box h2 { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 6px; }
+    .apk-box p, .apk-box li { color: var(--gray-500); font-size: 0.95rem; }
+    .apk-box p + p, .apk-box p + ol, .apk-box ol + h3, .apk-box ul + p { margin-top: 10px; }
+    .apk-box h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-top: 18px; }
+    .apk-box ol, .apk-box ul { padding-left: 22px; margin-top: 6px; }
+    .apk-box a:not(.btn-outline) { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+    .apk-meta { font-size: 0.85rem; color: var(--gray-400); margin-top: 8px; }
+    .btn-outline { display: inline-block; margin-top: 14px; padding: 10px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--navy); color: var(--navy); transition: background 0.2s; }
+    .btn-outline:hover { background: var(--gray-100); }
+    .btn-outline:focus-visible, .apk-box a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
     /* ===== Footer ===== */
     footer { background: var(--navy-dark); color: var(--gray-300); padding: 26px 24px; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
@@ -105,6 +119,7 @@
       .step { padding: 76px 22px 24px; }
       .step::before { left: 22px; top: 24px; }
       .note-box { padding: 30px 22px; }
+      .apk-box { padding: 24px 20px; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -158,6 +173,32 @@
     </div>
   </section>
 
+  <section class="apk-sec" id="apk">
+    <div class="container">
+      <div class="apk-box">
+        <h2>Can't wait for Play? Download the APK</h2>
+        <p>If you would rather not wait for the closed test, you can install TrackHound straight from this page. It is the same app, built from the same code as the Play version. The Play closed test is still the way that helps TrackHound reach Google Play, so please join it too if you can.</p>
+        <a class="btn-outline" id="apk-link" href="https://github.com/stormychel/stormychel.github.io/releases">Download the APK</a>
+        <p class="apk-meta" id="apk-meta" hidden></p>
+
+        <h3>How to install it</h3>
+        <ol>
+          <li>Open this page on your Android phone and tap <strong>Download the APK</strong>.</li>
+          <li>Open the downloaded file. Android asks whether your browser may install apps: allow it for this one install.</li>
+          <li>Tap <strong>Install</strong>, then open TrackHound and download a region.</li>
+        </ol>
+
+        <h3>Good to know</h3>
+        <ul>
+          <li><strong>No Android Auto.</strong> Android Auto only shows car apps installed from Google Play, so this version will not appear on your car screen. For the car, join the Play closed test.</li>
+          <li><strong>It installs beside the Play version.</strong> It has its own name on your phone, so you can keep both, or move to Play later without losing anything in the Play copy.</li>
+          <li><strong>Updates come through the app.</strong> When a new version is out, TrackHound tells you when you open it and brings you back here to download it.</li>
+          <li>Everything is unlocked, as in the Play closed test.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="note-sec">
     <div class="container">
       <div class="note-box">
@@ -188,6 +229,31 @@
       <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
     </div>
   </footer>
+
+  <script>
+    // The newest direct APK, written by TrackHound's Scripts/android-direct-release.sh.
+    // Without it the button falls back to the releases page.
+    (function () {
+      var link = document.getElementById('apk-link');
+      var meta = document.getElementById('apk-meta');
+      fetch('/trackhound/android/direct.json', { cache: 'no-cache' })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (d) {
+          if (!d || !d.url || !/^https:\/\/github\.com\//.test(d.url)) return;
+          link.href = d.url;
+          var parts = [];
+          if (d.versionName) parts.push('Version ' + d.versionName);
+          if (d.sizeBytes) parts.push(Math.round(d.sizeBytes / 1048576) + ' MB');
+          if (d.published) {
+            var t = new Date(d.published);
+            if (!isNaN(t.getTime())) parts.push('released ' + t.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
+          }
+          if (d.minSdk) parts.push('needs Android ' + ({26: '8', 27: '8.1', 28: '9', 29: '10', 30: '11', 31: '12', 33: '13', 34: '14', 35: '15', 36: '16'}[d.minSdk] || ('API ' + d.minSdk)) + ' or newer');
+          if (parts.length) { meta.textContent = parts.join(' \u00b7 '); meta.hidden = false; }
+        })
+        .catch(function () {});
+    })();
+  </script>
 
 </body>
 </html>
