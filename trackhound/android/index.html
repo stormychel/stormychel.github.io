@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TrackHound for Android: test it before launch</title>
-  <meta name="description" content="TrackHound is live on iPhone and in closed testing on Android. Join the test with your Google account, ride with it for 14 days, and help it reach Google Play.">
+  <title data-i18n="meta.title">TrackHound for Android: test it before launch</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="TrackHound is live on iPhone and in closed testing on Android. Join the test with your Google account, ride with it for 14 days, and help it reach Google Play.">
   <link rel="canonical" href="https://michelstorms.com/trackhound/android/">
 
   <link rel="icon" type="image/png" href="/assets/logo-og.png">
   <link rel="apple-touch-icon" href="/assets/logo-og.png">
 
-  <meta property="og:title" content="Test TrackHound on Android">
-  <meta property="og:description" content="Offline routing for small roads, gravel and dirt. Live on iPhone, in closed testing on Android. Join with your Google account.">
+  <meta property="og:title" data-i18n-attr="content:og.title" content="Test TrackHound on Android">
+  <meta property="og:description" data-i18n-attr="content:og.description" content="Offline routing for small roads, gravel and dirt. Live on iPhone, in closed testing on Android. Join with your Google account.">
   <meta property="og:url" content="https://michelstorms.com/trackhound/android/">
   <meta property="og:site_name" content="Michel Storms">
   <meta property="og:type" content="website">
@@ -127,6 +127,12 @@
       .btn, .btn:hover { transition: none; transform: none; }
     }
   </style>
+
+  <!-- i18n: cloak non-English first paint to prevent a flash of untranslated (English) content -->
+  <script>
+  (function(){try{var l=localStorage.getItem('site-lang');if(!l){var a=navigator.languages||[navigator.language||'en'],i,x;for(i=0;i<a.length;i++){x=(a[i]||'').toLowerCase();if(x.indexOf('nl')===0){l='nl';break;}if(x.indexOf('fr')===0){l='fr';break;}if(x.indexOf('en')===0){l='en';break;}}}if(l&&l!=='en'){var d=document.documentElement;d.setAttribute('data-i18n-cloak','');d.lang=l;setTimeout(function(){d.removeAttribute('data-i18n-cloak');},1500);}}catch(e){}})();
+  </script>
+  <style>html[data-i18n-cloak] body{visibility:hidden}</style>
 </head>
 <body>
 
@@ -134,9 +140,9 @@
     <div class="nav-inner">
       <a href="https://michelstorms.com/" class="nav-logo">Michel Storms</a>
       <ul class="nav-links">
-        <li><a href="https://michelstorms.com/">Home</a></li>
+        <li><a href="https://michelstorms.com/" data-i18n="nav.home">Home</a></li>
         <li><a href="/trackhound/">TrackHound</a></li>
-        <li><a href="/trackhound/press/">Press</a></li>
+        <li><a href="/trackhound/press/" data-i18n="nav.press">Press</a></li>
       </ul>
     </div>
   </nav>
@@ -144,9 +150,9 @@
   <main>
   <section class="hero">
     <div class="hero-content">
-      <span class="eyebrow">Android closed test</span>
-      <h1>Ride TrackHound on Android before it launches</h1>
-      <p class="lede">TrackHound plans routes onto the small roads, farm tracks and gravel that other apps steer you away from, and it works offline. It is live on iPhone. On Android it is in closed testing, and Google needs twelve riders using it for fourteen days before it can go on Google Play for everyone. I build it on my own, so every tester counts.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Android closed test</span>
+      <h1 data-i18n="hero.title">Ride TrackHound on Android before it launches</h1>
+      <p class="lede" data-i18n="hero.lede">TrackHound plans routes onto the small roads, farm tracks and gravel that other apps steer you away from, and it works offline. It is live on iPhone. On Android it is in closed testing, and Google needs twelve riders using it for fourteen days before it can go on Google Play for everyone. I build it on my own, so every tester counts.</p>
     </div>
   </section>
 
@@ -154,20 +160,20 @@
     <div class="container">
       <ol class="steps">
         <li class="step">
-          <h2>Join the tester group</h2>
-          <p>Sign in with the Google account you use on the Play Store on your phone, then join the group. That is what puts you on the test list. No form, nothing else to fill in.</p>
-          <a class="btn" href="https://groups.google.com/g/trackhound-android-testers">Join the group</a>
+          <h2 data-i18n="s1.title">Join the tester group</h2>
+          <p data-i18n="s1.body">Sign in with the Google account you use on the Play Store on your phone, then join the group. That is what puts you on the test list. No form, nothing else to fill in.</p>
+          <a class="btn" data-i18n="s1.btn" href="https://groups.google.com/g/trackhound-android-testers">Join the group</a>
         </li>
         <li class="step">
-          <h2>Opt in to the test</h2>
-          <p>Open the test page with the same Google account and tap <strong>Become a tester</strong>. </p>
-          <p><strong>The test opens in the next few days,</strong> once Google has finished reviewing it. Until then the test page says the app is not available. Join the group now, and I will email the group the moment the test is open.</p>
-          <a class="btn" href="https://play.google.com/apps/testing/com.michelstorms.TrackHound">Become a tester</a>
+          <h2 data-i18n="s2.title">Opt in to the test</h2>
+          <p data-i18n="s2.body1">Open the test page with the same Google account and tap <strong>Become a tester</strong>.</p>
+          <p data-i18n="s2.body2"><strong>The test opens in the next few days,</strong> once Google has finished reviewing it. Until then the test page says the app is not available. Join the group now, and I will email the group the moment the test is open.</p>
+          <a class="btn" data-i18n="s2.btn" href="https://play.google.com/apps/testing/com.michelstorms.TrackHound">Become a tester</a>
         </li>
         <li class="step">
-          <h2>Install it from Google Play</h2>
-          <p>TrackHound now shows up in the Play Store like any other app, and updates arrive the same way. Download a region, plan a ride, and take it out.</p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.michelstorms.TrackHound">Open in Google Play</a>
+          <h2 data-i18n="s3.title">Install it from Google Play</h2>
+          <p data-i18n="s3.body">TrackHound now shows up in the Play Store like any other app, and updates arrive the same way. Download a region, plan a ride, and take it out.</p>
+          <a class="btn" data-i18n="s3.btn" href="https://play.google.com/store/apps/details?id=com.michelstorms.TrackHound">Open in Google Play</a>
         </li>
       </ol>
     </div>
@@ -176,24 +182,24 @@
   <section class="apk-sec" id="apk">
     <div class="container">
       <div class="apk-box">
-        <h2>Can't wait for Play? Download the APK</h2>
-        <p>If you would rather not wait for the closed test, you can install TrackHound straight from this page. It is the same app, built from the same code as the Play version. The Play closed test is still the way that helps TrackHound reach Google Play, so please join it too if you can.</p>
-        <a class="btn-outline" id="apk-link" href="https://github.com/stormychel/stormychel.github.io/releases">Download the APK</a>
+        <h2 data-i18n="apk.title">Can't wait for Play? Download the APK</h2>
+        <p data-i18n="apk.intro">If you would rather not wait for the closed test, you can install TrackHound straight from this page. It is the same app, built from the same code as the Play version. The Play closed test is still the way that helps TrackHound reach Google Play, so please join it too if you can.</p>
+        <a class="btn-outline" id="apk-link" data-i18n="apk.btn" href="https://github.com/stormychel/stormychel.github.io/releases">Download the APK</a>
         <p class="apk-meta" id="apk-meta" hidden></p>
 
-        <h3>How to install it</h3>
+        <h3 data-i18n="apk.how">How to install it</h3>
         <ol>
-          <li>Open this page on your Android phone and tap <strong>Download the APK</strong>.</li>
-          <li>Open the downloaded file. Android asks whether your browser may install apps: allow it for this one install.</li>
-          <li>Tap <strong>Install</strong>, then open TrackHound and download a region.</li>
+          <li data-i18n="apk.step1">Open this page on your Android phone and tap <strong>Download the APK</strong>.</li>
+          <li data-i18n="apk.step2">Open the downloaded file. Android asks whether your browser may install apps: allow it for this one install.</li>
+          <li data-i18n="apk.step3">Tap <strong>Install</strong>, then open TrackHound and download a region.</li>
         </ol>
 
-        <h3>Good to know</h3>
+        <h3 data-i18n="apk.know">Good to know</h3>
         <ul>
-          <li><strong>No Android Auto.</strong> Android Auto only shows car apps installed from Google Play, so this version will not appear on your car screen. For the car, join the Play closed test.</li>
-          <li><strong>It installs beside the Play version.</strong> It has its own name on your phone, so you can keep both, or move to Play later without losing anything in the Play copy.</li>
-          <li><strong>Updates come through the app.</strong> When a new version is out, TrackHound tells you when you open it and brings you back here to download it.</li>
-          <li>Everything is unlocked, as in the Play closed test.</li>
+          <li data-i18n="apk.k1"><strong>No Android Auto.</strong> Android Auto only shows car apps installed from Google Play, so this version will not appear on your car screen. For the car, join the Play closed test.</li>
+          <li data-i18n="apk.k2"><strong>It installs beside the Play version.</strong> It has its own name on your phone, so you can keep both, or move to Play later without losing anything in the Play copy.</li>
+          <li data-i18n="apk.k3"><strong>Updates come through the app.</strong> When a new version is out, TrackHound tells you when you open it and brings you back here to download it.</li>
+          <li data-i18n="apk.k4">Everything is unlocked, as in the Play closed test.</li>
         </ul>
       </div>
     </div>
@@ -202,17 +208,17 @@
   <section class="note-sec">
     <div class="container">
       <div class="note-box">
-        <h2>Please stay for fourteen days</h2>
-        <p>Google counts testers who stay opted in for fourteen days in a row. Leaving early does not cause you any trouble, but it means one more rider has to be found before the launch. You can uninstall and leave the test at any time after that.</p>
+        <h2 data-i18n="n1.title">Please stay for fourteen days</h2>
+        <p data-i18n="n1.body">Google counts testers who stay opted in for fourteen days in a row. Leaving early does not cause you any trouble, but it means one more rider has to be found before the launch. You can uninstall and leave the test at any time after that.</p>
 
-        <h2>What is free</h2>
-        <p>Everything in the Android test is unlocked while it runs. You need an Android phone with Google Play, and a region pack takes some storage.</p>
+        <h2 data-i18n="n2.title">What is free</h2>
+        <p data-i18n="n2.body">Everything in the Android test is unlocked while it runs. You need an Android phone with Google Play, and a region pack takes some storage.</p>
 
-        <h2>Your address</h2>
-        <p>Joining the group shares your Google account address with me, the group owner. It is used only to give you access to the test and to email you about it, such as when it opens. It is never shown to other members, never shared, and never used for anything else. Leave the group and it is gone. For anything else, see the <a href="/trackhound/privacy/">privacy policy</a>.</p>
+        <h2 data-i18n="n3.title">Your address</h2>
+        <p data-i18n="n3.body">Joining the group shares your Google account address with me, the group owner. It is used only to give you access to the test and to email you about it, such as when it opens. It is never shown to other members, never shared, and never used for anything else. Leave the group and it is gone. For anything else, see the <a href="/trackhound/privacy/">privacy policy</a>.</p>
 
-        <h2>Found something?</h2>
-        <p>Tell me at <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a>. A short note on where you rode and what the route did is the most useful thing a tester can send.</p>
+        <h2 data-i18n="n4.title">Found something?</h2>
+        <p data-i18n="n4.body">Tell me at <a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a>. A short note on where you rode and what the route did is the most useful thing a tester can send.</p>
       </div>
     </div>
   </section>
@@ -220,40 +226,171 @@
 
   <footer>
     <div class="footer-inner">
-      <p>&copy; 2021&ndash;2026 Michel Storms. All rights reserved.</p>
+      <p>&copy; 2021-2026 Michel Storms. <span data-i18n="footer.rights">All rights reserved.</span></p>
       <div class="legal-links">
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
-        <a href="https://michelstorms.com/trackhound/license/">License Agreement</a>
-        <a href="https://michelstorms.com/trackhound/privacy/">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="footer.terms">Terms of Service</a>
+        <a href="https://michelstorms.com/trackhound/license/" data-i18n="footer.license">License Agreement</a>
+        <a href="https://michelstorms.com/trackhound/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
       </div>
       <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
     </div>
   </footer>
 
   <script>
+  window.I18N_STRINGS = {
+    nl: {
+      "meta.title": "TrackHound voor Android: test het voor de lancering",
+      "meta.description": "TrackHound is live op iPhone en in gesloten testing op Android. Doe mee met je Google-account, rij er 14 dagen mee en help het naar Google Play.",
+      "og.title": "Test TrackHound op Android",
+      "og.description": "Offline routeren over kleine wegen, gravel en onverhard. Live op iPhone, in gesloten testing op Android. Doe mee met je Google-account.",
+      "nav.home": "Home",
+      "nav.press": "Pers",
+      "hero.eyebrow": "Gesloten test op Android",
+      "hero.title": "Rij met TrackHound op Android voor het gelanceerd wordt",
+      "hero.lede": "TrackHound plant routes over de kleine wegen, boerderijpaden en gravel waar andere apps je van weghouden, en het werkt offline. Op iPhone is het live. Op Android zit het in gesloten testing, en Google wil twaalf rijders die het veertien dagen gebruiken voordat het voor iedereen op Google Play mag. Ik bouw het alleen, dus elke tester telt.",
+      "s1.title": "Word lid van de testersgroep",
+      "s1.body": "Meld je aan met het Google-account dat je op je telefoon in de Play Store gebruikt en word lid van de groep. Daarmee kom je op de testlijst. Geen formulier, niets anders in te vullen.",
+      "s1.btn": "Word lid van de groep",
+      "s2.title": "Doe mee aan de test",
+      "s2.body1": "Open de testpagina met hetzelfde Google-account en tik op <strong>Word een tester</strong>.",
+      "s2.body2": "<strong>De test gaat de komende dagen open,</strong> zodra Google de beoordeling heeft afgerond. Tot dan zegt de testpagina dat de app niet beschikbaar is. Word nu lid van de groep, dan mail ik de groep zodra de test open is.",
+      "s2.btn": "Word een tester",
+      "s3.title": "Installeer het via Google Play",
+      "s3.body": "TrackHound staat nu in de Play Store zoals elke andere app, en updates komen op dezelfde manier binnen. Download een regio, plan een rit en ga erop uit.",
+      "s3.btn": "Openen in Google Play",
+      "apk.title": "Kan je niet wachten op Play? Download de APK",
+      "apk.intro": "Wil je niet wachten op de gesloten test, dan kan je TrackHound rechtstreeks vanaf deze pagina installeren. Het is dezelfde app, gebouwd uit dezelfde code als de Play-versie. De gesloten test op Play blijft de manier die TrackHound helpt om op Google Play te raken, dus doe ook mee als je kan.",
+      "apk.btn": "Download de APK",
+      "apk.how": "Zo installeer je het",
+      "apk.step1": "Open deze pagina op je Android-telefoon en tik op <strong>Download de APK</strong>.",
+      "apk.step2": "Open het gedownloade bestand. Android vraagt of je browser apps mag installeren: sta dat toe voor deze ene installatie.",
+      "apk.step3": "Tik op <strong>Installeren</strong>, open daarna TrackHound en download een regio.",
+      "apk.know": "Goed om te weten",
+      "apk.k1": "<strong>Geen Android Auto.</strong> Android Auto toont alleen auto-apps die uit Google Play komen, dus deze versie verschijnt niet op het scherm van je auto. Doe voor de auto mee aan de gesloten test op Play.",
+      "apk.k2": "<strong>Het wordt naast de Play-versie geïnstalleerd.</strong> Het heeft een eigen naam op je telefoon, dus je kan beide houden of later naar Play overstappen zonder iets te verliezen in de Play-versie.",
+      "apk.k3": "<strong>Updates komen via de app.</strong> Als er een nieuwe versie is, laat TrackHound het je weten wanneer je de app opent en brengt het je terug naar deze pagina om te downloaden.",
+      "apk.k4": "Alles is ontgrendeld, net als in de gesloten test op Play.",
+      "n1.title": "Blijf alsjeblieft veertien dagen",
+      "n1.body": "Google telt testers die veertien dagen na elkaar aangemeld blijven. Eerder stoppen geeft je geen enkel probleem, maar dan moet er voor de lancering nog een rijder bij gevonden worden. Daarna kan je op elk moment de app verwijderen en de test verlaten.",
+      "n2.title": "Wat is gratis",
+      "n2.body": "Alles in de Android-test is ontgrendeld zolang de test loopt. Je hebt een Android-telefoon met Google Play nodig, en een kaartregio neemt wat opslagruimte in.",
+      "n3.title": "Je e-mailadres",
+      "n3.body": "Door lid te worden van de groep deel je het e-mailadres van je Google-account met mij, de eigenaar van de groep. Ik gebruik het alleen om je toegang tot de test te geven en je erover te mailen, bijvoorbeeld wanneer de test opengaat. Het wordt nooit aan andere leden getoond, nooit gedeeld en nooit voor iets anders gebruikt. Verlaat je de groep, dan is het weg. Voor al het andere, zie het <a href=\"/trackhound/privacy/\">privacybeleid</a>.",
+      "n4.title": "Iets gevonden?",
+      "n4.body": "Laat het me weten via <a href=\"mailto:michelstorms@icloud.com\">michelstorms@icloud.com</a>. Een kort bericht over waar je gereden hebt en wat de route deed, is het nuttigste wat een tester kan sturen.",
+      "footer.rights": "Alle rechten voorbehouden.",
+      "footer.terms": "Servicevoorwaarden",
+      "footer.license": "Licentieovereenkomst",
+      "footer.privacy": "Privacybeleid",
+      "js.version": "Versie {0}",
+      "js.size": "{0} MB",
+      "js.released": "uitgebracht op {0}",
+      "js.needs": "vereist Android {0} of nieuwer",
+      "js.api": "API {0}"
+    },
+    fr: {
+      "meta.title": "TrackHound pour Android : testez-le avant le lancement",
+      "meta.description": "TrackHound est disponible sur iPhone et en test fermé sur Android. Rejoignez le test avec votre compte Google, roulez avec pendant 14 jours et aidez-le à arriver sur Google Play.",
+      "og.title": "Testez TrackHound sur Android",
+      "og.description": "Navigation hors ligne sur les petites routes, le gravier et la terre. Disponible sur iPhone, en test fermé sur Android. Rejoignez-nous avec votre compte Google.",
+      "nav.home": "Accueil",
+      "nav.press": "Presse",
+      "hero.eyebrow": "Test fermé sur Android",
+      "hero.title": "Roulez avec TrackHound sur Android avant son lancement",
+      "hero.lede": "TrackHound calcule des itinéraires sur les petites routes, les chemins agricoles et le gravier dont les autres applications vous éloignent, et il fonctionne hors ligne. Il est disponible sur iPhone. Sur Android, il est en test fermé, et Google exige douze motards qui l'utilisent pendant quatorze jours avant qu'il puisse arriver sur Google Play pour tout le monde. Je le développe seul, donc chaque testeur compte.",
+      "s1.title": "Rejoignez le groupe de testeurs",
+      "s1.body": "Connectez-vous avec le compte Google que vous utilisez sur le Play Store de votre téléphone, puis rejoignez le groupe. C'est ce qui vous place sur la liste des testeurs. Pas de formulaire, rien d'autre à remplir.",
+      "s1.btn": "Rejoindre le groupe",
+      "s2.title": "Participez au test",
+      "s2.body1": "Ouvrez la page du test avec le même compte Google et touchez <strong>Devenir testeur</strong>.",
+      "s2.body2": "<strong>Le test ouvre dans les prochains jours,</strong> dès que Google aura terminé sa validation. D'ici là, la page du test indique que l'application n'est pas disponible. Rejoignez le groupe dès maintenant, et j'enverrai un e-mail au groupe dès que le test sera ouvert.",
+      "s2.btn": "Devenir testeur",
+      "s3.title": "Installez-le depuis Google Play",
+      "s3.body": "TrackHound apparaît désormais dans le Play Store comme n'importe quelle autre application, et les mises à jour arrivent de la même façon. Téléchargez une région, planifiez une sortie et partez rouler.",
+      "s3.btn": "Ouvrir dans Google Play",
+      "apk.title": "Impatient d'attendre Play ? Téléchargez l'APK",
+      "apk.intro": "Si vous préférez ne pas attendre le test fermé, vous pouvez installer TrackHound directement depuis cette page. C'est la même application, compilée à partir du même code que la version Play. Le test fermé sur Play reste ce qui aide TrackHound à arriver sur Google Play, alors rejoignez-le aussi si vous le pouvez.",
+      "apk.btn": "Télécharger l'APK",
+      "apk.how": "Comment l'installer",
+      "apk.step1": "Ouvrez cette page sur votre téléphone Android et touchez <strong>Télécharger l'APK</strong>.",
+      "apk.step2": "Ouvrez le fichier téléchargé. Android demande si votre navigateur peut installer des applications : autorisez-le pour cette seule installation.",
+      "apk.step3": "Touchez <strong>Installer</strong>, puis ouvrez TrackHound et téléchargez une région.",
+      "apk.know": "Bon à savoir",
+      "apk.k1": "<strong>Pas d'Android Auto.</strong> Android Auto n'affiche que les applications de voiture installées depuis Google Play, donc cette version n'apparaîtra pas sur l'écran de votre voiture. Pour la voiture, rejoignez le test fermé sur Play.",
+      "apk.k2": "<strong>Elle s'installe à côté de la version Play.</strong> Elle a son propre nom sur votre téléphone, vous pouvez donc garder les deux, ou passer plus tard à Play sans rien perdre dans la copie Play.",
+      "apk.k3": "<strong>Les mises à jour passent par l'application.</strong> Quand une nouvelle version est disponible, TrackHound vous le signale à l'ouverture et vous ramène ici pour la télécharger.",
+      "apk.k4": "Tout est débloqué, comme dans le test fermé sur Play.",
+      "n1.title": "Merci de rester quatorze jours",
+      "n1.body": "Google compte les testeurs qui restent inscrits quatorze jours d'affilée. Partir plus tôt ne vous cause aucun souci, mais il faudra alors trouver un motard de plus avant le lancement. Ensuite, vous pouvez désinstaller l'application et quitter le test à tout moment.",
+      "n2.title": "Ce qui est gratuit",
+      "n2.body": "Tout est débloqué dans le test Android tant qu'il dure. Il vous faut un téléphone Android avec Google Play, et une région de carte prend un peu d'espace de stockage.",
+      "n3.title": "Votre adresse e-mail",
+      "n3.body": "En rejoignant le groupe, vous partagez l'adresse de votre compte Google avec moi, le propriétaire du groupe. Elle sert uniquement à vous donner accès au test et à vous écrire à son sujet, par exemple quand il ouvre. Elle n'est jamais montrée aux autres membres, jamais partagée et jamais utilisée pour autre chose. Si vous quittez le groupe, elle disparaît. Pour tout le reste, consultez la <a href=\"/trackhound/privacy/\">politique de confidentialité</a>.",
+      "n4.title": "Un problème ?",
+      "n4.body": "Écrivez-moi à <a href=\"mailto:michelstorms@icloud.com\">michelstorms@icloud.com</a>. Un court message indiquant où vous avez roulé et ce que l'itinéraire a fait est ce qu'un testeur peut envoyer de plus utile.",
+      "footer.rights": "Tous droits réservés.",
+      "footer.terms": "Conditions d'utilisation",
+      "footer.license": "Contrat de licence",
+      "footer.privacy": "Politique de confidentialité",
+      "js.version": "Version {0}",
+      "js.size": "{0} Mo",
+      "js.released": "publiée le {0}",
+      "js.needs": "nécessite Android {0} ou plus récent",
+      "js.api": "API {0}"
+    }
+  };
+  </script>
+  <script>
     // The newest direct APK, written by TrackHound's Scripts/android-direct-release.sh.
-    // Without it the button falls back to the releases page.
+    // Without it the button falls back to the releases page. The labels under the
+    // button follow the page language (assets/i18n.js sets <html lang>); a change of
+    // language re-renders them from the last direct.json that was read.
     (function () {
       var link = document.getElementById('apk-link');
       var meta = document.getElementById('apk-meta');
+      var data = null;
+      var EN = { 'js.version': 'Version {0}', 'js.size': '{0} MB', 'js.released': 'released {0}', 'js.needs': 'needs Android {0} or newer', 'js.api': 'API {0}' };
+      var LOCALES = { en: 'en-GB', nl: 'nl-BE', fr: 'fr-BE' };
+      var ANDROID = {26: '8', 27: '8.1', 28: '9', 29: '10', 30: '11', 31: '12', 33: '13', 34: '14', 35: '15', 36: '16'};
+
+      function lang() {
+        var l = document.documentElement.lang;
+        return LOCALES[l] ? l : 'en';
+      }
+      function t(key, arg) {
+        var dict = (window.I18N_STRINGS || {})[lang()] || {};
+        var s = dict[key] != null ? dict[key] : EN[key];
+        return s.replace('{0}', arg);
+      }
+      function render() {
+        if (!data) return;
+        var parts = [];
+        if (data.versionName) parts.push(t('js.version', data.versionName));
+        if (data.sizeBytes) parts.push(t('js.size', Math.round(data.sizeBytes / 1048576)));
+        if (data.published) {
+          var d = new Date(data.published);
+          if (!isNaN(d.getTime())) parts.push(t('js.released', d.toLocaleDateString(LOCALES[lang()], { day: 'numeric', month: 'long', year: 'numeric' })));
+        }
+        if (data.minSdk) parts.push(t('js.needs', ANDROID[data.minSdk] || t('js.api', data.minSdk)));
+        if (parts.length) { meta.textContent = parts.join(' · '); meta.hidden = false; }
+      }
+
       fetch('/trackhound/android/direct.json', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
           if (!d || !d.url || !/^https:\/\/github\.com\//.test(d.url)) return;
           link.href = d.url;
-          var parts = [];
-          if (d.versionName) parts.push('Version ' + d.versionName);
-          if (d.sizeBytes) parts.push(Math.round(d.sizeBytes / 1048576) + ' MB');
-          if (d.published) {
-            var t = new Date(d.published);
-            if (!isNaN(t.getTime())) parts.push('released ' + t.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
-          }
-          if (d.minSdk) parts.push('needs Android ' + ({26: '8', 27: '8.1', 28: '9', 29: '10', 30: '11', 31: '12', 33: '13', 34: '14', 35: '15', 36: '16'}[d.minSdk] || ('API ' + d.minSdk)) + ' or newer');
-          if (parts.length) { meta.textContent = parts.join(' \u00b7 '); meta.hidden = false; }
+          data = d;
+          render();
         })
         .catch(function () {});
+
+      if (window.MutationObserver) {
+        new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+      }
     })();
   </script>
+  <script src="/assets/i18n.js"></script>
 
 </body>
 </html>
