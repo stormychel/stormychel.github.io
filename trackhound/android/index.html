@@ -177,7 +177,7 @@
     <div class="container">
       <div class="apk-box">
         <h2>Can't wait for Play? Download the APK</h2>
-        <p>If you would rather not wait for the closed test, you can install TrackHound straight from this page. It is the same app, built from the same code as the Play version. The closed test above is still the way that helps TrackHound reach Google Play, so please join it too if you can.</p>
+        <p>If you would rather not wait for the closed test, you can install TrackHound straight from this page. It is the same app, built from the same code as the Play version. The Play closed test is still the way that helps TrackHound reach Google Play, so please join it too if you can.</p>
         <a class="btn-outline" id="apk-link" href="https://github.com/stormychel/stormychel.github.io/releases">Download the APK</a>
         <p class="apk-meta" id="apk-meta" hidden></p>
 
@@ -190,10 +190,10 @@
 
         <h3>Good to know</h3>
         <ul>
-          <li><strong>No Android Auto.</strong> Android Auto only shows car apps installed from Google Play, so this version will not appear on your car screen. For the car, use the Play test above.</li>
+          <li><strong>No Android Auto.</strong> Android Auto only shows car apps installed from Google Play, so this version will not appear on your car screen. For the car, join the Play closed test.</li>
           <li><strong>It installs beside the Play version.</strong> It has its own name on your phone, so you can keep both, or move to Play later without losing anything in the Play copy.</li>
           <li><strong>Updates come through the app.</strong> When a new version is out, TrackHound tells you when you open it and brings you back here to download it.</li>
-          <li>Everything is unlocked, as in the test.</li>
+          <li>Everything is unlocked, as in the Play closed test.</li>
         </ul>
       </div>
     </div>
@@ -246,7 +246,7 @@
           if (d.sizeBytes) parts.push(Math.round(d.sizeBytes / 1048576) + ' MB');
           if (d.published) {
             var t = new Date(d.published);
-            if (!isNaN(t)) parts.push('released ' + t.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
+            if (!isNaN(t.getTime())) parts.push('released ' + t.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
           }
           if (d.minSdk) parts.push('needs Android ' + ({26: '8', 27: '8.1', 28: '9', 29: '10', 30: '11', 31: '12', 33: '13', 34: '14', 35: '15', 36: '16'}[d.minSdk] || ('API ' + d.minSdk)) + ' or newer');
           if (parts.length) { meta.textContent = parts.join(' \u00b7 '); meta.hidden = false; }
